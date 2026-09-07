@@ -1,0 +1,1045 @@
+/* ==========================================================================
+   NUDE REST — COMPLETE EDITORIAL SITE (BEGE QUASE PRETA + WHITE SECTION RHYTHM)
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;1,200;1,300;1,400&family=Manrope:wght@200;300;400;500;600&display=swap');
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  /* Official NUDE REST Palette (Tons Bege Quase Preta & Nude Nobre) */
+  --bg-page: #100C09;             /* Bege quase preta / Espresso ultra profundo */
+  --bg-light: #16120E;            /* Bege mocha profundo */
+  --bg-contrast: #201914;         /* Superfície elevada */
+  --border-color: #261F19;        /* Linhas estruturais sutis */
+  
+  --text-main: #F7F2ED;           /* Alabaster Nude */
+  --text-muted: #BDB2A6;          /* Nude suave */
+  --nude-linen: #ECE2D8;          /* Bege linho */
+  --nude-taupe: #988A7C;          /* Greige taupe */
+
+  /* Typography */
+  --font-title: 'Plus Jakarta Sans', 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-sans: 'Plus Jakarta Sans', 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+html {
+  background-color: var(--bg-page);
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg-page);
+  color: var(--text-main);
+  font-family: var(--font-sans);
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* Page Frame Container — 100% Full Width */
+.page-container {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-page);
+  display: flex;
+  flex-direction: column;
+  border-radius: 0;
+}
+
+/* Shared Utilities */
+.border-b {
+  border-bottom: 1px solid var(--border-color);
+}
+
+.border-r {
+  border-right: 1px solid var(--border-color);
+}
+
+.italic {
+  font-style: italic;
+  font-weight: 200;
+}
+
+/* --------------------------------------------------------------------------
+   01 — HEADER (Bege Quase Preta)
+   -------------------------------------------------------------------------- */
+header.header-bar {
+  height: 68px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 48px;
+  background-color: var(--bg-page);
+}
+
+.logo-text {
+  font-family: var(--font-title);
+  font-size: 18px;
+  font-weight: 300;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-main);
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+}
+
+.logo-text:hover {
+  opacity: 0.7;
+}
+
+.menu-toggle {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 26px;
+  height: 7px;
+  cursor: pointer;
+  opacity: 0.85;
+  transition: opacity 0.3s ease;
+}
+
+.menu-toggle:hover {
+  opacity: 0.5;
+}
+
+.menu-toggle span {
+  display: block;
+  width: 100%;
+  height: 1px;
+  background-color: var(--text-main);
+}
+
+/* --------------------------------------------------------------------------
+   02 — PAGE TITLE / INFINITE MARQUEE TICKER
+   -------------------------------------------------------------------------- */
+.section-page-title {
+  height: 84px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  background-color: var(--bg-page);
+}
+
+.marquee-track {
+  display: flex;
+  width: 100%;
+  overflow: hidden;
+  user-select: none;
+  mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+}
+
+.marquee-group {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  gap: 48px;
+  padding-right: 48px;
+  min-width: 100%;
+  animation: scrollMarquee 30s linear infinite;
+}
+
+.marquee-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 48px;
+  font-family: var(--font-title);
+  font-size: 20px;
+  font-weight: 300;
+  letter-spacing: 0.04em;
+  color: var(--text-main);
+  white-space: nowrap;
+}
+
+.marquee-dot {
+  font-family: var(--font-title);
+  color: var(--nude-taupe);
+  font-size: 16px;
+}
+
+.marquee-track:hover .marquee-group {
+  animation-play-state: paused;
+}
+
+@keyframes scrollMarquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   LENIS & SMOOTH SCROLL STYLES
+   -------------------------------------------------------------------------- */
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+/* Scroll Fade-in Animation */
+.fade-on-scroll {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.fade-on-scroll.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* --------------------------------------------------------------------------
+   03 — HERO SECTION (2/3 Vídeo + 1/3 Texto com Animação)
+   -------------------------------------------------------------------------- */
+.section-hero {
+  display: flex;
+  width: 100%;
+  min-height: calc(100vh - 152px);
+  min-height: calc(100dvh - 152px);
+  background-color: var(--bg-page);
+}
+
+.section-hero-home {
+  height: calc(100vh - 152px);
+  height: calc(100dvh - 152px);
+  min-height: calc(100dvh - 152px);
+}
+
+.hero-col-left {
+  width: 66.666%;
+  overflow: hidden;
+  position: relative;
+  background-color: #080605;
+}
+
+.hero-col-left video,
+.hero-col-left img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  display: block;
+}
+
+.hero-col-right {
+  width: 33.333%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 48px 36px;
+  background-color: var(--bg-page);
+}
+
+.hero-quote {
+  font-family: var(--font-title);
+  font-size: 34px;
+  font-weight: 200;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+  color: var(--text-main);
+  animation: heroTextReveal 1.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.hero-quote .line-italic {
+  font-style: italic;
+  font-weight: 200;
+}
+
+@keyframes heroTextReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(32px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   04 — BIO SECTION (Fundo Branco Puro + Logotipo SEM Linha em Volta)
+   -------------------------------------------------------------------------- */
+.section-bio {
+  position: relative;
+  width: 100%;
+  min-height: 520px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 96px 48px;
+  background-color: #FFFFFF;
+}
+
+.bio-text-center {
+  width: 600px;
+  max-width: 52%;
+  text-align: center;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+}
+
+.bio-text-center p {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.85;
+  letter-spacing: 0.01em;
+  color: #2E251F;
+}
+
+/* Slots dos Monogramas 100% SEM NENHUMA LINHA EM VOLTA */
+.decor-slot-bottom-left,
+.decor-slot-top-right {
+  position: absolute;
+  width: 140px;
+  height: 140px;
+  z-index: 1;
+  overflow: visible;
+  background: transparent !important;
+  background-color: transparent !important;
+  border: none !important;
+  border-width: 0 !important;
+  border-style: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.decor-slot-bottom-left {
+  bottom: 56px;
+  left: 64px;
+}
+
+.decor-slot-top-right {
+  top: 56px;
+  right: 64px;
+}
+
+.decor-slot-bottom-left img,
+.decor-slot-top-right img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  border: none !important;
+  border-width: 0 !important;
+  border-style: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  background: transparent !important;
+}
+
+/* Seção Bio com variante Bege Quase Preta */
+.section-bio.section-bio-dark {
+  background-color: var(--bg-page) !important;
+}
+
+.section-bio.section-bio-dark .bio-text-center p {
+  color: var(--text-muted) !important;
+}
+
+.section-bio.section-bio-dark .bio-text-center strong {
+  color: var(--text-main) !important;
+}
+
+.section-customizer {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 96px 48px;
+  background-color: var(--bg-page);
+}
+
+.section-customizer .customizer-content {
+  width: 680px;
+  max-width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.section-customizer .customizer-title {
+  font-family: var(--font-title);
+  font-size: 28px;
+  font-weight: 300;
+  color: var(--text-main);
+  letter-spacing: -0.01em;
+}
+
+.section-customizer .customizer-desc {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.7;
+  color: var(--text-muted);
+  margin-bottom: 24px;
+}
+
+/* --------------------------------------------------------------------------
+   05 — HORIZONTAL GALLERY SECTION (Bege Quase Preta)
+   -------------------------------------------------------------------------- */
+.section-gallery {
+  display: flex;
+  width: 100%;
+  min-height: 400px;
+  overflow: hidden;
+  background-color: var(--bg-page);
+}
+
+.gallery-lead-col {
+  width: 25%;
+  min-width: 260px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+  padding: 48px 36px;
+  background-color: var(--bg-page);
+}
+
+.gallery-lead-text {
+  font-family: var(--font-title);
+  font-size: 24px;
+  font-weight: 300;
+  line-height: 1.2;
+  text-align: right;
+  color: var(--text-main);
+  letter-spacing: -0.01em;
+}
+
+.gallery-scroll-strip {
+  width: 75%;
+  display: flex;
+  overflow-x: auto;
+  scrollbar-width: none;
+  background-color: var(--bg-page);
+}
+
+.gallery-scroll-strip::-webkit-scrollbar {
+  display: none;
+}
+
+.gallery-tile {
+  flex: 0 0 260px;
+  min-width: 260px;
+  padding: 36px 26px;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg-page);
+}
+
+.gallery-tile-img-box {
+  width: 100%;
+  aspect-ratio: 4/5;
+  margin-bottom: 22px;
+  overflow: hidden;
+  background-color: var(--bg-light);
+}
+
+.gallery-tile-img-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.gallery-tile-heading {
+  font-family: var(--font-title);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.3;
+  margin-bottom: 10px;
+  color: var(--text-main);
+  letter-spacing: 0.01em;
+}
+
+.gallery-tile-desc {
+  font-family: var(--font-sans);
+  font-size: 11.5px;
+  font-weight: 300;
+  line-height: 1.6;
+  color: var(--text-muted);
+}
+
+/* --------------------------------------------------------------------------
+   06 — BLOCO EDITORIAL FINAL (27% / 73% Bege Quase Preta)
+   -------------------------------------------------------------------------- */
+.section-final-editorial {
+  display: flex;
+  width: 100%;
+  min-height: 540px;
+  background-color: var(--bg-page);
+}
+
+.final-col-left {
+  width: 27%;
+  overflow: hidden;
+  background-color: var(--bg-light);
+}
+
+.final-col-left img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.final-col-right {
+  width: 73%;
+  padding: 96px 72px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  background-color: var(--bg-page);
+}
+
+.final-title {
+  font-family: var(--font-title);
+  font-size: 38px;
+  font-weight: 200;
+  letter-spacing: -0.02em;
+  color: var(--text-main);
+  margin-bottom: 44px;
+}
+
+.final-paras {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  max-width: 640px;
+}
+
+.final-paras p {
+  font-family: var(--font-sans);
+  font-size: 13.5px;
+  font-weight: 300;
+  line-height: 1.75;
+  color: var(--text-muted);
+}
+
+/* --------------------------------------------------------------------------
+   07 — MANIFESTO & PHILOSOPHY (3 Colunas Grid Bege Quase Preta)
+   -------------------------------------------------------------------------- */
+.section-manifesto {
+  display: flex;
+  width: 100%;
+  min-height: 380px;
+  background-color: var(--bg-page);
+}
+
+.manifesto-col {
+  flex: 1;
+  padding: 64px 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.manifesto-num {
+  font-family: var(--font-title);
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--nude-taupe);
+  letter-spacing: 0.14em;
+  margin-bottom: 36px;
+}
+
+.manifesto-title {
+  font-family: var(--font-title);
+  font-size: 23px;
+  font-weight: 300;
+  line-height: 1.25;
+  margin-bottom: 18px;
+  color: var(--text-main);
+  letter-spacing: -0.01em;
+}
+
+.manifesto-desc {
+  font-family: var(--font-sans);
+  font-size: 12.5px;
+  font-weight: 300;
+  line-height: 1.65;
+  color: var(--text-muted);
+}
+
+/* --------------------------------------------------------------------------
+   08 — SELECTED ARCHIVE / CURATED WORKS (4 Colunas com Imagens)
+   -------------------------------------------------------------------------- */
+.section-archive-header {
+  height: 90px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 48px;
+  background-color: var(--bg-page);
+}
+
+.archive-header-title {
+  font-family: var(--font-title);
+  font-size: 22px;
+  font-weight: 300;
+  letter-spacing: -0.01em;
+  color: var(--text-main);
+}
+
+.archive-header-index {
+  font-family: var(--font-title);
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.section-archive-grid {
+  display: flex;
+  width: 100%;
+  min-height: 480px;
+  background-color: var(--bg-page);
+}
+
+.archive-card {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 36px 32px;
+  background-color: var(--bg-page);
+}
+
+.archive-card:last-child {
+  border-right: none;
+}
+
+.archive-card-image {
+  width: 100%;
+  aspect-ratio: 3/4;
+  margin-bottom: 24px;
+  overflow: hidden;
+  background-color: var(--bg-light);
+}
+
+.archive-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* --------------------------------------------------------------------------
+   CLEAN BUTTONS & HIGH CONTRAST STYLES
+   -------------------------------------------------------------------------- */
+.btn-primary-nude {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 16px 28px;
+  background-color: #ECE2D8 !important;
+  color: #1E1713 !important;
+  border: 1px solid #ECE2D8;
+  font-family: var(--font-title);
+  font-size: 13px;
+  font-weight: 600 !important;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  border-radius: 2px;
+  transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary-nude:hover {
+  background-color: #FFFFFF !important;
+  color: #15100C !important;
+  border-color: #FFFFFF;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(236, 226, 216, 0.22);
+}
+
+.btn-primary-nude:active {
+  transform: translateY(0);
+}
+
+.btn-secondary-nude {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px 24px;
+  background-color: transparent;
+  color: #F7F2ED !important;
+  border: 1px solid var(--border-color);
+  font-family: var(--font-title);
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  border-radius: 2px;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-secondary-nude:hover {
+  background-color: var(--bg-contrast);
+  border-color: var(--nude-linen);
+  color: #FFFFFF !important;
+  transform: translateY(-2px);
+}
+
+.btn-secondary-nude:active {
+  transform: translateY(0);
+}
+
+.archive-card-meta {
+  font-family: var(--font-title);
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--nude-taupe);
+  margin-bottom: 8px;
+}
+
+.archive-card-title {
+  font-family: var(--font-title);
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 1.3;
+  color: var(--text-main);
+  margin-bottom: 12px;
+}
+
+.archive-card-desc {
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 300;
+  line-height: 1.6;
+  color: var(--text-muted);
+}
+
+/* --------------------------------------------------------------------------
+   09 — EDITORIAL CITATION / BIG PULL QUOTE (Bege Quase Preta)
+   -------------------------------------------------------------------------- */
+.section-quote-statement {
+  padding: 120px 48px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-color: var(--bg-light);
+}
+
+.statement-quote {
+  font-family: var(--font-title);
+  font-size: 36px;
+  font-weight: 200;
+  line-height: 1.35;
+  letter-spacing: -0.015em;
+  max-width: 860px;
+  color: var(--text-main);
+  margin-bottom: 32px;
+}
+
+.statement-author {
+  font-family: var(--font-title);
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--nude-taupe);
+}
+
+/* --------------------------------------------------------------------------
+   10 — CONTACT & INQUIRIES (50% / 50% Bege Quase Preta)
+   -------------------------------------------------------------------------- */
+.section-contact {
+  display: flex;
+  width: 100%;
+  min-height: 380px;
+  background-color: var(--bg-page);
+}
+
+.contact-col-left {
+  width: 50%;
+  padding: 72px 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.contact-heading {
+  font-family: var(--font-title);
+  font-size: 32px;
+  font-weight: 200;
+  line-height: 1.2;
+  color: var(--text-main);
+  letter-spacing: -0.01em;
+}
+
+.contact-note {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 300;
+  line-height: 1.7;
+  color: var(--text-muted);
+  max-width: 380px;
+}
+
+.contact-col-right {
+  width: 50%;
+  padding: 72px 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.contact-item-group {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.contact-item-label {
+  font-family: var(--font-title);
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--nude-taupe);
+  margin-bottom: 6px;
+}
+
+.contact-item-val {
+  font-family: var(--font-title);
+  font-size: 20px;
+  font-weight: 300;
+  color: var(--text-main);
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+  letter-spacing: 0.01em;
+}
+
+.contact-item-val:hover {
+  opacity: 0.6;
+}
+
+/* --------------------------------------------------------------------------
+   11 — EDITORIAL MINIMAL FOOTER
+   -------------------------------------------------------------------------- */
+footer.footer-bar {
+  height: 72px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 48px;
+  background-color: var(--bg-page);
+}
+
+.footer-credits {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 300;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+}
+
+.footer-stamp {
+  font-family: var(--font-title);
+  font-size: 12px;
+  font-weight: 300;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text-main);
+}
+
+/* --------------------------------------------------------------------------
+   RESPONSIVE ADJUSTMENTS (Mobile / Tablet)
+   -------------------------------------------------------------------------- */
+@media (max-width: 860px) {
+  header.header-bar, footer.footer-bar {
+    padding: 0 24px;
+    height: 56px;
+  }
+
+  .section-hero {
+    flex-direction: column;
+    min-height: auto;
+    height: auto;
+  }
+
+  .section-hero-home {
+    height: auto;
+    min-height: auto;
+  }
+
+  .hero-col-left, .hero-col-right {
+    width: 100%;
+  }
+
+  .hero-col-left {
+    height: 420px;
+  }
+
+  .hero-col-right {
+    padding: 48px 24px;
+  }
+
+  .hero-quote {
+    font-size: 28px;
+  }
+
+  .section-bio {
+    padding: 64px 24px;
+    min-height: auto;
+  }
+
+  .bio-text-center {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .decor-slot-bottom-left {
+    position: static;
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 24px auto;
+  }
+
+  .decor-slot-top-right {
+    position: static;
+    width: 100px;
+    height: 100px;
+    margin: 24px auto 0 auto;
+  }
+
+  .section-gallery {
+    flex-direction: column;
+  }
+
+  .gallery-lead-col {
+    width: 100%;
+    align-items: flex-start;
+    padding: 28px 24px;
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  .gallery-lead-text {
+    text-align: left;
+  }
+
+  .gallery-scroll-strip {
+    width: 100%;
+  }
+
+  .section-final-editorial {
+    flex-direction: column;
+    min-height: auto;
+  }
+
+  .final-col-left, .final-col-right {
+    width: 100%;
+    border-right: none;
+  }
+
+  .final-col-left {
+    height: 360px;
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  .final-col-right {
+    padding: 48px 24px;
+  }
+
+  .final-title {
+    font-size: 30px;
+    margin-bottom: 24px;
+  }
+
+  .section-manifesto {
+    flex-direction: column;
+  }
+
+  .manifesto-col {
+    border-right: none;
+    border-bottom: 1px solid var(--border-color);
+    padding: 48px 24px;
+  }
+
+  .section-archive-grid {
+    flex-direction: column;
+  }
+
+  .archive-card {
+    border-right: none;
+    border-bottom: 1px solid var(--border-color);
+    padding: 32px 24px;
+  }
+
+  .section-quote-statement {
+    padding: 72px 24px;
+  }
+
+  .statement-quote {
+    font-size: 26px;
+  }
+
+  .section-contact {
+    flex-direction: column;
+  }
+
+  .contact-col-left, .contact-col-right {
+    width: 100%;
+    border-right: none;
+    padding: 48px 24px;
+  }
+
+  .contact-col-left {
+    border-bottom: 1px solid var(--border-color);
+  }
+}
