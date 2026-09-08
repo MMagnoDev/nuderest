@@ -25,38 +25,9 @@ export const SmoothScroll: React.FC = () => {
 
     rafId = requestAnimationFrame(raf);
 
-    // 2. IntersectionObserver for Smooth Scroll Fade-in Effects
-    const handleScrollFade = () => {
-      const elements = document.querySelectorAll('.fade-on-scroll, section:not(.section-hero)');
-      
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add('is-visible');
-            }
-          });
-        },
-        {
-          threshold: 0.12,
-          rootMargin: '0px 0px -50px 0px',
-        }
-      );
-
-      elements.forEach((el) => {
-        el.classList.add('fade-on-scroll');
-        observer.observe(el);
-      });
-
-      return observer;
-    };
-
-    const observer = handleScrollFade();
-
     return () => {
       cancelAnimationFrame(rafId);
       lenis.destroy();
-      observer?.disconnect();
     };
   }, []);
 

@@ -150,12 +150,29 @@ header.header-bar {
    02 — PAGE TITLE / INFINITE MARQUEE TICKER
    -------------------------------------------------------------------------- */
 .section-page-title {
-  height: 84px;
+  min-height: 84px;
   display: flex;
+  justify-content: center;
   align-items: center;
-  overflow: hidden;
   position: relative;
   background-color: var(--bg-page);
+  padding: 0 24px;
+}
+
+.page-title {
+  font-family: var(--font-editorial);
+  font-size: clamp(26px, 3.2vw, 40px);
+  font-weight: 300 !important;
+  letter-spacing: -0.015em;
+  color: var(--text-main);
+  text-align: center;
+  width: 100%;
+}
+
+.page-title .quote-mark {
+  font-family: var(--font-editorial);
+  font-weight: 300;
+  color: var(--nude-taupe);
 }
 
 .marquee-track {
@@ -239,10 +256,9 @@ html.lenis, html.lenis body {
 
 /* Scroll Fade-in Animation */
 .fade-on-scroll {
-  opacity: 0;
-  transform: translateY(28px);
-  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
-  will-change: opacity, transform;
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
 .fade-on-scroll.is-visible {

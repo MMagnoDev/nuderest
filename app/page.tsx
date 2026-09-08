@@ -360,7 +360,7 @@ export default function HomePage() {
           <div className="contact-item-group">
             <div>
               <div className="contact-item-label">Correspondência Direta</div>
-              <a href="mailto:contacto@nuderest.com.br" className="contact-item-val">contacto@nuderest.com.br</a>
+              <a href="mailto:contacto@nuderest.com" className="contact-item-val">contacto@nuderest.com</a>
             </div>
             <div>
               <div className="contact-item-label">Showroom & Atelier</div>
@@ -368,8 +368,8 @@ export default function HomePage() {
             </div>
             <div>
               <div className="contact-item-label">WhatsApp VIP Concierge</div>
-              <a href="https://wa.me/5511999999999" target="_blank" rel="noopener noreferrer" className="contact-item-val">
-                +351 912 345 678 / WhatsApp
+              <a href="https://wa.me/351910000000" target="_blank" rel="noopener noreferrer" className="contact-item-val">
+                +351 910 000 000 / WhatsApp
               </a>
             </div>
           </div>

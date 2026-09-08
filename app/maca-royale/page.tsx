@@ -61,14 +61,14 @@ export default function MacaRoyalePage() {
       <Navbar />
 
       {/* Page Title */}
-      <section className="section-page-title border-b fade-on-scroll">
+      <section className="section-page-title border-b">
         <h1 className="page-title">
           <span className="quote-mark">‘</span>Maca Nude Rest <span className="italic">Royale</span><span className="quote-mark">’</span>
         </h1>
       </section>
 
       {/* Hero 50% / 50% */}
-      <section className="section-hero border-b fade-on-scroll">
+      <section className="section-hero border-b">
         <div className="hero-col-left border-r">
           <img
             src={product.image}
@@ -86,7 +86,7 @@ export default function MacaRoyalePage() {
       </section>
 
       {/* Editorial Customizer Section (Bege Quase Preta) */}
-      <section className="section-customizer border-b fade-on-scroll">
+      <section className="section-customizer border-b">
         <div className="customizer-content">
           
           <h3 className="customizer-title">
@@ -271,7 +271,7 @@ export default function MacaRoyalePage() {
       </section>
 
       {/* Specifications 3-Column Grid */}
-      <section className="section-manifesto border-b fade-on-scroll">
+      <section className="section-manifesto border-b">
         <div className="manifesto-col border-r">
           <span className="manifesto-num">DIMENSÕES & PESO</span>
           <div>
@@ -302,7 +302,7 @@ export default function MacaRoyalePage() {
       </section>
 
       {/* Link to other model */}
-      <section className="section-archive-header border-b fade-on-scroll">
+      <section className="section-archive-header border-b">
         <h2 className="archive-header-title">Conheça também a <span className="italic">Maca Sculpt Arc</span></h2>
         <Link href="/maca-sculpt-arc" className="archive-header-index" style={{ textDecoration: 'none' }}>
           Ver Modelo Curvo →
