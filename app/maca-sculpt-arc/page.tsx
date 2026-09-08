@@ -155,7 +155,7 @@ export default function MacaSculptArcPage() {
                 >
                   <span>{base.name}</span>
                   <span style={{ color: 'var(--nude-linen)', fontSize: '12px' }}>
-                    {base.extraPrice > 0 ? `+ R$ ${base.extraPrice.toFixed(2)}` : 'Incluído'}
+                    {base.extraPrice > 0 ? `+ ${base.extraPrice.toFixed(2)} €` : 'Incluído'}
                   </span>
                 </button>
               ))}
@@ -199,11 +199,11 @@ export default function MacaSculptArcPage() {
               Valor Total Personalizado
             </div>
             <div style={{ fontFamily: 'var(--font-title)', fontSize: '36px', fontWeight: 200, color: 'var(--text-main)' }}>
-              R$ {pixPrice.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}
+              {pixPrice.toLocaleString('pt-PT', { minimumFractionDigits: 2 })} €
               <span style={{ fontSize: '14px', color: 'var(--nude-linen)', marginLeft: '8px' }}>a pronto pagamento</span>
             </div>
             <div style={{ fontSize: '13px', color: 'var(--text-muted)' }}>
-              ou 12x de R$ {(totalPrice / 12).toLocaleString('pt-BR', { minimumFractionDigits: 2 })} sem juros no cartão
+              ou 12 prestações de {(totalPrice / 12).toLocaleString('pt-PT', { minimumFractionDigits: 2 })} € sem juros no cartão
             </div>
             <div style={{
               display: 'flex',

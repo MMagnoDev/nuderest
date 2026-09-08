@@ -32,7 +32,7 @@ export const Testimonials: React.FC = () => {
               ))}
             </div>
             <span style={{ fontSize: '14px', fontWeight: 600, color: 'var(--text-main)' }}>
-              Nota 4.9 de 5.0 (Mais de 320 avaliações verificadas)
+              Classificação 4.9 de 5.0 (Mais de 320 avaliações verificadas)
             </span>
           </div>
         </div>

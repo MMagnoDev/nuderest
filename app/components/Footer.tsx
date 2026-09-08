@@ -34,7 +34,7 @@ export const Footer: React.FC = () => {
               />
             </div>
             <p style={{ fontSize: '13px', lineHeight: 1.65, color: 'var(--text-muted)' }}>
-              Ateliê especializado na concepção e fabricação artesanal de macas ergonômicas personalizadas para clínicas de estética, spas, dermatologia e lash designers de alto padrão.
+              Atelier especializado na conceção e fabrico artesanal de macas ergonómicas personalizadas para clínicas de estética, spas, dermatologia e lash designers de elevado padrão.
             </p>
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--nude-linen)', fontSize: '12px', fontWeight: 600 }}>
               <ShieldCheck size={16} />
@@ -48,7 +48,7 @@ export const Footer: React.FC = () => {
               Coleções & Modelos
             </h4>
             <ul style={{ listStyle: 'none', padding: 0, display: 'flex', flexDirection: 'column', gap: '10px', fontSize: '13px' }}>
-              <li><a href="#catalogo" style={{ color: 'var(--text-muted)', textDecoration: 'none' }}>Maca Nude Rest Royale (Anatômica)</a></li>
+              <li><a href="#catalogo" style={{ color: 'var(--text-muted)', textDecoration: 'none' }}>Maca Nude Rest Royale (Anatómica)</a></li>
               <li><a href="#catalogo" style={{ color: 'var(--text-muted)', textDecoration: 'none' }}>Maca Sculpt Arc (Design Curvo)</a></li>
               <li><a href="#catalogo" style={{ color: 'var(--text-muted)', textDecoration: 'none' }}>Maca Studio Elétrica 3M</a></li>
               <li><a href="#catalogo" style={{ color: 'var(--text-muted)', textDecoration: 'none' }}>Maca Minimalist Pro</a></li>
@@ -59,7 +59,7 @@ export const Footer: React.FC = () => {
           {/* Institutional */}
           <div>
             <h4 style={{ fontSize: '14px', color: 'var(--nude-alabaster)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '20px' }}>
-              Segurança & Atendimento
+              Segurança & Apoio ao Cliente
             </h4>
             <ul style={{ listStyle: 'none', padding: 0, display: 'flex', flexDirection: 'column', gap: '12px', fontSize: '13px' }}>
               <li style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
@@ -68,11 +68,11 @@ export const Footer: React.FC = () => {
               </li>
               <li style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                 <Mail size={14} color="var(--nude-linen)" />
-                <span>contato@nuderest.com.br</span>
+                <span>contacto@nuderest.com.br</span>
               </li>
               <li style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                 <MapPin size={14} color="var(--nude-linen)" />
-                <span>Ateliê & Showroom: São Paulo — SP</span>
+                <span>Atelier & Showroom — Envio Assegurado</span>
               </li>
               <li><a href="#faq" style={{ color: 'var(--text-muted)', textDecoration: 'none' }}>Termos de Garantia & Envio Seguro</a></li>
             </ul>
@@ -120,7 +120,7 @@ export const Footer: React.FC = () => {
               {/* Payment Summary */}
               <div style={{ marginTop: '8px' }}>
                 <div style={{ fontSize: '11px', color: 'var(--text-dim)', marginBottom: '6px' }}>
-                  FORMAS DE PAGAMENTO ACEITAS:
+                  FORMAS DE PAGAMENTO ACEITES:
                 </div>
                 <div style={{
                   display: 'flex',
@@ -130,11 +130,11 @@ export const Footer: React.FC = () => {
                   fontWeight: 600,
                   color: 'var(--nude-linen)'
                 }}>
-                  <span style={{ padding: '4px 8px', backgroundColor: 'var(--bg-surface)', border: '1px solid var(--border-medium)', borderRadius: '4px' }}>PIX (5% OFF)</span>
+                  <span style={{ padding: '4px 8px', backgroundColor: 'var(--bg-surface)', border: '1px solid var(--border-medium)', borderRadius: '4px' }}>Pronto Pagamento (5% OFF)</span>
                   <span style={{ padding: '4px 8px', backgroundColor: 'var(--bg-surface)', border: '1px solid var(--border-medium)', borderRadius: '4px' }}>Visa</span>
                   <span style={{ padding: '4px 8px', backgroundColor: 'var(--bg-surface)', border: '1px solid var(--border-medium)', borderRadius: '4px' }}>Mastercard</span>
-                  <span style={{ padding: '4px 8px', backgroundColor: 'var(--bg-surface)', border: '1px solid var(--border-medium)', borderRadius: '4px' }}>Elo</span>
-                  <span style={{ padding: '4px 8px', backgroundColor: 'var(--bg-surface)', border: '1px solid var(--border-medium)', borderRadius: '4px' }}>Até 12x</span>
+                  <span style={{ padding: '4px 8px', backgroundColor: 'var(--bg-surface)', border: '1px solid var(--border-medium)', borderRadius: '4px' }}>Multibanco</span>
+                  <span style={{ padding: '4px 8px', backgroundColor: 'var(--bg-surface)', border: '1px solid var(--border-medium)', borderRadius: '4px' }}>Até 12 Prestações</span>
                 </div>
               </div>
             </div>

@@ -64,7 +64,7 @@ export default function MacaModelo2Page() {
       {/* Page Title */}
       <section className="section-page-title border-b">
         <h1 className="page-title">
-          <span className="quote-mark">‘</span>NUDE REST — <span className="italic">Maca Modelo 2 (Royale Anatômica)</span><span className="quote-mark">’</span>
+          <span className="quote-mark">‘</span>NUDE REST — <span className="italic">Maca Royale Anatómica</span><span className="quote-mark">’</span>
         </h1>
       </section>
 
@@ -115,10 +115,10 @@ export default function MacaModelo2Page() {
 
         <div className="hero-col-right">
           <h2 className="hero-quote">
-            Estofamento capitonê,<br />
+            Estofo capitonê,<br />
             pés em X dourados &<br />
-            suporte anatômico nobre<br />
-            <span className="line-italic">Maca Modelo 2</span>
+            suporte anatómico nobre<br />
+            <span className="line-italic">Maca Royale Anatómica</span>
           </h2>
         </div>
       </section>
@@ -128,10 +128,10 @@ export default function MacaModelo2Page() {
         <div className="customizer-content">
           
           <h3 className="customizer-title">
-            Personalize seu Modelo 2 — Royale Anatômica
+            Personalize o seu Modelo 2 — Royale Anatómica
           </h3>
           <p className="customizer-desc">
-            Almofadas anatômicas gomadas, pés em aço com banho dourado Champagne e curvatura para Lash Designers.
+            Almofadas anatómicas gomadas, pés em aço com banho dourado Champagne e curvatura ergonómica para Lash Designers.
           </p>
 
           {/* 1. Escolha de Cor */}
@@ -197,7 +197,7 @@ export default function MacaModelo2Page() {
                 >
                   <span>{base.name}</span>
                   <span style={{ color: 'var(--nude-taupe)', fontSize: '12px' }}>
-                    {base.extraPrice ? `+ R$ ${base.extraPrice.toFixed(2)}` : 'Incluso'}
+                    {base.extraPrice ? `+ ${base.extraPrice.toFixed(2)} €` : 'Incluído'}
                   </span>
                 </button>
               ))}
@@ -211,7 +211,7 @@ export default function MacaModelo2Page() {
             </label>
             <input
               type="text"
-              placeholder="Digite o nome ou deixe em branco para acabamento liso"
+              placeholder="Insira o nome ou deixe em branco para acabamento liso"
               value={embroideryText}
               onChange={(e) => setEmbroideryText(e.target.value)}
               style={{
@@ -230,7 +230,7 @@ export default function MacaModelo2Page() {
           {/* 4. Opcionais */}
           <div style={{ textAlign: 'left', marginBottom: '32px' }}>
             <label style={{ display: 'block', fontFamily: 'var(--font-title)', fontSize: '12px', letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--nude-taupe)', marginBottom: '12px' }}>
-              4. Acessórios e Proteção de Ateliê:
+              4. Acessórios & Proteção de Atelier:
             </label>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
               {product.optionalAddons.map(addon => {
@@ -258,7 +258,7 @@ export default function MacaModelo2Page() {
                       <div style={{ fontSize: '11px', color: 'var(--text-muted)', marginTop: '2px' }}>{addon.description}</div>
                     </div>
                     <span style={{ color: 'var(--nude-taupe)', fontSize: '12px', flexShrink: 0, marginLeft: '12px' }}>
-                      {isSelected ? '✓ Adicionado (+ R$ ' + addon.price.toFixed(2) + ')' : '+ R$ ' + addon.price.toFixed(2)}
+                      {isSelected ? '✓ Adicionado (+ ' + addon.price.toFixed(2) + ' €)' : '+ ' + addon.price.toFixed(2) + ' €'}
                     </span>
                   </button>
                 );
@@ -280,11 +280,11 @@ export default function MacaModelo2Page() {
               Valor Total Personalizado
             </div>
             <div style={{ fontFamily: 'var(--font-title)', fontSize: '36px', fontWeight: 200, color: 'var(--text-main)' }}>
-              R$ {pixPrice.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}
-              <span style={{ fontSize: '14px', color: 'var(--nude-linen)', marginLeft: '8px' }}>à vista no PIX</span>
+              {pixPrice.toLocaleString('pt-PT', { minimumFractionDigits: 2 })} €
+              <span style={{ fontSize: '14px', color: 'var(--nude-linen)', marginLeft: '8px' }}>a pronto pagamento</span>
             </div>
             <div style={{ fontSize: '13px', color: 'var(--text-muted)' }}>
-              ou 12x de R$ {(totalPrice / 12).toLocaleString('pt-BR', { minimumFractionDigits: 2 })} sem juros no cartão
+              ou 12 prestações de {(totalPrice / 12).toLocaleString('pt-PT', { minimumFractionDigits: 2 })} € sem juros com cartão
             </div>
             
             {/* Dual High Contrast CTA Buttons */}

@@ -64,7 +64,7 @@ export default function ColecoesPage() {
                 <div>
                   <div style={{ fontSize: '11px', color: 'var(--nude-taupe)', textTransform: 'uppercase' }}>A partir de</div>
                   <div style={{ fontFamily: 'var(--font-title)', fontSize: '24px', fontWeight: 300, color: 'var(--text-main)' }}>
-                    R$ {(product.price * 0.95).toLocaleString('pt-BR', { minimumFractionDigits: 2 })}
+                    {(product.price * 0.95).toLocaleString('pt-PT', { minimumFractionDigits: 2 })} €
                   </div>
                 </div>
 

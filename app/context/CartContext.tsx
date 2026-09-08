@@ -143,12 +143,12 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
       if (item.addons && item.addons.length > 0) {
         message += `• Opcionais: ${item.addons.map(a => a.name).join(', ')}%0A`;
       }
-      message += `• Subtotal Artigo: R$ ${itemTotal.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}%0A%0A`;
+      message += `• Subtotal Artigo: ${itemTotal.toLocaleString('pt-PT', { minimumFractionDigits: 2 })} €%0A%0A`;
     });
 
     message += `──────────────────%0A`;
-    message += `*VALOR TOTAL:* R$ ${subtotal.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}%0A`;
-    message += `*VALOR COM 5% NO PAGAMENTO IMEDIATO:* R$ ${pixTotal.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}%0A%0A`;
+    message += `*VALOR TOTAL:* ${subtotal.toLocaleString('pt-PT', { minimumFractionDigits: 2 })} €%0A`;
+    message += `*VALOR COM 5% NO PAGAMENTO IMEDIATO:* ${pixTotal.toLocaleString('pt-PT', { minimumFractionDigits: 2 })} €%0A%0A`;
     message += `Poderiam confirmar o prazo de confeção artesanal e os dados para pagamento?`;
 
     window.open(`https://wa.me/5511999999999?text=${message}`, '_blank');
@@ -168,7 +168,7 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
     if (item.addons && item.addons.length > 0) {
       message += `• Opcionais: ${item.addons.map(a => a.name).join(', ')}%0A`;
     }
-    message += `%0A*Valor:* R$ ${itemUnitTotal.toLocaleString('pt-BR', { minimumFractionDigits: 2 })} (ou R$ ${pix.toLocaleString('pt-BR', { minimumFractionDigits: 2 })} no pagamento pronto com 5% OFF)%0A%0A`;
+    message += `%0A*Valor:* ${itemUnitTotal.toLocaleString('pt-PT', { minimumFractionDigits: 2 })} € (ou ${pix.toLocaleString('pt-PT', { minimumFractionDigits: 2 })} € a pronto pagamento com 5% OFF)%0A%0A`;
     message += `Poderiam enviar-me os dados para pagamento e o prazo de entrega?`;
 
     window.open(`https://wa.me/5511999999999?text=${message}`, '_blank');

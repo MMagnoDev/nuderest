@@ -76,7 +76,7 @@ export interface CheckoutCustomer {
   neighborhood: string;
   city: string;
   state: string;
-  paymentMethod: 'pix' | 'credit_card';
+  paymentMethod: 'multibanco' | 'mbway' | 'credit_card' | 'bank_transfer' | 'pix';
   cardDetails?: {
     number: string;
     holder: string;
@@ -84,4 +84,26 @@ export interface CheckoutCustomer {
     cvv: string;
     installments: number;
   };
+}
+
+export interface FAQItem {
+  question: string;
+  answer: string;
+}
+
+export interface ReviewItem {
+  name: string;
+  role: string;
+  city: string;
+  maca: string;
+  rating: number;
+  comment: string;
+  date: string;
+}
+
+export interface RecentSaleItem {
+  name: string;
+  city: string;
+  model: string;
+  time: string;
 }

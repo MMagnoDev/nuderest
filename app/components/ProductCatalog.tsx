@@ -35,7 +35,7 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
   return (
     <section id="catalogo" className="section-pad border-b" style={{ backgroundColor: 'var(--bg-page)' }}>
       <div className="container">
-        
+
         {/* Section Header */}
         <div style={{
           display: 'flex',
@@ -48,12 +48,12 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
             <Sparkles size={12} />
             COLEÇÃO EXCLUSIVA DE MACAS NUDE REST
           </span>
-          
+
           <h2 style={{ marginBottom: '20px', maxWidth: '750px' }}>
             Escolha o modelo ideal para <br />
             o <span className="italic">posicionamento</span> do seu espaço
           </h2>
-          
+
           <p className="body-text" style={{ maxWidth: '620px' }}>
             Cada peça é confeccionada artesanalmente com materiais hospitalares de alta performance, espuma D33 multi-densidade e acabamentos nobres na paleta Nude Rest.
           </p>
@@ -132,7 +132,7 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
                   overflow: 'hidden',
                   cursor: 'pointer'
                 }}
-                onClick={() => onSelectProductToCustomize(product, currentColor)}
+                  onClick={() => onSelectProductToCustomize(product, currentColor)}
                 >
                   <Image
                     src={product.image}
@@ -141,7 +141,7 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
                     style={{ objectFit: 'cover', transition: 'transform 0.5s ease' }}
                     className="product-image"
                   />
-                  
+
                   {/* Badge top-left */}
                   {product.badge && (
                     <div style={{
@@ -275,10 +275,10 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
                   }}>
                     <div style={{ display: 'flex', alignItems: 'baseline', gap: '8px', marginBottom: '4px' }}>
                       <span style={{ fontSize: '13px', color: 'var(--text-dim)', textDecoration: 'line-through' }}>
-                        R$ {product.originalPrice.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}
+                        {product.originalPrice.toLocaleString('pt-PT', { minimumFractionDigits: 2 })} €
                       </span>
                       <span style={{ fontSize: '11px', color: '#4ADE80', fontWeight: 600 }}>
-                        {product.pixDiscountPercent}% OFF NO PIX
+                        5% OFF A PRONTO PAGAMENTO
                       </span>
                     </div>
 
@@ -290,15 +290,15 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
                         color: 'var(--text-main)',
                         marginRight: '6px'
                       }}>
-                        R$ {pixPrice.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}
+                        {pixPrice.toLocaleString('pt-PT', { minimumFractionDigits: 2 })} €
                       </span>
                       <span style={{ fontSize: '12px', color: 'var(--nude-linen)', fontWeight: 600 }}>
-                        à vista no Pix
+                        a pronto pagamento
                       </span>
                     </div>
 
                     <div style={{ fontSize: '12px', color: 'var(--text-muted)', marginBottom: '20px' }}>
-                      ou <strong>12x de R$ {installmentValue.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}</strong> sem juros
+                      ou <strong>12 prestações de {installmentValue.toLocaleString('pt-PT', { minimumFractionDigits: 2 })} €</strong> sem juros
                     </div>
 
                     {/* Action Buttons */}

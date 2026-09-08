@@ -77,11 +77,11 @@ export const CustomizerModal: React.FC<CustomizerModalProps> = ({
 
   const handleDirectWhatsAppOrder = () => {
     const text = `Olá! Gostaria de encomendar a *${product.name}* na paleta NUDE REST:%0A` +
-      `- *Cor do Estofado:* ${selectedColor.name}%0A` +
+      `- *Cor do Estofo:* ${selectedColor.name}%0A` +
       `- *Acabamento da Base:* ${selectedBase.name}%0A` +
       (embroideryText ? `- *Bordado Personalizado:* ${embroideryText}%0A` : '') +
-      `- *Valor Total:* R$ ${unitPrice.toFixed(2)} (ou R$ ${pixPrice.toFixed(2)} no PIX)%0A` +
-      `Poderiam me enviar o link de confirmação do pedido?`;
+      `- *Valor Total:* ${unitPrice.toFixed(2)} € (ou ${pixPrice.toFixed(2)} € a pronto pagamento)%0A` +
+      `Poderiam enviar-me o link de confirmação da encomenda?`;
     
     window.open(`https://wa.me/5511999999999?text=${text}`, '_blank');
   };
@@ -172,7 +172,7 @@ export const CustomizerModal: React.FC<CustomizerModalProps> = ({
                   bottom: '16px',
                   left: '16px',
                   right: '16px',
-                  backgroundColor: 'rgba(16, 12, 9, 0.92)',
+                  backgroundColor: 'rgba(23, 22, 21, 0.92)',
                   backdropFilter: 'blur(8px)',
                   padding: '12px 16px',
                   borderRadius: 'var(--radius-sm)',
@@ -256,7 +256,7 @@ export const CustomizerModal: React.FC<CustomizerModalProps> = ({
 
             <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginTop: '24px', color: 'var(--text-muted)', fontSize: '12px' }}>
               <Truck size={16} color="var(--nude-linen)" />
-              <span>{product.leadTime} + Frete com Seguro</span>
+              <span>{product.leadTime} + Envio Assegurado</span>
             </div>
           </div>
 
@@ -271,7 +271,7 @@ export const CustomizerModal: React.FC<CustomizerModalProps> = ({
             <div>
               <div style={{ marginBottom: '24px' }}>
                 <span className="badge-pill badge-nude" style={{ fontSize: '10px', marginBottom: '8px' }}>
-                  ATELIÊ DE PERSONALIZAÇÃO
+                  ATELIER DE PERSONALIZAÇÃO
                 </span>
                 <h2 style={{ fontSize: '32px', marginBottom: '6px' }}>{product.name}</h2>
                 <p style={{ fontSize: '14px', color: 'var(--text-muted)' }}>{product.subtitle}</p>
@@ -354,7 +354,7 @@ export const CustomizerModal: React.FC<CustomizerModalProps> = ({
                         </span>
                       </div>
                       <span style={{ fontSize: '12px', color: base.extraPrice > 0 ? 'var(--nude-linen)' : 'var(--text-dim)', fontWeight: 600 }}>
-                        {base.extraPrice > 0 ? `+ R$ ${base.extraPrice.toFixed(2)}` : 'Incluso'}
+                        {base.extraPrice > 0 ? `+ ${base.extraPrice.toFixed(2)} €` : 'Incluído'}
                       </span>
                     </button>
                   ))}
@@ -367,7 +367,7 @@ export const CustomizerModal: React.FC<CustomizerModalProps> = ({
                   3. Gravação de Nome / Monograma da Clínica
                 </label>
                 <p style={{ fontSize: '12px', color: 'var(--text-muted)', marginBottom: '10px' }}>
-                  Digite o nome que deseja bordar no cabeçote ou deixe em branco para receber a maca lisa.
+                  Introduza o nome que deseja bordar no apoio de cabeça ou deixe em branco para receber a maca lisa.
                 </p>
                 <input
                   type="text"
@@ -432,7 +432,7 @@ export const CustomizerModal: React.FC<CustomizerModalProps> = ({
                             </div>
                           </div>
                           <span style={{ fontSize: '12px', color: 'var(--nude-linen)', fontWeight: 600, whiteSpace: 'nowrap' }}>
-                            + R$ {addon.price.toFixed(2)}
+                            + {addon.price.toFixed(2)} €
                           </span>
                         </div>
                       );
@@ -462,11 +462,11 @@ export const CustomizerModal: React.FC<CustomizerModalProps> = ({
                     color: 'var(--nude-alabaster)',
                     lineHeight: 1.1
                   }}>
-                    R$ {pixPrice.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}
-                    <span style={{ fontSize: '13px', color: '#4ADE80', marginLeft: '8px', fontWeight: 600 }}>no PIX</span>
+                    {pixPrice.toLocaleString('pt-PT', { minimumFractionDigits: 2 })} €
+                    <span style={{ fontSize: '13px', color: '#4ADE80', marginLeft: '8px', fontWeight: 600 }}>a pronto pagamento</span>
                   </div>
                   <div style={{ fontSize: '12px', color: 'var(--text-muted)' }}>
-                    ou R$ {unitPrice.toLocaleString('pt-BR', { minimumFractionDigits: 2 })} em <strong>12x de R$ {installmentVal.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}</strong> sem juros
+                    ou {unitPrice.toLocaleString('pt-PT', { minimumFractionDigits: 2 })} € em <strong>12 prestações de {installmentVal.toLocaleString('pt-PT', { minimumFractionDigits: 2 })} €</strong> sem juros
                   </div>
                 </div>
 
@@ -494,7 +494,7 @@ export const CustomizerModal: React.FC<CustomizerModalProps> = ({
                   style={{ flex: '1 1 180px', height: '52px' }}
                 >
                   <MessageCircle size={17} />
-                  <span>Pedir no WhatsApp</span>
+                  <span>Encomendar no WhatsApp</span>
                 </button>
               </div>
             </div>

@@ -32,7 +32,7 @@ export const FAQ: React.FC = () => {
             <span className="italic">Termos de Garantia</span>
           </h2>
           <p className="body-text" style={{ maxWidth: '600px' }}>
-            Tudo o que você precisa saber sobre a fabricação sob medida, envio assegurado e personalização da sua maca NUDE REST.
+            Tudo o que necessita de saber sobre o fabrico por medida, envio assegurado e personalização da sua maca NUDE REST.
           </p>
         </div>
 
@@ -118,7 +118,7 @@ export const FAQ: React.FC = () => {
           gap: '12px'
         }}>
           <p style={{ fontSize: '14px', color: 'var(--text-muted)' }}>
-            Ainda possui dúvidas específicas sobre medidas ou tecidos?
+            Ainda tem dúvidas específicas sobre medidas ou tecidos?
           </p>
           <a
             href="https://wa.me/5511999999999?text=Ol%C3%A1%2C%20tenho%20uma%20d%C3%BAvida%20sobre%20as%20Macas%20NUDE%20REST."
@@ -128,7 +128,7 @@ export const FAQ: React.FC = () => {
             style={{ gap: '8px', color: 'var(--nude-linen)', borderColor: 'var(--border-medium)' }}
           >
             <MessageCircle size={15} />
-            <span>Falar com Concierge no WhatsApp</span>
+            <span>Contactar Concierge no WhatsApp</span>
           </a>
         </div>
 

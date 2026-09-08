@@ -16,31 +16,35 @@ export default function HomePage() {
           {/* Marquee Group 1 */}
           <div className="marquee-group">
             <span className="marquee-item">
-              ‘Atelier de Macas <span className="italic">Personalizadas</span>’
+              Atelier de Macas <span className="italic">de Alta Costura</span>
               <span className="marquee-dot">•</span>
             </span>
             <span className="marquee-item">
-              ‘Maca Modelo 1 & <span className="italic">Modelo 2</span>’
+              Maca Sculpt & <span className="italic">Maca Royale</span>
               <span className="marquee-dot">•</span>
             </span>
             <span className="marquee-item">
-              ‘Ergonomia de <span className="italic">Alta Performance</span>’
+              Ergonomia de <span className="italic">Alta Performance</span>
               <span className="marquee-dot">•</span>
             </span>
             <span className="marquee-item">
-              ‘Espuma D33 <span className="italic">Multi-Densidade</span>’
+              Espuma D33 de <span className="italic">Densidade Progressiva</span>
               <span className="marquee-dot">•</span>
             </span>
             <span className="marquee-item">
-              ‘Garantia Estrutural de <span className="italic">5 Anos</span>’
+              Estrutura com <span className="italic">5 Anos de Garantia</span>
               <span className="marquee-dot">•</span>
             </span>
             <span className="marquee-item">
-              ‘Bordado Personalizado com a sua <span className="italic">Marca</span>’
+              Bordado de Assinatura com a sua <span className="italic">Marca</span>
               <span className="marquee-dot">•</span>
             </span>
             <span className="marquee-item">
-              ‘NUDE REST <span className="italic">Atelier</span>’
+              Confeção Sob Medida para <span className="italic">Clínicas & Spas</span>
+              <span className="marquee-dot">•</span>
+            </span>
+            <span className="marquee-item">
+              NUDE REST <span className="italic">Atelier</span>
               <span className="marquee-dot">•</span>
             </span>
           </div>
@@ -48,31 +52,35 @@ export default function HomePage() {
           {/* Marquee Group 2 (Duplicate for infinite seamless loop) */}
           <div className="marquee-group" aria-hidden="true">
             <span className="marquee-item">
-              ‘Atelier de Macas <span className="italic">Personalizadas</span>’
+              Atelier de Macas <span className="italic">de Alta Costura</span>
               <span className="marquee-dot">•</span>
             </span>
             <span className="marquee-item">
-              ‘Maca Modelo 1 & <span className="italic">Modelo 2</span>’
+              Maca Sculpt & <span className="italic">Maca Royale</span>
               <span className="marquee-dot">•</span>
             </span>
             <span className="marquee-item">
-              ‘Ergonomia de <span className="italic">Alta Performance</span>’
+              Ergonomia de <span className="italic">Alta Performance</span>
               <span className="marquee-dot">•</span>
             </span>
             <span className="marquee-item">
-              ‘Espuma D33 <span className="italic">Multi-Densidade</span>’
+              Espuma D33 de <span className="italic">Densidade Progressiva</span>
               <span className="marquee-dot">•</span>
             </span>
             <span className="marquee-item">
-              ‘Garantia Estrutural de <span className="italic">5 Anos</span>’
+              Estrutura com <span className="italic">5 Anos de Garantia</span>
               <span className="marquee-dot">•</span>
             </span>
             <span className="marquee-item">
-              ‘Bordado Personalizado com a sua <span className="italic">Marca</span>’
+              Bordado de Assinatura com a sua <span className="italic">Marca</span>
               <span className="marquee-dot">•</span>
             </span>
             <span className="marquee-item">
-              ‘NUDE REST <span className="italic">Atelier</span>’
+              Confeção Sob Medida para <span className="italic">Clínicas & Spas</span>
+              <span className="marquee-dot">•</span>
+            </span>
+            <span className="marquee-item">
+              NUDE REST <span className="italic">Atelier</span>
               <span className="marquee-dot">•</span>
             </span>
           </div>
@@ -114,7 +122,7 @@ export default function HomePage() {
         {/* Center Bio Paragraphs */}
         <div className="bio-text-center">
           <p>
-            Concebidas para transformar a experiência estética num momento de repouso absoluto. A NUDE REST é especializada em dois modelos de assinatura: a <strong>Maca Modelo 1 (Sculpt Wave)</strong> e a <strong>Maca Modelo 2 (Royale Anatómica)</strong>. Ambas são projetadas artesanalmente com curvatura de alívio lombar, espuma multi-densidade D33 Ultra Soft e revestimento nobre de elevada resistência.
+            Concebidas para transformar a experiência estética num momento de repouso absoluto. A NUDE REST é especializada em dois modelos de assinatura: a <strong>Maca Sculpt (Sculpt Wave)</strong> e a <strong>Maca Royale (Royale Anatómica)</strong>. Ambas são projetadas artesanalmente com curvatura de alívio lombar, espuma multi-densidade D33 Ultra Soft e revestimento nobre de elevada resistência.
           </p>
           <p>
             Com dezenas de combinações na paleta Nude, escolha entre pés em aço com banho dourado Champagne ou bases revestidas por medida, com a opção de gravação em alta definição do logótipo da sua clínica. Uma composição arquitetónica sofisticada com 5 anos de garantia estrutural.
@@ -142,29 +150,29 @@ export default function HomePage() {
 
         {/* Horizontal Cards */}
         <div className="gallery-scroll-strip">
-          {/* Tile 1: Maca Modelo 1 — Sculpt Wave */}
+          {/* Tile 1: Maca Sculpt — Sculpt Wave */}
           <Link href="/maca-modelo-1" style={{ textDecoration: 'none', color: 'inherit' }} className="gallery-tile border-r">
             <div className="gallery-tile-img-box">
               <img
                 src="/assets/maca1/maca1_main.png"
-                alt="Maca Modelo 1 — Sculpt Wave"
+                alt="Maca Sculpt — Sculpt Wave"
               />
             </div>
-            <h4 className="gallery-tile-heading">Maca Modelo 1 — Sculpt Wave</h4>
+            <h4 className="gallery-tile-heading">Maca Sculpt — Sculpt Wave</h4>
             <p className="gallery-tile-desc">
               Design em arco escultural contínuo com base cilíndrica e estofamento em tecido texturado de luxo.
             </p>
           </Link>
 
-          {/* Tile 2: Maca Modelo 2 — Royale Anatómica */}
+          {/* Tile 2: Maca Royale — Royale Anatómica */}
           <Link href="/maca-modelo-2" style={{ textDecoration: 'none', color: 'inherit' }} className="gallery-tile border-r">
             <div className="gallery-tile-img-box">
               <img
                 src="/assets/maca2/maca2_main.png"
-                alt="Maca Modelo 2 — Royale Anatómica"
+                alt="Maca Royale — Royale Anatómica"
               />
             </div>
-            <h4 className="gallery-tile-heading">Maca Modelo 2 — Royale Anatómica</h4>
+            <h4 className="gallery-tile-heading">Maca Royale — Royale Anatómica</h4>
             <p className="gallery-tile-desc">
               Estofamento acolchoado capitonê de alto relevo com pés em X em acabamento dourado Champagne.
             </p>
@@ -278,13 +286,13 @@ export default function HomePage() {
             <div className="archive-card-image">
               <img
                 src="/assets/maca1/maca1_main.png"
-                alt="Maca Modelo 1 — Sculpt Wave"
+                alt="Maca Sculpt — Sculpt Wave"
               />
             </div>
-            <span className="archive-card-meta">Maca Modelo 1 / 01</span>
+            <span className="archive-card-meta">Maca Sculpt / 01</span>
             <h4 className="archive-card-title">Sculpt Wave Nude</h4>
             <p className="archive-card-desc">
-              Modelo 1 em curva contínua escultural com revestimento texturado e base cilíndrica.
+              Maca Sculpt em curva contínua escultural com revestimento texturado e base cilíndrica.
             </p>
           </div>
           {/* Archive Item 2 */}
@@ -292,13 +300,13 @@ export default function HomePage() {
             <div className="archive-card-image">
               <img
                 src="/assets/maca2/maca2_main.png"
-                alt="Maca Modelo 2 — Royale Anatómica"
+                alt="Maca Royale — Royale Anatómica"
               />
             </div>
-            <span className="archive-card-meta">Maca Modelo 2 / 02</span>
+            <span className="archive-card-meta">Maca Royale / 02</span>
             <h4 className="archive-card-title">Royale Gold Champagne</h4>
             <p className="archive-card-desc">
-              Modelo 2 com acolchoamento capitonê anatómico e pés em X em acabamento dourado fosco.
+              Maca Royale com acolchoamento capitonê anatómico e pés em X em acabamento dourado fosco.
             </p>
           </div>
           {/* Archive Item 3 */}
@@ -306,10 +314,10 @@ export default function HomePage() {
             <div className="archive-card-image">
               <img
                 src="/assets/maca1/maca1_detail.png"
-                alt="Pormenor de Costura Modelo 1"
+                alt="Pormenor de Costura Maca Sculpt"
               />
             </div>
-            <span className="archive-card-meta">Maca Modelo 1 / 03</span>
+            <span className="archive-card-meta">Maca Sculpt / 03</span>
             <h4 className="archive-card-title">Curvatura de Precisão</h4>
             <p className="archive-card-desc">
               Espuma D33 Ultra Soft com alívio lombar contínuo e manta aveludada por medida.
@@ -352,7 +360,7 @@ export default function HomePage() {
           <div className="contact-item-group">
             <div>
               <div className="contact-item-label">Correspondência Direta</div>
-              <a href="mailto:contato@nuderest.com.br" className="contact-item-val">contacto@nuderest.com.br</a>
+              <a href="mailto:contacto@nuderest.com.br" className="contact-item-val">contacto@nuderest.com.br</a>
             </div>
             <div>
               <div className="contact-item-label">Showroom & Atelier</div>

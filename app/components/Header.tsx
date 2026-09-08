@@ -36,9 +36,9 @@ export const Header: React.FC<HeaderProps> = ({ cartCount, onOpenCart }) => {
           5 ANOS DE GARANTIA ESTRUTURAL
         </span>
         <span style={{ opacity: 0.35 }}>•</span>
-        <span>5% DE DESCONTO NO PIX</span>
+        <span>5% DE DESCONTO A PRONTO PAGAMENTO</span>
         <span style={{ opacity: 0.35 }}>•</span>
-        <span>ENVIO COM SEGURO TOTAL PARA TODO O BRASIL</span>
+        <span>ENVIO ASSEGURADO PARA PORTUGAL & EUROPA</span>
       </div>
 
       {/* Main Navigation Header */}

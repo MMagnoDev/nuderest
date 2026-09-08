@@ -314,7 +314,7 @@ export const CartDrawer: React.FC = () => {
                           fontWeight: 300,
                           color: 'var(--text-main)'
                         }}>
-                          R$ {itemTotal.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}
+                          {itemTotal.toLocaleString('pt-PT', { minimumFractionDigits: 2 })} €
                         </div>
                       </div>
                     </div>
@@ -338,12 +338,12 @@ export const CartDrawer: React.FC = () => {
             <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '13px', color: 'var(--text-muted)' }}>
                 <span>Subtotal ({totalItems} {totalItems === 1 ? 'artigo' : 'artigos'})</span>
-                <span>R$ {subtotal.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}</span>
+                <span>{subtotal.toLocaleString('pt-PT', { minimumFractionDigits: 2 })} €</span>
               </div>
               
               <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '13px', color: '#68D391' }}>
                 <span>Desconto Especial no Pagamento Imediato (5%)</span>
-                <span>- R$ {(subtotal * 0.05).toLocaleString('pt-BR', { minimumFractionDigits: 2 })}</span>
+                <span>- {(subtotal * 0.05).toLocaleString('pt-PT', { minimumFractionDigits: 2 })} €</span>
               </div>
 
               <div style={{
@@ -356,7 +356,7 @@ export const CartDrawer: React.FC = () => {
               }}>
                 <span style={{ fontFamily: 'var(--font-title)', fontSize: '14px', color: 'var(--text-main)' }}>Total com 5% OFF</span>
                 <span style={{ fontFamily: 'var(--font-title)', fontSize: '22px', fontWeight: 300, color: 'var(--text-main)' }}>
-                  R$ {pixTotal.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}
+                  {pixTotal.toLocaleString('pt-PT', { minimumFractionDigits: 2 })} €
                 </span>
               </div>
             </div>

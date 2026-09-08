@@ -22,7 +22,7 @@ export default function AteliePage() {
         <div className="hero-col-left border-r">
           <img
             src="/assets/maca1/maca1_main.png"
-            alt="Ateliê NUDE REST — Identidade e Mobiliário de Alto Padrão"
+            alt="Atelier NUDE REST — Identidade e Mobiliário de Alto Padrão"
           />
         </div>
         <div className="hero-col-right">
@@ -49,7 +49,7 @@ export default function AteliePage() {
             A <strong>NUDE REST</strong> nasceu com um propósito claro: redefinir a experiência de repouso no universo da estética de luxo, lash design, dermatologia e spas. Entendemos que a maca é a peça central do seu espaço — onde a paciente passa horas e onde a autoridade do seu atendimento é percebida no primeiro toque.
           </p>
           <p>
-            Cada modelo que sai do nosso ateliê é confeccionado sob encomenda, unindo curvatura anatômica testada para alívio lombar absoluto, espumas certificadas D33 multi-densidade, revestimentos nobres resistentes à assepsia hospitalar com álcool 70% e personalização exclusiva com a marca da sua clínica.
+            Cada modelo que sai do nosso atelier é concebido e confecionado por medida, unindo curvatura anatómica testada para alívio lombar absoluto, espumas certificadas D33 multi-densidade, revestimentos nobres resistentes à assepsia hospitalar com álcool a 70% e personalização exclusiva com a marca da sua clínica.
           </p>
         </div>
 
@@ -61,12 +61,12 @@ export default function AteliePage() {
         </div>
       </section>
 
-      {/* 3 Pillars of NUDE REST */}
+      {/* 4 Pillars of NUDE REST */}
       <section className="section-manifesto border-b">
         <div className="manifesto-col border-r">
-          <span className="manifesto-num">01 / NOSSA ORIGEM</span>
+          <span className="manifesto-num">01 / A NOSSA ORIGEM</span>
           <div>
-            <h3 className="manifesto-title">Ateliê Sob Medida</h3>
+            <h3 className="manifesto-title">Atelier Sob Medida</h3>
             <p className="manifesto-desc">
               Não produzimos em massa. Cada peça é fabricada individualmente respeitando a paleta e a assinatura visual de cada profissional.
             </p>
@@ -86,7 +86,7 @@ export default function AteliePage() {
           <div>
             <h3 className="manifesto-title">5 Anos de Garantia</h3>
             <p className="manifesto-desc">
-              Estruturas robustas em aço carbono e multilaminado naval com transporte blindado assegurado para todo o Brasil.
+              Estruturas robustas em aço carbono e multilaminado naval com transporte dedicado assegurado com seguro total de carga.
             </p>
           </div>
         </div>

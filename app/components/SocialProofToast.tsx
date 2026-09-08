@@ -40,7 +40,7 @@ export const SocialProofToast: React.FC = () => {
       bottom: '24px',
       left: '24px',
       zIndex: 50,
-      backgroundColor: 'rgba(16, 12, 9, 0.95)',
+      backgroundColor: 'rgba(23, 22, 21, 0.95)',
       backdropFilter: 'blur(10px)',
       border: '1px solid var(--border-medium)',
       borderRadius: 'var(--radius-md)',

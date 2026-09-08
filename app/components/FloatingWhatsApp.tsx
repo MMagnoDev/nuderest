@@ -50,7 +50,7 @@ export const FloatingWhatsApp: React.FC = () => {
               ● Consultor Online
             </div>
             <div style={{ fontSize: '12px', color: '#F2EFE9', lineHeight: 1.4 }}>
-              Dúvidas sobre personalização ou frete? Chame agora nosso especialista.
+              Dúvidas sobre personalização ou envio assegurado? Fale com o nosso especialista.
             </div>
           </div>
         </div>

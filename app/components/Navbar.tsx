@@ -13,8 +13,8 @@ export const Navbar: React.FC = () => {
 
   const links = [
     { label: 'Início', href: '/' },
-    { label: 'Maca Modelo 1', href: '/maca-modelo-1' },
-    { label: 'Maca Modelo 2', href: '/maca-modelo-2' },
+    { label: 'Maca Sculpt', href: '/maca-modelo-1' },
+    { label: 'Maca Royale', href: '/maca-modelo-2' },
     { label: 'Coleções', href: '/colecoes' },
     { label: 'Sobre a NUDE REST', href: '/sobre' },
     { label: 'Contacto', href: '/contato' }
@@ -26,7 +26,7 @@ export const Navbar: React.FC = () => {
         position: 'sticky',
         top: 0,
         zIndex: 50,
-        backgroundColor: 'rgba(16, 12, 9, 0.95)',
+        backgroundColor: 'rgba(23, 22, 21, 0.95)',
         backdropFilter: 'blur(10px)',
         display: 'flex',
         justifyContent: 'space-between',

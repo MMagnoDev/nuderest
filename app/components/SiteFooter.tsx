@@ -6,7 +6,7 @@ export const SiteFooter: React.FC = () => {
       <span className="footer-credits">
         © 2026 NUDE REST MACAS PERSONALIZADAS. TODOS OS DIREITOS RESERVADOS. COMPRA SEGURA SSL.
       </span>
-      <span className="footer-stamp">NUDE REST / ATELIÊ</span>
+      <span className="footer-stamp">NUDE REST / ATELIER</span>
     </footer>
   );
 };
