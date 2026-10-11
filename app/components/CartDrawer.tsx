@@ -186,10 +186,12 @@ export const CartDrawer: React.FC = () => {
                       backgroundColor: 'var(--bg-light)',
                       border: '1px solid var(--border-color)'
                     }}>
-                      <img
+                      <Image
                         src={item.image}
                         alt={item.name}
-                        style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                        fill
+                        sizes="76px"
+                        style={{ objectFit: 'cover' }}
                       />
                     </div>
 
@@ -309,12 +311,13 @@ export const CartDrawer: React.FC = () => {
                         </div>
 
                         <div style={{
-                          fontFamily: 'var(--font-title)',
-                          fontSize: '15px',
-                          fontWeight: 300,
-                          color: 'var(--text-main)'
+                          fontFamily: 'var(--font-sans)',
+                          fontSize: '12px',
+                          fontWeight: 500,
+                          color: '#A39D93',
+                          letterSpacing: '0.04em'
                         }}>
-                          {itemTotal.toLocaleString('pt-PT', { minimumFractionDigits: 2 })} €
+                          Orçamento sob Consulta
                         </div>
                       </div>
                     </div>
@@ -337,27 +340,15 @@ export const CartDrawer: React.FC = () => {
           }}>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '13px', color: 'var(--text-muted)' }}>
-                <span>Subtotal ({totalItems} {totalItems === 1 ? 'artigo' : 'artigos'})</span>
-                <span>{subtotal.toLocaleString('pt-PT', { minimumFractionDigits: 2 })} €</span>
+                <span>Total Selecionado</span>
+                <span style={{ color: 'var(--text-main)', fontWeight: 500 }}>
+                  {totalItems} {totalItems === 1 ? 'modelo' : 'modelos'}
+                </span>
               </div>
               
-              <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '13px', color: '#68D391' }}>
-                <span>Desconto Especial no Pagamento Imediato (5%)</span>
-                <span>- {(subtotal * 0.05).toLocaleString('pt-PT', { minimumFractionDigits: 2 })} €</span>
-              </div>
-
-              <div style={{
-                display: 'flex',
-                justifyContent: 'space-between',
-                alignItems: 'baseline',
-                paddingTop: '10px',
-                borderTop: '1px solid var(--border-color)',
-                marginTop: '4px'
-              }}>
-                <span style={{ fontFamily: 'var(--font-title)', fontSize: '14px', color: 'var(--text-main)' }}>Total com 5% OFF</span>
-                <span style={{ fontFamily: 'var(--font-title)', fontSize: '22px', fontWeight: 300, color: 'var(--text-main)' }}>
-                  {pixTotal.toLocaleString('pt-PT', { minimumFractionDigits: 2 })} €
-                </span>
+              <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '13px', color: 'var(--text-muted)' }}>
+                <span>Condições Comerciais</span>
+                <span style={{ color: 'var(--text-main)' }}>Proposta por Medida</span>
               </div>
             </div>
 
@@ -371,7 +362,7 @@ export const CartDrawer: React.FC = () => {
                 fontSize: '13px'
               }}
             >
-              <span>Finalizar Encomenda no WhatsApp</span>
+              <span>Solicitar Orçamento no WhatsApp</span>
               <span style={{ fontSize: '16px' }}>→</span>
             </button>
 

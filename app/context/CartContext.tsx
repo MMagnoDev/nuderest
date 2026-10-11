@@ -127,13 +127,10 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
   const checkoutWhatsApp = () => {
     if (cart.length === 0) return;
 
-    let message = `*NOVA ENCOMENDA PERSONALIZADA — ATELIER NUDE REST*%0A%0A`;
-    message += `Olá! Gostaria de finalizar a minha encomenda de macas feitas por medida:%0A%0A`;
+    let message = `*SOLICITAÇÃO DE ORÇAMENTO — ATELIER NUDE REST*%0A%0A`;
+    message += `Olá! Gostaria de receber uma proposta personalizada para os seguintes modelos sob medida:%0A%0A`;
 
     cart.forEach((item, index) => {
-      const itemUnitTotal = item.unitPrice + (item.base.extraPrice || 0) + (item.addons || []).reduce((aSum, a) => aSum + a.price, 0);
-      const itemTotal = itemUnitTotal * item.quantity;
-
       message += `*Artigo ${index + 1}: ${item.name}* (Qtd: ${item.quantity})%0A`;
       message += `• Tonalidade do Revestimento: ${item.color.name}%0A`;
       message += `• Estrutura da Base / Pés: ${item.base.name}%0A`;
@@ -143,23 +140,18 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
       if (item.addons && item.addons.length > 0) {
         message += `• Opcionais: ${item.addons.map(a => a.name).join(', ')}%0A`;
       }
-      message += `• Subtotal Artigo: ${itemTotal.toLocaleString('pt-PT', { minimumFractionDigits: 2 })} €%0A%0A`;
+      message += `%0A`;
     });
 
     message += `──────────────────%0A`;
-    message += `*VALOR TOTAL:* ${subtotal.toLocaleString('pt-PT', { minimumFractionDigits: 2 })} €%0A`;
-    message += `*VALOR COM 5% NO PAGAMENTO IMEDIATO:* ${pixTotal.toLocaleString('pt-PT', { minimumFractionDigits: 2 })} €%0A%0A`;
-    message += `Poderiam confirmar o prazo de confeção artesanal e os dados para pagamento?`;
+    message += `Poderiam confirmar o prazo de confeção artesanal e enviar a proposta detalhada?`;
 
-    window.open(`https://wa.me/5511999999999?text=${message}`, '_blank');
+    window.open(`https://wa.me/351910800000?text=${message}`, '_blank');
   };
 
   const checkoutDirectWhatsApp = (item: Omit<CartItem, 'id' | 'quantity'>) => {
-    const itemUnitTotal = item.unitPrice + (item.base.extraPrice || 0) + (item.addons || []).reduce((aSum, a) => aSum + a.price, 0);
-    const pix = itemUnitTotal * 0.95;
-
-    let message = `*ENCOMENDA DIRETA — ATELIER NUDE REST*%0A%0A`;
-    message += `Olá! Gostaria de encomendar a *${item.name}*:%0A`;
+    let message = `*SOLICITAÇÃO DE ORÇAMENTO — ATELIER NUDE REST*%0A%0A`;
+    message += `Olá! Gostaria de solicitar proposta para a marquesa *${item.name}*:%0A`;
     message += `• Tonalidade: ${item.color.name}%0A`;
     message += `• Base / Pés: ${item.base.name}%0A`;
     if (item.embroideryText) {
@@ -168,10 +160,9 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
     if (item.addons && item.addons.length > 0) {
       message += `• Opcionais: ${item.addons.map(a => a.name).join(', ')}%0A`;
     }
-    message += `%0A*Valor:* ${itemUnitTotal.toLocaleString('pt-PT', { minimumFractionDigits: 2 })} € (ou ${pix.toLocaleString('pt-PT', { minimumFractionDigits: 2 })} € a pronto pagamento com 5% OFF)%0A%0A`;
-    message += `Poderiam enviar-me os dados para pagamento e o prazo de entrega?`;
+    message += `%0APoderiam confirmar a disponibilidade e o prazo de entrega?`;
 
-    window.open(`https://wa.me/5511999999999?text=${message}`, '_blank');
+    window.open(`https://wa.me/351910800000?text=${message}`, '_blank');
   };
 
   return (

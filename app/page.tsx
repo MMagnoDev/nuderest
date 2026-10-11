@@ -11,10 +11,28 @@ export default function HomePage() {
   const videoRef = React.useRef<HTMLVideoElement>(null);
 
   React.useEffect(() => {
-    if (videoRef.current) {
-      videoRef.current.muted = true;
-      videoRef.current.play().catch(() => {});
-    }
+    const video = videoRef.current;
+    if (!video) return;
+
+    video.muted = true;
+
+    // Pause video when scrolled out of viewport to save massive CPU/GPU resources
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          video.play().catch(() => {});
+        } else {
+          video.pause();
+        }
+      },
+      { threshold: 0.05 }
+    );
+
+    observer.observe(video);
+
+    return () => {
+      observer.disconnect();
+    };
   }, []);
 
   return (
@@ -45,13 +63,16 @@ export default function HomePage() {
             loop
             muted
             playsInline
+            preload="metadata"
             suppressHydrationWarning
-            poster="/photos/hero.png"
+            poster="/photos/hero.webp"
             style={{
               width: '100%',
               height: '100%',
               objectFit: 'cover',
-              objectPosition: 'center 35%'
+              objectPosition: 'center 35%',
+              transform: 'translateZ(0)',
+              willChange: 'transform'
             }}
           >
             <source src="/videohero.mp4" type="video/mp4" />
@@ -76,8 +97,8 @@ export default function HomePage() {
             <Reveal direction="up" delay={150}>
               <h1 style={{
                 fontFamily: 'var(--font-editorial)',
-                fontSize: 'clamp(42px, 5.2vw, 70px)',
-                fontWeight: 300,
+                fontSize: 'clamp(36px, 5.2vw, 72px)',
+                fontWeight: 400,
                 lineHeight: 1.08,
                 letterSpacing: '-0.025em',
                 color: '#EDE8DF',
@@ -161,12 +182,7 @@ export default function HomePage() {
         backgroundColor: '#FAF9F6'
       }}>
         <div className="editorial-container">
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'minmax(220px, 0.7fr) minmax(320px, 3.3fr)',
-            gap: 'clamp(24px, 3vw, 48px)',
-            alignItems: 'start'
-          }}>
+          <div className="editorial-signature-row">
             {/* Left Column: Intro text */}
             <div>
 
@@ -223,11 +239,7 @@ export default function HomePage() {
             </div>
 
             {/* Right Column: 3 Portrait Image Cards */}
-            <div style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(3, 1fr)',
-              gap: 'clamp(16px, 2.5vw, 32px)'
-            }}>
+            <div className="editorial-signature-cards">
               {/* Card 1: Maca Sculpt */}
               <Reveal direction="up" delay={150}>
                 <Link href="/maca-modelo-1" style={{ textDecoration: 'none', color: 'inherit', display: 'flex', flexDirection: 'column' }}>
@@ -241,9 +253,10 @@ export default function HomePage() {
                     marginBottom: '14px'
                   }}>
                     <Image
-                      src="/photos/pecasdeassinatura/_C1M0021.jpg"
+                      src="/photos/pecasdeassinatura/_C1M0021_mirrored.webp"
                       alt="Maca Sculpt Wave"
                       fill
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 400px"
                       style={{ objectFit: 'cover', objectPosition: 'center 45%', transition: 'transform 0.8s cubic-bezier(0.16, 1, 0.3, 1)' }}
                     />
                   </div>
@@ -280,9 +293,10 @@ export default function HomePage() {
                     marginBottom: '14px'
                   }}>
                     <Image
-                      src="/photos/pecasdeassinatura/_C1M0299.jpg"
+                      src="/photos/pecasdeassinatura/_C1M0299.webp"
                       alt="Maca Royale Anatómica"
                       fill
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 400px"
                       style={{ objectFit: 'cover', objectPosition: 'center 50%', transition: 'transform 0.8s cubic-bezier(0.16, 1, 0.3, 1)' }}
                     />
                   </div>
@@ -319,9 +333,10 @@ export default function HomePage() {
                     marginBottom: '14px'
                   }}>
                     <Image
-                      src="/photos/pecasdeassinatura/_C1M0362.jpg"
+                      src="/photos/pecasdeassinatura/_C1M0362.webp"
                       alt="Personalização Sob Medida"
                       fill
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 400px"
                       style={{ objectFit: 'cover', objectPosition: 'center 45%', transition: 'transform 0.8s cubic-bezier(0.16, 1, 0.3, 1)' }}
                     />
                   </div>
@@ -424,10 +439,10 @@ export default function HomePage() {
           <Reveal direction="right" delay={200}>
             <div className="image-hover-zoom editorial-bleed-right-image">
               <Image
-                src="/photos/sobre/sobre.png"
+                src="/photos/sobre/sobre.webp"
                 alt="NUDE REST - Da experiência à visão"
                 fill
-                priority
+                sizes="(max-width: 900px) 100vw, 66vw"
                 style={{
                   objectFit: 'cover',
                   objectPosition: 'center center',
@@ -451,10 +466,10 @@ export default function HomePage() {
           <Reveal direction="left" delay={200}>
             <div className="image-hover-zoom editorial-bleed-left-image">
               <Image
-                src="/photos/detalhe/detalhe.png"
+                src="/photos/detalhe/detalhe.webp"
                 alt="NUDE REST - Do desenho ao detalhe"
                 fill
-                priority
+                sizes="(max-width: 900px) 100vw, 66vw"
                 style={{
                   objectFit: 'cover',
                   objectPosition: 'center center',
@@ -551,7 +566,7 @@ export default function HomePage() {
                   backgroundColor: '#EAE6DF',
                   marginBottom: '16px'
                 }}>
-                  <Image src="/maca1/maca1_2.png" alt="Desenho Ergonómico Maca" fill style={{ objectFit: 'cover', transition: 'transform 0.8s' }} />
+                  <Image src="/maca1/maca1_2.webp" alt="Desenho Ergonómico Maca" fill sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw" style={{ objectFit: 'cover', transition: 'transform 0.8s' }} />
                 </div>
                 <h4 style={{ fontFamily: 'var(--font-sans)', fontSize: '13px', fontWeight: 600, color: '#1C1A18', marginBottom: '6px' }}>Ergonomia Ativa</h4>
                 <p style={{ fontSize: '12px', color: '#6E6860', lineHeight: 1.6 }}>Alívio lombar e suporte postural contínuo.</p>
@@ -570,7 +585,7 @@ export default function HomePage() {
                   backgroundColor: '#EAE6DF',
                   marginBottom: '16px'
                 }}>
-                  <Image src="/maca1/maca1_4.png" alt="Matérias Nobres Bouclé" fill style={{ objectFit: 'cover', transition: 'transform 0.8s' }} />
+                  <Image src="/maca1/maca1_4.webp" alt="Matérias Nobres Bouclé" fill sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw" style={{ objectFit: 'cover', transition: 'transform 0.8s' }} />
                 </div>
                 <h4 style={{ fontFamily: 'var(--font-sans)', fontSize: '13px', fontWeight: 600, color: '#1C1A18', marginBottom: '6px' }}>Tecidos & Espuma</h4>
                 <p style={{ fontSize: '12px', color: '#6E6860', lineHeight: 1.6 }}>Espuma D33 certificada e tecidos nobres.</p>
@@ -589,7 +604,7 @@ export default function HomePage() {
                   backgroundColor: '#EAE6DF',
                   marginBottom: '16px'
                 }}>
-                  <Image src="/maca2/maca2_3.png" alt="Confeção Artesanal de Canais" fill style={{ objectFit: 'cover', transition: 'transform 0.8s' }} />
+                  <Image src="/maca2/maca2_3.webp" alt="Confeção Artesanal de Canais" fill sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw" style={{ objectFit: 'cover', transition: 'transform 0.8s' }} />
                 </div>
                 <h4 style={{ fontFamily: 'var(--font-sans)', fontSize: '13px', fontWeight: 600, color: '#1C1A18', marginBottom: '6px' }}>Mestres Artesãos</h4>
                 <p style={{ fontSize: '12px', color: '#6E6860', lineHeight: 1.6 }}>Costura manual e precisão milimétrica.</p>
@@ -608,7 +623,7 @@ export default function HomePage() {
                   backgroundColor: '#EAE6DF',
                   marginBottom: '16px'
                 }}>
-                  <Image src="/maca2/maca2_5.png" alt="Controlo e Acabamento da Maca" fill style={{ objectFit: 'cover', transition: 'transform 0.8s' }} />
+                  <Image src="/maca2/maca2_5.webp" alt="Controlo e Acabamento da Maca" fill sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw" style={{ objectFit: 'cover', transition: 'transform 0.8s' }} />
                 </div>
                 <h4 style={{ fontFamily: 'var(--font-sans)', fontSize: '13px', fontWeight: 600, color: '#1C1A18', marginBottom: '6px' }}>5 Anos de Garantia</h4>
                 <p style={{ fontSize: '12px', color: '#6E6860', lineHeight: 1.6 }}>Rigor estético e envio assegurado.</p>

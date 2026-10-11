@@ -8,14 +8,15 @@ import { Footer } from '../components/Footer';
 import { Reveal } from '../components/ScrollReveal';
 
 export default function MacaRoyalePage() {
-  const [activeImage, setActiveImage] = useState('/maca2/maca2_1.png');
+  const [activeImage, setActiveImage] = useState('/maca2/maca2_1.webp');
 
   const galleryImages = [
-    '/maca2/maca2_1.png',
-    '/maca2/maca2_2.png',
-    '/maca2/maca2_3.png',
-    '/maca2/maca2_4.png',
-    '/maca2/maca2_5.png'
+    '/maca2/maca2_1.webp',
+    '/photos/pecasdeassinatura/_C1M0299.webp',
+    '/maca2/maca2_2.webp',
+    '/maca2/maca2_3.webp',
+    '/maca2/maca2_4.webp',
+    '/maca2/maca2_5.webp'
   ];
 
   return (
@@ -27,14 +28,10 @@ export default function MacaRoyalePage() {
         padding: 'clamp(96px, 10vw, 130px) 0 clamp(64px, 8vw, 96px) 0',
         borderBottom: '1px solid #ECE7DE'
       }}>
-        <div className="editorial-container" style={{
-          display: 'grid',
-          gridTemplateColumns: 'minmax(320px, 1.15fr) minmax(320px, 1.25fr)',
-          gap: 'clamp(48px, 6vw, 84px)',
-          alignItems: 'center'
-        }}>
-          {/* Left Info Column */}
-          <div>
+        <div className="editorial-container">
+          <div className="editorial-product-grid">
+            {/* Left Info Column */}
+            <div>
             <Reveal direction="up" delay={100}>
               <span style={{
                 fontFamily: 'var(--font-sans)',
@@ -65,12 +62,22 @@ export default function MacaRoyalePage() {
             </Reveal>
 
             <Reveal direction="up" delay={250}>
-              <div style={{ display: 'flex', alignItems: 'baseline', gap: '12px', marginBottom: '24px' }}>
-                <span style={{ fontFamily: 'var(--font-sans)', fontSize: '24px', fontWeight: 500, color: '#1C1A18', letterSpacing: '-0.02em' }}>
-                  1.090 €
+              <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '24px' }}>
+                <span style={{
+                  fontFamily: 'var(--font-sans)',
+                  fontSize: '11px',
+                  fontWeight: 600,
+                  letterSpacing: '0.16em',
+                  textTransform: 'uppercase',
+                  color: '#1C1A18',
+                  padding: '5px 12px',
+                  backgroundColor: '#EAE6DF',
+                  borderRadius: '2px'
+                }}>
+                  Sob Consulta
                 </span>
                 <span style={{ fontFamily: 'var(--font-sans)', fontSize: '13px', color: '#8E867C' }}>
-                  IVA incluído · Confeção sob medida
+                  Confeção artesanal por medida
                 </span>
               </div>
             </Reveal>
@@ -181,6 +188,7 @@ export default function MacaRoyalePage() {
                   alt="Maca Royale em Alta Definição"
                   fill
                   priority
+                  sizes="(max-width: 900px) 100vw, 55vw"
                   style={{ objectFit: 'cover', transition: 'transform 0.8s cubic-bezier(0.16, 1, 0.3, 1)' }}
                 />
               </div>
@@ -203,13 +211,14 @@ export default function MacaRoyalePage() {
                     transition: 'border-color 0.2s ease'
                   }}
                 >
-                  <Image src={img} alt={`Ângulo Royale ${idx + 1}`} fill style={{ objectFit: 'cover' }} />
+                  <Image src={img} alt={`Ângulo Royale ${idx + 1}`} fill sizes="120px" style={{ objectFit: 'cover' }} />
                 </div>
               ))}
             </div>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
       {/* 02 — DETALHES DE ENGENHARIA & CONFORTO */}
       <section style={{
@@ -255,7 +264,7 @@ export default function MacaRoyalePage() {
             <Reveal direction="up" delay={150}>
               <div style={{ display: 'flex', flexDirection: 'column' }}>
                 <div className="image-hover-zoom" style={{ position: 'relative', width: '100%', height: 'clamp(260px, 22vw, 320px)', marginBottom: '16px', borderRadius: '2px', overflow: 'hidden', backgroundColor: '#EAE6DF' }}>
-                  <Image src="/maca2/maca2_3.png" alt="Gomos anatómicos acolchoados" fill style={{ objectFit: 'cover', transition: 'transform 0.8s' }} />
+                  <Image src="/maca2/maca2_3.webp" alt="Gomos anatómicos acolchoados" fill sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw" style={{ objectFit: 'cover', transition: 'transform 0.8s' }} />
                 </div>
                 <h3 style={{ fontFamily: 'var(--font-sans)', fontSize: '14px', fontWeight: 600, color: '#1C1A18', marginBottom: '6px' }}>
                   Gomos Capitoné em Alta Densidade
@@ -269,7 +278,7 @@ export default function MacaRoyalePage() {
             <Reveal direction="up" delay={250}>
               <div style={{ display: 'flex', flexDirection: 'column' }}>
                 <div className="image-hover-zoom" style={{ position: 'relative', width: '100%', height: 'clamp(260px, 22vw, 320px)', marginBottom: '16px', borderRadius: '2px', overflow: 'hidden', backgroundColor: '#EAE6DF' }}>
-                  <Image src="/maca2/maca2_2.png" alt="Pés em X metálicos" fill style={{ objectFit: 'cover', transition: 'transform 0.8s' }} />
+                  <Image src="/maca2/maca2_2.webp" alt="Pés em X metálicos" fill sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw" style={{ objectFit: 'cover', transition: 'transform 0.8s' }} />
                 </div>
                 <h3 style={{ fontFamily: 'var(--font-sans)', fontSize: '14px', fontWeight: 600, color: '#1C1A18', marginBottom: '6px' }}>
                   Pés em X Dourado Champagne
@@ -283,7 +292,7 @@ export default function MacaRoyalePage() {
             <Reveal direction="up" delay={350}>
               <div style={{ display: 'flex', flexDirection: 'column' }}>
                 <div className="image-hover-zoom" style={{ position: 'relative', width: '100%', height: 'clamp(260px, 22vw, 320px)', marginBottom: '16px', borderRadius: '2px', overflow: 'hidden', backgroundColor: '#EAE6DF' }}>
-                  <Image src="/maca2/maca2_4.png" alt="Acabamento e Suporte Cervical" fill style={{ objectFit: 'cover', transition: 'transform 0.8s' }} />
+                  <Image src="/maca2/maca2_4.webp" alt="Acabamento e Suporte Cervical" fill sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw" style={{ objectFit: 'cover', transition: 'transform 0.8s' }} />
                 </div>
                 <h3 style={{ fontFamily: 'var(--font-sans)', fontSize: '14px', fontWeight: 600, color: '#1C1A18', marginBottom: '6px' }}>
                   Almofada Cervical Ergonómica
@@ -297,7 +306,7 @@ export default function MacaRoyalePage() {
             <Reveal direction="up" delay={450}>
               <div style={{ display: 'flex', flexDirection: 'column' }}>
                 <div className="image-hover-zoom" style={{ position: 'relative', width: '100%', height: 'clamp(260px, 22vw, 320px)', marginBottom: '16px', borderRadius: '2px', overflow: 'hidden', backgroundColor: '#EAE6DF' }}>
-                  <Image src="/photos/detalhe/detalhe.png" alt="Acabamentos por medida" fill style={{ objectFit: 'cover', transition: 'transform 0.8s' }} />
+                  <Image src="/photos/detalhe/detalhe.webp" alt="Acabamentos por medida" fill sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw" style={{ objectFit: 'cover', transition: 'transform 0.8s' }} />
                 </div>
                 <h3 style={{ fontFamily: 'var(--font-sans)', fontSize: '14px', fontWeight: 600, color: '#1C1A18', marginBottom: '6px' }}>
                   Acabamentos por Medida
@@ -316,12 +325,7 @@ export default function MacaRoyalePage() {
         padding: 'clamp(80px, 9vw, 130px) 0'
       }}>
         <div className="editorial-container">
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'minmax(300px, 1fr) minmax(320px, 1.25fr)',
-            gap: 'clamp(48px, 6vw, 84px)',
-            alignItems: 'center'
-          }}>
+          <div className="editorial-specs-grid">
             <div>
               <span style={{
                 fontFamily: 'var(--font-sans)',
@@ -385,7 +389,7 @@ export default function MacaRoyalePage() {
               height: 'clamp(320px, 38vw, 460px)',
               backgroundColor: 'transparent'
             }}>
-              <Image src="/maca2/maca2_1.png" alt="Dimensões Maca Royale Anatómica" fill style={{ objectFit: 'contain' }} />
+              <Image src="/photos/pecasdeassinatura/_C1M0299.webp" alt="Dimensões Maca Royale Anatómica" fill sizes="(max-width: 900px) 100vw, 800px" style={{ objectFit: 'contain' }} />
             </div>
           </div>
         </div>

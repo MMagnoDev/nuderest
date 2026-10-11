@@ -2,8 +2,6 @@
    NUDE REST — COMPLETE EDITORIAL SITE (BEGE QUASE PRETA + WHITE SECTION RHYTHM)
    ========================================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Plus+Jakarta+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;1,200;1,300;1,400&family=Manrope:wght@200;300;400;500;600&display=swap');
-
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
@@ -25,10 +23,10 @@
   --nude-taupe: #A39D93;
   --nude-alabaster: #EDE8DF;
 
-  /* Typography */
-  --font-editorial: 'Cormorant Garamond', Garamond, 'Times New Roman', serif;
-  --font-title: 'Cormorant Garamond', Garamond, 'Times New Roman', serif;
-  --font-sans: 'Plus Jakarta Sans', 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif;
+  /* Typography (Next.js font optimization) */
+  --font-editorial: var(--font-serif), Georgia, Cambria, 'Times New Roman', serif;
+  --font-title: var(--font-serif), Georgia, Cambria, 'Times New Roman', serif;
+  --font-sans: var(--font-jakarta), 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
 h1, h2, h3, h4, h5, h6, 
@@ -44,8 +42,8 @@ h1, h2, h3, h4, h5, h6,
 .gallery-tile-heading, 
 .customizer-title {
   font-family: var(--font-editorial);
-  font-weight: 300 !important;
-  letter-spacing: -0.015em;
+  font-weight: 400;
+  letter-spacing: -0.025em;
 }
 
 h1 strong, h2 strong, h3 strong, h4 strong, h5 strong, h6 strong,
@@ -58,7 +56,18 @@ html {
   font-size: 16px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  scroll-behavior: smooth;
+  scroll-behavior: auto;
+}
+
+/* Hardware accelerated transitions for fluid framerate */
+.image-hover-zoom img {
+  will-change: transform;
+  transform: translateZ(0);
+}
+
+footer.editorial-footer {
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 550px;
 }
 
 body {
@@ -87,7 +96,96 @@ body {
   width: 100%;
   max-width: 1720px;
   margin: 0 auto;
-  padding: 0 clamp(16px, 2vw, 32px);
+  padding: 0 clamp(20px, 3vw, 40px);
+}
+
+/* ==========================================================================
+   RESPONSIVE EDITORIAL GRID SYSTEM (DESKTOP -> TABLET -> MOBILE)
+   ========================================================================== */
+.editorial-split-grid {
+  display: grid;
+  grid-template-columns: minmax(320px, 1.25fr) minmax(300px, 1fr);
+  gap: clamp(36px, 5vw, 84px);
+  align-items: center;
+}
+
+.editorial-product-grid {
+  display: grid;
+  grid-template-columns: minmax(320px, 1.15fr) minmax(320px, 1.25fr);
+  gap: clamp(36px, 5vw, 84px);
+  align-items: center;
+}
+
+.editorial-configurator-grid {
+  display: grid;
+  grid-template-columns: minmax(320px, 1.25fr) minmax(320px, 1fr);
+  gap: clamp(36px, 5vw, 84px);
+  align-items: start;
+}
+
+.editorial-specs-grid {
+  display: grid;
+  grid-template-columns: minmax(300px, 1fr) minmax(320px, 1.25fr);
+  gap: clamp(36px, 5vw, 84px);
+  align-items: center;
+}
+
+.editorial-signature-row {
+  display: grid;
+  grid-template-columns: minmax(220px, 0.7fr) minmax(320px, 3.3fr);
+  gap: clamp(24px, 3vw, 48px);
+  align-items: start;
+}
+
+.editorial-signature-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(16px, 2.5vw, 32px);
+}
+
+@media (max-width: 960px) {
+  .editorial-split-grid,
+  .editorial-product-grid,
+  .editorial-configurator-grid,
+  .editorial-specs-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .editorial-signature-row {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .editorial-signature-cards {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
+
+@media (max-width: 640px) {
+  .editorial-container {
+    padding: 0 18px;
+  }
+
+  .editorial-signature-cards {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+}
+
+.editorial-footer-grid {
+  display: grid;
+  grid-template-columns: minmax(260px, 1.4fr) repeat(auto-fit, minmax(160px, 1fr));
+  gap: clamp(36px, 5vw, 64px);
+  margin-bottom: clamp(48px, 6vw, 72px);
+}
+
+@media (max-width: 768px) {
+  .editorial-footer-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
 }
 
 /* Shared Utilities */
@@ -1180,6 +1278,7 @@ footer.footer-bar {
 .reveal-item.is-revealed {
   opacity: 1 !important;
   transform: translate(0, 0) scale(1) !important;
+  will-change: auto !important;
 }
 
 .reveal-delay-100 { transition-delay: 100ms; }

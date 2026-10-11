@@ -88,12 +88,7 @@ export default function ContatoPage() {
         borderBottom: '1px solid #ECE7DE'
       }}>
         <div className="editorial-container">
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'minmax(300px, 1fr) minmax(320px, 1.15fr)',
-            gap: 'clamp(48px, 7vw, 96px)',
-            alignItems: 'flex-start'
-          }}>
+          <div className="editorial-split-grid" style={{ alignItems: 'flex-start' }}>
             {/* Left Concierge Column */}
             <div style={{ display: 'flex', flexDirection: 'column' }}>
               <Reveal direction="up" delay={150}>

@@ -69,12 +69,7 @@ export default function ColecoesPage() {
         borderBottom: '1px solid #ECE7DE'
       }}>
         <div className="editorial-container">
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'minmax(320px, 1.35fr) minmax(300px, 1fr)',
-            gap: 'clamp(48px, 7vw, 96px)',
-            alignItems: 'center'
-          }}>
+          <div className="editorial-split-grid">
             {/* Visual */}
             <Reveal direction="left" delay={150}>
               <div className="image-hover-zoom" style={{
@@ -86,10 +81,11 @@ export default function ColecoesPage() {
                 backgroundColor: '#EAE6DF'
               }}>
                 <Image
-                  src="/maca1/maca1_1.png"
+                  src="/maca1/maca1_1.webp"
                   alt="Maca Sculpt Wave em Bouclé Marfim"
                   fill
                   priority
+                  sizes="(max-width: 900px) 100vw, 55vw"
                   style={{ objectFit: 'cover', transition: 'transform 0.8s cubic-bezier(0.16, 1, 0.3, 1)' }}
                 />
               </div>
@@ -216,12 +212,7 @@ export default function ColecoesPage() {
         borderBottom: '1px solid #ECE7DE'
       }}>
         <div className="editorial-container">
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'minmax(300px, 1fr) minmax(320px, 1.35fr)',
-            gap: 'clamp(48px, 7vw, 96px)',
-            alignItems: 'center'
-          }}>
+          <div className="editorial-split-grid">
             {/* Info */}
             <div>
               <Reveal direction="up" delay={200}>
@@ -345,10 +336,11 @@ export default function ColecoesPage() {
                 backgroundColor: '#EAE6DF'
               }}>
                 <Image
-                  src="/maca2/maca2_1.png"
-                  alt="Maca Royale Anatómica em Divã Bege"
+                  src="/photos/pecasdeassinatura/_C1M0299.webp"
+                  alt="Maca Royale Anatómica"
                   fill
-                  style={{ objectFit: 'cover', transition: 'transform 0.8s cubic-bezier(0.16, 1, 0.3, 1)' }}
+                  sizes="(max-width: 900px) 100vw, 55vw"
+                  style={{ objectFit: 'cover', objectPosition: 'center 50%', transition: 'transform 0.8s cubic-bezier(0.16, 1, 0.3, 1)' }}
                 />
               </div>
             </Reveal>
@@ -406,7 +398,7 @@ export default function ColecoesPage() {
           {/* Cards Comparison Grid */}
           <div style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
             gap: 'clamp(32px, 5vw, 64px)'
           }}>
             {/* Sculpt Card */}
@@ -415,8 +407,8 @@ export default function ColecoesPage() {
                 borderTop: '1px solid #ECE7DE',
                 paddingTop: '32px'
               }}>
-                <div style={{ position: 'relative', width: '100%', height: '240px', marginBottom: '24px' }}>
-                  <Image src="/maca1/maca1_1.png" alt="Maca Sculpt" fill style={{ objectFit: 'contain' }} />
+                <div className="image-hover-zoom" style={{ position: 'relative', width: '100%', aspectRatio: '16/9', borderRadius: '2px', overflow: 'hidden', backgroundColor: '#EAE6DF', marginBottom: '24px' }}>
+                  <Image src="/maca1/maca1_1.webp" alt="Maca Sculpt Wave" fill sizes="(max-width: 768px) 100vw, 50vw" style={{ objectFit: 'cover', transition: 'transform 0.8s cubic-bezier(0.16, 1, 0.3, 1)' }} />
                 </div>
                 <h3 style={{ fontFamily: 'var(--font-sans)', fontSize: '20px', fontWeight: 500, color: '#1C1A18', marginBottom: '8px' }}>
                   Maca Sculpt Wave
@@ -438,8 +430,8 @@ export default function ColecoesPage() {
                 borderTop: '1px solid #ECE7DE',
                 paddingTop: '32px'
               }}>
-                <div style={{ position: 'relative', width: '100%', height: '240px', marginBottom: '24px' }}>
-                  <Image src="/maca2/maca2_1.png" alt="Maca Royale" fill style={{ objectFit: 'contain' }} />
+                <div className="image-hover-zoom" style={{ position: 'relative', width: '100%', aspectRatio: '16/9', borderRadius: '2px', overflow: 'hidden', backgroundColor: '#EAE6DF', marginBottom: '24px' }}>
+                  <Image src="/maca2/maca2_1.webp" alt="Maca Royale Anatómica" fill sizes="(max-width: 768px) 100vw, 50vw" style={{ objectFit: 'cover', transition: 'transform 0.8s cubic-bezier(0.16, 1, 0.3, 1)' }} />
                 </div>
                 <h3 style={{ fontFamily: 'var(--font-sans)', fontSize: '20px', fontWeight: 500, color: '#1C1A18', marginBottom: '8px' }}>
                   Maca Royale Anatómica

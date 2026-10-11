@@ -29,18 +29,18 @@ export default function CustomizerPage() {
   ];
 
   const sculptImages = [
-    '/maca1/maca1_1.png',
-    '/maca1/maca1_2.png',
-    '/maca1/maca1_3.png',
-    '/maca1/maca1_4.png'
+    '/maca1/maca1_1.webp',
+    '/maca1/maca1_2.webp',
+    '/maca1/maca1_3.webp',
+    '/maca1/maca1_4.webp'
   ];
 
   const royaleImages = [
-    '/maca2/maca2_1.png',
-    '/maca2/maca2_2.png',
-    '/maca2/maca2_3.png',
-    '/maca2/maca2_4.png',
-    '/maca2/maca2_5.png'
+    '/maca2/maca2_1.webp',
+    '/photos/pecasdeassinatura/_C1M0299.webp',
+    '/maca2/maca2_2.webp',
+    '/maca2/maca2_3.webp',
+    '/maca2/maca2_4.webp'
   ];
 
   const currentGallery = selectedModel === 'sculpt' ? sculptImages : royaleImages;
@@ -67,16 +67,16 @@ Gostaria de receber uma proposta personalizada e prazo de entrega.`;
 
   const handleAddToCart = () => {
     const addonsList: { id: string; name: string; price: number }[] = [];
-    if (embroidery) addonsList.push({ id: 'embroidery', name: 'Bordado Personalizado', price: 90 });
-    if (protectiveCover) addonsList.push({ id: 'cover', name: 'Capa Cristal Náutico', price: 75 });
-    if (pillowSet) addonsList.push({ id: 'pillows', name: 'Manta & Almofada Cervical', price: 65 });
+    if (embroidery) addonsList.push({ id: 'embroidery', name: 'Bordado Personalizado', price: 0 });
+    if (protectiveCover) addonsList.push({ id: 'cover', name: 'Capa Cristal Náutico', price: 0 });
+    if (pillowSet) addonsList.push({ id: 'pillows', name: 'Manta & Almofada Cervical', price: 0 });
 
     addToCart({
       productId: selectedModel === 'sculpt' ? 'sculpt-wave' : 'royale-anatomica',
       name: selectedModel === 'sculpt' ? 'Maca Sculpt Wave' : 'Maca Royale Anatómica',
       slug: selectedModel === 'sculpt' ? 'maca-modelo-1' : 'maca-modelo-2',
       image: currentImage,
-      unitPrice: selectedModel === 'sculpt' ? 1480 : 1690,
+      unitPrice: 0,
       color: { id: selectedColor.name.toLowerCase().replace(/\s+/g, '-'), name: selectedColor.name, hex: selectedColor.hex },
       base: { id: selectedBase.toLowerCase().replace(/\s+/g, '-'), name: selectedBase, extraPrice: 0 },
       embroideryText: embroidery ? (embroideryText || 'Logótipo Personalizado') : undefined,
@@ -90,15 +90,10 @@ Gostaria de receber uma proposta personalizada e prazo de entrega.`;
 
       {/* Main Dual Configurator Layout */}
       <section style={{ padding: 'clamp(56px, 7vw, 96px) 0', borderBottom: '1px solid #ECE7DE' }}>
-        <div className="editorial-container" style={{
-          display: 'grid',
-          gridTemplateColumns: 'minmax(320px, 1.25fr) minmax(320px, 1fr)',
-          gap: 'clamp(48px, 6vw, 84px)',
-          alignItems: 'start'
-        }}>
-          
-          {/* Left Column: Visualizer & Details */}
-          <div>
+        <div className="editorial-container">
+          <div className="editorial-configurator-grid">
+            {/* Left Column: Visualizer & Details */}
+            <div>
             <Link
               href="/colecoes"
               style={{
@@ -148,7 +143,9 @@ Gostaria de receber uma proposta personalizada e prazo de entrega.`;
               marginBottom: '24px',
               maxWidth: '520px'
             }}>
-              Design em arco escultural contínuo que combina ergonomia e funcionalidade, proporcionando um relaxamento profundo e uma experiência única para a sua cliente.
+              {selectedModel === 'sculpt'
+                ? 'Design em arco escultural contínuo que combina ergonomia ativa e funcionalidade, proporcionando um relaxamento profundo e uma experiência única para a sua cliente.'
+                : 'Estofamento anatómico com gomos acolchoados em capitoné e pés em X refinados, ideal para lash designers e micropigmentação com conforto prolongado.'}
             </p>
 
             {/* Main Image Stage */}
@@ -167,6 +164,7 @@ Gostaria de receber uma proposta personalizada e prazo de entrega.`;
                 alt="Pré-visualização da Maca Personalizada"
                 fill
                 priority
+                sizes="(max-width: 900px) 100vw, 55vw"
                 style={{ objectFit: 'cover', transition: 'transform 0.8s cubic-bezier(0.16, 1, 0.3, 1)' }}
               />
 
@@ -205,7 +203,7 @@ Gostaria de receber uma proposta personalizada e prazo de entrega.`;
                     transition: 'border-color 0.2s ease'
                   }}
                 >
-                  <Image src={img} alt={`Ângulo ${idx + 1}`} fill style={{ objectFit: 'cover' }} />
+                  <Image src={img} alt={`Ângulo ${idx + 1}`} fill sizes="120px" style={{ objectFit: 'cover' }} />
                 </div>
               ))}
             </div>
@@ -264,9 +262,9 @@ Gostaria de receber uma proposta personalizada e prazo de entrega.`;
             
             {/* Step 1: Modelo */}
             <div style={{ marginBottom: '28px' }}>
-              <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '12px' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '12px' }}>
                 <span style={{ fontFamily: 'var(--font-sans)', fontSize: '11px', fontWeight: 600, letterSpacing: '0.14em', textTransform: 'uppercase', color: '#1C1A18' }}>
-                  01. MODELO
+                  01. MODELO — {selectedModel === 'sculpt' ? 'MACA SCULPT' : 'MACA ROYALE'}
                 </span>
                 <span style={{ fontSize: '11px', color: '#8E867C' }}>1/5</span>
               </div>
@@ -274,7 +272,11 @@ Gostaria de receber uma proposta personalizada e prazo de entrega.`;
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px' }}>
                 <button
                   type="button"
-                  onClick={() => setSelectedModel('sculpt')}
+                  onClick={() => {
+                    setSelectedModel('sculpt');
+                    setSelectedBase('Base Cilíndrica Revestida Nude');
+                    setSelectedAngle(0);
+                  }}
                   style={{
                     padding: '12px',
                     border: selectedModel === 'sculpt' ? '2px solid #1C1A18' : '1px solid #E5E0D8',
@@ -291,7 +293,11 @@ Gostaria de receber uma proposta personalizada e prazo de entrega.`;
 
                 <button
                   type="button"
-                  onClick={() => setSelectedModel('royale')}
+                  onClick={() => {
+                    setSelectedModel('royale');
+                    setSelectedBase('Pés em X Dourado Champagne Escovado');
+                    setSelectedAngle(0);
+                  }}
                   style={{
                     padding: '12px',
                     border: selectedModel === 'royale' ? '2px solid #1C1A18' : '1px solid #E5E0D8',
@@ -390,19 +396,23 @@ Gostaria de receber uma proposta personalizada e prazo de entrega.`;
 
             {/* Step 3: Estrutura da Base */}
             <div style={{ marginBottom: '28px' }}>
-              <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '12px' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '12px' }}>
                 <span style={{ fontFamily: 'var(--font-sans)', fontSize: '11px', fontWeight: 600, letterSpacing: '0.14em', textTransform: 'uppercase', color: '#1C1A18' }}>
-                  03. ESTRUTURA DA BASE
+                  03. ESTRUTURA DA BASE — {selectedModel === 'sculpt' ? 'BASE CILÍNDRICA' : 'PÉS EM X'}
                 </span>
                 <span style={{ fontSize: '11px', color: '#8E867C' }}>3/5</span>
               </div>
 
               <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-                {[
+                {(selectedModel === 'sculpt' ? [
                   { name: 'Base Cilíndrica Revestida Nude', desc: 'Design contínuo e monolítico' },
                   { name: 'Base em Madeira Maciça Nobre', desc: 'Detalhe natural e sofisticado' },
                   { name: 'Base em Acabamento Taupe Esculpido', desc: 'Acabamento escultural mate' }
-                ].map((base) => (
+                ] : [
+                  { name: 'Pés em X Dourado Champagne Escovado', desc: 'Acabamento metálico acetinado nobre' },
+                  { name: 'Pés em X Aço Carbono Negro Fosco', desc: 'Estrutura geométrica contemporânea' },
+                  { name: 'Pés em Madeira Maciça Nobre', desc: 'Calor orgânico e acabamento artesanal' }
+                ]).map((base) => (
                   <div
                     key={base.name}
                     onClick={() => setSelectedBase(base.name)}
@@ -592,9 +602,9 @@ Gostaria de receber uma proposta personalizada e prazo de entrega.`;
             </div>
 
           </div>
-
         </div>
-      </section>
+      </div>
+    </section>
 
       {/* Explore in Detail Bottom Section */}
       <section style={{ padding: 'clamp(64px, 8vw, 110px) 0', borderBottom: '1px solid #E5E0D8' }}>
@@ -615,7 +625,7 @@ Gostaria de receber uma proposta personalizada e prazo de entrega.`;
             <Reveal direction="up" delay={150}>
               <div style={{ display: 'flex', flexDirection: 'column' }}>
                 <div className="image-hover-zoom" style={{ position: 'relative', width: '100%', height: 'clamp(260px, 22vw, 320px)', marginBottom: '16px', borderRadius: '2px', overflow: 'hidden', backgroundColor: '#EAE6DF' }}>
-                  <Image src="/maca1/maca1_3.png" alt="Curvatura milimétrica" fill style={{ objectFit: 'cover', transition: 'transform 0.8s' }} />
+                  <Image src="/maca1/maca1_3.webp" alt="Curvatura milimétrica" fill sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw" style={{ objectFit: 'cover', transition: 'transform 0.8s' }} />
                 </div>
                 <h3 style={{ fontFamily: 'var(--font-sans)', fontSize: '13px', fontWeight: 600, color: '#1C1A18', marginBottom: '6px' }}>
                   Curvatura Milimétrica
@@ -629,7 +639,7 @@ Gostaria de receber uma proposta personalizada e prazo de entrega.`;
             <Reveal direction="up" delay={250}>
               <div style={{ display: 'flex', flexDirection: 'column' }}>
                 <div className="image-hover-zoom" style={{ position: 'relative', width: '100%', height: 'clamp(260px, 22vw, 320px)', marginBottom: '16px', borderRadius: '2px', overflow: 'hidden', backgroundColor: '#EAE6DF' }}>
-                  <Image src="/maca1/maca1_4.png" alt="Tecidos de alta performance" fill style={{ objectFit: 'cover', transition: 'transform 0.8s' }} />
+                  <Image src="/maca1/maca1_4.webp" alt="Tecidos de alta performance" fill sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw" style={{ objectFit: 'cover', transition: 'transform 0.8s' }} />
                 </div>
                 <h3 style={{ fontFamily: 'var(--font-sans)', fontSize: '13px', fontWeight: 600, color: '#1C1A18', marginBottom: '6px' }}>
                   Tecidos de Alta Performance
@@ -643,13 +653,21 @@ Gostaria de receber uma proposta personalizada e prazo de entrega.`;
             <Reveal direction="up" delay={350}>
               <div style={{ display: 'flex', flexDirection: 'column' }}>
                 <div className="image-hover-zoom" style={{ position: 'relative', width: '100%', height: 'clamp(260px, 22vw, 320px)', marginBottom: '16px', borderRadius: '2px', overflow: 'hidden', backgroundColor: '#EAE6DF' }}>
-                  <Image src="/maca1/maca1_2.png" alt="Base cilíndrica escultural" fill style={{ objectFit: 'cover', transition: 'transform 0.8s' }} />
+                  <Image
+                    src={selectedModel === 'sculpt' ? '/maca1/maca1_2.webp' : '/maca2/maca2_4.webp'}
+                    alt={selectedModel === 'sculpt' ? 'Base cilíndrica escultural' : 'Pés em X geométricos'}
+                    fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                    style={{ objectFit: 'cover', transition: 'transform 0.8s' }}
+                  />
                 </div>
                 <h3 style={{ fontFamily: 'var(--font-sans)', fontSize: '13px', fontWeight: 600, color: '#1C1A18', marginBottom: '6px' }}>
-                  Base Cilíndrica Escultural
+                  {selectedModel === 'sculpt' ? 'Base Cilíndrica Escultural' : 'Pés em X Geométricos'}
                 </h3>
                 <p style={{ fontFamily: 'var(--font-sans)', fontSize: '12.5px', lineHeight: 1.6, color: '#6E6860' }}>
-                  Escolha o acabamento que melhor se adapta à arquitetura do seu espaço.
+                  {selectedModel === 'sculpt'
+                    ? 'Escolha o acabamento que melhor se adapta à arquitetura do seu espaço.'
+                    : 'Estrutura metálica cruzada de alta precisão com estabilidade absoluta.'}
                 </p>
               </div>
             </Reveal>
@@ -657,7 +675,7 @@ Gostaria de receber uma proposta personalizada e prazo de entrega.`;
             <Reveal direction="up" delay={450}>
               <div style={{ display: 'flex', flexDirection: 'column' }}>
                 <div className="image-hover-zoom" style={{ position: 'relative', width: '100%', height: 'clamp(260px, 22vw, 320px)', marginBottom: '16px', borderRadius: '2px', overflow: 'hidden', backgroundColor: '#EAE6DF' }}>
-                  <Image src="/photos/detalhe/detalhe.png" alt="Acabamentos por medida" fill style={{ objectFit: 'cover', transition: 'transform 0.8s' }} />
+                  <Image src="/photos/detalhe/detalhe.webp" alt="Acabamentos por medida" fill sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw" style={{ objectFit: 'cover', transition: 'transform 0.8s' }} />
                 </div>
                 <h3 style={{ fontFamily: 'var(--font-sans)', fontSize: '13px', fontWeight: 600, color: '#1C1A18', marginBottom: '6px' }}>
                   Acabamentos por Medida

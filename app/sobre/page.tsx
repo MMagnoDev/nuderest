@@ -69,12 +69,7 @@ export default function SobrePage() {
         borderBottom: '1px solid #ECE7DE'
       }}>
         <div className="editorial-container">
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'minmax(320px, 1.25fr) minmax(300px, 1fr)',
-            gap: 'clamp(48px, 7vw, 96px)',
-            alignItems: 'flex-start'
-          }}>
+          <div className="editorial-split-grid">
             {/* Left Photo: Curated Brand Asset */}
             <Reveal direction="left" delay={150}>
               <div className="image-hover-zoom" style={{
@@ -86,7 +81,7 @@ export default function SobrePage() {
                 backgroundColor: '#EAE6DF'
               }}>
                 <Image
-                  src="/photos/sobre/sobre2.png"
+                  src="/photos/sobre/sobre2.webp"
                   alt="Atelier e Filosofia NUDE REST"
                   fill
                   priority
@@ -241,7 +236,7 @@ export default function SobrePage() {
           {/* 3 Editorial Value Columns */}
           <div style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
             gap: 'clamp(32px, 5vw, 64px)'
           }}>
             <Reveal direction="up" delay={150}>
@@ -311,7 +306,7 @@ export default function SobrePage() {
                 backgroundColor: '#EAE6DF'
               }}>
                 <Image
-                  src="/maca1/maca1_1.png"
+                  src="/maca1/maca1_1.webp"
                   alt="Maca Sculpt em Ambiente"
                   fill
                   style={{ objectFit: 'cover', transition: 'transform 0.8s cubic-bezier(0.16, 1, 0.3, 1)' }}
@@ -329,10 +324,11 @@ export default function SobrePage() {
                 backgroundColor: '#EAE6DF'
               }}>
                 <Image
-                  src="/maca2/maca2_1.png"
-                  alt="Maca Royale em Ambiente"
+                  src="/photos/pecasdeassinatura/_C1M0299.webp"
+                  alt="Maca Royale Anatómica"
                   fill
-                  style={{ objectFit: 'cover', transition: 'transform 0.8s cubic-bezier(0.16, 1, 0.3, 1)' }}
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  style={{ objectFit: 'cover', objectPosition: 'center 50%', transition: 'transform 0.8s cubic-bezier(0.16, 1, 0.3, 1)' }}
                 />
               </div>
             </Reveal>

@@ -13,8 +13,9 @@ export const Navbar: React.FC<{ transparent?: boolean }> = ({ transparent = fals
 
   const links = [
     { label: 'Início', href: '/' },
+    { label: 'Coleções', href: '/colecoes' },
     { label: 'Sculpt', href: '/maca-modelo-1' },
-    { label: 'Pure', href: '/maca-modelo-2' },
+    { label: 'Royale', href: '/maca-modelo-2' },
     { label: 'Personalização', href: '/maca-sculpt-arc' },
     { label: 'Sobre', href: '/sobre' },
     { label: 'Atelier', href: '/atelie' },
@@ -42,7 +43,7 @@ export const Navbar: React.FC<{ transparent?: boolean }> = ({ transparent = fals
         {/* Brand Logo */}
         <Link href="/" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none' }}>
           <Image
-            src="/logo_clara.png?v=2"
+            src="/logo_clara.webp"
             alt="NUDE REST"
             width={130}
             height={54}
@@ -61,7 +62,7 @@ export const Navbar: React.FC<{ transparent?: boolean }> = ({ transparent = fals
         <nav className="header-nav-desktop" style={{
           display: 'flex',
           alignItems: 'center',
-          gap: 'clamp(18px, 2.2vw, 36px)'
+          gap: 'clamp(14px, 1.8vw, 30px)'
         }}>
           {links.map((link) => {
             const isActive = pathname === link.href;
@@ -184,22 +185,25 @@ export const Navbar: React.FC<{ transparent?: boolean }> = ({ transparent = fals
         </div>
 
         {/* Mobile Header Right (Cart + Hamburger) */}
-        <div className="mobile-only" style={{ display: 'none', alignItems: 'center', gap: '16px' }}>
+        <div className="mobile-only" style={{ display: 'none', alignItems: 'center', gap: '12px' }}>
           <button
             onClick={() => setIsCartOpen(true)}
             aria-label="Abrir carrinho"
             style={{
               background: 'transparent',
               border: 'none',
-              color: 'var(--text-main)',
+              color: '#EDE8DF',
               cursor: 'pointer',
               position: 'relative',
               display: 'flex',
               alignItems: 'center',
-              padding: '4px'
+              justifyContent: 'center',
+              width: '42px',
+              height: '42px',
+              padding: '6px'
             }}
           >
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
               <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
               <line x1="3" y1="6" x2="21" y2="6" />
               <path d="M16 10a4 4 0 0 1-8 0" />
@@ -207,10 +211,10 @@ export const Navbar: React.FC<{ transparent?: boolean }> = ({ transparent = fals
             {totalItems > 0 && (
               <span style={{
                 position: 'absolute',
-                top: '-4px',
-                right: '-6px',
-                backgroundColor: '#ECE2D8',
-                color: '#1E1713',
+                top: '2px',
+                right: '2px',
+                backgroundColor: '#EDE8DF',
+                color: '#161514',
                 fontSize: '10px',
                 fontWeight: 700,
                 width: '18px',
@@ -225,58 +229,166 @@ export const Navbar: React.FC<{ transparent?: boolean }> = ({ transparent = fals
             )}
           </button>
 
-          <div
-            className="menu-toggle"
+          <button
+            type="button"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            aria-label="Toggle menu"
+            aria-label={mobileMenuOpen ? 'Fechar menu' : 'Abrir menu'}
+            style={{
+              background: 'transparent',
+              border: 'none',
+              cursor: 'pointer',
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'center',
+              alignItems: 'center',
+              width: '44px',
+              height: '44px',
+              padding: '10px',
+              gap: '6px',
+              color: '#EDE8DF'
+            }}
           >
-            <span></span>
-            <span></span>
-          </div>
+            <span style={{
+              display: 'block',
+              width: '24px',
+              height: '1.5px',
+              backgroundColor: '#EDE8DF',
+              transition: 'transform 0.3s ease, opacity 0.3s ease',
+              transform: mobileMenuOpen ? 'rotate(45deg) translate(5px, 5px)' : 'none'
+            }} />
+            <span style={{
+              display: 'block',
+              width: '24px',
+              height: '1.5px',
+              backgroundColor: '#EDE8DF',
+              transition: 'transform 0.3s ease, opacity 0.3s ease',
+              transform: mobileMenuOpen ? 'rotate(-45deg) translate(5px, -5px)' : 'none'
+            }} />
+          </button>
         </div>
       </header>
 
-      {/* Mobile Drawer */}
+      {/* Luxury Full-Screen Mobile Drawer */}
       {mobileMenuOpen && (
         <div style={{
-          backgroundColor: 'var(--bg-light)',
-          borderBottom: '1px solid var(--border-color)',
-          padding: '24px',
+          position: 'fixed',
+          inset: 0,
+          zIndex: 9999,
+          backgroundColor: 'rgba(18, 17, 16, 0.98)',
+          backdropFilter: 'blur(20px)',
+          WebkitBackdropFilter: 'blur(20px)',
           display: 'flex',
           flexDirection: 'column',
-          gap: '18px'
+          justifyContent: 'space-between',
+          padding: '24px 24px 36px 24px',
+          animation: 'fadeIn 0.25s ease forwards'
         }}>
-          {links.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
+          {/* Top Bar inside Menu */}
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', height: '60px' }}>
+            <Link href="/" onClick={() => setMobileMenuOpen(false)} style={{ display: 'flex', alignItems: 'center' }}>
+              <Image
+                src="/logo_clara.webp"
+                alt="NUDE REST"
+                width={120}
+                height={50}
+                priority
+                style={{ height: '32px', width: 'auto', objectFit: 'contain' }}
+              />
+            </Link>
+            <button
               onClick={() => setMobileMenuOpen(false)}
+              aria-label="Fechar menu"
               style={{
-                fontFamily: 'var(--font-title)',
-                fontSize: '15px',
-                fontWeight: 300,
-                color: 'var(--text-main)',
-                textDecoration: 'none',
-                letterSpacing: '0.04em'
+                background: 'transparent',
+                border: 'none',
+                color: '#EDE8DF',
+                cursor: 'pointer',
+                width: '44px',
+                height: '44px',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                fontSize: '22px'
               }}
             >
-              {link.label}
-            </Link>
-          ))}
-          <div style={{ paddingTop: '12px', borderTop: '1px solid var(--border-color)' }}>
+              ✕
+            </button>
+          </div>
+
+          {/* Navigation Links */}
+          <nav style={{
+            display: 'flex',
+            flexDirection: 'column',
+            gap: '20px',
+            padding: '20px 0'
+          }}>
+            {links.map((link) => {
+              const isActive = pathname === link.href;
+              return (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  onClick={() => setMobileMenuOpen(false)}
+                  style={{
+                    fontFamily: 'var(--font-editorial)',
+                    fontSize: 'clamp(26px, 6vw, 36px)',
+                    fontWeight: 400,
+                    color: isActive ? '#FFFFFF' : '#C8C2B7',
+                    textDecoration: 'none',
+                    letterSpacing: '-0.02em',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'space-between',
+                    paddingBottom: '8px',
+                    borderBottom: '1px solid rgba(255, 255, 255, 0.06)'
+                  }}
+                >
+                  <span>{link.label}</span>
+                  <span style={{ fontSize: '18px', opacity: isActive ? 1 : 0.4 }}>→</span>
+                </Link>
+              );
+            })}
+          </nav>
+
+          {/* Bottom Action Area */}
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', paddingTop: '16px' }}>
             <a
-              href="https://wa.me/5511999999999"
+              href="https://wa.me/351910800000?text=Ol%C3%A1%2C%20gostaria%20de%20falar%20com%20um%20consultor%20da%20NUDE%20REST."
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-primary-nude"
               style={{
-                display: 'block',
-                textAlign: 'center',
-                width: '100%'
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                gap: '10px',
+                padding: '16px 24px',
+                fontSize: '12px',
+                fontFamily: 'var(--font-sans)',
+                fontWeight: 600,
+                letterSpacing: '0.14em',
+                textTransform: 'uppercase',
+                color: '#161514',
+                backgroundColor: '#EDE8DF',
+                borderRadius: '2px',
+                textDecoration: 'none',
+                minHeight: '48px'
               }}
             >
-              Atendimento no WhatsApp
+              <span>ATENDIMENTO CONCIERGE</span>
+              <span>→</span>
             </a>
+
+            <div style={{
+              display: 'flex',
+              justifyContent: 'space-between',
+              alignItems: 'center',
+              fontSize: '12px',
+              color: '#8E867C',
+              paddingTop: '8px'
+            }}>
+              <span>Garantia de 5 anos</span>
+              <span>Envio para todo o país</span>
+            </div>
           </div>
         </div>
       )}
@@ -285,13 +397,17 @@ export const Navbar: React.FC<{ transparent?: boolean }> = ({ transparent = fals
         .mobile-only {
           display: none !important;
         }
-        @media (max-width: 860px) {
+        @media (max-width: 980px) {
           .header-nav-desktop, .header-right-desktop {
             display: none !important;
           }
           .mobile-only {
             display: flex !important;
           }
+        }
+        @keyframes fadeIn {
+          from { opacity: 0; transform: translateY(-8px); }
+          to { opacity: 1; transform: translateY(0); }
         }
       `}</style>
     </>

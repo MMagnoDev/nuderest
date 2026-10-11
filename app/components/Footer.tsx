@@ -6,7 +6,7 @@ import Image from 'next/image';
 
 export const Footer: React.FC = () => {
   return (
-    <footer style={{
+    <footer className="editorial-footer" style={{
       backgroundColor: '#121110',
       color: '#EDE8DF',
       borderTop: '1px solid rgba(255, 255, 255, 0.08)',
@@ -17,18 +17,13 @@ export const Footer: React.FC = () => {
       <div className="editorial-container">
         
         {/* Main Footer Grid */}
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: 'minmax(260px, 1.4fr) repeat(auto-fit, minmax(160px, 1fr))',
-          gap: 'clamp(36px, 5vw, 64px)',
-          marginBottom: 'clamp(48px, 6vw, 72px)'
-        }}>
+        <div className="editorial-footer-grid">
           
           {/* Brand Column */}
           <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
             <Link href="/" style={{ textDecoration: 'none', display: 'inline-flex', alignItems: 'center' }}>
               <Image
-                src="/logo_clara.png?v=2"
+                src="/logo_clara.webp"
                 alt="NUDE REST"
                 width={130}
                 height={54}

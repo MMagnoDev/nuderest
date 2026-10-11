@@ -79,7 +79,7 @@ export default function AteliePage() {
               backgroundColor: '#EAE6DF'
             }}>
               <Image
-                src="/photos/detalhe/detalhe.png"
+                src="/photos/detalhe/detalhe.webp"
                 alt="Processo Criativo e Manufatura no Atelier NUDE REST"
                 fill
                 priority
@@ -132,7 +132,7 @@ export default function AteliePage() {
 
           <div style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
             gap: 'clamp(32px, 4vw, 56px)'
           }}>
             {/* Step 1 */}
@@ -148,7 +148,7 @@ export default function AteliePage() {
                   marginBottom: '20px'
                 }}>
                   <Image
-                    src="/maca1/maca1_2.png"
+                    src="/maca1/maca1_2.webp"
                     alt="Desenho Anatómico Maca 1"
                     fill
                     style={{ objectFit: 'cover', transition: 'transform 0.8s cubic-bezier(0.16, 1, 0.3, 1)' }}
@@ -179,7 +179,7 @@ export default function AteliePage() {
                   marginBottom: '20px'
                 }}>
                   <Image
-                    src="/maca1/maca1_4.png"
+                    src="/maca1/maca1_4.webp"
                     alt="Textura Bouclé e Espuma Ortopédica"
                     fill
                     style={{ objectFit: 'cover', transition: 'transform 0.8s cubic-bezier(0.16, 1, 0.3, 1)' }}
@@ -210,7 +210,7 @@ export default function AteliePage() {
                   marginBottom: '20px'
                 }}>
                   <Image
-                    src="/maca2/maca2_3.png"
+                    src="/maca2/maca2_3.webp"
                     alt="Tapeçaria e Canais em Alta Definição"
                     fill
                     style={{ objectFit: 'cover', transition: 'transform 0.8s cubic-bezier(0.16, 1, 0.3, 1)' }}
@@ -241,7 +241,7 @@ export default function AteliePage() {
                   marginBottom: '20px'
                 }}>
                   <Image
-                    src="/maca2/maca2_5.png"
+                    src="/maca2/maca2_5.webp"
                     alt="Rigor de Acabamento e Testes Finais"
                     fill
                     style={{ objectFit: 'cover', transition: 'transform 0.8s cubic-bezier(0.16, 1, 0.3, 1)' }}
