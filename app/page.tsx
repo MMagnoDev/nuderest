@@ -97,12 +97,12 @@ export default function HomePage() {
             <Reveal direction="up" delay={150}>
               <h1 style={{
                 fontFamily: 'var(--font-editorial)',
-                fontSize: 'clamp(36px, 5.2vw, 72px)',
+                fontSize: 'clamp(40px, 5.2vw, 72px)',
                 fontWeight: 400,
-                lineHeight: 1.08,
+                lineHeight: 1.1,
                 letterSpacing: '-0.025em',
                 color: '#EDE8DF',
-                marginBottom: '26px'
+                marginBottom: '22px'
               }}>
                 Uma nova forma<br />
                 de olhar para<br />
@@ -123,11 +123,11 @@ export default function HomePage() {
             <Reveal direction="up" delay={350}>
               <p style={{
                 fontFamily: 'var(--font-sans)',
-                fontSize: 'clamp(15px, 1.15vw, 16.5px)',
-                lineHeight: 1.75,
+                fontSize: 'clamp(14px, 1.15vw, 16px)',
+                lineHeight: 1.7,
                 color: '#C8C2B7',
                 maxWidth: '520px',
-                marginBottom: '36px'
+                marginBottom: '32px'
               }}>
                 A NUDE REST nasceu da vivência prática no setor e da decisão de redesenhar a peça central do atendimento, integrando ergonomia ativa, conforto e identidade espacial.
               </p>
@@ -640,53 +640,36 @@ export default function HomePage() {
         padding: 'clamp(48px, 6vw, 72px) 0'
       }}>
         <div className="editorial-container">
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
-            gap: '24px',
-            textAlign: 'center'
-          }}>
+          <div className="editorial-values-grid">
             <Reveal direction="up" delay={100}>
-              <div>
-                <h4 style={{ fontFamily: 'var(--font-sans)', fontSize: '11px', fontWeight: 600, letterSpacing: '0.16em', textTransform: 'uppercase', color: '#1C1A18', marginBottom: '6px' }}>
-                  AUTENTICIDADE
-                </h4>
-                <p style={{ fontFamily: 'var(--font-sans)', fontSize: '12px', color: '#6E6860' }}>
-                  Nascida da vivência prática no setor.
-                </p>
+              <div className="editorial-value-card">
+                <span className="editorial-value-index">01</span>
+                <h4 className="editorial-value-title">AUTENTICIDADE</h4>
+                <p className="editorial-value-desc">Nascida da vivência prática no setor.</p>
               </div>
             </Reveal>
 
             <Reveal direction="up" delay={200}>
-              <div>
-                <h4 style={{ fontFamily: 'var(--font-sans)', fontSize: '11px', fontWeight: 600, letterSpacing: '0.16em', textTransform: 'uppercase', color: '#1C1A18', marginBottom: '6px' }}>
-                  QUALIDADE ABSOLUTA
-                </h4>
-                <p style={{ fontFamily: 'var(--font-sans)', fontSize: '12px', color: '#6E6860' }}>
-                  Matérias-primas nobres certificadas.
-                </p>
+              <div className="editorial-value-card">
+                <span className="editorial-value-index">02</span>
+                <h4 className="editorial-value-title">QUALIDADE ABSOLUTA</h4>
+                <p className="editorial-value-desc">Matérias-primas nobres certificadas.</p>
               </div>
             </Reveal>
 
             <Reveal direction="up" delay={300}>
-              <div>
-                <h4 style={{ fontFamily: 'var(--font-sans)', fontSize: '11px', fontWeight: 600, letterSpacing: '0.16em', textTransform: 'uppercase', color: '#1C1A18', marginBottom: '6px' }}>
-                  ESTÉTICA COM SENTIDO
-                </h4>
-                <p style={{ fontFamily: 'var(--font-sans)', fontSize: '12px', color: '#6E6860' }}>
-                  Mobiliário escultural que eleva o espaço.
-                </p>
+              <div className="editorial-value-card">
+                <span className="editorial-value-index">03</span>
+                <h4 className="editorial-value-title">ESTÉTICA COM SENTIDO</h4>
+                <p className="editorial-value-desc">Mobiliário escultural que eleva o espaço.</p>
               </div>
             </Reveal>
 
             <Reveal direction="up" delay={400}>
-              <div>
-                <h4 style={{ fontFamily: 'var(--font-sans)', fontSize: '11px', fontWeight: 600, letterSpacing: '0.16em', textTransform: 'uppercase', color: '#1C1A18', marginBottom: '6px' }}>
-                  BEM-ESTAR
-                </h4>
-                <p style={{ fontFamily: 'var(--font-sans)', fontSize: '12px', color: '#6E6860' }}>
-                  Ergonomia ativa para quem cuida.
-                </p>
+              <div className="editorial-value-card">
+                <span className="editorial-value-index">04</span>
+                <h4 className="editorial-value-title">BEM-ESTAR</h4>
+                <p className="editorial-value-desc">Ergonomia ativa para quem cuida.</p>
               </div>
             </Reveal>
           </div>
