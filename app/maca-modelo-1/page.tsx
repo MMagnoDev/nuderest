@@ -2,367 +2,396 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Navbar } from '../components/Navbar';
-import { SiteFooter } from '../components/SiteFooter';
-import { PRODUCTS_CATALOG } from '@/data/products';
-import { useCart } from '../context/CartContext';
+import { Footer } from '../components/Footer';
+import { Reveal } from '../components/ScrollReveal';
 
-export default function MacaModelo1Page() {
-  const product = PRODUCTS_CATALOG[0]; // Maca Modelo 1 — Sculpt Wave
-  const [activeImage, setActiveImage] = useState(product.image);
-  const [selectedColor, setSelectedColor] = useState(product.availableColors[0]);
-  const [selectedBase, setSelectedBase] = useState(product.baseFinishes[0]);
-  const [embroideryText, setEmbroideryText] = useState('');
-  const [selectedAddons, setSelectedAddons] = useState<string[]>([]);
-  const { addToCart, checkoutDirectWhatsApp } = useCart();
+export default function MacaSculptPage() {
+  const [activeImage, setActiveImage] = useState('/maca1/maca1_1.png');
 
-  const baseExtra = selectedBase.extraPrice || 0;
-  const addonsTotal = selectedAddons.reduce((sum, id) => {
-    const addon = product.optionalAddons.find(a => a.id === id);
-    return sum + (addon ? addon.price : 0);
-  }, 0);
-
-  const totalPrice = product.price + baseExtra + addonsTotal;
-  const pixPrice = totalPrice * 0.95;
-
-  const toggleAddon = (id: string) => {
-    setSelectedAddons(prev =>
-      prev.includes(id) ? prev.filter(a => a !== id) : [...prev, id]
-    );
-  };
-
-  const getCustomizedItem = () => {
-    const chosenAddons = selectedAddons
-      .map(id => product.optionalAddons.find(a => a.id === id))
-      .filter((a): a is typeof product.optionalAddons[0] => !!a);
-
-    return {
-      productId: product.id,
-      name: product.name,
-      slug: product.slug,
-      image: activeImage || product.image,
-      unitPrice: product.price,
-      color: selectedColor,
-      base: selectedBase,
-      embroideryText: embroideryText.trim() || undefined,
-      addons: chosenAddons
-    };
-  };
-
-  const handleBuyWhatsApp = () => {
-    checkoutDirectWhatsApp(getCustomizedItem());
-  };
-
-  const handleAddToCart = () => {
-    addToCart(getCustomizedItem());
-  };
+  const galleryImages = [
+    '/maca1/maca1_1.png',
+    '/maca1/maca1_2.png',
+    '/maca1/maca1_3.png',
+    '/maca1/maca1_4.png'
+  ];
 
   return (
-    <main className="page-container">
+    <main style={{ backgroundColor: '#FAF9F6', minHeight: '100vh', color: '#1C1A18' }}>
       <Navbar />
 
-      {/* Page Title */}
-      <section className="section-page-title border-b">
-        <h1 className="page-title">
-          <span className="quote-mark">‘</span>NUDE REST — <span className="italic">Maca Sculpt Wave</span><span className="quote-mark">’</span>
-        </h1>
-      </section>
+      {/* 01 — PRODUCT HERO */}
+      <section style={{
+        padding: 'clamp(96px, 10vw, 130px) 0 clamp(64px, 8vw, 96px) 0',
+        borderBottom: '1px solid #ECE7DE'
+      }}>
+        <div className="editorial-container" style={{
+          display: 'grid',
+          gridTemplateColumns: 'minmax(320px, 1.15fr) minmax(320px, 1.25fr)',
+          gap: 'clamp(48px, 6vw, 84px)',
+          alignItems: 'center'
+        }}>
+          {/* Left Info Column */}
+          <div>
+            <Reveal direction="up" delay={100}>
+              <span style={{
+                fontFamily: 'var(--font-sans)',
+                fontSize: '11px',
+                fontWeight: 600,
+                letterSpacing: '0.22em',
+                textTransform: 'uppercase',
+                color: '#8E867C',
+                display: 'block',
+                marginBottom: '14px'
+              }}>
+                SCULPT WAVE / DESIGN DE ASSINATURA
+              </span>
+            </Reveal>
 
-      {/* Hero 50% / 50% with Interactive Photo Gallery */}
-      <section className="section-hero border-b">
-        <div className="hero-col-left border-r" style={{ display: 'flex', flexDirection: 'column' }}>
-          <div style={{ flex: 1, position: 'relative', minHeight: '440px', overflow: 'hidden' }}>
-            <img
-              src={activeImage}
-              alt={product.name}
-              style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-            />
+            <Reveal direction="up" delay={200}>
+              <h1 style={{
+                fontFamily: 'var(--font-sans)',
+                fontSize: 'clamp(38px, 4.5vw, 56px)',
+                fontWeight: 400,
+                lineHeight: 1.1,
+                letterSpacing: '-0.03em',
+                color: '#1C1A18',
+                marginBottom: '20px'
+              }}>
+                Maca Sculpt
+              </h1>
+            </Reveal>
+
+            <Reveal direction="up" delay={250}>
+              <div style={{ display: 'flex', alignItems: 'baseline', gap: '12px', marginBottom: '24px' }}>
+                <span style={{ fontFamily: 'var(--font-sans)', fontSize: '24px', fontWeight: 500, color: '#1C1A18', letterSpacing: '-0.02em' }}>
+                  1.290 €
+                </span>
+                <span style={{ fontFamily: 'var(--font-sans)', fontSize: '13px', color: '#8E867C' }}>
+                  IVA incluído · Confeção sob medida
+                </span>
+              </div>
+            </Reveal>
+
+            <Reveal direction="up" delay={300}>
+              <p style={{
+                fontFamily: 'var(--font-sans)',
+                fontSize: 'clamp(14.5px, 1.05vw, 15.5px)',
+                lineHeight: 1.75,
+                color: '#55514B',
+                marginBottom: '32px',
+                maxWidth: '480px'
+              }}>
+                A silhueta em arco contínuo que redefine o conceito de marquesa estética. Concebida como uma escultura arquitetónica, a sua curvatura elimina pontos de tensão e acomoda o corpo em alívio postural profundo.
+              </p>
+            </Reveal>
+
+            {/* Quick Specs Pill Row */}
+            <Reveal direction="up" delay={350}>
+              <div style={{
+                display: 'flex',
+                flexWrap: 'wrap',
+                gap: '8px',
+                marginBottom: '36px'
+              }}>
+                <span style={{ fontSize: '11.5px', padding: '6px 14px', backgroundColor: '#F2EFEB', borderRadius: '2px', color: '#3A3632' }}>
+                  Arco contínuo sem emendas
+                </span>
+                <span style={{ fontSize: '11.5px', padding: '6px 14px', backgroundColor: '#F2EFEB', borderRadius: '2px', color: '#3A3632' }}>
+                  Espuma D33 Ultra Soft
+                </span>
+                <span style={{ fontSize: '11.5px', padding: '6px 14px', backgroundColor: '#F2EFEB', borderRadius: '2px', color: '#3A3632' }}>
+                  Garantia de 5 anos
+                </span>
+              </div>
+            </Reveal>
+
+            {/* CTA Buttons */}
+            <Reveal direction="up" delay={400}>
+              <div style={{ display: 'flex', gap: '14px', flexWrap: 'wrap' }}>
+                <Link
+                  href="/maca-sculpt-arc"
+                  style={{
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '8px',
+                    padding: '14px 32px',
+                    fontSize: '11px',
+                    fontFamily: 'var(--font-sans)',
+                    fontWeight: 600,
+                    letterSpacing: '0.16em',
+                    textTransform: 'uppercase',
+                    color: '#EDE8DF',
+                    backgroundColor: '#1C1A18',
+                    borderRadius: '2px',
+                    textDecoration: 'none',
+                    transition: 'background-color 0.25s ease'
+                  }}
+                  onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = '#38342F')}
+                  onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = '#1C1A18')}
+                >
+                  <span>PERSONALIZAR ACABAMENTOS</span>
+                  <span>→</span>
+                </Link>
+
+                <a
+                  href="https://wa.me/351910800000?text=Ol%C3%A1%2C%20gostaria%20de%20informa%C3%A7%C3%B5es%20e%20proposta%20para%20a%20Maca%20Sculpt."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    padding: '14px 26px',
+                    fontSize: '11px',
+                    fontFamily: 'var(--font-sans)',
+                    fontWeight: 500,
+                    letterSpacing: '0.16em',
+                    textTransform: 'uppercase',
+                    color: '#1C1A18',
+                    border: '1px solid #1C1A18',
+                    borderRadius: '2px',
+                    textDecoration: 'none',
+                    transition: 'background-color 0.25s ease'
+                  }}
+                  onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = 'rgba(28, 26, 24, 0.05)')}
+                  onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = 'transparent')}
+                >
+                  FALAR COM CONCIERGE
+                </a>
+              </div>
+            </Reveal>
           </div>
 
-          {/* Gallery Thumbnails */}
-          {product.gallery && product.gallery.length > 1 && (
-            <div style={{
-              display: 'flex',
-              gap: '12px',
-              padding: '16px 24px',
-              backgroundColor: 'var(--bg-page)',
-              borderTop: '1px solid var(--border-color)',
-              overflowX: 'auto'
-            }}>
-              {product.gallery.map((img, idx) => (
-                <button
+          {/* Right Main Gallery Viewer */}
+          <div>
+            <Reveal direction="right" delay={200}>
+              <div className="image-hover-zoom" style={{
+                position: 'relative',
+                width: '100%',
+                height: 'clamp(360px, 42vw, 520px)',
+                backgroundColor: '#EAE6DF',
+                borderRadius: '2px',
+                overflow: 'hidden',
+                marginBottom: '16px'
+              }}>
+                <Image
+                  src={activeImage}
+                  alt="Maca Sculpt em Alta Definição"
+                  fill
+                  priority
+                  style={{ objectFit: 'cover', transition: 'transform 0.8s cubic-bezier(0.16, 1, 0.3, 1)' }}
+                />
+              </div>
+            </Reveal>
+
+            {/* Thumbnails */}
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '12px' }}>
+              {galleryImages.map((img, idx) => (
+                <div
                   key={idx}
                   onClick={() => setActiveImage(img)}
                   style={{
-                    width: '64px',
-                    height: '64px',
-                    padding: 0,
-                    border: activeImage === img ? '2px solid var(--nude-linen)' : '1px solid var(--border-color)',
-                    background: 'none',
-                    cursor: 'pointer',
+                    position: 'relative',
+                    height: '84px',
+                    backgroundColor: '#EAE6DF',
+                    border: activeImage === img ? '2px solid #1C1A18' : '1px solid #ECE7DE',
+                    borderRadius: '2px',
                     overflow: 'hidden',
-                    flexShrink: 0,
-                    opacity: activeImage === img ? 1 : 0.6,
-                    transition: 'opacity 0.2s ease'
+                    cursor: 'pointer',
+                    transition: 'border-color 0.2s ease'
                   }}
                 >
-                  <img src={img} alt={`Ângulo ${idx + 1}`} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-                </button>
+                  <Image src={img} alt={`Ângulo Sculpt ${idx + 1}`} fill style={{ objectFit: 'cover' }} />
+                </div>
               ))}
             </div>
-          )}
-        </div>
-
-        <div className="hero-col-right">
-          <h2 className="hero-quote">
-            Arco escultural contínuo,<br />
-            base cilíndrica &<br />
-            conforto anatómico ativo<br />
-            <span className="line-italic">Maca Sculpt Wave</span>
-          </h2>
+          </div>
         </div>
       </section>
 
-      {/* Editorial Customizer Section (Bege Quase Preta) */}
-      <section className="section-customizer border-b">
-        <div className="customizer-content">
-          
-          <h3 className="customizer-title">
-            Personalize o seu Modelo 1 — Sculpt Wave
-          </h3>
-          <p className="customizer-desc">
-            Design fluido escultural com cabeceira contínua e curvatura milimétrica para acomodação perfeita da coluna lombar.
-          </p>
-
-          {/* 1. Escolha de Cor */}
-          <div style={{ textAlign: 'left', marginBottom: '32px' }}>
-            <label style={{ display: 'block', fontFamily: 'var(--font-title)', fontSize: '12px', letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--nude-taupe)', marginBottom: '12px' }}>
-              1. Tonalidade do Revestimento: <span style={{ color: 'var(--text-main)', fontWeight: 400 }}>{selectedColor.name}</span>
-            </label>
-            <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
-              {product.availableColors.map(color => (
-                <button
-                  key={color.id}
-                  onClick={() => setSelectedColor(color)}
-                  style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: '10px',
-                    padding: '10px 18px',
-                    backgroundColor: selectedColor.id === color.id ? 'var(--bg-contrast)' : 'var(--bg-light)',
-                    border: selectedColor.id === color.id ? '1px solid var(--nude-linen)' : '1px solid var(--border-color)',
-                    color: 'var(--text-main)',
-                    cursor: 'pointer',
-                    fontFamily: 'var(--font-sans)',
-                    fontSize: '13px',
-                    transition: 'all 0.2s ease'
-                  }}
-                >
-                  <span style={{
-                    width: '14px',
-                    height: '14px',
-                    borderRadius: '50%',
-                    backgroundColor: color.hex,
-                    border: '1px solid rgba(255,255,255,0.2)'
-                  }} />
-                  {color.name}
-                </button>
-              ))}
-            </div>
-          </div>
-
-          {/* 2. Escolha de Base */}
-          <div style={{ textAlign: 'left', marginBottom: '32px' }}>
-            <label style={{ display: 'block', fontFamily: 'var(--font-title)', fontSize: '12px', letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--nude-taupe)', marginBottom: '12px' }}>
-              2. Estrutura da Base: <span style={{ color: 'var(--text-main)', fontWeight: 400 }}>{selectedBase.name}</span>
-            </label>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
-              {product.baseFinishes.map(base => (
-                <button
-                  key={base.id}
-                  onClick={() => setSelectedBase(base)}
-                  style={{
-                    display: 'flex',
-                    justifyContent: 'space-between',
-                    alignItems: 'center',
-                    padding: '14px 20px',
-                    backgroundColor: selectedBase.id === base.id ? 'var(--bg-contrast)' : 'var(--bg-light)',
-                    border: selectedBase.id === base.id ? '1px solid var(--nude-linen)' : '1px solid var(--border-color)',
-                    color: 'var(--text-main)',
-                    cursor: 'pointer',
-                    fontFamily: 'var(--font-sans)',
-                    fontSize: '13px',
-                    textAlign: 'left'
-                  }}
-                >
-                  <span>{base.name}</span>
-                  <span style={{ color: 'var(--nude-taupe)', fontSize: '12px' }}>
-                    {base.extraPrice ? `+ ${base.extraPrice.toFixed(2)} €` : 'Incluído'}
-                  </span>
-                </button>
-              ))}
-            </div>
-          </div>
-
-          {/* 3. Bordado Personalizado */}
-          <div style={{ textAlign: 'left', marginBottom: '32px' }}>
-            <label style={{ display: 'block', fontFamily: 'var(--font-title)', fontSize: '12px', letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--nude-taupe)', marginBottom: '8px' }}>
-              3. Gravação de Nome / Monograma da Clínica:
-            </label>
-            <input
-              type="text"
-              placeholder="Insira o nome ou deixe em branco para acabamento liso"
-              value={embroideryText}
-              onChange={(e) => setEmbroideryText(e.target.value)}
-              style={{
-                width: '100%',
-                padding: '14px 18px',
-                backgroundColor: 'var(--bg-light)',
-                border: '1px solid var(--border-color)',
-                color: 'var(--text-main)',
+      {/* 02 — DETALHES DE ENGENHARIA & DESIGN */}
+      <section style={{
+        padding: 'clamp(80px, 9vw, 120px) 0',
+        borderBottom: '1px solid #ECE7DE'
+      }}>
+        <div className="editorial-container">
+          <div style={{ maxWidth: '640px', marginBottom: 'clamp(48px, 6vw, 72px)' }}>
+            <Reveal direction="up" delay={100}>
+              <span style={{
                 fontFamily: 'var(--font-sans)',
-                fontSize: '13px',
-                outline: 'none'
-              }}
-            />
+                fontSize: '11px',
+                fontWeight: 600,
+                letterSpacing: '0.2em',
+                textTransform: 'uppercase',
+                color: '#8E867C',
+                display: 'block',
+                marginBottom: '14px'
+              }}>
+                RIGOR CONSTRUTIVO
+              </span>
+            </Reveal>
+
+            <Reveal direction="up" delay={200}>
+              <h2 style={{
+                fontFamily: 'var(--font-sans)',
+                fontSize: 'clamp(30px, 3.6vw, 44px)',
+                fontWeight: 400,
+                lineHeight: 1.15,
+                letterSpacing: '-0.025em',
+                color: '#1C1A18'
+              }}>
+                Projetada para a postura e para o espaço.
+              </h2>
+            </Reveal>
           </div>
 
-          {/* 4. Opcionais */}
-          <div style={{ textAlign: 'left', marginBottom: '32px' }}>
-            <label style={{ display: 'block', fontFamily: 'var(--font-title)', fontSize: '12px', letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--nude-taupe)', marginBottom: '12px' }}>
-              4. Acessórios & Proteção de Atelier:
-            </label>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
-              {product.optionalAddons.map(addon => {
-                const isSelected = selectedAddons.includes(addon.id);
-                return (
-                  <button
-                    key={addon.id}
-                    onClick={() => toggleAddon(addon.id)}
-                    style={{
-                      display: 'flex',
-                      justifyContent: 'space-between',
-                      alignItems: 'center',
-                      padding: '14px 20px',
-                      backgroundColor: isSelected ? 'var(--bg-contrast)' : 'var(--bg-light)',
-                      border: isSelected ? '1px solid var(--nude-linen)' : '1px solid var(--border-color)',
-                      color: 'var(--text-main)',
-                      cursor: 'pointer',
-                      fontFamily: 'var(--font-sans)',
-                      fontSize: '13px',
-                      textAlign: 'left'
-                    }}
-                  >
-                    <div>
-                      <div>{addon.name}</div>
-                      <div style={{ fontSize: '11px', color: 'var(--text-muted)', marginTop: '2px' }}>{addon.description}</div>
-                    </div>
-                    <span style={{ color: 'var(--nude-taupe)', fontSize: '12px', flexShrink: 0, marginLeft: '12px' }}>
-                      {isSelected ? '✓ Adicionado (+ ' + addon.price.toFixed(2) + ' €)' : '+ ' + addon.price.toFixed(2) + ' €'}
-                    </span>
-                  </button>
-                );
-              })}
-            </div>
-          </div>
-
-          {/* Pricing & Dual CTA Buttons */}
           <div style={{
-            padding: '32px',
-            backgroundColor: 'var(--bg-light)',
-            border: '1px solid var(--border-color)',
-            display: 'flex',
-            flexDirection: 'column',
-            gap: '16px',
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
+            gap: 'clamp(20px, 3vw, 36px)'
+          }}>
+            <Reveal direction="up" delay={150}>
+              <div style={{ display: 'flex', flexDirection: 'column' }}>
+                <div className="image-hover-zoom" style={{ position: 'relative', width: '100%', height: 'clamp(260px, 22vw, 320px)', marginBottom: '16px', borderRadius: '2px', overflow: 'hidden', backgroundColor: '#EAE6DF' }}>
+                  <Image src="/maca1/maca1_3.png" alt="Curvatura ergonómica contínua" fill style={{ objectFit: 'cover', transition: 'transform 0.8s' }} />
+                </div>
+                <h3 style={{ fontFamily: 'var(--font-sans)', fontSize: '14px', fontWeight: 600, color: '#1C1A18', marginBottom: '6px' }}>
+                  Curvatura Ergonómica Contínua
+                </h3>
+                <p style={{ fontFamily: 'var(--font-sans)', fontSize: '12.5px', lineHeight: 1.6, color: '#55514B' }}>
+                  Apoio lombar contínuo que elimina tensões na coluna e nos quadris durante procedimentos longos.
+                </p>
+              </div>
+            </Reveal>
+
+            <Reveal direction="up" delay={250}>
+              <div style={{ display: 'flex', flexDirection: 'column' }}>
+                <div className="image-hover-zoom" style={{ position: 'relative', width: '100%', height: 'clamp(260px, 22vw, 320px)', marginBottom: '16px', borderRadius: '2px', overflow: 'hidden', backgroundColor: '#EAE6DF' }}>
+                  <Image src="/maca1/maca1_2.png" alt="Base cilíndrica escultural" fill style={{ objectFit: 'cover', transition: 'transform 0.8s' }} />
+                </div>
+                <h3 style={{ fontFamily: 'var(--font-sans)', fontSize: '14px', fontWeight: 600, color: '#1C1A18', marginBottom: '6px' }}>
+                  Base Cilíndrica Escultural
+                </h3>
+                <p style={{ fontFamily: 'var(--font-sans)', fontSize: '12.5px', lineHeight: 1.6, color: '#55514B' }}>
+                  Estabilidade arquitetónica sem ruídos mecânicos, com revestimento coordenado ou madeira nobre.
+                </p>
+              </div>
+            </Reveal>
+
+            <Reveal direction="up" delay={350}>
+              <div style={{ display: 'flex', flexDirection: 'column' }}>
+                <div className="image-hover-zoom" style={{ position: 'relative', width: '100%', height: 'clamp(260px, 22vw, 320px)', marginBottom: '16px', borderRadius: '2px', overflow: 'hidden', backgroundColor: '#EAE6DF' }}>
+                  <Image src="/maca1/maca1_4.png" alt="Tecido Bouclé e Resistência" fill style={{ objectFit: 'cover', transition: 'transform 0.8s' }} />
+                </div>
+                <h3 style={{ fontFamily: 'var(--font-sans)', fontSize: '14px', fontWeight: 600, color: '#1C1A18', marginBottom: '6px' }}>
+                  Bouclé Têxtil Premium
+                </h3>
+                <p style={{ fontFamily: 'var(--font-sans)', fontSize: '12.5px', lineHeight: 1.6, color: '#55514B' }}>
+                  Toque têxtil aveludado de alta sofisticação com tratamento antimanchas e higienização fácil.
+                </p>
+              </div>
+            </Reveal>
+
+            <Reveal direction="up" delay={450}>
+              <div style={{ display: 'flex', flexDirection: 'column' }}>
+                <div className="image-hover-zoom" style={{ position: 'relative', width: '100%', height: 'clamp(260px, 22vw, 320px)', marginBottom: '16px', borderRadius: '2px', overflow: 'hidden', backgroundColor: '#EAE6DF' }}>
+                  <Image src="/photos/detalhe/detalhe.png" alt="Acabamentos por medida" fill style={{ objectFit: 'cover', transition: 'transform 0.8s' }} />
+                </div>
+                <h3 style={{ fontFamily: 'var(--font-sans)', fontSize: '14px', fontWeight: 600, color: '#1C1A18', marginBottom: '6px' }}>
+                  Acabamentos por Medida
+                </h3>
+                <p style={{ fontFamily: 'var(--font-sans)', fontSize: '12.5px', lineHeight: 1.6, color: '#55514B' }}>
+                  Escolha o tom, o tecido e grave a assinatura visual exclusiva do seu atelier.
+                </p>
+              </div>
+            </Reveal>
+          </div>
+        </div>
+      </section>
+
+      {/* 03 — ESPECIFICAÇÕES TÉCNICAS (MINIMALIST CLEAN GRID) */}
+      <section style={{
+        padding: 'clamp(80px, 9vw, 130px) 0'
+      }}>
+        <div className="editorial-container">
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'minmax(300px, 1fr) minmax(320px, 1.25fr)',
+            gap: 'clamp(48px, 6vw, 84px)',
             alignItems: 'center'
           }}>
-            <div style={{ fontSize: '12px', letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--nude-taupe)' }}>
-              Valor Total Personalizado
+            <div>
+              <span style={{
+                fontFamily: 'var(--font-sans)',
+                fontSize: '11px',
+                fontWeight: 600,
+                letterSpacing: '0.2em',
+                textTransform: 'uppercase',
+                color: '#8E867C',
+                display: 'block',
+                marginBottom: '14px'
+              }}>
+                FICHA TÉCNICA
+              </span>
+              <h2 style={{
+                fontFamily: 'var(--font-sans)',
+                fontSize: 'clamp(28px, 3.4vw, 42px)',
+                fontWeight: 400,
+                lineHeight: 1.15,
+                letterSpacing: '-0.025em',
+                color: '#1C1A18',
+                marginBottom: '32px'
+              }}>
+                Dimensões e proporções milimétricas.
+              </h2>
+
+              <div style={{
+                display: 'flex',
+                flexDirection: 'column',
+                gap: '16px',
+                fontFamily: 'var(--font-sans)',
+                fontSize: '14px',
+                borderTop: '1px solid #ECE7DE',
+                paddingTop: '24px'
+              }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+                  <span style={{ color: '#8E867C' }}>Comprimento Total</span>
+                  <span style={{ fontWeight: 500, color: '#1C1A18' }}>192 cm</span>
+                </div>
+                <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+                  <span style={{ color: '#8E867C' }}>Largura de Conforto</span>
+                  <span style={{ fontWeight: 500, color: '#1C1A18' }}>76 cm</span>
+                </div>
+                <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+                  <span style={{ color: '#8E867C' }}>Altura de Trabalho</span>
+                  <span style={{ fontWeight: 500, color: '#1C1A18' }}>78 cm (ergonomia para sentar/atender)</span>
+                </div>
+                <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+                  <span style={{ color: '#8E867C' }}>Capacidade Estrutural</span>
+                  <span style={{ fontWeight: 500, color: '#1C1A18' }}>Até 260 kg estáticos</span>
+                </div>
+                <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+                  <span style={{ color: '#8E867C' }}>Prazo de Confeção</span>
+                  <span style={{ fontWeight: 500, color: '#1C1A18' }}>7 a 10 dias úteis</span>
+                </div>
+              </div>
             </div>
-            <div style={{ fontFamily: 'var(--font-title)', fontSize: '36px', fontWeight: 200, color: 'var(--text-main)' }}>
-              {pixPrice.toLocaleString('pt-PT', { minimumFractionDigits: 2 })} €
-              <span style={{ fontSize: '14px', color: 'var(--nude-linen)', marginLeft: '8px' }}>a pronto pagamento</span>
-            </div>
-            <div style={{ fontSize: '13px', color: 'var(--text-muted)' }}>
-              ou 12 prestações de {(totalPrice / 12).toLocaleString('pt-PT', { minimumFractionDigits: 2 })} € sem juros com cartão
-            </div>
-            
-            {/* Dual High Contrast CTA Buttons */}
+
             <div style={{
-              display: 'flex',
-              flexDirection: 'column',
-              gap: '12px',
+              position: 'relative',
               width: '100%',
-              maxWidth: '420px',
-              marginTop: '12px'
+              height: 'clamp(320px, 38vw, 460px)',
+              backgroundColor: 'transparent'
             }}>
-              {/* Direct WhatsApp Purchase */}
-              <button
-                onClick={handleBuyWhatsApp}
-                className="btn-primary-nude"
-                style={{
-                  width: '100%',
-                  padding: '16px'
-                }}
-              >
-                <span>Encomendar via WhatsApp</span>
-                <span>→</span>
-              </button>
-
-              {/* Add to Cart */}
-              <button
-                onClick={handleAddToCart}
-                className="btn-secondary-nude"
-                style={{
-                  width: '100%',
-                  padding: '14px'
-                }}
-              >
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
-                  <line x1="3" y1="6" x2="21" y2="6" />
-                  <path d="M16 10a4 4 0 0 1-8 0" />
-                </svg>
-                <span>Adicionar ao Carrinho</span>
-              </button>
+              <Image src="/maca1/maca1_1.png" alt="Dimensões Maca Sculpt Wave" fill style={{ objectFit: 'contain' }} />
             </div>
           </div>
-
         </div>
       </section>
 
-      {/* Specifications 3-Column Grid */}
-      <section className="section-manifesto border-b">
-        <div className="manifesto-col border-r">
-          <span className="manifesto-num">DIMENSÕES & PESO</span>
-          <div>
-            <h3 className="manifesto-title">{product.dimensions.length} × {product.dimensions.width}</h3>
-            <p className="manifesto-desc">
-              Altura de {product.dimensions.height}. Estrutura em multilaminado naval com capacidade para {product.dimensions.weightCapacity}.
-            </p>
-          </div>
-        </div>
-        <div className="manifesto-col border-r">
-          <span className="manifesto-num">CONSTRUÇÃO & RELEVO</span>
-          <div>
-            <h3 className="manifesto-title">Arco Escultural Contínuo</h3>
-            <p className="manifesto-desc">
-              Sem emendas aparentes, garantindo postura correta à profissional e imponência arquitetónica ao ambiente.
-            </p>
-          </div>
-        </div>
-        <div className="manifesto-col">
-          <span className="manifesto-num">GARANTIA & TRANSPORTE</span>
-          <div>
-            <h3 className="manifesto-title">5 Anos de Garantia</h3>
-            <p className="manifesto-desc">
-              Garantia estrutural de fábrica e entrega assegurada em embalagem reforçada para todo o território nacional.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <SiteFooter />
+      {/* Unified Luxury Footer */}
+      <Footer />
     </main>
   );
 }

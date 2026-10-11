@@ -1,384 +1,709 @@
+'use client';
+
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Navbar } from './components/Navbar';
-import { SiteFooter } from './components/SiteFooter';
+import { Footer } from './components/Footer';
+import { Reveal } from './components/ScrollReveal';
 
 export default function HomePage() {
+  const videoRef = React.useRef<HTMLVideoElement>(null);
+
+  React.useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.muted = true;
+      videoRef.current.play().catch(() => {});
+    }
+  }, []);
+
   return (
-    <main className="page-container">
+    <main className="editorial-page" style={{ backgroundColor: '#FAF9F6', minHeight: '100vh', color: '#1C1A18' }}>
       
-      {/* 01 — HEADER COM LINKS DIRETOS NO DESKTOP */}
-      <Navbar />
+      {/* 01 — NAVBAR COM SOBREPOSIÇÃO 100% TRANSPARENTE NA HERO */}
+      <Navbar transparent={true} />
 
-      {/* 02 — TÍTULO DA PÁGINA / INFINITE MARQUEE */}
-      <section className="section-page-title border-b">
-        <div className="marquee-track" aria-hidden="true">
-          {/* Marquee Group 1 */}
-          <div className="marquee-group">
-            <span className="marquee-item">
-              Atelier de Macas <span className="italic">de Alta Costura</span>
-              <span className="marquee-dot">•</span>
-            </span>
-            <span className="marquee-item">
-              Maca Sculpt & <span className="italic">Maca Royale</span>
-              <span className="marquee-dot">•</span>
-            </span>
-            <span className="marquee-item">
-              Ergonomia de <span className="italic">Alta Performance</span>
-              <span className="marquee-dot">•</span>
-            </span>
-            <span className="marquee-item">
-              Espuma D33 de <span className="italic">Densidade Progressiva</span>
-              <span className="marquee-dot">•</span>
-            </span>
-            <span className="marquee-item">
-              Estrutura com <span className="italic">5 Anos de Garantia</span>
-              <span className="marquee-dot">•</span>
-            </span>
-            <span className="marquee-item">
-              Bordado de Assinatura com a sua <span className="italic">Marca</span>
-              <span className="marquee-dot">•</span>
-            </span>
-            <span className="marquee-item">
-              Confeção Sob Medida para <span className="italic">Clínicas & Spas</span>
-              <span className="marquee-dot">•</span>
-            </span>
-            <span className="marquee-item">
-              NUDE REST <span className="italic">Atelier</span>
-              <span className="marquee-dot">•</span>
-            </span>
-          </div>
-
-          {/* Marquee Group 2 (Duplicate for infinite seamless loop) */}
-          <div className="marquee-group" aria-hidden="true">
-            <span className="marquee-item">
-              Atelier de Macas <span className="italic">de Alta Costura</span>
-              <span className="marquee-dot">•</span>
-            </span>
-            <span className="marquee-item">
-              Maca Sculpt & <span className="italic">Maca Royale</span>
-              <span className="marquee-dot">•</span>
-            </span>
-            <span className="marquee-item">
-              Ergonomia de <span className="italic">Alta Performance</span>
-              <span className="marquee-dot">•</span>
-            </span>
-            <span className="marquee-item">
-              Espuma D33 de <span className="italic">Densidade Progressiva</span>
-              <span className="marquee-dot">•</span>
-            </span>
-            <span className="marquee-item">
-              Estrutura com <span className="italic">5 Anos de Garantia</span>
-              <span className="marquee-dot">•</span>
-            </span>
-            <span className="marquee-item">
-              Bordado de Assinatura com a sua <span className="italic">Marca</span>
-              <span className="marquee-dot">•</span>
-            </span>
-            <span className="marquee-item">
-              Confeção Sob Medida para <span className="italic">Clínicas & Spas</span>
-              <span className="marquee-dot">•</span>
-            </span>
-            <span className="marquee-item">
-              NUDE REST <span className="italic">Atelier</span>
-              <span className="marquee-dot">•</span>
-            </span>
-          </div>
-        </div>
-      </section>
-
-      {/* 03 — HERO PRINCIPAL (2/3 VÍDEO + 1/3 TEXTO COM ANIMAÇÃO) */}
-      <section className="section-hero section-hero-home border-b">
-        <div className="hero-col-left border-r">
+      {/* 02 — HERO SECTION FULL SCREEN (100% DA TELA COM IMAGEM COBRINDO TUDO) */}
+      <section className="editorial-hero" style={{
+        position: 'relative',
+        width: '100%',
+        minHeight: '100vh',
+        display: 'flex',
+        alignItems: 'center',
+        overflow: 'hidden'
+      }}>
+        {/* Full Bleed Background Video */}
+        <div style={{
+          position: 'absolute',
+          inset: 0,
+          zIndex: 1,
+          overflow: 'hidden'
+        }}>
           <video
-            src="/video_hero.mp4"
+            ref={videoRef}
             autoPlay
             loop
             muted
             playsInline
-            style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
-          />
-        </div>
-        <div className="hero-col-right">
-          <h2 className="hero-quote">
-            Atelier de macas,<br />
-            ergonomia &<br />
-            design por medida<br />
-            <span className="line-italic">NUDE REST</span>
-          </h2>
-        </div>
-      </section>
-
-      {/* 04 — TEXTO BIOGRÁFICO COM MONOGRAMAS EM FUNDO BRANCO */}
-      <section className="section-bio border-b">
-        {/* Logotipo Monograma NR (Bottom-Left) */}
-        <div className="decor-slot-bottom-left">
-          <img
-            src="/logotipo.png"
-            alt="NUDE REST Monograma"
-          />
+            suppressHydrationWarning
+            poster="/photos/hero.png"
+            style={{
+              width: '100%',
+              height: '100%',
+              objectFit: 'cover',
+              objectPosition: 'center 35%'
+            }}
+          >
+            <source src="/videohero.mp4" type="video/mp4" />
+          </video>
+          {/* Subtle Luminous Gradient Overlay */}
+          <div style={{
+            position: 'absolute',
+            inset: 0,
+            background: 'linear-gradient(90deg, rgba(18, 17, 16, 0.75) 0%, rgba(18, 17, 16, 0.42) 45%, rgba(18, 17, 16, 0.05) 100%)'
+          }} />
         </div>
 
-        {/* Center Bio Paragraphs */}
-        <div className="bio-text-center">
-          <p>
-            Concebidas para transformar a experiência estética num momento de repouso absoluto. A NUDE REST é especializada em dois modelos de assinatura: a <strong>Maca Sculpt (Sculpt Wave)</strong> e a <strong>Maca Royale (Royale Anatómica)</strong>. Ambas são projetadas artesanalmente com curvatura de alívio lombar, espuma multi-densidade D33 Ultra Soft e revestimento nobre de elevada resistência.
-          </p>
-          <p>
-            Com dezenas de combinações na paleta Nude, escolha entre pés em aço com banho dourado Champagne ou bases revestidas por medida, com a opção de gravação em alta definição do logótipo da sua clínica. Uma composição arquitetónica sofisticada com 5 anos de garantia estrutural.
-          </p>
-        </div>
+        {/* Hero Content Overlay */}
+        <div className="editorial-container" style={{
+          position: 'relative',
+          zIndex: 10,
+          width: '100%',
+          paddingTop: 'clamp(80px, 10vh, 120px)',
+          paddingBottom: 'clamp(48px, 6vh, 80px)'
+        }}>
+          <div style={{ maxWidth: '600px' }}>
+            <Reveal direction="up" delay={150}>
+              <h1 style={{
+                fontFamily: 'var(--font-editorial)',
+                fontSize: 'clamp(42px, 5.2vw, 70px)',
+                fontWeight: 300,
+                lineHeight: 1.08,
+                letterSpacing: '-0.025em',
+                color: '#EDE8DF',
+                marginBottom: '26px'
+              }}>
+                Uma nova forma<br />
+                de olhar para<br />
+                os espaços de beleza.
+              </h1>
+            </Reveal>
 
-        {/* Logotipo Monograma NR (Top-Right) */}
-        <div className="decor-slot-top-right">
-          <img
-            src="/logotipo.png"
-            alt="NUDE REST Monograma"
-          />
-        </div>
-      </section>
+            {/* Subtle Divider Line */}
+            <Reveal direction="up" delay={250}>
+              <div style={{
+                width: '38px',
+                height: '1px',
+                backgroundColor: 'rgba(237, 232, 223, 0.5)',
+                marginBottom: '26px'
+              }} />
+            </Reveal>
 
-      {/* 05 — GALERIA / OS 2 MODELOS DE MACAS & PERSONALIZAÇÃO */}
-      <section className="section-gallery border-b">
-        {/* Left Lead Column */}
-        <div className="gallery-lead-col border-r">
-          <h3 className="gallery-lead-text">
-            Os Nossos 2 Modelos<br />
-            <span className="italic">& acabamentos</span>
-          </h3>
-        </div>
+            <Reveal direction="up" delay={350}>
+              <p style={{
+                fontFamily: 'var(--font-sans)',
+                fontSize: 'clamp(15px, 1.15vw, 16.5px)',
+                lineHeight: 1.75,
+                color: '#C8C2B7',
+                maxWidth: '520px',
+                marginBottom: '36px'
+              }}>
+                A NUDE REST nasceu da vivência prática no setor e da decisão de redesenhar a peça central do atendimento, integrando ergonomia ativa, conforto e identidade espacial.
+              </p>
+            </Reveal>
 
-        {/* Horizontal Cards */}
-        <div className="gallery-scroll-strip">
-          {/* Tile 1: Maca Sculpt — Sculpt Wave */}
-          <Link href="/maca-modelo-1" style={{ textDecoration: 'none', color: 'inherit' }} className="gallery-tile border-r">
-            <div className="gallery-tile-img-box">
-              <img
-                src="/assets/maca1/maca1_main.png"
-                alt="Maca Sculpt — Sculpt Wave"
-              />
-            </div>
-            <h4 className="gallery-tile-heading">Maca Sculpt — Sculpt Wave</h4>
-            <p className="gallery-tile-desc">
-              Design em arco escultural contínuo com base cilíndrica e estofamento em tecido texturado de luxo.
-            </p>
-          </Link>
-
-          {/* Tile 2: Maca Royale — Royale Anatómica */}
-          <Link href="/maca-modelo-2" style={{ textDecoration: 'none', color: 'inherit' }} className="gallery-tile border-r">
-            <div className="gallery-tile-img-box">
-              <img
-                src="/assets/maca2/maca2_main.png"
-                alt="Maca Royale — Royale Anatómica"
-              />
-            </div>
-            <h4 className="gallery-tile-heading">Maca Royale — Royale Anatómica</h4>
-            <p className="gallery-tile-desc">
-              Estofamento acolchoado capitonê de alto relevo com pés em X em acabamento dourado Champagne.
-            </p>
-          </Link>
-
-          {/* Tile 3: Detalhes & Textura Modelo 1 */}
-          <div className="gallery-tile border-r">
-            <div className="gallery-tile-img-box">
-              <img
-                src="/assets/maca1/maca1_detail.png"
-                alt="Pormenor de Costura Modelo 1"
-              />
-            </div>
-            <h4 className="gallery-tile-heading">Acabamento Nobre Modelo 1</h4>
-            <p className="gallery-tile-desc">
-              Curvatura anatómica com costura artesanal francesa e manta de conforto integrada.
-            </p>
-          </div>
-
-          {/* Tile 4: Estrutura Dourada Modelo 2 */}
-          <div className="gallery-tile border-r">
-            <div className="gallery-tile-img-box">
-              <img
-                src="/assets/maca2/maca2_angle2.png"
-                alt="Pés Dourados Modelo 2"
-              />
-            </div>
-            <h4 className="gallery-tile-heading">Estrutura em X Modelo 2</h4>
-            <p className="gallery-tile-desc">
-              Pés em aço carbono microtexturado em tom ouro nobre com máxima estabilidade estrutural.
-            </p>
-          </div>
-
-          {/* Tile 5: Almofada & Gravação */}
-          <div className="gallery-tile">
-            <div className="gallery-tile-img-box">
-              <img
-                src="/assets/maca2/maca2_gallery1.png"
-                alt="Ergonomia Cervical"
-              />
-            </div>
-            <h4 className="gallery-tile-heading">Ergonomia & Almofada</h4>
-            <p className="gallery-tile-desc">
-              Apoio cervical articulado por medida com possibilidade de gravação da sua marca.
-            </p>
+            <Reveal direction="up" delay={450}>
+              <div>
+                <Link
+                  href="/sobre"
+                  className="editorial-btn"
+                  style={{
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '10px',
+                    padding: '13px 32px',
+                    fontSize: '11px',
+                    fontFamily: 'var(--font-sans)',
+                    fontWeight: 500,
+                    letterSpacing: '0.16em',
+                    textTransform: 'uppercase',
+                    color: '#EDE8DF',
+                    border: '1px solid rgba(237, 232, 223, 0.6)',
+                    borderRadius: '2px',
+                    textDecoration: 'none',
+                    transition: 'all 0.3s cubic-bezier(0.16, 1, 0.3, 1)',
+                    backgroundColor: 'rgba(18, 17, 16, 0.4)',
+                    backdropFilter: 'blur(8px)'
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.borderColor = '#EDE8DF';
+                    e.currentTarget.style.backgroundColor = 'rgba(237, 232, 223, 0.15)';
+                    e.currentTarget.style.transform = 'translateY(-2px)';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.borderColor = 'rgba(237, 232, 223, 0.6)';
+                    e.currentTarget.style.backgroundColor = 'rgba(18, 17, 16, 0.4)';
+                    e.currentTarget.style.transform = 'translateY(0)';
+                  }}
+                >
+                  <span>A NOSSA HISTÓRIA</span>
+                  <span>→</span>
+                </Link>
+              </div>
+            </Reveal>
           </div>
         </div>
       </section>
 
-      {/* 06 — BLOCO EDITORIAL FINAL (27% / 73%) */}
-      <section className="section-final-editorial border-b">
-        <div className="final-col-left border-r">
-          <img
-            src="/assets/maca1/maca1_angle2.png"
-            alt="Atelier NUDE REST — Modelo 1"
-          />
-        </div>
-        <div className="final-col-right">
-          <h3 className="final-title">Ergonomia com <span className="italic">propósito</span></h3>
-          <div className="final-paras">
-            <p>
-              Acreditamos que o mobiliário clínico deve ser a extensão da excelência profissional. Cada pormenor da NUDE REST foi estudado para eliminar pontos de pressão na coluna vertebral da paciente e assegurar que a profissional trabalhe com acesso desobstruído e conforto postural.
-            </p>
-            <p>
-              Utilizamos espumas de alta resiliência D33 que não deformam com o tempo, aliadas a couros náuticos resistentes à assepsia constante com álcool 70%. Segurança estrutural, transporte dedicado com seguro total e a garantia de um investimento que valoriza o seu atendimento.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* 07 — PRINCIPLES & PHILOSOPHY (3-Column Grid) */}
-      <section className="section-manifesto border-b">
-        <div className="manifesto-col border-r">
-          <span className="manifesto-num">01 / ERGONOMIA</span>
-          <div>
-            <h3 className="manifesto-title">Alívio Postural Ativo</h3>
-            <p className="manifesto-desc">
-              Desenvolvida com curvatura milimétrica que acomoda o corpo em relaxamento profundo durante longas sessões de atendimento.
-            </p>
-          </div>
-        </div>
-        <div className="manifesto-col border-r">
-          <span className="manifesto-num">02 / ARTESANATO</span>
-          <div>
-            <h3 className="manifesto-title">Paleta Nude & Bordado</h3>
-            <p className="manifesto-desc">
-              Confeção por medida na paleta exclusiva NUDE REST com gravação do logótipo da sua clínica em fios acetinados.
-            </p>
-          </div>
-        </div>
-        <div className="manifesto-col">
-          <span className="manifesto-num">03 / SEGURANÇA</span>
-          <div>
-            <h3 className="manifesto-title">5 Anos de Garantia</h3>
-            <p className="manifesto-desc">
-              Chassi reforçado em aço e madeira tratada com garantia estrutural de 5 anos e envio seguro e assegurado.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* 08 — SELECTED ARCHIVE / CURATED WORKS (4-Column Grid) */}
-      <section className="section-archive border-b">
-        <div className="section-archive-header border-b">
-          <h2 className="archive-header-title">Arquivo <span className="italic">de Produção</span></h2>
-          <span className="archive-header-index">Vol. 01 — 2026</span>
-        </div>
-        <div className="section-archive-grid">
-          {/* Archive Item 1 */}
-          <div className="archive-card border-r">
-            <div className="archive-card-image">
-              <img
-                src="/assets/maca1/maca1_main.png"
-                alt="Maca Sculpt — Sculpt Wave"
-              />
-            </div>
-            <span className="archive-card-meta">Maca Sculpt / 01</span>
-            <h4 className="archive-card-title">Sculpt Wave Nude</h4>
-            <p className="archive-card-desc">
-              Maca Sculpt em curva contínua escultural com revestimento texturado e base cilíndrica.
-            </p>
-          </div>
-          {/* Archive Item 2 */}
-          <div className="archive-card border-r">
-            <div className="archive-card-image">
-              <img
-                src="/assets/maca2/maca2_main.png"
-                alt="Maca Royale — Royale Anatómica"
-              />
-            </div>
-            <span className="archive-card-meta">Maca Royale / 02</span>
-            <h4 className="archive-card-title">Royale Gold Champagne</h4>
-            <p className="archive-card-desc">
-              Maca Royale com acolchoamento capitonê anatómico e pés em X em acabamento dourado fosco.
-            </p>
-          </div>
-          {/* Archive Item 3 */}
-          <div className="archive-card border-r">
-            <div className="archive-card-image">
-              <img
-                src="/assets/maca1/maca1_detail.png"
-                alt="Pormenor de Costura Maca Sculpt"
-              />
-            </div>
-            <span className="archive-card-meta">Maca Sculpt / 03</span>
-            <h4 className="archive-card-title">Curvatura de Precisão</h4>
-            <p className="archive-card-desc">
-              Espuma D33 Ultra Soft com alívio lombar contínuo e manta aveludada por medida.
-            </p>
-          </div>
-          {/* Archive Item 4 */}
-          <div className="archive-card">
-            <div className="archive-card-image">
-              <img
-                src="/assets/maca2/maca2_gallery1.png"
-                alt="Pés Dourados Modelo 2"
-              />
-            </div>
-            <span className="archive-card-meta">Maca Modelo 2 / 04</span>
-            <h4 className="archive-card-title">Chassi & Conforto</h4>
-            <p className="archive-card-desc">
-              Estrutura reforçada de elevada sustentação e apoio cervical acolchoado ergonómico.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* 09 — BIG PULL QUOTE STATEMENT */}
-      <section className="section-quote-statement border-b">
-        <blockquote className="statement-quote">
-          “O luxo no atendimento começa onde a cliente repousa: na união perfeita entre ergonomia absoluta e design por medida.”
-        </blockquote>
-        <span className="statement-author">— NUDE REST Manifesto</span>
-      </section>
-
-      {/* 10 — CONTACT & INQUIRIES (50% / 50%) */}
-      <section className="section-contact border-b">
-        <div className="contact-col-left border-r">
-          <h2 className="contact-heading">Personalize o seu <br /><span className="italic">espaço</span></h2>
-          <p className="contact-note">
-            Disponível para encomendas de macas feitas por medida, escolha de paleta exclusiva, bordado de marca e faturação para clínicas e spas.
-          </p>
-        </div>
-        <div className="contact-col-right">
-          <div className="contact-item-group">
+      {/* 03 — REFERENCE SECTION 1: ARCHIVE / COLLECTION GALLERY ROW (3 PROPORTIONAL CARDS) */}
+      <section style={{
+        padding: 'clamp(64px, 7vw, 100px) 0',
+        backgroundColor: '#FAF9F6'
+      }}>
+        <div className="editorial-container">
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'minmax(220px, 0.7fr) minmax(320px, 3.3fr)',
+            gap: 'clamp(24px, 3vw, 48px)',
+            alignItems: 'start'
+          }}>
+            {/* Left Column: Intro text */}
             <div>
-              <div className="contact-item-label">Correspondência Direta</div>
-              <a href="mailto:contacto@nuderest.com" className="contact-item-val">contacto@nuderest.com</a>
+
+
+              <Reveal direction="up" delay={200}>
+                <h2 style={{
+                  fontFamily: 'var(--font-sans)',
+                  fontSize: 'clamp(24px, 2.4vw, 32px)',
+                  fontWeight: 500,
+                  lineHeight: 1.2,
+                  letterSpacing: '-0.02em',
+                  color: '#1C1A18',
+                  marginBottom: '14px'
+                }}>
+                  Peças de Assinatura
+                </h2>
+              </Reveal>
+
+              <Reveal direction="up" delay={300}>
+                <p style={{
+                  fontFamily: 'var(--font-sans)',
+                  fontSize: '13px',
+                  lineHeight: 1.65,
+                  color: '#6E6860',
+                  marginBottom: '24px',
+                  maxWidth: '220px'
+                }}>
+                  Ergonomia precisa e acabamentos por medida para clínicas de alto padrão.
+                </p>
+              </Reveal>
+
+              <Reveal direction="up" delay={400}>
+                <Link
+                  href="/colecoes"
+                  style={{
+                    fontFamily: 'var(--font-sans)',
+                    fontSize: '11px',
+                    fontWeight: 500,
+                    letterSpacing: '0.14em',
+                    textTransform: 'uppercase',
+                    color: '#1C1A18',
+                    textDecoration: 'none',
+                    borderBottom: '1px solid #1C1A18',
+                    paddingBottom: '2px',
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '6px'
+                  }}
+                >
+                  <span>VER TODAS</span>
+                  <span>→</span>
+                </Link>
+              </Reveal>
             </div>
-            <div>
-              <div className="contact-item-label">Showroom & Atelier</div>
-              <p className="contact-item-val" style={{ fontSize: '19px' }}>Atelier NUDE REST — Atendimento Exclusivo</p>
-            </div>
-            <div>
-              <div className="contact-item-label">WhatsApp VIP Concierge</div>
-              <a href="https://wa.me/351910000000" target="_blank" rel="noopener noreferrer" className="contact-item-val">
-                +351 910 000 000 / WhatsApp
-              </a>
+
+            {/* Right Column: 3 Portrait Image Cards */}
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(3, 1fr)',
+              gap: 'clamp(16px, 2.5vw, 32px)'
+            }}>
+              {/* Card 1: Maca Sculpt */}
+              <Reveal direction="up" delay={150}>
+                <Link href="/maca-modelo-1" style={{ textDecoration: 'none', color: 'inherit', display: 'flex', flexDirection: 'column' }}>
+                  <div className="image-hover-zoom" style={{
+                    position: 'relative',
+                    width: '100%',
+                    aspectRatio: '3/4.2',
+                    backgroundColor: '#EAE6DF',
+                    borderRadius: '2px',
+                    overflow: 'hidden',
+                    marginBottom: '14px'
+                  }}>
+                    <Image
+                      src="/photos/pecasdeassinatura/_C1M0021.jpg"
+                      alt="Maca Sculpt Wave"
+                      fill
+                      style={{ objectFit: 'cover', objectPosition: 'center 45%', transition: 'transform 0.8s cubic-bezier(0.16, 1, 0.3, 1)' }}
+                    />
+                  </div>
+                  <h3 style={{
+                    fontFamily: 'var(--font-sans)',
+                    fontSize: '15px',
+                    fontWeight: 500,
+                    letterSpacing: '-0.01em',
+                    color: '#1C1A18',
+                    marginBottom: '4px'
+                  }}>
+                    Maca Sculpt Wave
+                  </h3>
+                  <span style={{
+                    fontFamily: 'var(--font-sans)',
+                    fontSize: '12px',
+                    color: '#8E867C'
+                  }}>
+                    Design em Arco Contínuo
+                  </span>
+                </Link>
+              </Reveal>
+
+              {/* Card 2: Maca Royale */}
+              <Reveal direction="up" delay={250}>
+                <Link href="/maca-modelo-2" style={{ textDecoration: 'none', color: 'inherit', display: 'flex', flexDirection: 'column' }}>
+                  <div className="image-hover-zoom" style={{
+                    position: 'relative',
+                    width: '100%',
+                    aspectRatio: '3/4.2',
+                    backgroundColor: '#EAE6DF',
+                    borderRadius: '2px',
+                    overflow: 'hidden',
+                    marginBottom: '14px'
+                  }}>
+                    <Image
+                      src="/photos/pecasdeassinatura/_C1M0299.jpg"
+                      alt="Maca Royale Anatómica"
+                      fill
+                      style={{ objectFit: 'cover', objectPosition: 'center 50%', transition: 'transform 0.8s cubic-bezier(0.16, 1, 0.3, 1)' }}
+                    />
+                  </div>
+                  <h3 style={{
+                    fontFamily: 'var(--font-sans)',
+                    fontSize: '15px',
+                    fontWeight: 500,
+                    letterSpacing: '-0.01em',
+                    color: '#1C1A18',
+                    marginBottom: '4px'
+                  }}>
+                    Maca Royale Anatómica
+                  </h3>
+                  <span style={{
+                    fontFamily: 'var(--font-sans)',
+                    fontSize: '12px',
+                    color: '#8E867C'
+                  }}>
+                    Capitoné & Pés em X
+                  </span>
+                </Link>
+              </Reveal>
+
+              {/* Card 3: Atelier Custom */}
+              <Reveal direction="up" delay={350}>
+                <Link href="/maca-sculpt-arc" style={{ textDecoration: 'none', color: 'inherit', display: 'flex', flexDirection: 'column' }}>
+                  <div className="image-hover-zoom" style={{
+                    position: 'relative',
+                    width: '100%',
+                    aspectRatio: '3/4.2',
+                    backgroundColor: '#EAE6DF',
+                    borderRadius: '2px',
+                    overflow: 'hidden',
+                    marginBottom: '14px'
+                  }}>
+                    <Image
+                      src="/photos/pecasdeassinatura/_C1M0362.jpg"
+                      alt="Personalização Sob Medida"
+                      fill
+                      style={{ objectFit: 'cover', objectPosition: 'center 45%', transition: 'transform 0.8s cubic-bezier(0.16, 1, 0.3, 1)' }}
+                    />
+                  </div>
+                  <h3 style={{
+                    fontFamily: 'var(--font-sans)',
+                    fontSize: '15px',
+                    fontWeight: 500,
+                    letterSpacing: '-0.01em',
+                    color: '#1C1A18',
+                    marginBottom: '4px'
+                  }}>
+                    Personalização Sob Medida
+                  </h3>
+                  <span style={{
+                    fontFamily: 'var(--font-sans)',
+                    fontSize: '12px',
+                    color: '#8E867C'
+                  }}>
+                    Tecidos, Cores & Gravação
+                  </span>
+                </Link>
+              </Reveal>
             </div>
           </div>
         </div>
       </section>
 
-      {/* 11 — EDITORIAL MINIMAL FOOTER */}
-      <SiteFooter />
+      {/* 04 — REFERENCE SECTION 2: ASYMMETRIC RIGHT-BLEED HERO EDITORIAL SHOT */}
+      <section style={{
+        padding: 'clamp(56px, 6vw, 96px) 0',
+        backgroundColor: '#FAF9F6',
+        overflow: 'hidden',
+        width: '100%'
+      }}>
+        <div className="editorial-bleed-right">
+          {/* Left Text Block (1/3 da seção) - distribuído na altura da imagem */}
+          {/* Left Text Block (1/3 da seção) - texto diretamente abaixo do título */}
+          <div className="editorial-bleed-text-col">
+            <Reveal direction="up" delay={150}>
+              <h2 style={{
+                fontFamily: 'var(--font-sans)',
+                fontSize: 'clamp(28px, 3.2vw, 42px)',
+                fontWeight: 400,
+                lineHeight: 1.15,
+                letterSpacing: '-0.025em',
+                color: '#1C1A18',
+                marginBottom: '20px'
+              }}>
+                Da experiência<br />
+                à visão.
+              </h2>
+            </Reveal>
 
+            <Reveal direction="up" delay={250}>
+              <div style={{
+                fontFamily: 'var(--font-sans)',
+                fontSize: 'clamp(14px, 1.05vw, 15.5px)',
+                lineHeight: 1.75,
+                color: '#55514B',
+                display: 'flex',
+                flexDirection: 'column',
+                gap: '16px',
+                marginBottom: '28px'
+              }}>
+                <p>
+                  A NUDE REST nasceu da prática diária no setor da estética e da perceção clara de que o conforto da marquesa dita a experiência de quem cuida e de quem é cuidada.
+                </p>
+                <p>
+                  Criamos peças com presença arquitetónica que transformam os espaços em ambientes de puro acolhimento.
+                </p>
+              </div>
+            </Reveal>
+
+            <Reveal direction="up" delay={350}>
+              <Link
+                href="/sobre"
+                style={{
+                  fontFamily: 'var(--font-sans)',
+                  fontSize: '11px',
+                  fontWeight: 500,
+                  letterSpacing: '0.16em',
+                  textTransform: 'uppercase',
+                  color: '#1C1A18',
+                  textDecoration: 'none',
+                  borderBottom: '1px solid #1C1A18',
+                  paddingBottom: '3px',
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '8px',
+                  transition: 'opacity 0.3s ease'
+                }}
+              >
+                <span>A NOSSA HISTÓRIA</span>
+                <span>→</span>
+              </Link>
+            </Reveal>
+          </div>
+
+          {/* Right Large Landscape Image (2/3 da seção, encostada na borda) */}
+          <Reveal direction="right" delay={200}>
+            <div className="image-hover-zoom editorial-bleed-right-image">
+              <Image
+                src="/photos/sobre/sobre.png"
+                alt="NUDE REST - Da experiência à visão"
+                fill
+                priority
+                style={{
+                  objectFit: 'cover',
+                  objectPosition: 'center center',
+                  transition: 'transform 0.8s cubic-bezier(0.16, 1, 0.3, 1)'
+                }}
+              />
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* 05 — REFERENCE SECTION 3: ASYMMETRIC LEFT-BLEED EDITORIAL SHOT */}
+      <section style={{
+        padding: 'clamp(56px, 6vw, 96px) 0',
+        backgroundColor: '#FAF9F6',
+        overflow: 'hidden',
+        width: '100%'
+      }}>
+        <div className="editorial-bleed-left">
+          {/* Left Large Landscape Image (2/3 da seção, encostada na borda) */}
+          <Reveal direction="left" delay={200}>
+            <div className="image-hover-zoom editorial-bleed-left-image">
+              <Image
+                src="/photos/detalhe/detalhe.png"
+                alt="NUDE REST - Do desenho ao detalhe"
+                fill
+                priority
+                style={{
+                  objectFit: 'cover',
+                  objectPosition: 'center center',
+                  transition: 'transform 0.8s cubic-bezier(0.16, 1, 0.3, 1)'
+                }}
+              />
+            </div>
+          </Reveal>
+
+          {/* Right Text Block (1/3 da seção) - texto diretamente abaixo do título */}
+          <div className="editorial-bleed-text-col">
+            <Reveal direction="up" delay={150}>
+              <h2 style={{
+                fontFamily: 'var(--font-sans)',
+                fontSize: 'clamp(28px, 3.2vw, 42px)',
+                fontWeight: 400,
+                lineHeight: 1.15,
+                letterSpacing: '-0.025em',
+                color: '#1C1A18',
+                marginBottom: '20px'
+              }}>
+                Do desenho<br />
+                ao detalhe.
+              </h2>
+            </Reveal>
+
+            <Reveal direction="up" delay={250}>
+              <div style={{
+                fontFamily: 'var(--font-sans)',
+                fontSize: 'clamp(14px, 1.05vw, 15.5px)',
+                lineHeight: 1.75,
+                color: '#55514B',
+                display: 'flex',
+                flexDirection: 'column',
+                gap: '16px',
+                marginBottom: '28px'
+              }}>
+                <p>
+                  Cada marquesa é concebida com um olhar atento à proporção, à costura e à matéria-prima selecionada com rigor cirúrgico.
+                </p>
+                <p>
+                  A união entre espuma de alta densidade e revestimentos nobres garante uma postura equilibrada e durabilidade incomparável.
+                </p>
+              </div>
+            </Reveal>
+
+            <Reveal direction="up" delay={350}>
+              <Link
+                href="/atelie"
+                style={{
+                  fontFamily: 'var(--font-sans)',
+                  fontSize: '11px',
+                  fontWeight: 500,
+                  letterSpacing: '0.16em',
+                  textTransform: 'uppercase',
+                  color: '#1C1A18',
+                  textDecoration: 'none',
+                  borderBottom: '1px solid #1C1A18',
+                  paddingBottom: '3px',
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '8px',
+                  transition: 'opacity 0.3s ease'
+                }}
+              >
+                <span>CONHECER O ATELIER</span>
+                <span>→</span>
+              </Link>
+            </Reveal>
+          </div>
+        </div>
+      </section>
+
+      {/* 06 — PROCESS HIGHLIGHTS: 4 MINIMALIST REFINED TILES */}
+      <section style={{
+        padding: 'clamp(56px, 6vw, 84px) 0',
+        backgroundColor: '#FAF9F6'
+      }}>
+        <div className="editorial-container">
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
+            gap: 'clamp(18px, 2.5vw, 28px)'
+          }}>
+            {/* Tile 1 */}
+            <Reveal direction="up" delay={100}>
+              <div style={{ display: 'flex', flexDirection: 'column' }}>
+                <div className="image-hover-zoom" style={{
+                  position: 'relative',
+                  width: '100%',
+                  height: 'clamp(280px, 25vw, 380px)',
+                  borderRadius: '2px',
+                  overflow: 'hidden',
+                  backgroundColor: '#EAE6DF',
+                  marginBottom: '16px'
+                }}>
+                  <Image src="/maca1/maca1_2.png" alt="Desenho Ergonómico Maca" fill style={{ objectFit: 'cover', transition: 'transform 0.8s' }} />
+                </div>
+                <h4 style={{ fontFamily: 'var(--font-sans)', fontSize: '13px', fontWeight: 600, color: '#1C1A18', marginBottom: '6px' }}>Ergonomia Ativa</h4>
+                <p style={{ fontSize: '12px', color: '#6E6860', lineHeight: 1.6 }}>Alívio lombar e suporte postural contínuo.</p>
+              </div>
+            </Reveal>
+
+            {/* Tile 2 */}
+            <Reveal direction="up" delay={200}>
+              <div style={{ display: 'flex', flexDirection: 'column' }}>
+                <div className="image-hover-zoom" style={{
+                  position: 'relative',
+                  width: '100%',
+                  height: 'clamp(280px, 25vw, 380px)',
+                  borderRadius: '2px',
+                  overflow: 'hidden',
+                  backgroundColor: '#EAE6DF',
+                  marginBottom: '16px'
+                }}>
+                  <Image src="/maca1/maca1_4.png" alt="Matérias Nobres Bouclé" fill style={{ objectFit: 'cover', transition: 'transform 0.8s' }} />
+                </div>
+                <h4 style={{ fontFamily: 'var(--font-sans)', fontSize: '13px', fontWeight: 600, color: '#1C1A18', marginBottom: '6px' }}>Tecidos & Espuma</h4>
+                <p style={{ fontSize: '12px', color: '#6E6860', lineHeight: 1.6 }}>Espuma D33 certificada e tecidos nobres.</p>
+              </div>
+            </Reveal>
+
+            {/* Tile 3 */}
+            <Reveal direction="up" delay={300}>
+              <div style={{ display: 'flex', flexDirection: 'column' }}>
+                <div className="image-hover-zoom" style={{
+                  position: 'relative',
+                  width: '100%',
+                  height: 'clamp(280px, 25vw, 380px)',
+                  borderRadius: '2px',
+                  overflow: 'hidden',
+                  backgroundColor: '#EAE6DF',
+                  marginBottom: '16px'
+                }}>
+                  <Image src="/maca2/maca2_3.png" alt="Confeção Artesanal de Canais" fill style={{ objectFit: 'cover', transition: 'transform 0.8s' }} />
+                </div>
+                <h4 style={{ fontFamily: 'var(--font-sans)', fontSize: '13px', fontWeight: 600, color: '#1C1A18', marginBottom: '6px' }}>Mestres Artesãos</h4>
+                <p style={{ fontSize: '12px', color: '#6E6860', lineHeight: 1.6 }}>Costura manual e precisão milimétrica.</p>
+              </div>
+            </Reveal>
+
+            {/* Tile 4 */}
+            <Reveal direction="up" delay={400}>
+              <div style={{ display: 'flex', flexDirection: 'column' }}>
+                <div className="image-hover-zoom" style={{
+                  position: 'relative',
+                  width: '100%',
+                  height: 'clamp(280px, 25vw, 380px)',
+                  borderRadius: '2px',
+                  overflow: 'hidden',
+                  backgroundColor: '#EAE6DF',
+                  marginBottom: '16px'
+                }}>
+                  <Image src="/maca2/maca2_5.png" alt="Controlo e Acabamento da Maca" fill style={{ objectFit: 'cover', transition: 'transform 0.8s' }} />
+                </div>
+                <h4 style={{ fontFamily: 'var(--font-sans)', fontSize: '13px', fontWeight: 600, color: '#1C1A18', marginBottom: '6px' }}>5 Anos de Garantia</h4>
+                <p style={{ fontSize: '12px', color: '#6E6860', lineHeight: 1.6 }}>Rigor estético e envio assegurado.</p>
+              </div>
+            </Reveal>
+          </div>
+        </div>
+      </section>
+
+      {/* 07 — VALUES STRIP (MINIMALIST 4 COLUMNS) */}
+      <section style={{
+        backgroundColor: '#F3F1EC',
+        color: '#1C1A18',
+        padding: 'clamp(48px, 6vw, 72px) 0'
+      }}>
+        <div className="editorial-container">
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
+            gap: '24px',
+            textAlign: 'center'
+          }}>
+            <Reveal direction="up" delay={100}>
+              <div>
+                <h4 style={{ fontFamily: 'var(--font-sans)', fontSize: '11px', fontWeight: 600, letterSpacing: '0.16em', textTransform: 'uppercase', color: '#1C1A18', marginBottom: '6px' }}>
+                  AUTENTICIDADE
+                </h4>
+                <p style={{ fontFamily: 'var(--font-sans)', fontSize: '12px', color: '#6E6860' }}>
+                  Nascida da vivência prática no setor.
+                </p>
+              </div>
+            </Reveal>
+
+            <Reveal direction="up" delay={200}>
+              <div>
+                <h4 style={{ fontFamily: 'var(--font-sans)', fontSize: '11px', fontWeight: 600, letterSpacing: '0.16em', textTransform: 'uppercase', color: '#1C1A18', marginBottom: '6px' }}>
+                  QUALIDADE ABSOLUTA
+                </h4>
+                <p style={{ fontFamily: 'var(--font-sans)', fontSize: '12px', color: '#6E6860' }}>
+                  Matérias-primas nobres certificadas.
+                </p>
+              </div>
+            </Reveal>
+
+            <Reveal direction="up" delay={300}>
+              <div>
+                <h4 style={{ fontFamily: 'var(--font-sans)', fontSize: '11px', fontWeight: 600, letterSpacing: '0.16em', textTransform: 'uppercase', color: '#1C1A18', marginBottom: '6px' }}>
+                  ESTÉTICA COM SENTIDO
+                </h4>
+                <p style={{ fontFamily: 'var(--font-sans)', fontSize: '12px', color: '#6E6860' }}>
+                  Mobiliário escultural que eleva o espaço.
+                </p>
+              </div>
+            </Reveal>
+
+            <Reveal direction="up" delay={400}>
+              <div>
+                <h4 style={{ fontFamily: 'var(--font-sans)', fontSize: '11px', fontWeight: 600, letterSpacing: '0.16em', textTransform: 'uppercase', color: '#1C1A18', marginBottom: '6px' }}>
+                  BEM-ESTAR
+                </h4>
+                <p style={{ fontFamily: 'var(--font-sans)', fontSize: '12px', color: '#6E6860' }}>
+                  Ergonomia ativa para quem cuida.
+                </p>
+              </div>
+            </Reveal>
+          </div>
+        </div>
+      </section>
+
+      {/* 08 — UNIFIED DARK LUXURY FOOTER */}
+      <Footer />
+
+      {/* Editorial CSS Grid and Layout Rules */}
+      <style jsx global>{`
+        .editorial-container {
+          width: 100%;
+          max-width: 1720px;
+          margin: 0 auto;
+          padding: 0 clamp(16px, 2vw, 32px);
+        }
+
+        .image-hover-zoom:hover img {
+          transform: scale(1.03) !important;
+        }
+
+        .editorial-btn:active {
+          transform: scale(0.98) !important;
+        }
+
+        @media (max-width: 860px) {
+          .editorial-container {
+            padding: 0 16px;
+          }
+        }
+      `}</style>
     </main>
   );
 }

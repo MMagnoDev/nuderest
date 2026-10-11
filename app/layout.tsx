@@ -3,6 +3,7 @@ import './globals.css';
 import { CartProvider } from './context/CartContext';
 import { CartDrawer } from './components/CartDrawer';
 import { SmoothScroll } from './components/SmoothScroll';
+import { ScrollRevealInit } from './components/ScrollReveal';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://nuderest.com.br'),
@@ -49,6 +50,7 @@ export default function RootLayout({
       </head>
       <body>
         <SmoothScroll />
+        <ScrollRevealInit />
         <CartProvider>
           {children}
           <CartDrawer />

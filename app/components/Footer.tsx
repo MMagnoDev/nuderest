@@ -1,168 +1,181 @@
 'use client';
 
 import React from 'react';
+import Link from 'next/link';
 import Image from 'next/image';
-import { ShieldCheck, Lock, Award, Phone, Mail, MapPin } from 'lucide-react';
 
 export const Footer: React.FC = () => {
   return (
     <footer style={{
-      backgroundColor: '#16100C',
-      borderTop: '1px solid var(--border-subtle)',
-      color: 'var(--text-muted)',
-      paddingTop: '80px',
-      paddingBottom: '40px'
+      backgroundColor: '#121110',
+      color: '#EDE8DF',
+      borderTop: '1px solid rgba(255, 255, 255, 0.08)',
+      paddingTop: 'clamp(64px, 8vw, 96px)',
+      paddingBottom: '40px',
+      fontFamily: 'var(--font-sans)'
     }}>
-      <div className="container">
+      <div className="editorial-container">
         
         {/* Main Footer Grid */}
         <div style={{
           display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
-          gap: '48px',
-          marginBottom: '64px'
+          gridTemplateColumns: 'minmax(260px, 1.4fr) repeat(auto-fit, minmax(160px, 1fr))',
+          gap: 'clamp(36px, 5vw, 64px)',
+          marginBottom: 'clamp(48px, 6vw, 72px)'
         }}>
           
           {/* Brand Column */}
           <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
-            <div style={{ position: 'relative', height: '40px', width: '200px' }}>
+            <Link href="/" style={{ textDecoration: 'none', display: 'inline-flex', alignItems: 'center' }}>
               <Image
-                src="/logo.png"
+                src="/logo_clara.png?v=2"
                 alt="NUDE REST"
-                fill
-                style={{ objectFit: 'contain', filter: 'brightness(0) invert(1)' }}
+                width={130}
+                height={54}
+                style={{
+                  height: '36px',
+                  width: 'auto',
+                  objectFit: 'contain',
+                  display: 'block'
+                }}
               />
-            </div>
-            <p style={{ fontSize: '13px', lineHeight: 1.65, color: 'var(--text-muted)' }}>
-              Atelier especializado na conceção e fabrico artesanal de macas ergonómicas personalizadas para clínicas de estética, spas, dermatologia e lash designers de elevado padrão.
+            </Link>
+            <p style={{
+              fontSize: '13.5px',
+              lineHeight: 1.75,
+              color: '#8E867C',
+              maxWidth: '380px'
+            }}>
+              Atelier dedicado à conceção de marquesas ergonómicas de alta performance para espaços de estética, clínicas e dermatologia.
             </p>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--nude-linen)', fontSize: '12px', fontWeight: 600 }}>
-              <ShieldCheck size={16} />
-              <span>Garantia Estrutural de 5 Anos em todas as peças</span>
+            <div style={{
+              fontSize: '11px',
+              letterSpacing: '0.14em',
+              textTransform: 'uppercase',
+              color: '#EDE8DF',
+              opacity: 0.8
+            }}>
+              Garantia Estrutural de 5 Anos
             </div>
           </div>
 
-          {/* Quick Links */}
+          {/* Navigation Column: Modelos */}
           <div>
-            <h4 style={{ fontSize: '14px', color: 'var(--nude-alabaster)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '20px' }}>
-              Coleções & Modelos
+            <h4 style={{
+              fontSize: '11px',
+              fontWeight: 600,
+              letterSpacing: '0.18em',
+              textTransform: 'uppercase',
+              color: '#EDE8DF',
+              marginBottom: '20px'
+            }}>
+              Modelos & Coleções
             </h4>
-            <ul style={{ listStyle: 'none', padding: 0, display: 'flex', flexDirection: 'column', gap: '10px', fontSize: '13px' }}>
-              <li><a href="#catalogo" style={{ color: 'var(--text-muted)', textDecoration: 'none' }}>Maca Nude Rest Royale (Anatómica)</a></li>
-              <li><a href="#catalogo" style={{ color: 'var(--text-muted)', textDecoration: 'none' }}>Maca Sculpt Arc (Design Curvo)</a></li>
-              <li><a href="#catalogo" style={{ color: 'var(--text-muted)', textDecoration: 'none' }}>Maca Studio Elétrica 3M</a></li>
-              <li><a href="#catalogo" style={{ color: 'var(--text-muted)', textDecoration: 'none' }}>Maca Minimalist Pro</a></li>
-              <li><a href="#personalizacao" style={{ color: 'var(--text-muted)', textDecoration: 'none' }}>Paleta de Cores Nude</a></li>
+            <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '12px', fontSize: '13px' }}>
+              <li>
+                <Link href="/maca-modelo-1" style={{ color: '#8E867C', textDecoration: 'none', transition: 'color 0.2s ease' }} onMouseEnter={(e) => (e.currentTarget.style.color = '#EDE8DF')} onMouseLeave={(e) => (e.currentTarget.style.color = '#8E867C')}>
+                  Maca Sculpt Wave
+                </Link>
+              </li>
+              <li>
+                <Link href="/maca-modelo-2" style={{ color: '#8E867C', textDecoration: 'none', transition: 'color 0.2s ease' }} onMouseEnter={(e) => (e.currentTarget.style.color = '#EDE8DF')} onMouseLeave={(e) => (e.currentTarget.style.color = '#8E867C')}>
+                  Maca Royale Anatómica
+                </Link>
+              </li>
+              <li>
+                <Link href="/maca-sculpt-arc" style={{ color: '#8E867C', textDecoration: 'none', transition: 'color 0.2s ease' }} onMouseEnter={(e) => (e.currentTarget.style.color = '#EDE8DF')} onMouseLeave={(e) => (e.currentTarget.style.color = '#8E867C')}>
+                  Personalizador Sob Medida
+                </Link>
+              </li>
+              <li>
+                <Link href="/colecoes" style={{ color: '#8E867C', textDecoration: 'none', transition: 'color 0.2s ease' }} onMouseEnter={(e) => (e.currentTarget.style.color = '#EDE8DF')} onMouseLeave={(e) => (e.currentTarget.style.color = '#8E867C')}>
+                  Comparativo de Coleções
+                </Link>
+              </li>
             </ul>
           </div>
 
-          {/* Institutional */}
+          {/* Navigation Column: O Atelier */}
           <div>
-            <h4 style={{ fontSize: '14px', color: 'var(--nude-alabaster)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '20px' }}>
-              Segurança & Apoio ao Cliente
+            <h4 style={{
+              fontSize: '11px',
+              fontWeight: 600,
+              letterSpacing: '0.18em',
+              textTransform: 'uppercase',
+              color: '#EDE8DF',
+              marginBottom: '20px'
+            }}>
+              A Marca
             </h4>
-            <ul style={{ listStyle: 'none', padding: 0, display: 'flex', flexDirection: 'column', gap: '12px', fontSize: '13px' }}>
-              <li style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                <Phone size={14} color="var(--nude-linen)" />
-                <span>WhatsApp: (11) 99999-9999</span>
+            <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '12px', fontSize: '13px' }}>
+              <li>
+                <Link href="/sobre" style={{ color: '#8E867C', textDecoration: 'none', transition: 'color 0.2s ease' }} onMouseEnter={(e) => (e.currentTarget.style.color = '#EDE8DF')} onMouseLeave={(e) => (e.currentTarget.style.color = '#8E867C')}>
+                  A Nossa História
+                </Link>
               </li>
-              <li style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                <Mail size={14} color="var(--nude-linen)" />
-                <span>contacto@nuderest.com.br</span>
+              <li>
+                <Link href="/atelie" style={{ color: '#8E867C', textDecoration: 'none', transition: 'color 0.2s ease' }} onMouseEnter={(e) => (e.currentTarget.style.color = '#EDE8DF')} onMouseLeave={(e) => (e.currentTarget.style.color = '#8E867C')}>
+                  O Atelier & Processo
+                </Link>
               </li>
-              <li style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                <MapPin size={14} color="var(--nude-linen)" />
-                <span>Atelier & Showroom — Envio Assegurado</span>
+              <li>
+                <Link href="/contato" style={{ color: '#8E867C', textDecoration: 'none', transition: 'color 0.2s ease' }} onMouseEnter={(e) => (e.currentTarget.style.color = '#EDE8DF')} onMouseLeave={(e) => (e.currentTarget.style.color = '#8E867C')}>
+                  Atendimento & Encomendas
+                </Link>
               </li>
-              <li><a href="#faq" style={{ color: 'var(--text-muted)', textDecoration: 'none' }}>Termos de Garantia & Envio Seguro</a></li>
             </ul>
           </div>
 
-          {/* Security & Payment Badges */}
+          {/* Navigation Column: Atendimento Concierge */}
           <div>
-            <h4 style={{ fontSize: '14px', color: 'var(--nude-alabaster)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '20px' }}>
-              Certificações de Segurança
+            <h4 style={{
+              fontSize: '11px',
+              fontWeight: 600,
+              letterSpacing: '0.18em',
+              textTransform: 'uppercase',
+              color: '#EDE8DF',
+              marginBottom: '20px'
+            }}>
+              Contacto Privado
             </h4>
-            
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-              <div style={{
-                backgroundColor: 'var(--bg-surface)',
-                border: '1px solid var(--border-subtle)',
-                borderRadius: 'var(--radius-sm)',
-                padding: '12px 16px',
-                display: 'flex',
-                alignItems: 'center',
-                gap: '12px'
-              }}>
-                <Lock size={20} color="#4ADE80" />
-                <div>
-                  <div style={{ fontSize: '12px', fontWeight: 600, color: 'var(--nude-alabaster)' }}>SSL 256-Bit Encrypted</div>
-                  <div style={{ fontSize: '10px', color: 'var(--text-dim)' }}>Ambiente 100% Protegido</div>
-                </div>
-              </div>
-
-              <div style={{
-                backgroundColor: 'var(--bg-surface)',
-                border: '1px solid var(--border-subtle)',
-                borderRadius: 'var(--radius-sm)',
-                padding: '12px 16px',
-                display: 'flex',
-                alignItems: 'center',
-                gap: '12px'
-              }}>
-                <Award size={20} color="var(--nude-linen)" />
-                <div>
-                  <div style={{ fontSize: '12px', fontWeight: 600, color: 'var(--nude-alabaster)' }}>Google Avaliações 4.9★</div>
-                  <div style={{ fontSize: '10px', color: 'var(--text-dim)' }}>Aprovado por profissionais</div>
-                </div>
-              </div>
-
-              {/* Payment Summary */}
-              <div style={{ marginTop: '8px' }}>
-                <div style={{ fontSize: '11px', color: 'var(--text-dim)', marginBottom: '6px' }}>
-                  FORMAS DE PAGAMENTO ACEITES:
-                </div>
-                <div style={{
-                  display: 'flex',
-                  gap: '8px',
-                  flexWrap: 'wrap',
-                  fontSize: '11px',
-                  fontWeight: 600,
-                  color: 'var(--nude-linen)'
-                }}>
-                  <span style={{ padding: '4px 8px', backgroundColor: 'var(--bg-surface)', border: '1px solid var(--border-medium)', borderRadius: '4px' }}>Pronto Pagamento (5% OFF)</span>
-                  <span style={{ padding: '4px 8px', backgroundColor: 'var(--bg-surface)', border: '1px solid var(--border-medium)', borderRadius: '4px' }}>Visa</span>
-                  <span style={{ padding: '4px 8px', backgroundColor: 'var(--bg-surface)', border: '1px solid var(--border-medium)', borderRadius: '4px' }}>Mastercard</span>
-                  <span style={{ padding: '4px 8px', backgroundColor: 'var(--bg-surface)', border: '1px solid var(--border-medium)', borderRadius: '4px' }}>Multibanco</span>
-                  <span style={{ padding: '4px 8px', backgroundColor: 'var(--bg-surface)', border: '1px solid var(--border-medium)', borderRadius: '4px' }}>Até 12 Prestações</span>
-                </div>
-              </div>
-            </div>
+            <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '12px', fontSize: '13px' }}>
+              <li>
+                <a href="https://wa.me/351910800000" target="_blank" rel="noopener noreferrer" style={{ color: '#8E867C', textDecoration: 'none', transition: 'color 0.2s ease' }} onMouseEnter={(e) => (e.currentTarget.style.color = '#EDE8DF')} onMouseLeave={(e) => (e.currentTarget.style.color = '#8E867C')}>
+                  WhatsApp: +351 910 800 000
+                </a>
+              </li>
+              <li>
+                <a href="mailto:contacto@nuderest.com" style={{ color: '#8E867C', textDecoration: 'none', transition: 'color 0.2s ease' }} onMouseEnter={(e) => (e.currentTarget.style.color = '#EDE8DF')} onMouseLeave={(e) => (e.currentTarget.style.color = '#8E867C')}>
+                  contacto@nuderest.com
+                </a>
+              </li>
+              <li style={{ color: '#6A635A', fontSize: '12px' }}>
+                Atendimento por marcação
+              </li>
+            </ul>
           </div>
 
         </div>
 
-        {/* Bottom Bar */}
+        {/* Bottom Sub-bar */}
         <div style={{
-          paddingTop: '32px',
-          borderTop: '1px solid var(--border-subtle)',
+          paddingTop: '28px',
+          borderTop: '1px solid rgba(255, 255, 255, 0.06)',
           display: 'flex',
           justifyContent: 'space-between',
           alignItems: 'center',
           flexWrap: 'wrap',
           gap: '16px',
-          fontSize: '12px',
-          color: 'var(--text-dim)'
+          fontSize: '11px',
+          color: '#6A635A'
         }}>
           <div>
-            © 2026 NUDE REST MACAS PERSONALIZADAS LTDA. TODOS OS DIREITOS RESERVADOS. CNPJ: 00.000.000/0001-00
+            © 2026 NUDE REST. Todos os direitos reservados.
           </div>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-            <span>PALETA OFICIAL NUDE REST</span>
+          <div style={{ display: 'flex', gap: '20px' }}>
+            <span>Design Minimalista & Ergonomia Ativa</span>
             <span>•</span>
-            <div style={{ position: 'relative', width: '20px', height: '20px', filter: 'brightness(0) invert(1)', opacity: 0.7 }}>
-              <Image src="/logotipo.png" alt="NR" fill style={{ objectFit: 'contain' }} />
-            </div>
+            <span>Envio Seguro</span>
           </div>
         </div>
 

@@ -21,12 +21,12 @@ export const PRODUCTS_CATALOG: Product[] = [
     reviewCount: 88,
     badge: 'Design Assinatura',
     leadTime: 'Confeção em 7 a 10 dias úteis',
-    image: '/assets/maca1/maca1_main.png',
+    image: '/maca1/maca1_1.png',
     gallery: [
-      '/assets/maca1/maca1_main.png',
-      '/assets/maca1/maca1_angle2.png',
-      '/assets/maca1/maca1_detail.png',
-      '/assets/maca1/maca1_close.png'
+      '/maca1/maca1_1.png',
+      '/maca1/maca1_2.png',
+      '/maca1/maca1_3.png',
+      '/maca1/maca1_4.png'
     ],
     description: 'Design curvo fluido contínuo com acabamento arquitetónico em tecido nobre, base estrutural em cilindro e curva anatómica para alívio da coluna lombar.',
     longDescription: 'A Maca Sculpt Wave é a expressão máxima do design contemporâneo para ambientes de estética de luxo. Concebida como uma escultura funcional, a sua curvatura proporciona relaxamento imediato para a cliente e ergonomia impecável para a profissional.',
@@ -68,14 +68,13 @@ export const PRODUCTS_CATALOG: Product[] = [
     reviewCount: 112,
     badge: 'Mais Desejada',
     leadTime: 'Confeção em 7 a 10 dias úteis',
-    image: '/assets/maca2/maca2_main.png',
+    image: '/maca2/maca2_1.png',
     gallery: [
-      '/assets/maca2/maca2_main.png',
-      '/assets/maca2/maca2_angle2.png',
-      '/assets/maca2/maca2_detail.png',
-      '/assets/maca2/maca2_gallery1.png',
-      '/assets/maca2/maca2_gallery2.png',
-      '/assets/maca2/maca2_close.png'
+      '/maca2/maca2_1.png',
+      '/maca2/maca2_2.png',
+      '/maca2/maca2_3.png',
+      '/maca2/maca2_4.png',
+      '/maca2/maca2_5.png'
     ],
     description: 'Estofo acolchoado com gomos anatómicos, curvatura suave e pés em X em aço carbono com banho dourado Champagne fosco de altíssima durabilidade.',
     longDescription: 'A Maca Royale Anatómica une a tradição do estofamento nobre ao suporte ortopédico ativo. Idealizada para procedimentos de longa duração, as suas almofadas anatómicas acolhem a cliente eliminando qualquer ponto de pressão lombar.',

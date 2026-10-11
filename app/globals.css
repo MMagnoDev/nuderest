@@ -83,6 +83,13 @@ body {
   border-radius: 0;
 }
 
+.editorial-container {
+  width: 100%;
+  max-width: 1720px;
+  margin: 0 auto;
+  padding: 0 clamp(16px, 2vw, 32px);
+}
+
 /* Shared Utilities */
 .border-b {
   border-bottom: 1px solid var(--border-color);
@@ -1143,3 +1150,114 @@ footer.footer-bar {
     padding: 32px 16px;
   }
 }
+
+/* ==========================================================================
+   EDITORIAL REVEAL ON SCROLL ANIMATION
+   ========================================================================== */
+
+.reveal-on-scroll,
+.reveal-item {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.95s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.95s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-on-scroll.reveal-left {
+  transform: translateX(-40px);
+}
+
+.reveal-on-scroll.reveal-right {
+  transform: translateX(40px);
+}
+
+.reveal-on-scroll.reveal-scale {
+  transform: scale(0.95);
+}
+
+.reveal-on-scroll.is-revealed,
+.reveal-item.is-revealed {
+  opacity: 1 !important;
+  transform: translate(0, 0) scale(1) !important;
+}
+
+.reveal-delay-100 { transition-delay: 100ms; }
+.reveal-delay-200 { transition-delay: 200ms; }
+.reveal-delay-300 { transition-delay: 300ms; }
+.reveal-delay-400 { transition-delay: 400ms; }
+.reveal-delay-500 { transition-delay: 500ms; }
+
+/* --------------------------------------------------------------------------
+   RIGHT-BLEED EDITORIAL BREAKOUT LAYOUT (1/3 Texto + 2/3 Imagem até a borda)
+   -------------------------------------------------------------------------- */
+.editorial-bleed-right {
+  display: grid;
+  grid-template-columns: minmax(280px, 1fr) minmax(480px, 2fr);
+  align-items: flex-start;
+  gap: clamp(28px, 3.5vw, 64px);
+  width: 100%;
+  padding-left: max(clamp(16px, 2vw, 32px), calc((100vw - 1720px) / 2 + clamp(16px, 2vw, 32px)));
+  padding-right: 0;
+}
+
+.editorial-bleed-right-image {
+  position: relative;
+  width: 100%;
+  height: clamp(420px, 42vw, 620px);
+  background-color: #EAE6DF;
+  overflow: hidden;
+}
+
+@media (max-width: 960px) {
+  .editorial-bleed-right {
+    grid-template-columns: 1fr;
+    padding-left: clamp(16px, 2vw, 24px);
+    padding-right: clamp(16px, 2vw, 24px);
+    gap: 32px;
+  }
+  .editorial-bleed-right-image {
+    height: clamp(280px, 56vw, 420px);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   LEFT-BLEED EDITORIAL BREAKOUT LAYOUT (2/3 Imagem até a borda + 1/3 Texto)
+   -------------------------------------------------------------------------- */
+.editorial-bleed-left {
+  display: grid;
+  grid-template-columns: minmax(480px, 2fr) minmax(280px, 1fr);
+  align-items: flex-start;
+  gap: clamp(28px, 3.5vw, 64px);
+  width: 100%;
+  padding-left: 0;
+  padding-right: max(clamp(16px, 2vw, 32px), calc((100vw - 1720px) / 2 + clamp(16px, 2vw, 32px)));
+}
+
+.editorial-bleed-left-image {
+  position: relative;
+  width: 100%;
+  height: clamp(420px, 42vw, 620px);
+  background-color: #EAE6DF;
+  overflow: hidden;
+}
+
+.editorial-bleed-text-col {
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+}
+
+@media (max-width: 960px) {
+  .editorial-bleed-left {
+    grid-template-columns: 1fr;
+    padding-left: clamp(16px, 2vw, 24px);
+    padding-right: clamp(16px, 2vw, 24px);
+    gap: 32px;
+  }
+  .editorial-bleed-left-image {
+    height: clamp(280px, 56vw, 420px);
+  }
+}
+
+

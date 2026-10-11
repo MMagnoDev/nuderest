@@ -78,10 +78,10 @@ export const Header: React.FC<HeaderProps> = ({ cartCount, onOpenCart }) => {
           <a href="#" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none' }}>
             <div style={{ position: 'relative', height: '36px', width: '190px' }}>
               <Image
-                src="/logo.png"
+                src="/logo_clara.png?v=2"
                 alt="NUDE REST — Macas Personalizadas"
                 fill
-                style={{ objectFit: 'contain', filter: 'brightness(0) invert(1)' }}
+                style={{ objectFit: 'contain' }}
                 priority
               />
             </div>
