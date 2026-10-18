@@ -146,7 +146,7 @@ export const CartDrawer: React.FC = () => {
                 lineHeight: 1.6,
                 maxWidth: '260px'
               }}>
-                Personalize o Modelo 1 ou Modelo 2 com acabamentos exclusivos feitos por medida.
+                Conheça o Modelo Sculpt ou Modelo Pure com acabamentos exclusivos feitos por medida.
               </p>
               <Link
                 href="/colecoes"

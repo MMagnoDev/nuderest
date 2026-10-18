@@ -2,7 +2,6 @@
 
 import React from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 import { Navbar } from '../components/Navbar';
 import { Footer } from '../components/Footer';
 import { Reveal } from '../components/ScrollReveal';
@@ -12,13 +11,97 @@ export default function SobrePage() {
     <main style={{ backgroundColor: '#FAF9F6', minHeight: '100vh', color: '#1C1A18' }}>
       <Navbar />
 
-      {/* 01 — EDITORIAL HERO HEADER */}
+      {/* 01 — HERO & HISTÓRIA */}
       <section style={{
-        padding: 'clamp(96px, 11vw, 140px) 0 clamp(48px, 6vw, 72px) 0',
+        padding: 'clamp(96px, 11vw, 150px) 0 clamp(64px, 8vw, 100px) 0',
         borderBottom: '1px solid #ECE7DE'
       }}>
         <div className="editorial-container">
-          <div style={{ maxWidth: '780px' }}>
+          <div style={{ maxWidth: '820px', margin: '0 auto' }}>
+            <Reveal direction="up" delay={100}>
+              <span style={{
+                fontFamily: 'var(--font-sans)',
+                fontSize: '11px',
+                fontWeight: 600,
+                letterSpacing: '0.22em',
+                textTransform: 'uppercase',
+                color: '#8E867C',
+                display: 'block',
+                marginBottom: '20px'
+              }}>
+                A NOSSA HISTÓRIA
+              </span>
+            </Reveal>
+
+            <Reveal direction="up" delay={200}>
+              <h1 style={{
+                fontFamily: 'var(--font-editorial)',
+                fontSize: 'clamp(36px, 4.6vw, 62px)',
+                fontWeight: 400,
+                lineHeight: 1.15,
+                letterSpacing: '-0.025em',
+                color: '#1C1A18',
+                marginBottom: '32px'
+              }}>
+                Nasceu da prática.<br />
+                Cresceu da vontade de fazer diferente.
+              </h1>
+            </Reveal>
+
+            <Reveal direction="up" delay={300}>
+              <div style={{
+                fontFamily: 'var(--font-sans)',
+                fontSize: 'clamp(15px, 1.15vw, 17px)',
+                lineHeight: 1.85,
+                color: '#55514B',
+                display: 'flex',
+                flexDirection: 'column',
+                gap: '22px'
+              }}>
+                <p>
+                  A NUDE REST nasceu da minha experiência enquanto lash designer e de anos passados a trabalhar diariamente com clientes, espaços e marquesas.
+                </p>
+                <p>
+                  Ao longo desse percurso, fui percebendo que cuidamos de quase tudo: da técnica, da luz, da decoração, da experiência, dos pequenos detalhes.
+                </p>
+                <p>
+                  Mas havia uma peça essencial que muitas vezes ficava para segundo plano: a marquesa.
+                </p>
+                <p>
+                  É nela que a cliente passa grande parte do atendimento. É à volta dela que a profissional trabalha durante horas. E, ainda assim, nem sempre é pensada com o cuidado que esse papel merece.
+                </p>
+              </div>
+            </Reveal>
+
+            <Reveal direction="up" delay={400}>
+              <div style={{
+                marginTop: '36px',
+                paddingLeft: '24px',
+                borderLeft: '2px solid #1C1A18'
+              }}>
+                <p style={{
+                  fontFamily: 'var(--font-editorial)',
+                  fontSize: 'clamp(18px, 1.6vw, 24px)',
+                  fontStyle: 'italic',
+                  lineHeight: 1.5,
+                  color: '#1C1A18'
+                }}>
+                  Foi daí que nasceu a vontade de fazer diferente.
+                </p>
+              </div>
+            </Reveal>
+          </div>
+        </div>
+      </section>
+
+      {/* 02 — ORIGEM & PROPÓSITO */}
+      <section style={{
+        padding: 'clamp(80px, 9vw, 130px) 0',
+        backgroundColor: '#F3F1EC',
+        borderBottom: '1px solid #ECE7DE'
+      }}>
+        <div className="editorial-container">
+          <div style={{ maxWidth: '820px', margin: '0 auto' }}>
             <Reveal direction="up" delay={100}>
               <span style={{
                 fontFamily: 'var(--font-sans)',
@@ -30,180 +113,64 @@ export default function SobrePage() {
                 display: 'block',
                 marginBottom: '18px'
               }}>
-                A NOSSA HISTÓRIA
+                ORIGEM & PROPÓSITO
               </span>
             </Reveal>
 
             <Reveal direction="up" delay={200}>
-              <h1 style={{
+              <h2 style={{
                 fontFamily: 'var(--font-sans)',
-                fontSize: 'clamp(38px, 4.8vw, 64px)',
+                fontSize: 'clamp(28px, 3.4vw, 44px)',
                 fontWeight: 400,
-                lineHeight: 1.1,
-                letterSpacing: '-0.03em',
+                lineHeight: 1.2,
+                letterSpacing: '-0.025em',
                 color: '#1C1A18',
-                marginBottom: '24px'
+                marginBottom: '28px'
               }}>
-                A redefinição da experiência do cuidado.
-              </h1>
+                Uma marca criada por uma profissional, para profissionais.
+              </h2>
             </Reveal>
 
             <Reveal direction="up" delay={300}>
-              <p style={{
+              <div style={{
                 fontFamily: 'var(--font-sans)',
                 fontSize: 'clamp(15px, 1.15vw, 17px)',
-                lineHeight: 1.75,
+                lineHeight: 1.85,
                 color: '#55514B',
-                maxWidth: '640px'
+                display: 'flex',
+                flexDirection: 'column',
+                gap: '22px'
               }}>
-                A NUDE REST nasceu da vivência diária no setor da estética avançada e da convicção de que a peça central de atendimento merecia uma abordagem escultórica, ergonómica e arquitetónica.
-              </p>
-            </Reveal>
-          </div>
-        </div>
-      </section>
-
-      {/* 02 — ASYMMETRIC STORY SPLIT (FOTO OFICIAL SOBRE + NARRATIVA) */}
-      <section style={{
-        padding: 'clamp(80px, 9vw, 120px) 0',
-        borderBottom: '1px solid #ECE7DE'
-      }}>
-        <div className="editorial-container">
-          <div className="editorial-split-grid">
-            {/* Left Photo: Curated Brand Asset */}
-            <Reveal direction="left" delay={150}>
-              <div className="image-hover-zoom" style={{
-                position: 'relative',
-                width: '100%',
-                height: 'clamp(380px, 42vw, 560px)',
-                borderRadius: '2px',
-                overflow: 'hidden',
-                backgroundColor: '#EAE6DF'
-              }}>
-                <Image
-                  src="/photos/sobre/sobre2.webp"
-                  alt="Atelier e Filosofia NUDE REST"
-                  fill
-                  priority
-                  style={{
-                    objectFit: 'cover',
-                    objectPosition: 'center 55%',
-                    transition: 'transform 0.8s cubic-bezier(0.16, 1, 0.3, 1)'
-                  }}
-                />
+                <p>
+                  A NUDE REST nasce de uma necessidade real: repensar a peça que está no centro de tantos atendimentos.
+                </p>
+                <p>
+                  Quisemos criar marquesas que não fossem apenas bonitas, mas que fizessem sentido para os dois lados da experiência — para quem se deita e para quem trabalha.
+                </p>
+                <p>
+                  Conforto, proporção, materiais, ergonomia e presença no espaço passaram a ser pensados como partes da mesma peça.
+                </p>
+                <p style={{
+                  color: '#1C1A18',
+                  fontWeight: 500,
+                  fontSize: 'clamp(16px, 1.2vw, 18px)'
+                }}>
+                  Porque uma marquesa não deve simplesmente ocupar um lugar. Deve fazer parte da forma como esse lugar é vivido.
+                </p>
               </div>
             </Reveal>
-
-            {/* Right Text Column */}
-            <div style={{ display: 'flex', flexDirection: 'column', paddingTop: '8px' }}>
-              <Reveal direction="up" delay={200}>
-                <span style={{
-                  fontFamily: 'var(--font-sans)',
-                  fontSize: '11px',
-                  fontWeight: 600,
-                  letterSpacing: '0.18em',
-                  textTransform: 'uppercase',
-                  color: '#8E867C',
-                  display: 'block',
-                  marginBottom: '16px'
-                }}>
-                  ORIGEM & PROPÓSITO
-                </span>
-              </Reveal>
-
-              <Reveal direction="up" delay={250}>
-                <h2 style={{
-                  fontFamily: 'var(--font-sans)',
-                  fontSize: 'clamp(28px, 3.2vw, 40px)',
-                  fontWeight: 400,
-                  lineHeight: 1.18,
-                  letterSpacing: '-0.025em',
-                  color: '#1C1A18',
-                  marginBottom: '24px'
-                }}>
-                  Do desconforto da prática ao desenho da peça perfeita.
-                </h2>
-              </Reveal>
-
-              <Reveal direction="up" delay={300}>
-                <div style={{
-                  fontFamily: 'var(--font-sans)',
-                  fontSize: 'clamp(14.5px, 1.05vw, 15.5px)',
-                  lineHeight: 1.8,
-                  color: '#55514B',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  gap: '20px',
-                  marginBottom: '36px'
-                }}>
-                  <p>
-                    Durante anos de prática com tratamentos estéticos, percebemos uma contradição comum: clínicas de arquitetura deslumbrante equipadas com macas genéricas, ruidosas ou desconfortáveis, que comprometiam tanto o relaxamento da cliente quanto a saúde postural da profissional.
-                  </p>
-                  <p>
-                    A NUDE REST foi criada para eliminar essa distância. Cada modelo é desenhado a partir da biomecânica do corpo humano, eliminando pontos de pressão na coluna lombar e nas pernas, ao mesmo tempo em que eleva visualmente a estética do espaço.
-                  </p>
-                  <p>
-                    Trabalhamos com tapeceiros artesanais e engenharia estrutural de topo para criar peças que duram décadas, vestidas com tecidos bouclé e revestimentos selecionados sob medida.
-                  </p>
-                </div>
-              </Reveal>
-
-              <Reveal direction="up" delay={350}>
-                <div style={{
-                  borderLeft: '2px solid #1C1A18',
-                  paddingLeft: '20px',
-                  marginBottom: '36px'
-                }}>
-                  <p style={{
-                    fontFamily: 'var(--font-sans)',
-                    fontSize: '15px',
-                    fontStyle: 'italic',
-                    lineHeight: 1.6,
-                    color: '#1C1A18'
-                  }}>
-                    &ldquo;Acreditamos que aquilo que nos rodeia faz parte ativa do acolhimento. A beleza de uma clínica começa no respeito pelo corpo.&rdquo;
-                  </p>
-                </div>
-              </Reveal>
-
-              <Reveal direction="up" delay={400}>
-                <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
-                  <Link
-                    href="/atelie"
-                    style={{
-                      fontFamily: 'var(--font-sans)',
-                      fontSize: '11px',
-                      fontWeight: 500,
-                      letterSpacing: '0.16em',
-                      textTransform: 'uppercase',
-                      color: '#1C1A18',
-                      textDecoration: 'none',
-                      borderBottom: '1px solid #1C1A18',
-                      paddingBottom: '3px',
-                      display: 'inline-flex',
-                      alignItems: 'center',
-                      gap: '8px',
-                      transition: 'opacity 0.3s ease'
-                    }}
-                  >
-                    <span>CONHECER O ATELIER</span>
-                    <span>→</span>
-                  </Link>
-                </div>
-              </Reveal>
-            </div>
           </div>
         </div>
       </section>
 
-      {/* 03 — MANIFESTO SECTION (DARK EDITORIAL ACCENT) */}
+      {/* 03 — OS NOSSOS PILARES (DARK LUXURY EDITORIAL) */}
       <section style={{
         backgroundColor: '#161514',
         color: '#EDE8DF',
-        padding: 'clamp(96px, 11vw, 140px) 0'
+        padding: 'clamp(96px, 11vw, 150px) 0'
       }}>
         <div className="editorial-container">
-          <div style={{ maxWidth: '640px', marginBottom: 'clamp(56px, 7vw, 84px)' }}>
+          <div style={{ maxWidth: '820px', margin: '0 auto clamp(56px, 7vw, 84px) auto' }}>
             <Reveal direction="up" delay={100}>
               <span style={{
                 fontFamily: 'var(--font-sans)',
@@ -215,147 +182,230 @@ export default function SobrePage() {
                 display: 'block',
                 marginBottom: '16px'
               }}>
-                OS NOSSOS PILARES
+                CRIADA POR UMA PROFISSIONAL. PENSADA PARA PROFISSIONAIS.
               </span>
             </Reveal>
 
             <Reveal direction="up" delay={200}>
               <h2 style={{
-                fontFamily: 'var(--font-sans)',
-                fontSize: 'clamp(32px, 3.8vw, 48px)',
+                fontFamily: 'var(--font-editorial)',
+                fontSize: 'clamp(32px, 4vw, 52px)',
                 fontWeight: 400,
                 lineHeight: 1.15,
                 letterSpacing: '-0.025em',
-                color: '#EDE8DF'
+                color: '#EDE8DF',
+                marginBottom: '16px'
               }}>
-                Rigor em cada detalhe, do núcleo à costura.
+                OS NOSSOS PILARES
               </h2>
             </Reveal>
-          </div>
 
-          {/* 3 Editorial Value Columns */}
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
-            gap: 'clamp(32px, 5vw, 64px)'
-          }}>
-            <Reveal direction="up" delay={150}>
-              <div style={{ borderTop: '1px solid rgba(255, 255, 255, 0.15)', paddingTop: '28px' }}>
-                <span style={{ fontSize: '11px', color: '#A39D93', letterSpacing: '0.14em', textTransform: 'uppercase', display: 'block', marginBottom: '12px' }}>
-                  01 / POSTURA
-                </span>
-                <h3 style={{ fontFamily: 'var(--font-sans)', fontSize: '18px', fontWeight: 500, color: '#EDE8DF', marginBottom: '14px' }}>
-                  Ergonomia Ativa
-                </h3>
-                <p style={{ fontFamily: 'var(--font-sans)', fontSize: '14px', lineHeight: 1.7, color: '#A39D93' }}>
-                  Curvaturas calculadas para acomodar a anatomia em posição de relaxamento muscular espontâneo, evitando dormência e garantindo horas de atendimento com serenidade total.
-                </p>
-              </div>
-            </Reveal>
-
-            <Reveal direction="up" delay={250}>
-              <div style={{ borderTop: '1px solid rgba(255, 255, 255, 0.15)', paddingTop: '28px' }}>
-                <span style={{ fontSize: '11px', color: '#A39D93', letterSpacing: '0.14em', textTransform: 'uppercase', display: 'block', marginBottom: '12px' }}>
-                  02 / MATÉRIA
-                </span>
-                <h3 style={{ fontFamily: 'var(--font-sans)', fontSize: '18px', fontWeight: 500, color: '#EDE8DF', marginBottom: '14px' }}>
-                  Matéria-Prima Cirúrgica
-                </h3>
-                <p style={{ fontFamily: 'var(--font-sans)', fontSize: '14px', lineHeight: 1.7, color: '#A39D93' }}>
-                  Espuma D33 de alta densidade e retorno elástico, estruturada em madeira nobre naval e vestida com tecidos nobres impermeabilizados e resistentes a assepsia frequente.
-                </p>
-              </div>
-            </Reveal>
-
-            <Reveal direction="up" delay={350}>
-              <div style={{ borderTop: '1px solid rgba(255, 255, 255, 0.15)', paddingTop: '28px' }}>
-                <span style={{ fontSize: '11px', color: '#A39D93', letterSpacing: '0.14em', textTransform: 'uppercase', display: 'block', marginBottom: '12px' }}>
-                  03 / IDENTIDADE
-                </span>
-                <h3 style={{ fontFamily: 'var(--font-sans)', fontSize: '18px', fontWeight: 500, color: '#EDE8DF', marginBottom: '14px' }}>
-                  Presença Arquitetónica
-                </h3>
-                <p style={{ fontFamily: 'var(--font-sans)', fontSize: '14px', lineHeight: 1.7, color: '#A39D93' }}>
-                  Cada peça funciona como uma escultura que valoriza o projeto de interiores da clínica. Cores, bordados e acabamentos afinados ao milímetro de acordo com o seu espaço.
-                </p>
-              </div>
-            </Reveal>
-          </div>
-        </div>
-      </section>
-
-      {/* 04 — GALLERY ACCENT (AS MACAS EM HARMONIA) */}
-      <section style={{
-        padding: 'clamp(80px, 9vw, 120px) 0',
-        borderBottom: '1px solid #ECE7DE'
-      }}>
-        <div className="editorial-container">
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-            gap: 'clamp(24px, 3.5vw, 48px)',
-            alignItems: 'center'
-          }}>
-            <Reveal direction="up" delay={150}>
-              <div className="image-hover-zoom" style={{
-                position: 'relative',
-                width: '100%',
-                height: 'clamp(320px, 36vw, 460px)',
-                borderRadius: '2px',
-                overflow: 'hidden',
-                backgroundColor: '#EAE6DF'
-              }}>
-                <Image
-                  src="/maca1/maca1_1.webp"
-                  alt="Maca Sculpt em Ambiente"
-                  fill
-                  style={{ objectFit: 'cover', transition: 'transform 0.8s cubic-bezier(0.16, 1, 0.3, 1)' }}
-                />
-              </div>
-            </Reveal>
-
-            <Reveal direction="up" delay={250}>
-              <div className="image-hover-zoom" style={{
-                position: 'relative',
-                width: '100%',
-                height: 'clamp(320px, 36vw, 460px)',
-                borderRadius: '2px',
-                overflow: 'hidden',
-                backgroundColor: '#EAE6DF'
-              }}>
-                <Image
-                  src="/photos/pecasdeassinatura/_C1M0299.webp"
-                  alt="Maca Royale Anatómica"
-                  fill
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                  style={{ objectFit: 'cover', objectPosition: 'center 50%', transition: 'transform 0.8s cubic-bezier(0.16, 1, 0.3, 1)' }}
-                />
-              </div>
-            </Reveal>
-          </div>
-
-          <div style={{ marginTop: '48px', textAlign: 'center' }}>
             <Reveal direction="up" delay={300}>
-              <Link
-                href="/colecoes"
-                style={{
-                  fontFamily: 'var(--font-sans)',
+              <p style={{
+                fontFamily: 'var(--font-sans)',
+                fontSize: 'clamp(15px, 1.1vw, 17px)',
+                color: '#A39D93',
+                lineHeight: 1.6
+              }}>
+                Pensada para quem recebe. Criada por quem trabalha.
+              </p>
+            </Reveal>
+          </div>
+
+          {/* 4 Pillars Grid (2x2) */}
+          <div style={{
+            maxWidth: '1080px',
+            margin: '0 auto',
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+            gap: 'clamp(36px, 5vw, 64px)'
+          }}>
+            {/* 01 / CONFORTO */}
+            <Reveal direction="up" delay={150}>
+              <div style={{ borderTop: '1px solid rgba(255, 255, 255, 0.15)', paddingTop: '28px' }}>
+                <span style={{
                   fontSize: '11px',
                   fontWeight: 600,
-                  letterSpacing: '0.16em',
+                  color: '#A39D93',
+                  letterSpacing: '0.18em',
                   textTransform: 'uppercase',
-                  color: '#1C1A18',
-                  textDecoration: 'none',
-                  borderBottom: '1.5px solid #1C1A18',
-                  paddingBottom: '3px',
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  gap: '8px'
-                }}
-              >
-                <span>EXPLORAR TODAS AS COLEÇÕES</span>
-                <span>→</span>
-              </Link>
+                  display: 'block',
+                  marginBottom: '12px'
+                }}>
+                  01 / CONFORTO
+                </span>
+                <h3 style={{
+                  fontFamily: 'var(--font-sans)',
+                  fontSize: '20px',
+                  fontWeight: 500,
+                  color: '#EDE8DF',
+                  marginBottom: '14px'
+                }}>
+                  Conforto que se sente.
+                </h3>
+                <p style={{
+                  fontFamily: 'var(--font-sans)',
+                  fontSize: '14.5px',
+                  lineHeight: 1.75,
+                  color: '#A39D93'
+                }}>
+                  A forma, as curvas e as diferentes camadas de espuma são pensadas para que a cliente encontre uma posição confortável e consiga permanecer nela ao longo do atendimento.
+                </p>
+              </div>
+            </Reveal>
+
+            {/* 02 / PROFISSIONAL */}
+            <Reveal direction="up" delay={250}>
+              <div style={{ borderTop: '1px solid rgba(255, 255, 255, 0.15)', paddingTop: '28px' }}>
+                <span style={{
+                  fontSize: '11px',
+                  fontWeight: 600,
+                  color: '#A39D93',
+                  letterSpacing: '0.18em',
+                  textTransform: 'uppercase',
+                  display: 'block',
+                  marginBottom: '12px'
+                }}>
+                  02 / PROFISSIONAL
+                </span>
+                <h3 style={{
+                  fontFamily: 'var(--font-sans)',
+                  fontSize: '20px',
+                  fontWeight: 500,
+                  color: '#EDE8DF',
+                  marginBottom: '14px'
+                }}>
+                  Pensada também para quem trabalha.
+                </h3>
+                <p style={{
+                  fontFamily: 'var(--font-sans)',
+                  fontSize: '14.5px',
+                  lineHeight: 1.75,
+                  color: '#A39D93'
+                }}>
+                  A NUDE REST nasce da experiência diária de uma profissional. Por isso, cada decisão de desenho tem em conta os movimentos, a proximidade e as horas que passamos à volta da marquesa.
+                </p>
+              </div>
+            </Reveal>
+
+            {/* 03 / MATERIAIS */}
+            <Reveal direction="up" delay={350}>
+              <div style={{ borderTop: '1px solid rgba(255, 255, 255, 0.15)', paddingTop: '28px' }}>
+                <span style={{
+                  fontSize: '11px',
+                  fontWeight: 600,
+                  color: '#A39D93',
+                  letterSpacing: '0.18em',
+                  textTransform: 'uppercase',
+                  display: 'block',
+                  marginBottom: '12px'
+                }}>
+                  03 / MATERIAIS
+                </span>
+                <h3 style={{
+                  fontFamily: 'var(--font-sans)',
+                  fontSize: '20px',
+                  fontWeight: 500,
+                  color: '#EDE8DF',
+                  marginBottom: '14px'
+                }}>
+                  O que está por dentro também importa.
+                </h3>
+                <p style={{
+                  fontFamily: 'var(--font-sans)',
+                  fontSize: '14.5px',
+                  lineHeight: 1.75,
+                  color: '#A39D93'
+                }}>
+                  Da estrutura às espumas e aos revestimentos, selecionamos materiais pela sua qualidade, toque, resistência e capacidade de acompanhar uma utilização profissional diária.
+                </p>
+              </div>
+            </Reveal>
+
+            {/* 04 / IDENTIDADE */}
+            <Reveal direction="up" delay={450}>
+              <div style={{ borderTop: '1px solid rgba(255, 255, 255, 0.15)', paddingTop: '28px' }}>
+                <span style={{
+                  fontSize: '11px',
+                  fontWeight: 600,
+                  color: '#A39D93',
+                  letterSpacing: '0.18em',
+                  textTransform: 'uppercase',
+                  display: 'block',
+                  marginBottom: '12px'
+                }}>
+                  04 / IDENTIDADE
+                </span>
+                <h3 style={{
+                  fontFamily: 'var(--font-sans)',
+                  fontSize: '20px',
+                  fontWeight: 500,
+                  color: '#EDE8DF',
+                  marginBottom: '14px'
+                }}>
+                  Uma peça que faz parte do espaço.
+                </h3>
+                <p style={{
+                  fontFamily: 'var(--font-sans)',
+                  fontSize: '14.5px',
+                  lineHeight: 1.75,
+                  color: '#A39D93'
+                }}>
+                  Não queríamos criar uma marquesa que simplesmente se coloca numa sala. Cada modelo é desenhado para ter presença e integrar-se naturalmente na identidade do espaço.
+                </p>
+              </div>
+            </Reveal>
+          </div>
+
+          {/* CTA at Bottom of Pillars */}
+          <div style={{ marginTop: 'clamp(56px, 7vw, 84px)', textAlign: 'center' }}>
+            <Reveal direction="up" delay={300}>
+              <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}>
+                <Link
+                  href="/colecoes"
+                  style={{
+                    fontFamily: 'var(--font-sans)',
+                    fontSize: '11px',
+                    fontWeight: 600,
+                    letterSpacing: '0.16em',
+                    textTransform: 'uppercase',
+                    color: '#161514',
+                    backgroundColor: '#EDE8DF',
+                    padding: '14px 32px',
+                    borderRadius: '2px',
+                    textDecoration: 'none',
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '8px',
+                    transition: 'opacity 0.25s ease'
+                  }}
+                >
+                  <span>CONHECER AS COLEÇÕES</span>
+                  <span>→</span>
+                </Link>
+
+                <Link
+                  href="/contato"
+                  style={{
+                    fontFamily: 'var(--font-sans)',
+                    fontSize: '11px',
+                    fontWeight: 500,
+                    letterSpacing: '0.16em',
+                    textTransform: 'uppercase',
+                    color: '#EDE8DF',
+                    border: '1px solid rgba(237, 232, 223, 0.4)',
+                    padding: '14px 32px',
+                    borderRadius: '2px',
+                    textDecoration: 'none',
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '8px',
+                    transition: 'border-color 0.25s ease'
+                  }}
+                >
+                  <span>CONTACTAR</span>
+                </Link>
+              </div>
             </Reveal>
           </div>
         </div>

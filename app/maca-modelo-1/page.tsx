@@ -41,7 +41,7 @@ export default function MacaSculptPage() {
                 display: 'block',
                 marginBottom: '14px'
               }}>
-                SCULPT WAVE / DESIGN DE ASSINATURA
+                SCULPT / DESIGN DE ASSINATURA
               </span>
             </Reveal>
 
@@ -55,42 +55,63 @@ export default function MacaSculptPage() {
                 color: '#1C1A18',
                 marginBottom: '20px'
               }}>
-                Maca Sculpt
+                SCULPT
               </h1>
             </Reveal>
 
             <Reveal direction="up" delay={250}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '24px' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '24px' }}>
                 <span style={{
                   fontFamily: 'var(--font-sans)',
-                  fontSize: '11px',
+                  fontSize: '12px',
                   fontWeight: 600,
-                  letterSpacing: '0.16em',
+                  letterSpacing: '0.08em',
                   textTransform: 'uppercase',
                   color: '#1C1A18',
                   padding: '5px 12px',
                   backgroundColor: '#EAE6DF',
                   borderRadius: '2px'
                 }}>
-                  Sob Consulta
+                  Feita por encomenda
                 </span>
                 <span style={{ fontFamily: 'var(--font-sans)', fontSize: '13px', color: '#8E867C' }}>
-                  Confeção artesanal por medida
+                  · Personalizável
                 </span>
               </div>
             </Reveal>
 
             <Reveal direction="up" delay={300}>
-              <p style={{
+              <div style={{
                 fontFamily: 'var(--font-sans)',
                 fontSize: 'clamp(14.5px, 1.05vw, 15.5px)',
                 lineHeight: 1.75,
                 color: '#55514B',
                 marginBottom: '32px',
-                maxWidth: '480px'
+                maxWidth: '520px',
+                display: 'flex',
+                flexDirection: 'column',
+                gap: '16px'
               }}>
-                A silhueta em arco contínuo que redefine o conceito de marquesa estética. Concebida como uma escultura arquitetónica, a sua curvatura elimina pontos de tensão e acomoda o corpo em alívio postural profundo.
-              </p>
+                <p style={{
+                  fontWeight: 500,
+                  color: '#1C1A18',
+                  fontSize: 'clamp(15px, 1.1vw, 16.5px)'
+                }}>
+                  Uma peça que muda a forma como se sente e como se vê um espaço.
+                </p>
+                <p>
+                  A SCULPT foi desenhada para receber o corpo de forma natural, criando uma sensação de conforto desde o momento em que a cliente se deita. As suas curvas contínuas acompanham a silhueta enquanto dão à peça a presença escultórica que a distingue.
+                </p>
+                <p style={{
+                  fontFamily: 'var(--font-sans)',
+                  color: '#1C1A18',
+                  fontWeight: 500,
+                  lineHeight: 1.6
+                }}>
+                  Conforto pensado ao detalhe.<br />
+                  Design que não passa despercebido.
+                </p>
+              </div>
             </Reveal>
 
             {/* Quick Specs Pill Row */}
@@ -102,13 +123,16 @@ export default function MacaSculptPage() {
                 marginBottom: '36px'
               }}>
                 <span style={{ fontSize: '11.5px', padding: '6px 14px', backgroundColor: '#F2EFEB', borderRadius: '2px', color: '#3A3632' }}>
-                  Arco contínuo sem emendas
+                  Curvas pensadas para o corpo
                 </span>
                 <span style={{ fontSize: '11.5px', padding: '6px 14px', backgroundColor: '#F2EFEB', borderRadius: '2px', color: '#3A3632' }}>
-                  Espuma D33 Ultra Soft
+                  Espuma de alta densidade
                 </span>
                 <span style={{ fontSize: '11.5px', padding: '6px 14px', backgroundColor: '#F2EFEB', borderRadius: '2px', color: '#3A3632' }}>
-                  Garantia de 5 anos
+                  Produção artesanal
+                </span>
+                <span style={{ fontSize: '11.5px', padding: '6px 14px', backgroundColor: '#F2EFEB', borderRadius: '2px', color: '#3A3632' }}>
+                  Personalização à escolha
                 </span>
               </div>
             </Reveal>
@@ -116,8 +140,10 @@ export default function MacaSculptPage() {
             {/* CTA Buttons */}
             <Reveal direction="up" delay={400}>
               <div style={{ display: 'flex', gap: '14px', flexWrap: 'wrap' }}>
-                <Link
-                  href="/maca-sculpt-arc"
+                <a
+                  href="https://wa.me/351910800000?text=Ol%C3%A1%2C%20gostaria%20de%20criar%20a%20minha%20SCULPT%20sob%20medida."
+                  target="_blank"
+                  rel="noopener noreferrer"
                   style={{
                     display: 'inline-flex',
                     alignItems: 'center',
@@ -137,14 +163,12 @@ export default function MacaSculptPage() {
                   onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = '#38342F')}
                   onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = '#1C1A18')}
                 >
-                  <span>PERSONALIZAR ACABAMENTOS</span>
+                  <span>CRIAR A MINHA SCULPT</span>
                   <span>→</span>
-                </Link>
+                </a>
 
-                <a
-                  href="https://wa.me/351910800000?text=Ol%C3%A1%2C%20gostaria%20de%20informa%C3%A7%C3%B5es%20e%20proposta%20para%20a%20Maca%20Sculpt."
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <Link
+                  href="/contato"
                   style={{
                     display: 'inline-flex',
                     alignItems: 'center',
@@ -164,7 +188,7 @@ export default function MacaSculptPage() {
                   onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = 'transparent')}
                 >
                   FALAR COM CONCIERGE
-                </a>
+                </Link>
               </div>
             </Reveal>
           </div>
@@ -218,38 +242,23 @@ export default function MacaSculptPage() {
       </div>
     </section>
 
-      {/* 02 — DETALHES DE ENGENHARIA & DESIGN */}
+      {/* 02 — POR DENTRO DA SCULPT */}
       <section style={{
         padding: 'clamp(80px, 9vw, 120px) 0',
         borderBottom: '1px solid #ECE7DE'
       }}>
         <div className="editorial-container">
           <div style={{ maxWidth: '640px', marginBottom: 'clamp(48px, 6vw, 72px)' }}>
-            <Reveal direction="up" delay={100}>
-              <span style={{
-                fontFamily: 'var(--font-sans)',
-                fontSize: '11px',
-                fontWeight: 600,
-                letterSpacing: '0.2em',
-                textTransform: 'uppercase',
-                color: '#8E867C',
-                display: 'block',
-                marginBottom: '14px'
-              }}>
-                RIGOR CONSTRUTIVO
-              </span>
-            </Reveal>
-
             <Reveal direction="up" delay={200}>
               <h2 style={{
-                fontFamily: 'var(--font-sans)',
-                fontSize: 'clamp(30px, 3.6vw, 44px)',
+                fontFamily: 'var(--font-editorial)',
+                fontSize: 'clamp(30px, 3.8vw, 46px)',
                 fontWeight: 400,
                 lineHeight: 1.15,
                 letterSpacing: '-0.025em',
                 color: '#1C1A18'
               }}>
-                Projetada para a postura e para o espaço.
+                POR DENTRO DA SCULPT
               </h2>
             </Reveal>
           </div>
@@ -262,13 +271,13 @@ export default function MacaSculptPage() {
             <Reveal direction="up" delay={150}>
               <div style={{ display: 'flex', flexDirection: 'column' }}>
                 <div className="image-hover-zoom" style={{ position: 'relative', width: '100%', height: 'clamp(260px, 22vw, 320px)', marginBottom: '16px', borderRadius: '2px', overflow: 'hidden', backgroundColor: '#EAE6DF' }}>
-                  <Image src="/maca1/maca1_3.webp" alt="Curvatura ergonómica contínua" fill sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw" style={{ objectFit: 'cover', transition: 'transform 0.8s' }} />
+                  <Image src="/maca1/maca1_3.webp" alt="Curvas que acompanham o corpo" fill sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw" style={{ objectFit: 'cover', transition: 'transform 0.8s' }} />
                 </div>
-                <h3 style={{ fontFamily: 'var(--font-sans)', fontSize: '14px', fontWeight: 600, color: '#1C1A18', marginBottom: '6px' }}>
-                  Curvatura Ergonómica Contínua
+                <h3 style={{ fontFamily: 'var(--font-sans)', fontSize: '15px', fontWeight: 600, color: '#1C1A18', marginBottom: '8px' }}>
+                  Curvas que acompanham o corpo
                 </h3>
-                <p style={{ fontFamily: 'var(--font-sans)', fontSize: '12.5px', lineHeight: 1.6, color: '#55514B' }}>
-                  Apoio lombar contínuo que elimina tensões na coluna e nos quadris durante procedimentos longos.
+                <p style={{ fontFamily: 'var(--font-sans)', fontSize: '13px', lineHeight: 1.65, color: '#55514B' }}>
+                  A forma da SCULPT foi pensada para que o corpo encontre naturalmente uma posição confortável e permaneça nela ao longo do atendimento.
                 </p>
               </div>
             </Reveal>
@@ -276,13 +285,13 @@ export default function MacaSculptPage() {
             <Reveal direction="up" delay={250}>
               <div style={{ display: 'flex', flexDirection: 'column' }}>
                 <div className="image-hover-zoom" style={{ position: 'relative', width: '100%', height: 'clamp(260px, 22vw, 320px)', marginBottom: '16px', borderRadius: '2px', overflow: 'hidden', backgroundColor: '#EAE6DF' }}>
-                  <Image src="/maca1/maca1_2.webp" alt="Base cilíndrica escultural" fill sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw" style={{ objectFit: 'cover', transition: 'transform 0.8s' }} />
+                  <Image src="/maca1/maca1_2.webp" alt="Estabilidade que se sente" fill sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw" style={{ objectFit: 'cover', transition: 'transform 0.8s' }} />
                 </div>
-                <h3 style={{ fontFamily: 'var(--font-sans)', fontSize: '14px', fontWeight: 600, color: '#1C1A18', marginBottom: '6px' }}>
-                  Base Cilíndrica Escultural
+                <h3 style={{ fontFamily: 'var(--font-sans)', fontSize: '15px', fontWeight: 600, color: '#1C1A18', marginBottom: '8px' }}>
+                  Estabilidade que se sente
                 </h3>
-                <p style={{ fontFamily: 'var(--font-sans)', fontSize: '12.5px', lineHeight: 1.6, color: '#55514B' }}>
-                  Estabilidade arquitetónica sem ruídos mecânicos, com revestimento coordenado ou madeira nobre.
+                <p style={{ fontFamily: 'var(--font-sans)', fontSize: '13px', lineHeight: 1.65, color: '#55514B' }}>
+                  A estrutura foi desenvolvida para transmitir segurança e firmeza, sem retirar leveza à forma da peça.
                 </p>
               </div>
             </Reveal>
@@ -290,13 +299,13 @@ export default function MacaSculptPage() {
             <Reveal direction="up" delay={350}>
               <div style={{ display: 'flex', flexDirection: 'column' }}>
                 <div className="image-hover-zoom" style={{ position: 'relative', width: '100%', height: 'clamp(260px, 22vw, 320px)', marginBottom: '16px', borderRadius: '2px', overflow: 'hidden', backgroundColor: '#EAE6DF' }}>
-                  <Image src="/maca1/maca1_4.webp" alt="Tecido Bouclé e Resistência" fill sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw" style={{ objectFit: 'cover', transition: 'transform 0.8s' }} />
+                  <Image src="/maca1/maca1_4.webp" alt="Texturas que convidam ao toque" fill sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw" style={{ objectFit: 'cover', transition: 'transform 0.8s' }} />
                 </div>
-                <h3 style={{ fontFamily: 'var(--font-sans)', fontSize: '14px', fontWeight: 600, color: '#1C1A18', marginBottom: '6px' }}>
-                  Bouclé Têxtil Premium
+                <h3 style={{ fontFamily: 'var(--font-sans)', fontSize: '15px', fontWeight: 600, color: '#1C1A18', marginBottom: '8px' }}>
+                  Texturas que convidam ao toque
                 </h3>
-                <p style={{ fontFamily: 'var(--font-sans)', fontSize: '12.5px', lineHeight: 1.6, color: '#55514B' }}>
-                  Toque têxtil aveludado de alta sofisticação com tratamento antimanchas e higienização fácil.
+                <p style={{ fontFamily: 'var(--font-sans)', fontSize: '13px', lineHeight: 1.65, color: '#55514B' }}>
+                  Tecidos escolhidos não apenas pela estética, mas também pelo conforto, resistência e facilidade de manutenção no dia a dia profissional.
                 </p>
               </div>
             </Reveal>
@@ -304,13 +313,13 @@ export default function MacaSculptPage() {
             <Reveal direction="up" delay={450}>
               <div style={{ display: 'flex', flexDirection: 'column' }}>
                 <div className="image-hover-zoom" style={{ position: 'relative', width: '100%', height: 'clamp(260px, 22vw, 320px)', marginBottom: '16px', borderRadius: '2px', overflow: 'hidden', backgroundColor: '#EAE6DF' }}>
-                  <Image src="/photos/detalhe/detalhe.webp" alt="Acabamentos por medida" fill sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw" style={{ objectFit: 'cover', transition: 'transform 0.8s' }} />
+                  <Image src="/photos/detalhe/detalhe.webp" alt="Feita para pertencer ao teu espaço" fill sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw" style={{ objectFit: 'cover', transition: 'transform 0.8s' }} />
                 </div>
-                <h3 style={{ fontFamily: 'var(--font-sans)', fontSize: '14px', fontWeight: 600, color: '#1C1A18', marginBottom: '6px' }}>
-                  Acabamentos por Medida
+                <h3 style={{ fontFamily: 'var(--font-sans)', fontSize: '15px', fontWeight: 600, color: '#1C1A18', marginBottom: '8px' }}>
+                  Feita para pertencer ao teu espaço
                 </h3>
-                <p style={{ fontFamily: 'var(--font-sans)', fontSize: '12.5px', lineHeight: 1.6, color: '#55514B' }}>
-                  Escolha o tom, o tecido e grave a assinatura visual exclusiva do seu atelier.
+                <p style={{ fontFamily: 'var(--font-sans)', fontSize: '13px', lineHeight: 1.65, color: '#55514B' }}>
+                  Escolhe o revestimento, o tom e os acabamentos para criar uma SCULPT alinhada com a identidade do teu espaço.
                 </p>
               </div>
             </Reveal>
@@ -338,7 +347,7 @@ export default function MacaSculptPage() {
                 FICHA TÉCNICA
               </span>
               <h2 style={{
-                fontFamily: 'var(--font-sans)',
+                fontFamily: 'var(--font-editorial)',
                 fontSize: 'clamp(28px, 3.4vw, 42px)',
                 fontWeight: 400,
                 lineHeight: 1.15,
@@ -346,38 +355,67 @@ export default function MacaSculptPage() {
                 color: '#1C1A18',
                 marginBottom: '32px'
               }}>
-                Dimensões e proporções milimétricas.
+                Tudo o que precisas de saber.
               </h2>
 
               <div style={{
                 display: 'flex',
                 flexDirection: 'column',
-                gap: '16px',
+                gap: '14px',
                 fontFamily: 'var(--font-sans)',
-                fontSize: '14px',
+                fontSize: '14.5px',
                 borderTop: '1px solid #ECE7DE',
-                paddingTop: '24px'
+                paddingTop: '20px'
               }}>
-                <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                  <span style={{ color: '#8E867C' }}>Comprimento Total</span>
-                  <span style={{ fontWeight: 500, color: '#1C1A18' }}>192 cm</span>
+                <div style={{ display: 'flex', justifyContent: 'space-between', paddingBottom: '10px', borderBottom: '1px solid #F0ECE5' }}>
+                  <span style={{ color: '#8E867C' }}>Comprimento</span>
+                  <span style={{ fontWeight: 500, color: '#1C1A18' }}>180 cm</span>
                 </div>
-                <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                  <span style={{ color: '#8E867C' }}>Largura de Conforto</span>
-                  <span style={{ fontWeight: 500, color: '#1C1A18' }}>76 cm</span>
+                <div style={{ display: 'flex', justifyContent: 'space-between', paddingBottom: '10px', borderBottom: '1px solid #F0ECE5' }}>
+                  <span style={{ color: '#8E867C' }}>Largura</span>
+                  <span style={{ fontWeight: 500, color: '#1C1A18' }}>74 cm</span>
                 </div>
-                <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                  <span style={{ color: '#8E867C' }}>Altura de Trabalho</span>
-                  <span style={{ fontWeight: 500, color: '#1C1A18' }}>78 cm (ergonomia para sentar/atender)</span>
+                <div style={{ display: 'flex', justifyContent: 'space-between', paddingBottom: '10px', borderBottom: '1px solid #F0ECE5' }}>
+                  <span style={{ color: '#8E867C' }}>Altura</span>
+                  <span style={{ fontWeight: 500, color: '#1C1A18' }}>80 cm*</span>
                 </div>
-                <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                  <span style={{ color: '#8E867C' }}>Capacidade Estrutural</span>
-                  <span style={{ fontWeight: 500, color: '#1C1A18' }}>Até 260 kg estáticos</span>
+                <div style={{ display: 'flex', justifyContent: 'space-between', paddingBottom: '10px', borderBottom: '1px solid #F0ECE5' }}>
+                  <span style={{ color: '#8E867C' }}>Capacidade estrutural</span>
+                  <span style={{ fontWeight: 500, color: '#1C1A18' }}>até 200 kg estáticos</span>
                 </div>
-                <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                  <span style={{ color: '#8E867C' }}>Prazo de Confeção</span>
-                  <span style={{ fontWeight: 500, color: '#1C1A18' }}>7 a 10 dias úteis</span>
+                <div style={{ display: 'flex', justifyContent: 'space-between', paddingBottom: '10px', borderBottom: '1px solid #F0ECE5' }}>
+                  <span style={{ color: '#8E867C' }}>Prazo de confeção</span>
+                  <span style={{ fontWeight: 500, color: '#1C1A18' }}>15 a 20 dias úteis</span>
                 </div>
+              </div>
+
+              <p style={{
+                fontFamily: 'var(--font-sans)',
+                fontSize: '12.5px',
+                color: '#8E867C',
+                marginTop: '16px',
+                lineHeight: 1.6
+              }}>
+                *Altura pensada para facilitar o trabalho da profissional durante o atendimento.
+              </p>
+
+              <div style={{
+                marginTop: '32px',
+                padding: '22px 26px',
+                backgroundColor: '#F3F1EC',
+                borderRadius: '2px',
+                borderLeft: '2px solid #1C1A18'
+              }}>
+                <p style={{
+                  fontFamily: 'var(--font-editorial)',
+                  fontSize: 'clamp(15px, 1.15vw, 17px)',
+                  fontStyle: 'italic',
+                  lineHeight: 1.65,
+                  color: '#1C1A18',
+                  margin: 0
+                }}>
+                  &ldquo;Uma marquesa pode ser confortável. Pode ser funcional. Pode ser bonita. Nós não vimos razão para ter de escolher.&rdquo;
+                </p>
               </div>
             </div>
 
@@ -387,7 +425,7 @@ export default function MacaSculptPage() {
               height: 'clamp(320px, 38vw, 460px)',
               backgroundColor: 'transparent'
             }}>
-              <Image src="/maca1/maca1_1.webp" alt="Dimensões Maca Sculpt Wave" fill sizes="(max-width: 900px) 100vw, 800px" style={{ objectFit: 'contain' }} />
+              <Image src="/maca1/maca1_1.webp" alt="Dimensões SCULPT" fill sizes="(max-width: 900px) 100vw, 800px" style={{ objectFit: 'contain' }} />
             </div>
           </div>
         </div>

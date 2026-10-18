@@ -121,16 +121,26 @@ export default function HomePage() {
             </Reveal>
 
             <Reveal direction="up" delay={350}>
-              <p style={{
+              <div style={{
                 fontFamily: 'var(--font-sans)',
                 fontSize: 'clamp(14px, 1.15vw, 16px)',
                 lineHeight: 1.7,
                 color: '#C8C2B7',
-                maxWidth: '520px',
-                marginBottom: '32px'
+                maxWidth: '540px',
+                marginBottom: '32px',
+                display: 'flex',
+                flexDirection: 'column',
+                gap: '16px'
               }}>
-                A NUDE REST nasceu da vivência prática no setor e da decisão de redesenhar a peça central do atendimento, integrando ergonomia ativa, conforto e identidade espacial.
-              </p>
+                <p>
+                  A NUDE REST nasceu de quem conhece esta realidade de perto — e acredita que a peça onde tudo acontece pode oferecer mais.
+                </p>
+                <p style={{ color: '#EDE8DF', lineHeight: 1.6 }}>
+                  Conforto para quem recebe.<br />
+                  Funcionalidade para quem trabalha.<br />
+                  Presença para o espaço.
+                </p>
+              </div>
             </Reveal>
 
             <Reveal direction="up" delay={450}>
@@ -280,7 +290,7 @@ export default function HomePage() {
                 </Link>
               </Reveal>
 
-              {/* Card 2: Maca Royale */}
+              {/* Card 2: Maca Pure */}
               <Reveal direction="up" delay={250}>
                 <Link href="/maca-modelo-2" style={{ textDecoration: 'none', color: 'inherit', display: 'flex', flexDirection: 'column' }}>
                   <div className="image-hover-zoom" style={{
@@ -294,9 +304,9 @@ export default function HomePage() {
                   }}>
                     <Image
                       src="/photos/pecasdeassinatura/_C1M0299.webp"
-                      alt="Maca Royale Anatómica"
+                      alt="Maca Pure Anatómica"
                       fill
-                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 400px"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 500px"
                       style={{ objectFit: 'cover', objectPosition: 'center 50%', transition: 'transform 0.8s cubic-bezier(0.16, 1, 0.3, 1)' }}
                     />
                   </div>
@@ -308,7 +318,7 @@ export default function HomePage() {
                     color: '#1C1A18',
                     marginBottom: '4px'
                   }}>
-                    Maca Royale Anatómica
+                    Maca Pure Anatómica
                   </h3>
                   <span style={{
                     fontFamily: 'var(--font-sans)',
@@ -316,46 +326,6 @@ export default function HomePage() {
                     color: '#8E867C'
                   }}>
                     Capitoné & Pés em X
-                  </span>
-                </Link>
-              </Reveal>
-
-              {/* Card 3: Atelier Custom */}
-              <Reveal direction="up" delay={350}>
-                <Link href="/maca-sculpt-arc" style={{ textDecoration: 'none', color: 'inherit', display: 'flex', flexDirection: 'column' }}>
-                  <div className="image-hover-zoom" style={{
-                    position: 'relative',
-                    width: '100%',
-                    aspectRatio: '3/4.2',
-                    backgroundColor: '#EAE6DF',
-                    borderRadius: '2px',
-                    overflow: 'hidden',
-                    marginBottom: '14px'
-                  }}>
-                    <Image
-                      src="/photos/pecasdeassinatura/_C1M0362.webp"
-                      alt="Personalização Sob Medida"
-                      fill
-                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 400px"
-                      style={{ objectFit: 'cover', objectPosition: 'center 45%', transition: 'transform 0.8s cubic-bezier(0.16, 1, 0.3, 1)' }}
-                    />
-                  </div>
-                  <h3 style={{
-                    fontFamily: 'var(--font-sans)',
-                    fontSize: '15px',
-                    fontWeight: 500,
-                    letterSpacing: '-0.01em',
-                    color: '#1C1A18',
-                    marginBottom: '4px'
-                  }}>
-                    Personalização Sob Medida
-                  </h3>
-                  <span style={{
-                    fontFamily: 'var(--font-sans)',
-                    fontSize: '12px',
-                    color: '#8E867C'
-                  }}>
-                    Tecidos, Cores & Gravação
                   </span>
                 </Link>
               </Reveal>
@@ -508,10 +478,10 @@ export default function HomePage() {
                 marginBottom: '28px'
               }}>
                 <p>
-                  Cada marquesa é concebida com um olhar atento à proporção, à costura e à matéria-prima selecionada com rigor cirúrgico.
+                  Cada NUDE REST começa numa ideia e ganha forma através de escolhas feitas com intenção — das proporções ao estofo, das espumas ao tecido e aos acabamentos.
                 </p>
                 <p>
-                  A união entre espuma de alta densidade e revestimentos nobres garante uma postura equilibrada e durabilidade incomparável.
+                  São esses detalhes, muitos deles quase invisíveis, que definem a forma como a peça se sente, se integra no espaço e acompanha o dia a dia de quem a utiliza.
                 </p>
               </div>
             </Reveal>
@@ -543,95 +513,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 06 — PROCESS HIGHLIGHTS: 4 MINIMALIST REFINED TILES */}
-      <section style={{
-        padding: 'clamp(56px, 6vw, 84px) 0',
-        backgroundColor: '#FAF9F6'
-      }}>
-        <div className="editorial-container">
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
-            gap: 'clamp(18px, 2.5vw, 28px)'
-          }}>
-            {/* Tile 1 */}
-            <Reveal direction="up" delay={100}>
-              <div style={{ display: 'flex', flexDirection: 'column' }}>
-                <div className="image-hover-zoom" style={{
-                  position: 'relative',
-                  width: '100%',
-                  height: 'clamp(280px, 25vw, 380px)',
-                  borderRadius: '2px',
-                  overflow: 'hidden',
-                  backgroundColor: '#EAE6DF',
-                  marginBottom: '16px'
-                }}>
-                  <Image src="/maca1/maca1_2.webp" alt="Desenho Ergonómico Maca" fill sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw" style={{ objectFit: 'cover', transition: 'transform 0.8s' }} />
-                </div>
-                <h4 style={{ fontFamily: 'var(--font-sans)', fontSize: '13px', fontWeight: 600, color: '#1C1A18', marginBottom: '6px' }}>Ergonomia Ativa</h4>
-                <p style={{ fontSize: '12px', color: '#6E6860', lineHeight: 1.6 }}>Alívio lombar e suporte postural contínuo.</p>
-              </div>
-            </Reveal>
 
-            {/* Tile 2 */}
-            <Reveal direction="up" delay={200}>
-              <div style={{ display: 'flex', flexDirection: 'column' }}>
-                <div className="image-hover-zoom" style={{
-                  position: 'relative',
-                  width: '100%',
-                  height: 'clamp(280px, 25vw, 380px)',
-                  borderRadius: '2px',
-                  overflow: 'hidden',
-                  backgroundColor: '#EAE6DF',
-                  marginBottom: '16px'
-                }}>
-                  <Image src="/maca1/maca1_4.webp" alt="Matérias Nobres Bouclé" fill sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw" style={{ objectFit: 'cover', transition: 'transform 0.8s' }} />
-                </div>
-                <h4 style={{ fontFamily: 'var(--font-sans)', fontSize: '13px', fontWeight: 600, color: '#1C1A18', marginBottom: '6px' }}>Tecidos & Espuma</h4>
-                <p style={{ fontSize: '12px', color: '#6E6860', lineHeight: 1.6 }}>Espuma D33 certificada e tecidos nobres.</p>
-              </div>
-            </Reveal>
-
-            {/* Tile 3 */}
-            <Reveal direction="up" delay={300}>
-              <div style={{ display: 'flex', flexDirection: 'column' }}>
-                <div className="image-hover-zoom" style={{
-                  position: 'relative',
-                  width: '100%',
-                  height: 'clamp(280px, 25vw, 380px)',
-                  borderRadius: '2px',
-                  overflow: 'hidden',
-                  backgroundColor: '#EAE6DF',
-                  marginBottom: '16px'
-                }}>
-                  <Image src="/maca2/maca2_3.webp" alt="Confeção Artesanal de Canais" fill sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw" style={{ objectFit: 'cover', transition: 'transform 0.8s' }} />
-                </div>
-                <h4 style={{ fontFamily: 'var(--font-sans)', fontSize: '13px', fontWeight: 600, color: '#1C1A18', marginBottom: '6px' }}>Mestres Artesãos</h4>
-                <p style={{ fontSize: '12px', color: '#6E6860', lineHeight: 1.6 }}>Costura manual e precisão milimétrica.</p>
-              </div>
-            </Reveal>
-
-            {/* Tile 4 */}
-            <Reveal direction="up" delay={400}>
-              <div style={{ display: 'flex', flexDirection: 'column' }}>
-                <div className="image-hover-zoom" style={{
-                  position: 'relative',
-                  width: '100%',
-                  height: 'clamp(280px, 25vw, 380px)',
-                  borderRadius: '2px',
-                  overflow: 'hidden',
-                  backgroundColor: '#EAE6DF',
-                  marginBottom: '16px'
-                }}>
-                  <Image src="/maca2/maca2_5.webp" alt="Controlo e Acabamento da Maca" fill sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw" style={{ objectFit: 'cover', transition: 'transform 0.8s' }} />
-                </div>
-                <h4 style={{ fontFamily: 'var(--font-sans)', fontSize: '13px', fontWeight: 600, color: '#1C1A18', marginBottom: '6px' }}>5 Anos de Garantia</h4>
-                <p style={{ fontSize: '12px', color: '#6E6860', lineHeight: 1.6 }}>Rigor estético e envio assegurado.</p>
-              </div>
-            </Reveal>
-          </div>
-        </div>
-      </section>
 
       {/* 07 — VALUES STRIP (MINIMALIST 4 COLUMNS) */}
       <section style={{

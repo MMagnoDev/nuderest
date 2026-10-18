@@ -20,7 +20,7 @@ export const PRODUCTS_CATALOG: Product[] = [
     rating: 5.0,
     reviewCount: 88,
     badge: 'Design Assinatura',
-    leadTime: 'Confeção em 7 a 10 dias úteis',
+    leadTime: 'Confeção em 15 a 20 dias úteis',
     image: '/maca1/maca1_1.webp',
     gallery: [
       '/maca1/maca1_1.webp',
@@ -31,10 +31,10 @@ export const PRODUCTS_CATALOG: Product[] = [
     description: 'Design curvo fluido contínuo com acabamento arquitetónico em tecido nobre, base estrutural em cilindro e curva anatómica para alívio da coluna lombar.',
     longDescription: 'A Maca Sculpt Wave é a expressão máxima do design contemporâneo para ambientes de estética de luxo. Concebida como uma escultura funcional, a sua curvatura proporciona relaxamento imediato para a cliente e ergonomia impecável para a profissional.',
     dimensions: {
-      length: '192 cm',
-      width: '76 cm',
-      height: '78 cm (padrão ergonómico)',
-      weightCapacity: 'Até 260 kg estáticos'
+      length: '180 cm',
+      width: '74 cm',
+      height: '80 cm',
+      weightCapacity: 'Até 200 kg estáticos'
     },
     features: [
       'Design em arco escultural contínuo sem emendas aparentes',
@@ -58,7 +58,7 @@ export const PRODUCTS_CATALOG: Product[] = [
   {
     id: 'nr-modelo-2-royale',
     slug: 'maca-modelo-2',
-    name: 'Maca Royale Anatómica',
+    name: 'Maca Pure Anatómica',
     subtitle: 'Estofo capitonê acolchoado de alto luxo com estrutura metálica dourada Champagne para Lash Designers',
     category: 'anatomica',
     price: 0,
@@ -77,7 +77,7 @@ export const PRODUCTS_CATALOG: Product[] = [
       '/maca2/maca2_5.webp'
     ],
     description: 'Estofo acolchoado com gomos anatómicos, curvatura suave e pés em X em aço carbono com banho dourado Champagne fosco de altíssima durabilidade.',
-    longDescription: 'A Maca Royale Anatómica une a tradição do estofamento nobre ao suporte ortopédico ativo. Idealizada para procedimentos de longa duração, as suas almofadas anatómicas acolhem a cliente eliminando qualquer ponto de pressão lombar.',
+    longDescription: 'A Maca Pure Anatómica une a tradição do estofamento nobre ao suporte ortopédico ativo. Idealizada para procedimentos de longa duração, as suas almofadas anatómicas acolhem a cliente eliminando qualquer ponto de pressão lombar.',
     dimensions: {
       length: '188 cm',
       width: '74 cm',

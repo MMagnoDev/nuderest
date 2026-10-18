@@ -56,7 +56,7 @@ export default function ColecoesPage() {
                 color: '#55514B',
                 maxWidth: '640px'
               }}>
-                Desenvolvidas para atender às exigências de clínicas de alto padrão, spas e consultórios de estética avançada. Escolha a curvatura contínua da Sculpt ou o estofamento acolchoado da Royale.
+                Desenvolvidas para atender às exigências de clínicas de alto padrão, spas e consultórios de estética avançada. Escolha a curvatura contínua da Sculpt ou o estofamento acolchoado da Pure.
               </p>
             </Reveal>
           </div>
@@ -156,7 +156,7 @@ export default function ColecoesPage() {
                   </div>
                   <div style={{ display: 'flex', justifyContent: 'space-between' }}>
                     <span style={{ color: '#8E867C' }}>Dimensões</span>
-                    <span>192 cm × 76 cm × 78 cm</span>
+                    <span>180 cm × 74 cm × 80 cm</span>
                   </div>
                 </div>
               </Reveal>
@@ -180,24 +180,6 @@ export default function ColecoesPage() {
                     }}
                   >
                     EXPLORAR SCULPT →
-                  </Link>
-                  <Link
-                    href="/maca-sculpt-arc"
-                    style={{
-                      fontFamily: 'var(--font-sans)',
-                      fontSize: '11px',
-                      fontWeight: 500,
-                      letterSpacing: '0.16em',
-                      textTransform: 'uppercase',
-                      color: '#1C1A18',
-                      border: '1px solid #1C1A18',
-                      padding: '14px 26px',
-                      borderRadius: '2px',
-                      textDecoration: 'none',
-                      transition: 'background-color 0.25s ease'
-                    }}
-                  >
-                    PERSONALIZAR
                   </Link>
                 </div>
               </Reveal>
@@ -240,7 +222,7 @@ export default function ColecoesPage() {
                   color: '#1C1A18',
                   marginBottom: '20px'
                 }}>
-                  Maca Royale Anatómica
+                  Maca Pure Anatómica
                 </h2>
               </Reveal>
 
@@ -301,25 +283,7 @@ export default function ColecoesPage() {
                       transition: 'background-color 0.25s ease'
                     }}
                   >
-                    EXPLORAR ROYALE →
-                  </Link>
-                  <Link
-                    href="/maca-sculpt-arc"
-                    style={{
-                      fontFamily: 'var(--font-sans)',
-                      fontSize: '11px',
-                      fontWeight: 500,
-                      letterSpacing: '0.16em',
-                      textTransform: 'uppercase',
-                      color: '#1C1A18',
-                      border: '1px solid #1C1A18',
-                      padding: '14px 26px',
-                      borderRadius: '2px',
-                      textDecoration: 'none',
-                      transition: 'background-color 0.25s ease'
-                    }}
-                  >
-                    PERSONALIZAR
+                    EXPLORAR PURE →
                   </Link>
                 </div>
               </Reveal>
@@ -379,7 +343,7 @@ export default function ColecoesPage() {
                 color: '#1C1A18',
                 marginBottom: '18px'
               }}>
-                Sculpt Wave ou Royale Anatómica?
+                Sculpt Wave ou Pure Anatómica?
               </h2>
             </Reveal>
 
@@ -431,10 +395,10 @@ export default function ColecoesPage() {
                 paddingTop: '32px'
               }}>
                 <div className="image-hover-zoom" style={{ position: 'relative', width: '100%', aspectRatio: '16/9', borderRadius: '2px', overflow: 'hidden', backgroundColor: '#EAE6DF', marginBottom: '24px' }}>
-                  <Image src="/maca2/maca2_1.webp" alt="Maca Royale Anatómica" fill sizes="(max-width: 768px) 100vw, 50vw" style={{ objectFit: 'cover', transition: 'transform 0.8s cubic-bezier(0.16, 1, 0.3, 1)' }} />
+                  <Image src="/maca2/maca2_1.webp" alt="Maca Pure Anatómica" fill sizes="(max-width: 768px) 100vw, 50vw" style={{ objectFit: 'cover', transition: 'transform 0.8s cubic-bezier(0.16, 1, 0.3, 1)' }} />
                 </div>
                 <h3 style={{ fontFamily: 'var(--font-sans)', fontSize: '20px', fontWeight: 500, color: '#1C1A18', marginBottom: '8px' }}>
-                  Maca Royale Anatómica
+                  Maca Pure Anatómica
                 </h3>
                 <p style={{ fontSize: '13.5px', color: '#6E6860', marginBottom: '24px', lineHeight: 1.6 }}>
                   Ideal para procedimentos minuciosos de longa duração, lash designers e micropigmentação com máximo aconchego.

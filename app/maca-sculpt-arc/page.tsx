@@ -6,7 +6,7 @@ import Image from 'next/image';
 import { Navbar } from '../components/Navbar';
 import { Footer } from '../components/Footer';
 import { Reveal } from '../components/ScrollReveal';
-import { useCart } from '../context/CartContext';
+
 
 export default function CustomizerPage() {
   const [selectedModel, setSelectedModel] = useState<'sculpt' | 'royale'>('sculpt');
@@ -19,7 +19,6 @@ export default function CustomizerPage() {
   const [pillowSet, setPillowSet] = useState(false);
   const [selectedAngle, setSelectedAngle] = useState(0);
 
-  const { addToCart } = useCart();
 
   const colors = [
     { name: 'Alabaster Nude', hex: '#EDE8DF' },
@@ -65,24 +64,7 @@ Gostaria de receber uma proposta personalizada e prazo de entrega.`;
     return `https://wa.me/351910800000?text=${encodeURIComponent(text)}`;
   };
 
-  const handleAddToCart = () => {
-    const addonsList: { id: string; name: string; price: number }[] = [];
-    if (embroidery) addonsList.push({ id: 'embroidery', name: 'Bordado Personalizado', price: 0 });
-    if (protectiveCover) addonsList.push({ id: 'cover', name: 'Capa Cristal Náutico', price: 0 });
-    if (pillowSet) addonsList.push({ id: 'pillows', name: 'Manta & Almofada Cervical', price: 0 });
 
-    addToCart({
-      productId: selectedModel === 'sculpt' ? 'sculpt-wave' : 'royale-anatomica',
-      name: selectedModel === 'sculpt' ? 'Maca Sculpt Wave' : 'Maca Royale Anatómica',
-      slug: selectedModel === 'sculpt' ? 'maca-modelo-1' : 'maca-modelo-2',
-      image: currentImage,
-      unitPrice: 0,
-      color: { id: selectedColor.name.toLowerCase().replace(/\s+/g, '-'), name: selectedColor.name, hex: selectedColor.hex },
-      base: { id: selectedBase.toLowerCase().replace(/\s+/g, '-'), name: selectedBase, extraPrice: 0 },
-      embroideryText: embroidery ? (embroideryText || 'Logótipo Personalizado') : undefined,
-      addons: addonsList
-    });
-  };
 
   return (
     <main style={{ backgroundColor: '#FAF9F6', minHeight: '100vh', color: '#1C1A18' }}>
@@ -513,42 +495,6 @@ Gostaria de receber uma proposta personalizada e prazo de entrega.`;
 
             {/* Step 5: CTAs */}
             <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
-              <button
-                type="button"
-                onClick={handleAddToCart}
-                className="editorial-btn"
-                style={{
-                  display: 'flex',
-                  justifyContent: 'center',
-                  alignItems: 'center',
-                  gap: '10px',
-                  width: '100%',
-                  padding: '14px 24px',
-                  backgroundColor: '#1C1A18',
-                  color: '#EDE8DF',
-                  fontSize: '11px',
-                  fontFamily: 'var(--font-sans)',
-                  fontWeight: 600,
-                  letterSpacing: '0.16em',
-                  textTransform: 'uppercase',
-                  border: 'none',
-                  borderRadius: '2px',
-                  cursor: 'pointer',
-                  transition: 'all 0.3s cubic-bezier(0.16, 1, 0.3, 1)'
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.backgroundColor = '#33302C';
-                  e.currentTarget.style.transform = 'translateY(-2px)';
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.backgroundColor = '#1C1A18';
-                  e.currentTarget.style.transform = 'translateY(0)';
-                }}
-              >
-                <span>ADICIONAR AO CARRINHO</span>
-                <span>→</span>
-              </button>
-
               <a
                 href={generateWhatsAppMessage()}
                 target="_blank"
@@ -560,31 +506,30 @@ Gostaria de receber uma proposta personalizada e prazo de entrega.`;
                   alignItems: 'center',
                   gap: '8px',
                   width: '100%',
-                  padding: '13px 24px',
-                  backgroundColor: 'transparent',
-                  color: '#1C1A18',
+                  padding: '15px 24px',
+                  backgroundColor: '#1C1A18',
+                  color: '#EDE8DF',
                   fontSize: '11px',
                   fontFamily: 'var(--font-sans)',
-                  fontWeight: 500,
-                  letterSpacing: '0.14em',
+                  fontWeight: 600,
+                  letterSpacing: '0.16em',
                   textTransform: 'uppercase',
-                  border: '1px solid rgba(28, 26, 24, 0.4)',
+                  border: 'none',
                   borderRadius: '2px',
                   textDecoration: 'none',
                   transition: 'all 0.3s cubic-bezier(0.16, 1, 0.3, 1)'
                 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.borderColor = '#1C1A18';
-                  e.currentTarget.style.backgroundColor = 'rgba(28, 26, 24, 0.05)';
+                  e.currentTarget.style.backgroundColor = '#33302C';
                   e.currentTarget.style.transform = 'translateY(-2px)';
                 }}
                 onMouseLeave={(e) => {
-                  e.currentTarget.style.borderColor = 'rgba(28, 26, 24, 0.4)';
-                  e.currentTarget.style.backgroundColor = 'transparent';
+                  e.currentTarget.style.backgroundColor = '#1C1A18';
                   e.currentTarget.style.transform = 'translateY(0)';
                 }}
               >
                 <span>CONSULTAR POR WHATSAPP</span>
+                <span>→</span>
               </a>
 
               <div style={{

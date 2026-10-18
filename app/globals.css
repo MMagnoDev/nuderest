@@ -23,9 +23,10 @@
   --nude-taupe: #A39D93;
   --nude-alabaster: #EDE8DF;
 
-  /* Typography (Next.js font optimization) */
-  --font-editorial: var(--font-serif), Georgia, Cambria, 'Times New Roman', serif;
-  --font-title: var(--font-serif), Georgia, Cambria, 'Times New Roman', serif;
+  /* Typography (Next.js font optimization & User Font Preference) */
+  --font-editorial: var(--font-cormorant), 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+  --font-title: var(--font-cormorant), 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+  --font-serif: var(--font-cormorant), 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
   --font-sans: var(--font-jakarta), 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
@@ -41,9 +42,8 @@ h1, h2, h3, h4, h5, h6,
 .archive-card-title, 
 .gallery-tile-heading, 
 .customizer-title {
-  font-family: var(--font-editorial);
-  font-weight: 400;
-  letter-spacing: -0.025em;
+  font-family: var(--font-cormorant), 'Cormorant Garamond', Georgia, 'Times New Roman', serif !important;
+  letter-spacing: -0.015em;
 }
 
 h1 strong, h2 strong, h3 strong, h4 strong, h5 strong, h6 strong,
@@ -139,8 +139,8 @@ body {
 
 .editorial-signature-cards {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: clamp(16px, 2.5vw, 32px);
+  grid-template-columns: repeat(2, 1fr);
+  gap: clamp(20px, 3vw, 40px);
 }
 
 @media (max-width: 960px) {

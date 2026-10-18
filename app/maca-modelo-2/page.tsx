@@ -43,7 +43,7 @@ export default function MacaRoyalePage() {
                 display: 'block',
                 marginBottom: '14px'
               }}>
-                ROYALE ANATÓMICA / LUXO & CONFORTO
+                PURE / EQUILÍBRIO &amp; PERSONALIZAÇÃO
               </span>
             </Reveal>
 
@@ -57,42 +57,59 @@ export default function MacaRoyalePage() {
                 color: '#1C1A18',
                 marginBottom: '20px'
               }}>
-                Maca Royale
+                PURE
               </h1>
             </Reveal>
 
             <Reveal direction="up" delay={250}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '24px' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '24px' }}>
                 <span style={{
                   fontFamily: 'var(--font-sans)',
-                  fontSize: '11px',
+                  fontSize: '12px',
                   fontWeight: 600,
-                  letterSpacing: '0.16em',
+                  letterSpacing: '0.08em',
                   textTransform: 'uppercase',
                   color: '#1C1A18',
                   padding: '5px 12px',
                   backgroundColor: '#EAE6DF',
                   borderRadius: '2px'
                 }}>
-                  Sob Consulta
+                  Feita por encomenda
                 </span>
                 <span style={{ fontFamily: 'var(--font-sans)', fontSize: '13px', color: '#8E867C' }}>
-                  Confeção artesanal por medida
+                  · Personalizável
                 </span>
               </div>
             </Reveal>
 
             <Reveal direction="up" delay={300}>
-              <p style={{
+              <div style={{
                 fontFamily: 'var(--font-sans)',
                 fontSize: 'clamp(14.5px, 1.05vw, 15.5px)',
                 lineHeight: 1.75,
                 color: '#55514B',
                 marginBottom: '32px',
-                maxWidth: '480px'
+                maxWidth: '520px',
+                display: 'flex',
+                flexDirection: 'column',
+                gap: '16px'
               }}>
-                A escolha preferida de Lash Designers e especialistas em micropigmentação. O seu estofamento em gomos anatómicos acolhe a cliente sem compressão lombar, aliado a pés metálicos elegantes em acabamento Champagne.
-              </p>
+                <p>
+                  A PURE é o segundo modelo da coleção NUDE REST. Uma peça de linhas mais depuradas, onde o estofo e a estrutura metálica trabalham em conjunto para criar uma presença elegante e versátil.
+                </p>
+                <p>
+                  Cada PURE pode ser adaptada ao espaço através da escolha do tecido, da técnica de estofo e do acabamento dos pés metálicos.
+                </p>
+                <p style={{
+                  fontFamily: 'var(--font-sans)',
+                  color: '#1C1A18',
+                  fontWeight: 500,
+                  fontSize: 'clamp(15px, 1.1vw, 16.5px)',
+                  lineHeight: 1.6
+                }}>
+                  Uma base. Diferentes formas de a tornar tua.
+                </p>
+              </div>
             </Reveal>
 
             {/* Quick Specs Pill Row */}
@@ -104,13 +121,16 @@ export default function MacaRoyalePage() {
                 marginBottom: '36px'
               }}>
                 <span style={{ fontSize: '11.5px', padding: '6px 14px', backgroundColor: '#F2EFEB', borderRadius: '2px', color: '#3A3632' }}>
-                  Canais capitoné anatómicos
+                  Diferentes técnicas de estofo
                 </span>
                 <span style={{ fontSize: '11.5px', padding: '6px 14px', backgroundColor: '#F2EFEB', borderRadius: '2px', color: '#3A3632' }}>
-                  Pés em X Champagne escovado
+                  Estrutura metálica em X
                 </span>
                 <span style={{ fontSize: '11.5px', padding: '6px 14px', backgroundColor: '#F2EFEB', borderRadius: '2px', color: '#3A3632' }}>
-                  Almofada cervical com encaixe
+                  Acabamentos metálicos à escolha
+                </span>
+                <span style={{ fontSize: '11.5px', padding: '6px 14px', backgroundColor: '#F2EFEB', borderRadius: '2px', color: '#3A3632' }}>
+                  Produção por encomenda
                 </span>
               </div>
             </Reveal>
@@ -118,8 +138,10 @@ export default function MacaRoyalePage() {
             {/* CTA Buttons */}
             <Reveal direction="up" delay={400}>
               <div style={{ display: 'flex', gap: '14px', flexWrap: 'wrap' }}>
-                <Link
-                  href="/maca-sculpt-arc"
+                <a
+                  href="https://wa.me/351910800000?text=Ol%C3%A1%2C%20gostaria%20de%20criar%20a%20minha%20PURE%20sob%20medida."
+                  target="_blank"
+                  rel="noopener noreferrer"
                   style={{
                     display: 'inline-flex',
                     alignItems: 'center',
@@ -139,14 +161,12 @@ export default function MacaRoyalePage() {
                   onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = '#38342F')}
                   onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = '#1C1A18')}
                 >
-                  <span>PERSONALIZAR ACABAMENTOS</span>
+                  <span>CRIAR A MINHA PURE</span>
                   <span>→</span>
-                </Link>
+                </a>
 
-                <a
-                  href="https://wa.me/351910800000?text=Ol%C3%A1%2C%20gostaria%20de%20informa%C3%A7%C3%B5es%20e%20proposta%20para%20a%20Maca%20Royale."
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <Link
+                  href="/contato"
                   style={{
                     display: 'inline-flex',
                     alignItems: 'center',
@@ -166,7 +186,7 @@ export default function MacaRoyalePage() {
                   onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = 'transparent')}
                 >
                   FALAR COM CONCIERGE
-                </a>
+                </Link>
               </div>
             </Reveal>
           </div>
@@ -185,7 +205,7 @@ export default function MacaRoyalePage() {
               }}>
                 <Image
                   src={activeImage}
-                  alt="Maca Royale em Alta Definição"
+                  alt="Maca Pure em Alta Definição"
                   fill
                   priority
                   sizes="(max-width: 900px) 100vw, 55vw"
@@ -211,7 +231,7 @@ export default function MacaRoyalePage() {
                     transition: 'border-color 0.2s ease'
                   }}
                 >
-                  <Image src={img} alt={`Ângulo Royale ${idx + 1}`} fill sizes="120px" style={{ objectFit: 'cover' }} />
+                  <Image src={img} alt={`Ângulo Pure ${idx + 1}`} fill sizes="120px" style={{ objectFit: 'cover' }} />
                 </div>
               ))}
             </div>
@@ -220,7 +240,7 @@ export default function MacaRoyalePage() {
       </div>
     </section>
 
-      {/* 02 — DETALHES DE ENGENHARIA & CONFORTO */}
+      {/* 02 — POR DENTRO DA PURE */}
       <section style={{
         padding: 'clamp(80px, 9vw, 120px) 0',
         borderBottom: '1px solid #ECE7DE'
@@ -238,20 +258,20 @@ export default function MacaRoyalePage() {
                 display: 'block',
                 marginBottom: '14px'
               }}>
-                RIGOR CONSTRUTIVO
+                OS DETALHES FAZEM A DIFERENÇA
               </span>
             </Reveal>
 
             <Reveal direction="up" delay={200}>
               <h2 style={{
-                fontFamily: 'var(--font-sans)',
-                fontSize: 'clamp(30px, 3.6vw, 44px)',
+                fontFamily: 'var(--font-editorial)',
+                fontSize: 'clamp(30px, 3.8vw, 46px)',
                 fontWeight: 400,
                 lineHeight: 1.15,
                 letterSpacing: '-0.025em',
                 color: '#1C1A18'
               }}>
-                Criada para procedimentos de máxima precisão.
+                POR DENTRO DA PURE
               </h2>
             </Reveal>
           </div>
@@ -264,13 +284,13 @@ export default function MacaRoyalePage() {
             <Reveal direction="up" delay={150}>
               <div style={{ display: 'flex', flexDirection: 'column' }}>
                 <div className="image-hover-zoom" style={{ position: 'relative', width: '100%', height: 'clamp(260px, 22vw, 320px)', marginBottom: '16px', borderRadius: '2px', overflow: 'hidden', backgroundColor: '#EAE6DF' }}>
-                  <Image src="/maca2/maca2_3.webp" alt="Gomos anatómicos acolchoados" fill sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw" style={{ objectFit: 'cover', transition: 'transform 0.8s' }} />
+                  <Image src="/maca2/maca2_2.webp" alt="Estrutura metálica em X" fill sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw" style={{ objectFit: 'cover', transition: 'transform 0.8s' }} />
                 </div>
-                <h3 style={{ fontFamily: 'var(--font-sans)', fontSize: '14px', fontWeight: 600, color: '#1C1A18', marginBottom: '6px' }}>
-                  Gomos Capitoné em Alta Densidade
+                <h3 style={{ fontFamily: 'var(--font-sans)', fontSize: '15px', fontWeight: 600, color: '#1C1A18', marginBottom: '8px' }}>
+                  Estrutura metálica em X
                 </h3>
-                <p style={{ fontFamily: 'var(--font-sans)', fontSize: '12.5px', lineHeight: 1.6, color: '#55514B' }}>
-                  Acolchoamento com canais longitudinais que aliviam a pressão do cóccix e das pernas durante sessões longas.
+                <p style={{ fontFamily: 'var(--font-sans)', fontSize: '13px', lineHeight: 1.65, color: '#55514B' }}>
+                  A estrutura dá leveza visual à peça e pode ser personalizada em diferentes acabamentos metálicos, incluindo champagne escovado, entre outras tonalidades disponíveis.
                 </p>
               </div>
             </Reveal>
@@ -278,13 +298,13 @@ export default function MacaRoyalePage() {
             <Reveal direction="up" delay={250}>
               <div style={{ display: 'flex', flexDirection: 'column' }}>
                 <div className="image-hover-zoom" style={{ position: 'relative', width: '100%', height: 'clamp(260px, 22vw, 320px)', marginBottom: '16px', borderRadius: '2px', overflow: 'hidden', backgroundColor: '#EAE6DF' }}>
-                  <Image src="/maca2/maca2_2.webp" alt="Pés em X metálicos" fill sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw" style={{ objectFit: 'cover', transition: 'transform 0.8s' }} />
+                  <Image src="/maca2/maca2_3.webp" alt="Estofo com diferentes expressões" fill sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw" style={{ objectFit: 'cover', transition: 'transform 0.8s' }} />
                 </div>
-                <h3 style={{ fontFamily: 'var(--font-sans)', fontSize: '14px', fontWeight: 600, color: '#1C1A18', marginBottom: '6px' }}>
-                  Pés em X Dourado Champagne
+                <h3 style={{ fontFamily: 'var(--font-sans)', fontSize: '15px', fontWeight: 600, color: '#1C1A18', marginBottom: '8px' }}>
+                  Estofo com diferentes expressões
                 </h3>
-                <p style={{ fontFamily: 'var(--font-sans)', fontSize: '12.5px', lineHeight: 1.6, color: '#55514B' }}>
-                  Estrutura em aço com pintura eletrostática fosca de alta resistência ao desgaste e estabilidade rígida.
+                <p style={{ fontFamily: 'var(--font-sans)', fontSize: '13px', lineHeight: 1.65, color: '#55514B' }}>
+                  A PURE pode ser produzida com diferentes técnicas de estofo, permitindo alterar a linguagem da peça — de uma leitura mais limpa a um acabamento mais marcado e texturado.
                 </p>
               </div>
             </Reveal>
@@ -292,13 +312,13 @@ export default function MacaRoyalePage() {
             <Reveal direction="up" delay={350}>
               <div style={{ display: 'flex', flexDirection: 'column' }}>
                 <div className="image-hover-zoom" style={{ position: 'relative', width: '100%', height: 'clamp(260px, 22vw, 320px)', marginBottom: '16px', borderRadius: '2px', overflow: 'hidden', backgroundColor: '#EAE6DF' }}>
-                  <Image src="/maca2/maca2_4.webp" alt="Acabamento e Suporte Cervical" fill sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw" style={{ objectFit: 'cover', transition: 'transform 0.8s' }} />
+                  <Image src="/maca2/maca2_4.webp" alt="Tecidos escolhidos para o teu espaço" fill sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw" style={{ objectFit: 'cover', transition: 'transform 0.8s' }} />
                 </div>
-                <h3 style={{ fontFamily: 'var(--font-sans)', fontSize: '14px', fontWeight: 600, color: '#1C1A18', marginBottom: '6px' }}>
-                  Almofada Cervical Ergonómica
+                <h3 style={{ fontFamily: 'var(--font-sans)', fontSize: '15px', fontWeight: 600, color: '#1C1A18', marginBottom: '8px' }}>
+                  Tecidos escolhidos para o teu espaço
                 </h3>
-                <p style={{ fontFamily: 'var(--font-sans)', fontSize: '12.5px', lineHeight: 1.6, color: '#55514B' }}>
-                  Apoio de cabeça milimétrico com canal anatómico integrado para serenidade e estabilidade total.
+                <p style={{ fontFamily: 'var(--font-sans)', fontSize: '13px', lineHeight: 1.65, color: '#55514B' }}>
+                  Seleciona o tecido, a textura e o tom que melhor se integram na identidade do teu espaço.
                 </p>
               </div>
             </Reveal>
@@ -306,13 +326,13 @@ export default function MacaRoyalePage() {
             <Reveal direction="up" delay={450}>
               <div style={{ display: 'flex', flexDirection: 'column' }}>
                 <div className="image-hover-zoom" style={{ position: 'relative', width: '100%', height: 'clamp(260px, 22vw, 320px)', marginBottom: '16px', borderRadius: '2px', overflow: 'hidden', backgroundColor: '#EAE6DF' }}>
-                  <Image src="/photos/detalhe/detalhe.webp" alt="Acabamentos por medida" fill sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw" style={{ objectFit: 'cover', transition: 'transform 0.8s' }} />
+                  <Image src="/photos/detalhe/detalhe.webp" alt="Feita para ser tua" fill sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw" style={{ objectFit: 'cover', transition: 'transform 0.8s' }} />
                 </div>
-                <h3 style={{ fontFamily: 'var(--font-sans)', fontSize: '14px', fontWeight: 600, color: '#1C1A18', marginBottom: '6px' }}>
-                  Acabamentos por Medida
+                <h3 style={{ fontFamily: 'var(--font-sans)', fontSize: '15px', fontWeight: 600, color: '#1C1A18', marginBottom: '8px' }}>
+                  Feita para ser tua
                 </h3>
-                <p style={{ fontFamily: 'var(--font-sans)', fontSize: '12.5px', lineHeight: 1.6, color: '#55514B' }}>
-                  Tecidos nobres, cores personalizadas e gravação bordada do logótipo da sua clínica.
+                <p style={{ fontFamily: 'var(--font-sans)', fontSize: '13px', lineHeight: 1.65, color: '#55514B' }}>
+                  Cada combinação de estofo, tecido e acabamento metálico cria uma PURE diferente, perfeitamente alinhada com o teu espaço.
                 </p>
               </div>
             </Reveal>
@@ -340,7 +360,7 @@ export default function MacaRoyalePage() {
                 FICHA TÉCNICA
               </span>
               <h2 style={{
-                fontFamily: 'var(--font-sans)',
+                fontFamily: 'var(--font-editorial)',
                 fontSize: 'clamp(28px, 3.4vw, 42px)',
                 fontWeight: 400,
                 lineHeight: 1.15,
@@ -348,7 +368,7 @@ export default function MacaRoyalePage() {
                 color: '#1C1A18',
                 marginBottom: '32px'
               }}>
-                Dimensões e proporções milimétricas.
+                Tudo o que precisas de saber.
               </h2>
 
               <div style={{
@@ -389,7 +409,7 @@ export default function MacaRoyalePage() {
               height: 'clamp(320px, 38vw, 460px)',
               backgroundColor: 'transparent'
             }}>
-              <Image src="/photos/pecasdeassinatura/_C1M0299.webp" alt="Dimensões Maca Royale Anatómica" fill sizes="(max-width: 900px) 100vw, 800px" style={{ objectFit: 'contain' }} />
+              <Image src="/photos/pecasdeassinatura/_C1M0299.webp" alt="Dimensões Maca Pure Anatómica" fill sizes="(max-width: 900px) 100vw, 800px" style={{ objectFit: 'contain' }} />
             </div>
           </div>
         </div>

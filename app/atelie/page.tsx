@@ -1,7 +1,6 @@
 'use client';
 
 import React from 'react';
-import Link from 'next/link';
 import Image from 'next/image';
 import { Navbar } from '../components/Navbar';
 import { Footer } from '../components/Footer';
@@ -30,7 +29,7 @@ export default function AteliePage() {
                 display: 'block',
                 marginBottom: '18px'
               }}>
-                ATELIER DE MANUFATURA
+                ATELIER
               </span>
             </Reveal>
 
@@ -42,22 +41,32 @@ export default function AteliePage() {
                 lineHeight: 1.1,
                 letterSpacing: '-0.03em',
                 color: '#1C1A18',
-                marginBottom: '24px'
+                marginBottom: '28px'
               }}>
-                A arte da proporção e do detalhe milimétrico.
+                Onde cada peça ganha forma.
               </h1>
             </Reveal>
 
             <Reveal direction="up" delay={300}>
-              <p style={{
-                fontFamily: 'var(--font-sans)',
-                fontSize: 'clamp(15px, 1.15vw, 17px)',
-                lineHeight: 1.75,
-                color: '#55514B',
-                maxWidth: '660px'
-              }}>
-                Não produzimos em massa. Cada peça é confeccionada unitariamente por mestres tapeceiros, combinando espumas ortopédicas de alta resiliência e acabamentos sob medida.
-              </p>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', maxWidth: '680px' }}>
+                <p style={{
+                  fontFamily: 'var(--font-sans)',
+                  fontSize: 'clamp(15px, 1.15vw, 17px)',
+                  lineHeight: 1.75,
+                  color: '#55514B'
+                }}>
+                  A NUDE REST não nasce numa linha de produção.<br />
+                  Cada peça é construída individualmente, passando por diferentes mãos, materiais e etapas até chegar ao resultado final.
+                </p>
+                <p style={{
+                  fontFamily: 'var(--font-sans)',
+                  fontSize: 'clamp(15px, 1.15vw, 17px)',
+                  lineHeight: 1.75,
+                  color: '#55514B'
+                }}>
+                  Da estrutura ao estofo, do tecido à costura, cada escolha é feita para criar uma peça confortável, consistente e pensada para durar no dia a dia profissional.
+                </p>
+              </div>
             </Reveal>
           </div>
         </div>
@@ -100,7 +109,7 @@ export default function AteliePage() {
         borderBottom: '1px solid #ECE7DE'
       }}>
         <div className="editorial-container">
-          <div style={{ maxWidth: '600px', marginBottom: 'clamp(48px, 6vw, 72px)' }}>
+          <div style={{ maxWidth: '640px', marginBottom: 'clamp(48px, 6vw, 72px)' }}>
             <Reveal direction="up" delay={100}>
               <span style={{
                 fontFamily: 'var(--font-sans)',
@@ -112,7 +121,7 @@ export default function AteliePage() {
                 display: 'block',
                 marginBottom: '14px'
               }}>
-                MÉTODO DE PRODUÇÃO
+                O NOSSO PROCESSO
               </span>
             </Reveal>
 
@@ -125,7 +134,7 @@ export default function AteliePage() {
                 letterSpacing: '-0.025em',
                 color: '#1C1A18'
               }}>
-                Quatro etapas rigorosas de confeção artesanal.
+                Feita por etapas. Pensada como um todo.
               </h2>
             </Reveal>
           </div>
@@ -149,19 +158,19 @@ export default function AteliePage() {
                 }}>
                   <Image
                     src="/maca1/maca1_2.webp"
-                    alt="Desenho Anatómico Maca 1"
+                    alt="01 / Estrutura NUDE REST"
                     fill
                     style={{ objectFit: 'cover', transition: 'transform 0.8s cubic-bezier(0.16, 1, 0.3, 1)' }}
                   />
                 </div>
                 <span style={{ fontSize: '11px', color: '#8E867C', letterSpacing: '0.16em', textTransform: 'uppercase', display: 'block', marginBottom: '8px' }}>
-                  01 / ESTRUTURA & CURVATURA
+                  01 / ESTRUTURA
                 </span>
-                <h3 style={{ fontFamily: 'var(--font-sans)', fontSize: '17px', fontWeight: 500, color: '#1C1A18', marginBottom: '10px' }}>
-                  Chassi em Madeira Naval
+                <h3 style={{ fontFamily: 'var(--font-sans)', fontSize: '18px', fontWeight: 500, color: '#1C1A18', marginBottom: '10px' }}>
+                  A forma começa por dentro.
                 </h3>
-                <p style={{ fontFamily: 'var(--font-sans)', fontSize: '13.5px', lineHeight: 1.7, color: '#55514B' }}>
-                  Modelado com curvatura contínua que distribui uniformemente o peso corporal e anula oscilações, garantindo solidez estrutural e alívio das articulações da cliente.
+                <p style={{ fontFamily: 'var(--font-sans)', fontSize: '14px', lineHeight: 1.7, color: '#55514B' }}>
+                  É aqui que se define a base de cada modelo, respeitando as proporções, as curvas e a estabilidade necessárias para dar forma à peça.
                 </p>
               </div>
             </Reveal>
@@ -180,19 +189,19 @@ export default function AteliePage() {
                 }}>
                   <Image
                     src="/maca1/maca1_4.webp"
-                    alt="Textura Bouclé e Espuma Ortopédica"
+                    alt="02 / Conforto NUDE REST"
                     fill
                     style={{ objectFit: 'cover', transition: 'transform 0.8s cubic-bezier(0.16, 1, 0.3, 1)' }}
                   />
                 </div>
                 <span style={{ fontSize: '11px', color: '#8E867C', letterSpacing: '0.16em', textTransform: 'uppercase', display: 'block', marginBottom: '8px' }}>
-                  02 / ALCOCHOAMENTO
+                  02 / CONFORTO
                 </span>
-                <h3 style={{ fontFamily: 'var(--font-sans)', fontSize: '17px', fontWeight: 500, color: '#1C1A18', marginBottom: '10px' }}>
-                  Espuma D33 Multi-Densidade
+                <h3 style={{ fontFamily: 'var(--font-sans)', fontSize: '18px', fontWeight: 500, color: '#1C1A18', marginBottom: '10px' }}>
+                  Camadas escolhidas para serem sentidas.
                 </h3>
-                <p style={{ fontFamily: 'var(--font-sans)', fontSize: '13.5px', lineHeight: 1.7, color: '#55514B' }}>
-                  Camadas de alta densidade combinadas com memória elástica suave. Mantém a postura neutra mesmo em procedimentos de 3 horas sem deformação com o uso.
+                <p style={{ fontFamily: 'var(--font-sans)', fontSize: '14px', lineHeight: 1.7, color: '#55514B' }}>
+                  As espumas são combinadas de forma a criar equilíbrio entre firmeza, conforto e adaptação ao corpo ao longo do atendimento.
                 </p>
               </div>
             </Reveal>
@@ -211,19 +220,19 @@ export default function AteliePage() {
                 }}>
                   <Image
                     src="/maca2/maca2_3.webp"
-                    alt="Tapeçaria e Canais em Alta Definição"
+                    alt="03 / Estofo NUDE REST"
                     fill
                     style={{ objectFit: 'cover', transition: 'transform 0.8s cubic-bezier(0.16, 1, 0.3, 1)' }}
                   />
                 </div>
                 <span style={{ fontSize: '11px', color: '#8E867C', letterSpacing: '0.16em', textTransform: 'uppercase', display: 'block', marginBottom: '8px' }}>
-                  03 / TAPEÇARIA
+                  03 / ESTOFO
                 </span>
-                <h3 style={{ fontFamily: 'var(--font-sans)', fontSize: '17px', fontWeight: 500, color: '#1C1A18', marginBottom: '10px' }}>
-                  Costura Manual & Pesponto
+                <h3 style={{ fontFamily: 'var(--font-sans)', fontSize: '18px', fontWeight: 500, color: '#1C1A18', marginBottom: '10px' }}>
+                  É aqui que a peça ganha carácter.
                 </h3>
-                <p style={{ fontFamily: 'var(--font-sans)', fontSize: '13.5px', lineHeight: 1.7, color: '#55514B' }}>
-                  Alinhamento milimétrico em gomos capitoné ou bouclé liso. Fios técnicos reforçados que resistem a produtos de assepsia e atrito constante.
+                <p style={{ fontFamily: 'var(--font-sans)', fontSize: '14px', lineHeight: 1.7, color: '#55514B' }}>
+                  Cada curva, costura e acabamento é trabalhado com atenção para respeitar o desenho e dar à peça a expressão final que a distingue.
                 </p>
               </div>
             </Reveal>
@@ -242,19 +251,19 @@ export default function AteliePage() {
                 }}>
                   <Image
                     src="/maca2/maca2_5.webp"
-                    alt="Rigor de Acabamento e Testes Finais"
+                    alt="04 / Acabamento NUDE REST"
                     fill
                     style={{ objectFit: 'cover', transition: 'transform 0.8s cubic-bezier(0.16, 1, 0.3, 1)' }}
                   />
                 </div>
                 <span style={{ fontSize: '11px', color: '#8E867C', letterSpacing: '0.16em', textTransform: 'uppercase', display: 'block', marginBottom: '8px' }}>
-                  04 / RIGOR
+                  04 / ACABAMENTO
                 </span>
-                <h3 style={{ fontFamily: 'var(--font-sans)', fontSize: '17px', fontWeight: 500, color: '#1C1A18', marginBottom: '10px' }}>
-                  Controlo & Entrega Assegurada
+                <h3 style={{ fontFamily: 'var(--font-sans)', fontSize: '18px', fontWeight: 500, color: '#1C1A18', marginBottom: '10px' }}>
+                  Antes de sair do atelier, tudo é revisto.
                 </h3>
-                <p style={{ fontFamily: 'var(--font-sans)', fontSize: '13.5px', lineHeight: 1.7, color: '#55514B' }}>
-                  Cada marquesa é montada, inspecionada sob luz de ateliê e protegida com embalagem estruturada reforçada para entrega direta no seu espaço.
+                <p style={{ fontFamily: 'var(--font-sans)', fontSize: '14px', lineHeight: 1.7, color: '#55514B' }}>
+                  A peça é verificada nos detalhes finais antes de seguir para o espaço onde vai ser vivida todos os dias.
                 </p>
               </div>
             </Reveal>
@@ -287,7 +296,7 @@ export default function AteliePage() {
                 display: 'block',
                 marginBottom: '14px'
               }}>
-                PERSONALIZAÇÃO EXCLUSIVA
+                PERSONALIZAÇÃO
               </span>
               <h2 style={{
                 fontFamily: 'var(--font-sans)',
@@ -298,19 +307,30 @@ export default function AteliePage() {
                 color: '#1C1A18',
                 marginBottom: '20px'
               }}>
-                A sua marca bordada com distinção.
+                A tua NUDE REST, à tua maneira.
               </h2>
-              <p style={{
-                fontFamily: 'var(--font-sans)',
-                fontSize: '14.5px',
-                lineHeight: 1.75,
-                color: '#55514B',
-                marginBottom: '28px'
-              }}>
-                Adapte as cores de revestimento ao projeto de arquitetura do seu espaço, adicione o logótipo bordado em fios nobres e escolha bases cilíndricas ou douradas.
-              </p>
-              <Link
-                href="/maca-sculpt-arc"
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '14px', marginBottom: '32px' }}>
+                <p style={{
+                  fontFamily: 'var(--font-sans)',
+                  fontSize: '15px',
+                  lineHeight: 1.75,
+                  color: '#55514B'
+                }}>
+                  Escolhe entre diferentes tecidos, tonalidades, acabamentos e, nos modelos aplicáveis, opções de estrutura metálica.
+                </p>
+                <p style={{
+                  fontFamily: 'var(--font-sans)',
+                  fontSize: '15px',
+                  lineHeight: 1.75,
+                  color: '#55514B'
+                }}>
+                  Algumas peças podem ainda receber o logótipo do teu espaço, criando uma presença ainda mais pessoal e integrada no ambiente.
+                </p>
+              </div>
+              <a
+                href="https://wa.me/351910800000?text=Ol%C3%A1%2C%20gostaria%20de%20personalizar%20a%20minha%20pe%C3%A7a%20NUDE%20REST."
+                target="_blank"
+                rel="noopener noreferrer"
                 style={{
                   fontFamily: 'var(--font-sans)',
                   fontSize: '11px',
@@ -319,7 +339,7 @@ export default function AteliePage() {
                   textTransform: 'uppercase',
                   color: '#EDE8DF',
                   backgroundColor: '#1C1A18',
-                  padding: '14px 32px',
+                  padding: '16px 36px',
                   borderRadius: '2px',
                   textDecoration: 'none',
                   display: 'inline-flex',
@@ -328,15 +348,15 @@ export default function AteliePage() {
                   transition: 'background-color 0.3s ease'
                 }}
               >
-                <span>CONFIGURAR A SUA PEÇA</span>
+                <span>PERSONALIZAR A MINHA PEÇA</span>
                 <span>→</span>
-              </Link>
+              </a>
             </div>
 
             <div style={{
               display: 'flex',
               flexDirection: 'column',
-              gap: '20px',
+              gap: '24px',
               fontFamily: 'var(--font-sans)',
               fontSize: '13.5px',
               color: '#3A3632',
@@ -344,16 +364,22 @@ export default function AteliePage() {
               paddingLeft: 'clamp(20px, 3vw, 36px)'
             }}>
               <div>
-                <strong style={{ display: 'block', color: '#1C1A18', marginBottom: '4px' }}>Bordado Personalizado</strong>
-                Monogramas e logótipos vetorizados aplicados com fios acetinados nobres.
+                <strong style={{ display: 'block', color: '#1C1A18', marginBottom: '4px', fontSize: '14.5px', fontWeight: 500 }}>
+                  Tecidos & Tonalidades
+                </strong>
+                Diferentes texturas e opções de cor pensadas para harmonizar com a decoração e atmosfera do teu espaço.
               </div>
               <div>
-                <strong style={{ display: 'block', color: '#1C1A18', marginBottom: '4px' }}>Paleta de Cores Signature</strong>
-                Tons de Alabaster, Linen Nude, Taupe Greige e Mocha Noir.
+                <strong style={{ display: 'block', color: '#1C1A18', marginBottom: '4px', fontSize: '14.5px', fontWeight: 500 }}>
+                  Estruturas & Acabamentos
+                </strong>
+                Opções de bases e estruturas metálicas em diferentes acabamentos nos modelos aplicáveis.
               </div>
               <div>
-                <strong style={{ display: 'block', color: '#1C1A18', marginBottom: '4px' }}>Acessórios Anatómicos</strong>
-                Almofada cervical com encaixe magnético e capas em cristal náutico flexível.
+                <strong style={{ display: 'block', color: '#1C1A18', marginBottom: '4px', fontSize: '14.5px', fontWeight: 500 }}>
+                  Identidade do Teu Espaço
+                </strong>
+                Integração do teu logótipo para uma presença ainda mais pessoal e integrada no ambiente.
               </div>
             </div>
           </div>

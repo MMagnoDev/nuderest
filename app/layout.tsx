@@ -1,10 +1,10 @@
 import type { Metadata, Viewport } from 'next';
-import { Instrument_Serif, Plus_Jakarta_Sans } from 'next/font/google';
+import { Cormorant_Garamond, Plus_Jakarta_Sans } from 'next/font/google';
 import './globals.css';
-import { CartProvider } from './context/CartContext';
-import { CartDrawer } from './components/CartDrawer';
+
 import { SmoothScroll } from './components/SmoothScroll';
 import { ScrollRevealInit } from './components/ScrollReveal';
+import { CookieConsent } from './components/CookieConsent';
 
 export const viewport: Viewport = {
   width: 'device-width',
@@ -13,11 +13,11 @@ export const viewport: Viewport = {
   themeColor: '#151413',
 };
 
-const serifFont = Instrument_Serif({
+const cormorant = Cormorant_Garamond({
   subsets: ['latin'],
-  weight: ['400'],
+  weight: ['300', '400', '500', '600', '700'],
   style: ['normal', 'italic'],
-  variable: '--font-serif',
+  variable: '--font-cormorant',
   display: 'swap',
 });
 
@@ -67,17 +67,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="pt-PT" className={`${serifFont.variable} ${jakarta.variable}`}>
+    <html lang="pt-PT" className={`${cormorant.variable} ${jakarta.variable}`}>
       <head>
         <meta name="theme-color" content="#151413" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet" />
       </head>
       <body>
         <SmoothScroll />
         <ScrollRevealInit />
-        <CartProvider>
-          {children}
-          <CartDrawer />
-        </CartProvider>
+        {children}
+        <CookieConsent />
       </body>
     </html>
   );

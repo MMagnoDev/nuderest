@@ -10,7 +10,7 @@ export default function ContatoPage() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
-  const [model, setModel] = useState('Maca Sculpt Wave');
+  const [model, setModel] = useState('SCULPT');
   const [message, setMessage] = useState('');
   const [submitted, setSubmitted] = useState(false);
 
@@ -176,7 +176,7 @@ export default function ContatoPage() {
                 }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '13px', color: '#55514B' }}>
                     <span style={{ width: '6px', height: '6px', borderRadius: '50%', backgroundColor: '#1C1A18' }}></span>
-                    Confeção artesanal em 7 a 10 dias úteis
+                    Confeção artesanal em 15 a 20 dias úteis
                   </div>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '13px', color: '#55514B' }}>
                     <span style={{ width: '6px', height: '6px', borderRadius: '50%', backgroundColor: '#1C1A18' }}></span>
@@ -323,10 +323,8 @@ export default function ContatoPage() {
                         cursor: 'pointer'
                       }}
                     >
-                      <option value="Maca Sculpt Wave">Maca Sculpt Wave (Arco Escultural)</option>
-                      <option value="Maca Royale Anatómica">Maca Royale Anatómica (Capitoné & Canais)</option>
-                      <option value="Personalização Sob Medida">Personalização Completa / Projeto de Clínica</option>
-                      <option value="Dúvidas Gerais">Outras Informações</option>
+                      <option value="SCULPT">SCULPT</option>
+                      <option value="PURE">PURE</option>
                     </select>
                   </div>
 

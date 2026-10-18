@@ -1,10 +1,35 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 
+const defaultFaqs = [
+  {
+    question: 'Qual é o prazo de confeção e entrega das marquesas?',
+    answer: 'O nosso prazo de confeção artesanal é de 15 a 20 dias úteis. Cada peça é produzida individualmente sob encomenda no nosso atelier antes de ser inspecionada e enviada com segurança para o teu espaço.'
+  },
+  {
+    question: 'Como funciona a personalização de tecidos e acabamentos?',
+    answer: 'Podes escolher entre diferentes tipos de tecido, tonalidades e acabamentos. Nos modelos aplicáveis (como a PURE), dispomos de diferentes técnicas de estofo e opções de estrutura metálica.'
+  },
+  {
+    question: 'É possível incluir o logótipo da minha marca na peça?',
+    answer: 'Sim. Algumas peças podem receber o logótipo ou monograma do teu espaço, conferindo uma presença visual ainda mais pessoal, autoral e integrada no teu ambiente de atendimento.'
+  },
+  {
+    question: 'Qual é a capacidade de suporte e estabilidade da estrutura?',
+    answer: 'As marquesas NUDE REST foram concebidas para uso profissional intenso, com capacidade estrutural de até 200 kg estáticos e ergonomia pensada tanto para o conforto da cliente como para a postura da profissional.'
+  },
+  {
+    question: 'Como posso solicitar uma proposta ou encomendar?',
+    answer: 'Podes entrar em contacto direto connosco através do WhatsApp ou preencher o formulário na página de Contactos com o modelo e detalhes de interesse para receberes um orçamento personalizado.'
+  }
+];
+
 export const Footer: React.FC = () => {
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
+
   return (
     <footer className="editorial-footer" style={{
       backgroundColor: '#121110',
@@ -16,6 +41,110 @@ export const Footer: React.FC = () => {
     }}>
       <div className="editorial-container">
         
+        {/* FAQ Accordion Section */}
+        <section
+          aria-label="Perguntas Frequentes"
+          style={{
+            paddingBottom: 'clamp(48px, 6vw, 72px)',
+            marginBottom: 'clamp(48px, 6vw, 72px)',
+            borderBottom: '1px solid rgba(255, 255, 255, 0.08)'
+          }}
+        >
+          <div style={{ maxWidth: '640px', marginBottom: 'clamp(32px, 4vw, 48px)' }}>
+            <span style={{
+              fontSize: '11px',
+              fontWeight: 600,
+              letterSpacing: '0.2em',
+              textTransform: 'uppercase',
+              color: '#8E867C',
+              display: 'block',
+              marginBottom: '12px'
+            }}>
+              FAQ · PERGUNTAS FREQUENTES
+            </span>
+            <h3 style={{
+              fontFamily: 'var(--font-title)',
+              fontSize: 'clamp(26px, 3.2vw, 38px)',
+              fontWeight: 400,
+              lineHeight: 1.2,
+              letterSpacing: '-0.02em',
+              color: '#EDE8DF'
+            }}>
+              Tudo o que precisas de saber antes de encomendar.
+            </h3>
+          </div>
+
+          <div style={{
+            display: 'flex',
+            flexDirection: 'column',
+            maxWidth: '920px',
+            borderBottom: '1px solid rgba(255, 255, 255, 0.08)'
+          }}>
+            {defaultFaqs.map((faq, index) => {
+              const isOpen = openIndex === index;
+              return (
+                <div
+                  key={index}
+                  style={{
+                    borderTop: '1px solid rgba(255, 255, 255, 0.08)'
+                  }}
+                >
+                  <button
+                    onClick={() => setOpenIndex(isOpen ? null : index)}
+                    aria-expanded={isOpen}
+                    style={{
+                      width: '100%',
+                      background: 'transparent',
+                      border: 'none',
+                      color: '#EDE8DF',
+                      padding: '22px 0',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'space-between',
+                      gap: '16px',
+                      cursor: 'pointer',
+                      textAlign: 'left',
+                      fontFamily: 'var(--font-sans)',
+                      fontSize: 'clamp(15px, 1.1vw, 17px)',
+                      fontWeight: 400,
+                      transition: 'color 0.2s ease'
+                    }}
+                    onMouseEnter={(e) => (e.currentTarget.style.color = '#FFFFFF')}
+                    onMouseLeave={(e) => (e.currentTarget.style.color = '#EDE8DF')}
+                  >
+                    <span>{faq.question}</span>
+                    <span style={{
+                      fontSize: '18px',
+                      color: '#8E867C',
+                      transition: 'transform 0.3s ease',
+                      transform: isOpen ? 'rotate(45deg)' : 'none',
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      width: '24px',
+                      height: '24px'
+                    }}>
+                      +
+                    </span>
+                  </button>
+
+                  {isOpen && (
+                    <div style={{
+                      paddingBottom: '22px',
+                      color: '#A39D93',
+                      fontSize: '14px',
+                      lineHeight: 1.75,
+                      maxWidth: '780px'
+                    }}>
+                      <p>{faq.answer}</p>
+                    </div>
+                  )}
+                </div>
+              );
+            })}
+          </div>
+        </section>
+
         {/* Main Footer Grid */}
         <div className="editorial-footer-grid">
           
@@ -74,12 +203,7 @@ export const Footer: React.FC = () => {
               </li>
               <li>
                 <Link href="/maca-modelo-2" style={{ color: '#8E867C', textDecoration: 'none', transition: 'color 0.2s ease' }} onMouseEnter={(e) => (e.currentTarget.style.color = '#EDE8DF')} onMouseLeave={(e) => (e.currentTarget.style.color = '#8E867C')}>
-                  Maca Royale Anatómica
-                </Link>
-              </li>
-              <li>
-                <Link href="/maca-sculpt-arc" style={{ color: '#8E867C', textDecoration: 'none', transition: 'color 0.2s ease' }} onMouseEnter={(e) => (e.currentTarget.style.color = '#EDE8DF')} onMouseLeave={(e) => (e.currentTarget.style.color = '#8E867C')}>
-                  Personalizador Sob Medida
+                  Maca Pure Anatómica
                 </Link>
               </li>
               <li>
@@ -115,7 +239,7 @@ export const Footer: React.FC = () => {
               </li>
               <li>
                 <Link href="/contato" style={{ color: '#8E867C', textDecoration: 'none', transition: 'color 0.2s ease' }} onMouseEnter={(e) => (e.currentTarget.style.color = '#EDE8DF')} onMouseLeave={(e) => (e.currentTarget.style.color = '#8E867C')}>
-                  Atendimento & Encomendas
+                  Contactos
                 </Link>
               </li>
             </ul>
