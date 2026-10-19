@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Image from 'next/image';
 import Link from 'next/link';
 import { Navbar } from '../components/Navbar';
 import { Footer } from '../components/Footer';
@@ -16,78 +17,115 @@ export default function SobrePage() {
         padding: 'clamp(96px, 11vw, 150px) 0 clamp(64px, 8vw, 100px) 0',
         borderBottom: '1px solid #ECE7DE'
       }}>
-        <div className="editorial-container">
-          <div style={{ maxWidth: '820px', margin: '0 auto' }}>
-            <Reveal direction="up" delay={100}>
-              <span style={{
-                fontFamily: 'var(--font-sans)',
-                fontSize: '11px',
-                fontWeight: 600,
-                letterSpacing: '0.22em',
-                textTransform: 'uppercase',
-                color: '#8E867C',
-                display: 'block',
-                marginBottom: '20px'
-              }}>
-                A NOSSA HISTÓRIA
-              </span>
-            </Reveal>
-
-            <Reveal direction="up" delay={200}>
-              <h1 style={{
-                fontFamily: 'var(--font-editorial)',
-                fontSize: 'clamp(36px, 4.6vw, 62px)',
-                fontWeight: 400,
-                lineHeight: 1.15,
-                letterSpacing: '-0.025em',
-                color: '#1C1A18',
-                marginBottom: '32px'
-              }}>
-                Nasceu da prática.<br />
-                Cresceu da vontade de fazer diferente.
-              </h1>
-            </Reveal>
-
-            <Reveal direction="up" delay={300}>
-              <div style={{
-                fontFamily: 'var(--font-sans)',
-                fontSize: 'clamp(15px, 1.15vw, 17px)',
-                lineHeight: 1.85,
-                color: '#55514B',
-                display: 'flex',
-                flexDirection: 'column',
-                gap: '22px'
-              }}>
-                <p>
-                  A NUDE REST nasceu da minha experiência enquanto lash designer e de anos passados a trabalhar diariamente com clientes, espaços e marquesas.
-                </p>
-                <p>
-                  Ao longo desse percurso, fui percebendo que cuidamos de quase tudo: da técnica, da luz, da decoração, da experiência, dos pequenos detalhes.
-                </p>
-                <p>
-                  Mas havia uma peça essencial que muitas vezes ficava para segundo plano: a marquesa.
-                </p>
-                <p>
-                  É nela que a cliente passa grande parte do atendimento. É à volta dela que a profissional trabalha durante horas. E, ainda assim, nem sempre é pensada com o cuidado que esse papel merece.
-                </p>
-              </div>
-            </Reveal>
-
-            <Reveal direction="up" delay={400}>
-              <div style={{
-                marginTop: '36px',
-                paddingLeft: '24px',
-                borderLeft: '2px solid #1C1A18'
-              }}>
-                <p style={{
-                  fontFamily: 'var(--font-editorial)',
-                  fontSize: 'clamp(18px, 1.6vw, 24px)',
-                  fontStyle: 'italic',
-                  lineHeight: 1.5,
-                  color: '#1C1A18'
+        <div className="editorial-container" style={{ maxWidth: '1280px' }}>
+          <div className="sobre-hero-grid" style={{
+            display: 'grid',
+            gridTemplateColumns: 'minmax(0, 1.15fr) minmax(0, 0.85fr)',
+            alignItems: 'center',
+            gap: 'clamp(40px, 6vw, 84px)'
+          }}>
+            <div>
+              <Reveal direction="up" delay={100}>
+                <span style={{
+                  fontFamily: 'var(--font-sans)',
+                  fontSize: '11px',
+                  fontWeight: 600,
+                  letterSpacing: '0.22em',
+                  textTransform: 'uppercase',
+                  color: '#8E867C',
+                  display: 'block',
+                  marginBottom: '20px'
                 }}>
-                  Foi daí que nasceu a vontade de fazer diferente.
-                </p>
+                  A NOSSA HISTÓRIA
+                </span>
+              </Reveal>
+
+              <Reveal direction="up" delay={200}>
+                <h1 style={{
+                  fontFamily: 'var(--font-editorial)',
+                  fontSize: 'clamp(34px, 4.2vw, 56px)',
+                  fontWeight: 400,
+                  lineHeight: 1.15,
+                  letterSpacing: '-0.025em',
+                  color: '#1C1A18',
+                  marginBottom: '32px'
+                }}>
+                  Nasceu da prática.<br />
+                  Cresceu da vontade de fazer diferente.
+                </h1>
+              </Reveal>
+
+              <Reveal direction="up" delay={300}>
+                <div style={{
+                  fontFamily: 'var(--font-sans)',
+                  fontSize: 'clamp(15px, 1.1vw, 16.5px)',
+                  lineHeight: 1.85,
+                  color: '#55514B',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: '20px'
+                }}>
+                  <p>
+                    A NUDE REST nasceu da minha experiência enquanto lash designer e de anos passados a trabalhar diariamente com clientes, espaços e marquesas.
+                  </p>
+                  <p>
+                    Ao longo desse percurso, fui percebendo que cuidamos de quase tudo: da técnica, da luz, da decoração, da experiência, dos pequenos detalhes.
+                  </p>
+                  <p>
+                    Mas havia uma peça essencial que muitas vezes ficava para segundo plano: a marquesa.
+                  </p>
+                  <p>
+                    É nela que a cliente passa grande parte do atendimento. É à volta dela que a profissional trabalha durante horas. E, ainda assim, nem sempre é pensada com o cuidado que esse papel merece.
+                  </p>
+                </div>
+              </Reveal>
+
+              <Reveal direction="up" delay={400}>
+                <div style={{
+                  marginTop: '36px',
+                  paddingLeft: '24px',
+                  borderLeft: '2px solid #1C1A18'
+                }}>
+                  <p style={{
+                    fontFamily: 'var(--font-editorial)',
+                    fontSize: 'clamp(18px, 1.6vw, 24px)',
+                    fontStyle: 'italic',
+                    lineHeight: 1.5,
+                    color: '#1C1A18'
+                  }}>
+                    Foi daí que nasceu a vontade de fazer diferente.
+                  </p>
+                </div>
+              </Reveal>
+            </div>
+
+            {/* Right Column: Image a-marca.webp */}
+            <Reveal direction="left" delay={250}>
+              <div
+                className="image-hover-zoom"
+                style={{
+                  position: 'relative',
+                  width: '100%',
+                  aspectRatio: '4 / 5',
+                  borderRadius: '2px',
+                  overflow: 'hidden',
+                  backgroundColor: '#EAE6DF',
+                  boxShadow: '0 20px 48px -12px rgba(28, 26, 24, 0.08)'
+                }}
+              >
+                <Image
+                  src="/photos/sobre/a-marca.webp"
+                  alt="NUDE REST — A Nossa História"
+                  fill
+                  priority
+                  unoptimized
+                  sizes="(max-width: 900px) 100vw, 45vw"
+                  style={{
+                    objectFit: 'cover',
+                    objectPosition: 'center 20%',
+                    transition: 'transform 0.8s cubic-bezier(0.16, 1, 0.3, 1)'
+                  }}
+                />
               </div>
             </Reveal>
           </div>

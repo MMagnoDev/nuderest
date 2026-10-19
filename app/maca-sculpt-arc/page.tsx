@@ -28,14 +28,14 @@ export default function CustomizerPage() {
   ];
 
   const sculptImages = [
-    '/maca1/maca1_1.webp',
+    '/photos/sculpt.webp',
     '/maca1/maca1_2.webp',
     '/maca1/maca1_3.webp',
     '/maca1/maca1_4.webp'
   ];
 
   const royaleImages = [
-    '/maca2/maca2_1.webp',
+    '/photos/pure.webp',
     '/photos/pecasdeassinatura/_C1M0299.webp',
     '/maca2/maca2_2.webp',
     '/maca2/maca2_3.webp',

@@ -8,10 +8,10 @@ import { Footer } from '../components/Footer';
 import { Reveal } from '../components/ScrollReveal';
 
 export default function MacaRoyalePage() {
-  const [activeImage, setActiveImage] = useState('/maca2/maca2_1.webp');
+  const [activeImage, setActiveImage] = useState('/photos/pure.webp');
 
   const galleryImages = [
-    '/maca2/maca2_1.webp',
+    '/photos/pure.webp',
     '/photos/pecasdeassinatura/_C1M0299.webp',
     '/maca2/maca2_2.webp',
     '/maca2/maca2_3.webp',

@@ -21,9 +21,9 @@ export const PRODUCTS_CATALOG: Product[] = [
     reviewCount: 88,
     badge: 'Design Assinatura',
     leadTime: 'Confeção em 15 a 20 dias úteis',
-    image: '/maca1/maca1_1.webp',
+    image: '/photos/sculpt.webp',
     gallery: [
-      '/maca1/maca1_1.webp',
+      '/photos/sculpt.webp',
       '/maca1/maca1_2.webp',
       '/maca1/maca1_3.webp',
       '/maca1/maca1_4.webp'
@@ -68,9 +68,9 @@ export const PRODUCTS_CATALOG: Product[] = [
     reviewCount: 112,
     badge: 'Mais Desejada',
     leadTime: 'Confeção em 7 a 10 dias úteis',
-    image: '/photos/pecasdeassinatura/_C1M0299.webp',
+    image: '/photos/pure.webp',
     gallery: [
-      '/photos/pecasdeassinatura/_C1M0299.webp',
+      '/photos/pure.webp',
       '/maca2/maca2_2.webp',
       '/maca2/maca2_3.webp',
       '/maca2/maca2_4.webp',

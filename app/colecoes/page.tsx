@@ -81,10 +81,11 @@ export default function ColecoesPage() {
                 backgroundColor: '#EAE6DF'
               }}>
                 <Image
-                  src="/maca1/maca1_1.webp"
+                  src="/photos/sculpt.webp"
                   alt="Maca Sculpt Wave em Bouclé Marfim"
                   fill
                   priority
+                  unoptimized
                   sizes="(max-width: 900px) 100vw, 55vw"
                   style={{ objectFit: 'cover', transition: 'transform 0.8s cubic-bezier(0.16, 1, 0.3, 1)' }}
                 />
@@ -300,9 +301,10 @@ export default function ColecoesPage() {
                 backgroundColor: '#EAE6DF'
               }}>
                 <Image
-                  src="/photos/pecasdeassinatura/_C1M0299.webp"
+                  src="/photos/pure.webp"
                   alt="Maca Royale Anatómica"
                   fill
+                  unoptimized
                   sizes="(max-width: 900px) 100vw, 55vw"
                   style={{ objectFit: 'cover', objectPosition: 'center 50%', transition: 'transform 0.8s cubic-bezier(0.16, 1, 0.3, 1)' }}
                 />
@@ -372,7 +374,7 @@ export default function ColecoesPage() {
                 paddingTop: '32px'
               }}>
                 <div className="image-hover-zoom" style={{ position: 'relative', width: '100%', aspectRatio: '16/9', borderRadius: '2px', overflow: 'hidden', backgroundColor: '#EAE6DF', marginBottom: '24px' }}>
-                  <Image src="/maca1/maca1_1.webp" alt="Maca Sculpt Wave" fill sizes="(max-width: 768px) 100vw, 50vw" style={{ objectFit: 'cover', transition: 'transform 0.8s cubic-bezier(0.16, 1, 0.3, 1)' }} />
+                  <Image src="/photos/sculpt.webp" alt="Maca Sculpt Wave" fill unoptimized sizes="(max-width: 768px) 100vw, 50vw" style={{ objectFit: 'cover', transition: 'transform 0.8s cubic-bezier(0.16, 1, 0.3, 1)' }} />
                 </div>
                 <h3 style={{ fontFamily: 'var(--font-sans)', fontSize: '20px', fontWeight: 500, color: '#1C1A18', marginBottom: '8px' }}>
                   Maca Sculpt Wave
@@ -395,7 +397,7 @@ export default function ColecoesPage() {
                 paddingTop: '32px'
               }}>
                 <div className="image-hover-zoom" style={{ position: 'relative', width: '100%', aspectRatio: '16/9', borderRadius: '2px', overflow: 'hidden', backgroundColor: '#EAE6DF', marginBottom: '24px' }}>
-                  <Image src="/maca2/maca2_1.webp" alt="Maca Pure Anatómica" fill sizes="(max-width: 768px) 100vw, 50vw" style={{ objectFit: 'cover', transition: 'transform 0.8s cubic-bezier(0.16, 1, 0.3, 1)' }} />
+                  <Image src="/photos/pure.webp" alt="Maca Pure Anatómica" fill unoptimized sizes="(max-width: 768px) 100vw, 50vw" style={{ objectFit: 'cover', transition: 'transform 0.8s cubic-bezier(0.16, 1, 0.3, 1)' }} />
                 </div>
                 <h3 style={{ fontFamily: 'var(--font-sans)', fontSize: '20px', fontWeight: 500, color: '#1C1A18', marginBottom: '8px' }}>
                   Maca Pure Anatómica

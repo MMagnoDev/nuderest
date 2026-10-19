@@ -8,10 +8,10 @@ import { Footer } from '../components/Footer';
 import { Reveal } from '../components/ScrollReveal';
 
 export default function MacaSculptPage() {
-  const [activeImage, setActiveImage] = useState('/maca1/maca1_1.webp');
+  const [activeImage, setActiveImage] = useState('/photos/sculpt.webp');
 
   const galleryImages = [
-    '/maca1/maca1_1.webp',
+    '/photos/sculpt.webp',
     '/maca1/maca1_2.webp',
     '/maca1/maca1_3.webp',
     '/maca1/maca1_4.webp'
@@ -425,7 +425,7 @@ export default function MacaSculptPage() {
               height: 'clamp(320px, 38vw, 460px)',
               backgroundColor: 'transparent'
             }}>
-              <Image src="/maca1/maca1_1.webp" alt="Dimensões SCULPT" fill sizes="(max-width: 900px) 100vw, 800px" style={{ objectFit: 'contain' }} />
+              <Image src="/photos/sculpt.webp" alt="Dimensões SCULPT" fill sizes="(max-width: 900px) 100vw, 800px" style={{ objectFit: 'contain' }} />
             </div>
           </div>
         </div>

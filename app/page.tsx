@@ -75,6 +75,7 @@ export default function HomePage() {
               willChange: 'transform'
             }}
           >
+            <source src="/hero.webm" type="video/webm" />
             <source src="/videohero.mp4" type="video/mp4" />
           </video>
           {/* Subtle Luminous Gradient Overlay */}
@@ -135,7 +136,14 @@ export default function HomePage() {
                 <p>
                   A NUDE REST nasceu de quem conhece esta realidade de perto — e acredita que a peça onde tudo acontece pode oferecer mais.
                 </p>
-                <p style={{ color: '#EDE8DF', lineHeight: 1.6 }}>
+                <p style={{
+                  fontFamily: 'var(--font-editorial)',
+                  fontStyle: 'italic',
+                  fontSize: 'clamp(20px, 1.7vw, 25px)',
+                  lineHeight: 1.4,
+                  letterSpacing: '-0.01em',
+                  color: '#EDE8DF'
+                }}>
                   Conforto para quem recebe.<br />
                   Funcionalidade para quem trabalha.<br />
                   Presença para o espaço.
@@ -186,334 +194,469 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 03 — REFERENCE SECTION 1: ARCHIVE / COLLECTION GALLERY ROW (3 PROPORTIONAL CARDS) */}
+      {/* 03 — SIGNATURE MODELS SHOWCASE (STAGGERED EDITORIAL SHOWCASE) */}
       <section style={{
-        padding: 'clamp(64px, 7vw, 100px) 0',
-        backgroundColor: '#FAF9F6'
+        padding: 'clamp(72px, 8vw, 120px) 0',
+        backgroundColor: '#FAF9F6',
+        borderBottom: '1px solid #ECE7DE'
       }}>
-        <div className="editorial-container">
-          <div className="editorial-signature-row">
-            {/* Left Column: Intro text */}
-            <div>
-
-
-              <Reveal direction="up" delay={200}>
+        <div className="editorial-container" style={{ maxWidth: '1360px' }}>
+          
+          {/* Row 1: Sculpt (Text on Left, Image on Right) */}
+          <div className="model-showcase-row model-showcase-row-sculpt" style={{
+            display: 'grid',
+            gridTemplateColumns: 'minmax(280px, 1fr) minmax(360px, 1.45fr)',
+            gap: 'clamp(36px, 6vw, 96px)',
+            alignItems: 'center',
+            marginBottom: 'clamp(64px, 8vw, 120px)'
+          }}>
+            {/* Text Column */}
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
+              <Reveal direction="up" delay={150}>
                 <h2 style={{
-                  fontFamily: 'var(--font-sans)',
-                  fontSize: 'clamp(24px, 2.4vw, 32px)',
-                  fontWeight: 500,
-                  lineHeight: 1.2,
+                  fontFamily: 'var(--font-title)',
+                  fontSize: 'clamp(42px, 5vw, 68px)',
+                  fontWeight: 400,
+                  lineHeight: 1.05,
                   letterSpacing: '-0.02em',
                   color: '#1C1A18',
-                  marginBottom: '14px'
+                  marginBottom: '20px'
                 }}>
-                  Peças de Assinatura
+                  Sculpt
                 </h2>
               </Reveal>
 
-              <Reveal direction="up" delay={300}>
+              <Reveal direction="up" delay={250}>
                 <p style={{
                   fontFamily: 'var(--font-sans)',
-                  fontSize: '13px',
+                  fontSize: 'clamp(14px, 1.05vw, 15.5px)',
                   lineHeight: 1.65,
-                  color: '#6E6860',
-                  marginBottom: '24px',
-                  maxWidth: '220px'
+                  color: '#55514B',
+                  maxWidth: '360px',
+                  marginBottom: '32px'
                 }}>
-                  Ergonomia precisa e acabamentos por medida para clínicas de alto padrão.
+                  Escultura e presença para ambientes de tratamento onde o conforto e a estética se encontram.
                 </p>
               </Reveal>
 
-              <Reveal direction="up" delay={400}>
+              <Reveal direction="up" delay={350}>
                 <Link
-                  href="/colecoes"
+                  href="/maca-modelo-1"
                   style={{
                     fontFamily: 'var(--font-sans)',
                     fontSize: '11px',
-                    fontWeight: 500,
-                    letterSpacing: '0.14em',
+                    fontWeight: 600,
+                    letterSpacing: '0.18em',
                     textTransform: 'uppercase',
                     color: '#1C1A18',
                     textDecoration: 'none',
                     borderBottom: '1px solid #1C1A18',
-                    paddingBottom: '2px',
+                    paddingBottom: '3px',
                     display: 'inline-flex',
                     alignItems: 'center',
-                    gap: '6px'
+                    gap: '8px',
+                    transition: 'opacity 0.2s ease'
                   }}
+                  onMouseEnter={(e) => (e.currentTarget.style.opacity = '0.7')}
+                  onMouseLeave={(e) => (e.currentTarget.style.opacity = '1')}
                 >
-                  <span>VER TODAS</span>
+                  <span>VER MODELO</span>
                   <span>→</span>
                 </Link>
               </Reveal>
             </div>
 
-            {/* Right Column: 3 Portrait Image Cards */}
-            <div className="editorial-signature-cards">
-              {/* Card 1: Maca Sculpt */}
+            {/* Image Column */}
+            <Reveal direction="up" delay={200}>
+              <Link href="/maca-modelo-1" style={{ display: 'block', textDecoration: 'none' }}>
+                <div className="image-hover-zoom" style={{
+                  position: 'relative',
+                  width: '100%',
+                  aspectRatio: '16/11',
+                  borderRadius: '2px',
+                  overflow: 'hidden',
+                  backgroundColor: '#EAE6DF',
+                  boxShadow: '0 8px 30px rgba(0, 0, 0, 0.04)'
+                }}>
+                  <Image
+                    src="/photos/sculpt.webp"
+                    alt="Sculpt — NUDE REST"
+                    fill
+                    priority
+                    unoptimized
+                    sizes="(max-width: 900px) 100vw, 60vw"
+                    style={{
+                      objectFit: 'cover',
+                      objectPosition: 'center 50%',
+                      transition: 'transform 0.8s cubic-bezier(0.16, 1, 0.3, 1)'
+                    }}
+                  />
+                </div>
+              </Link>
+            </Reveal>
+          </div>
+
+          {/* Row 2: Pure (Image on Left, Text on Right) */}
+          <div className="model-showcase-row model-showcase-row-pure" style={{
+            display: 'grid',
+            gridTemplateColumns: 'minmax(360px, 1.45fr) minmax(280px, 1fr)',
+            gap: 'clamp(36px, 6vw, 96px)',
+            alignItems: 'center'
+          }}>
+            {/* Image Column */}
+            <Reveal direction="up" delay={200}>
+              <Link href="/maca-modelo-2" style={{ display: 'block', textDecoration: 'none' }}>
+                <div className="image-hover-zoom" style={{
+                  position: 'relative',
+                  width: '100%',
+                  aspectRatio: '16/11',
+                  borderRadius: '2px',
+                  overflow: 'hidden',
+                  backgroundColor: '#EAE6DF',
+                  boxShadow: '0 8px 30px rgba(0, 0, 0, 0.04)'
+                }}>
+                  <Image
+                    src="/photos/pure.webp"
+                    alt="Pure — NUDE REST"
+                    fill
+                    priority
+                    unoptimized
+                    sizes="(max-width: 900px) 100vw, 60vw"
+                    style={{
+                      objectFit: 'cover',
+                      objectPosition: 'center 50%',
+                      transition: 'transform 0.8s cubic-bezier(0.16, 1, 0.3, 1)'
+                    }}
+                  />
+                </div>
+              </Link>
+            </Reveal>
+
+            {/* Text Column */}
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
               <Reveal direction="up" delay={150}>
-                <Link href="/maca-modelo-1" style={{ textDecoration: 'none', color: 'inherit', display: 'flex', flexDirection: 'column' }}>
-                  <div className="image-hover-zoom" style={{
-                    position: 'relative',
-                    width: '100%',
-                    aspectRatio: '3/4.2',
-                    backgroundColor: '#EAE6DF',
-                    borderRadius: '2px',
-                    overflow: 'hidden',
-                    marginBottom: '14px'
-                  }}>
-                    <Image
-                      src="/photos/pecasdeassinatura/_C1M0021_mirrored.webp"
-                      alt="Maca Sculpt Wave"
-                      fill
-                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 400px"
-                      style={{ objectFit: 'cover', objectPosition: 'center 45%', transition: 'transform 0.8s cubic-bezier(0.16, 1, 0.3, 1)' }}
-                    />
-                  </div>
-                  <h3 style={{
-                    fontFamily: 'var(--font-sans)',
-                    fontSize: '15px',
-                    fontWeight: 500,
-                    letterSpacing: '-0.01em',
-                    color: '#1C1A18',
-                    marginBottom: '4px'
-                  }}>
-                    Maca Sculpt Wave
-                  </h3>
-                  <span style={{
-                    fontFamily: 'var(--font-sans)',
-                    fontSize: '12px',
-                    color: '#8E867C'
-                  }}>
-                    Design em Arco Contínuo
-                  </span>
-                </Link>
+                <h2 style={{
+                  fontFamily: 'var(--font-title)',
+                  fontSize: 'clamp(42px, 5vw, 68px)',
+                  fontWeight: 400,
+                  lineHeight: 1.05,
+                  letterSpacing: '-0.02em',
+                  color: '#1C1A18',
+                  marginBottom: '20px'
+                }}>
+                  Pure
+                </h2>
               </Reveal>
 
-              {/* Card 2: Maca Pure */}
               <Reveal direction="up" delay={250}>
-                <Link href="/maca-modelo-2" style={{ textDecoration: 'none', color: 'inherit', display: 'flex', flexDirection: 'column' }}>
-                  <div className="image-hover-zoom" style={{
-                    position: 'relative',
-                    width: '100%',
-                    aspectRatio: '3/4.2',
-                    backgroundColor: '#EAE6DF',
-                    borderRadius: '2px',
-                    overflow: 'hidden',
-                    marginBottom: '14px'
-                  }}>
-                    <Image
-                      src="/photos/pecasdeassinatura/_C1M0299.webp"
-                      alt="Maca Pure Anatómica"
-                      fill
-                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 500px"
-                      style={{ objectFit: 'cover', objectPosition: 'center 50%', transition: 'transform 0.8s cubic-bezier(0.16, 1, 0.3, 1)' }}
-                    />
-                  </div>
-                  <h3 style={{
+                <p style={{
+                  fontFamily: 'var(--font-sans)',
+                  fontSize: 'clamp(14px, 1.05vw, 15.5px)',
+                  lineHeight: 1.65,
+                  color: '#55514B',
+                  maxWidth: '360px',
+                  marginBottom: '32px'
+                }}>
+                  Conforto envolvente e linhas equilibradas para uma experiência de tratamento em pleno bem-estar.
+                </p>
+              </Reveal>
+
+              <Reveal direction="up" delay={350}>
+                <Link
+                  href="/maca-modelo-2"
+                  style={{
                     fontFamily: 'var(--font-sans)',
-                    fontSize: '15px',
-                    fontWeight: 500,
-                    letterSpacing: '-0.01em',
+                    fontSize: '11px',
+                    fontWeight: 600,
+                    letterSpacing: '0.18em',
+                    textTransform: 'uppercase',
                     color: '#1C1A18',
-                    marginBottom: '4px'
-                  }}>
-                    Maca Pure Anatómica
-                  </h3>
-                  <span style={{
+                    textDecoration: 'none',
+                    borderBottom: '1px solid #1C1A18',
+                    paddingBottom: '3px',
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '8px',
+                    transition: 'opacity 0.2s ease'
+                  }}
+                  onMouseEnter={(e) => (e.currentTarget.style.opacity = '0.7')}
+                  onMouseLeave={(e) => (e.currentTarget.style.opacity = '1')}
+                >
+                  <span>VER MODELO</span>
+                  <span>→</span>
+                </Link>
+              </Reveal>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      {/* 03.5 — INFINITE EDITORIAL TICKER (LIGHT THEME) */}
+      <section
+        aria-label="Destaques do Atelier NUDE REST"
+        style={{
+          backgroundColor: '#FAF9F6',
+          borderTop: '1px solid rgba(28, 26, 24, 0.07)',
+          borderBottom: '1px solid rgba(28, 26, 24, 0.07)',
+          padding: 'clamp(14px, 1.5vw, 20px) 0',
+          overflow: 'hidden',
+          width: '100%',
+          userSelect: 'none'
+        }}
+      >
+        <div className="infinite-ticker-wrapper">
+          <div className="infinite-ticker-track">
+            {/* Loop Group 1 */}
+            <div className="infinite-ticker-group">
+              <span className="ticker-item">Confeção Sob Medida para <em>Clínicas & Spas</em></span>
+              <span className="ticker-dot">·</span>
+              <span className="ticker-item">Design de Assinatura com a sua <em>Marca</em></span>
+              <span className="ticker-dot">·</span>
+              <span className="ticker-item">NUDE REST <em>Atelier</em></span>
+              <span className="ticker-dot">·</span>
+              <span className="ticker-item">Atelier de Macas de <em>Alta Costura</em></span>
+              <span className="ticker-dot">·</span>
+              <span className="ticker-item">Ergonomia Ativa & <em>Conforto Absoluto</em></span>
+              <span className="ticker-dot">·</span>
+              <span className="ticker-item">Personalização Exclusiva de <em>Tecidos & Estrutura</em></span>
+              <span className="ticker-dot">·</span>
+              <span className="ticker-item">Estrutura Reforçada com <em>Capacidade até 200 kg</em></span>
+              <span className="ticker-dot">·</span>
+            </div>
+
+            {/* Loop Group 2 (Duplicate for Seamless Infinite Scroll) */}
+            <div className="infinite-ticker-group" aria-hidden="true">
+              <span className="ticker-item">Confeção Sob Medida para <em>Clínicas & Spas</em></span>
+              <span className="ticker-dot">·</span>
+              <span className="ticker-item">Design de Assinatura com a sua <em>Marca</em></span>
+              <span className="ticker-dot">·</span>
+              <span className="ticker-item">NUDE REST <em>Atelier</em></span>
+              <span className="ticker-dot">·</span>
+              <span className="ticker-item">Atelier de Macas de <em>Alta Costura</em></span>
+              <span className="ticker-dot">·</span>
+              <span className="ticker-item">Ergonomia Ativa & <em>Conforto Absoluto</em></span>
+              <span className="ticker-dot">·</span>
+              <span className="ticker-item">Personalização Exclusiva de <em>Tecidos & Estrutura</em></span>
+              <span className="ticker-dot">·</span>
+              <span className="ticker-item">Estrutura Reforçada com <em>Capacidade até 200 kg</em></span>
+              <span className="ticker-dot">·</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 04 — REFERENCE SECTION 2: DA EXPERIÊNCIA À VISÃO */}
+      <section style={{
+        padding: 'clamp(56px, 6vw, 96px) 0',
+        backgroundColor: '#F7F4EE',
+        overflow: 'hidden',
+        width: '100%'
+      }}>
+        <div className="editorial-container" style={{ maxWidth: '1140px' }}>
+          <div className="model-showcase-row model-showcase-row-sculpt" style={{
+            display: 'grid',
+            gridTemplateColumns: 'minmax(0, 1fr) minmax(0, 1fr)',
+            alignItems: 'center',
+            gap: 'clamp(40px, 5.5vw, 84px)'
+          }}>
+            {/* Left Text Block */}
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
+              <Reveal direction="up" delay={150}>
+                <h2 style={{
+                  fontFamily: 'var(--font-title)',
+                  fontSize: 'clamp(34px, 3.8vw, 50px)',
+                  fontWeight: 400,
+                  lineHeight: 1.15,
+                  letterSpacing: '-0.02em',
+                  color: '#1C1A18',
+                  marginBottom: '22px'
+                }}>
+                  Da experiência<br />
+                  à visão.
+                </h2>
+              </Reveal>
+
+              <Reveal direction="up" delay={250}>
+                <div style={{
+                  fontFamily: 'var(--font-sans)',
+                  fontSize: 'clamp(14px, 1.02vw, 15px)',
+                  lineHeight: 1.7,
+                  color: '#55514B',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: '16px',
+                  marginBottom: '32px',
+                  maxWidth: '410px'
+                }}>
+                  <p>
+                    A NUDE REST nasceu da prática diária no setor da estética e da perceção clara de que o conforto da marquesa dita a experiência de quem cuida e de quem é cuidada.
+                  </p>
+                  <p>
+                    Criamos peças com presença arquitetónica que transformam os espaços em ambientes de puro acolhimento.
+                  </p>
+                </div>
+              </Reveal>
+
+              <Reveal direction="up" delay={350}>
+                <Link
+                  href="/sobre"
+                  style={{
                     fontFamily: 'var(--font-sans)',
-                    fontSize: '12px',
-                    color: '#8E867C'
-                  }}>
-                    Capitoné & Pés em X
-                  </span>
+                    fontSize: '11px',
+                    fontWeight: 600,
+                    letterSpacing: '0.18em',
+                    textTransform: 'uppercase',
+                    color: '#1C1A18',
+                    textDecoration: 'none',
+                    borderBottom: '1px solid #1C1A18',
+                    paddingBottom: '3px',
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '8px',
+                    transition: 'opacity 0.2s ease'
+                  }}
+                  onMouseEnter={(e) => (e.currentTarget.style.opacity = '0.7')}
+                  onMouseLeave={(e) => (e.currentTarget.style.opacity = '1')}
+                >
+                  <span>A NOSSA HISTÓRIA</span>
+                  <span>→</span>
+                </Link>
+              </Reveal>
+            </div>
+
+            {/* Right Image Column (Exact 3:4 framing from screenshot) */}
+            <Reveal direction="left" delay={200}>
+              <div className="image-hover-zoom" style={{
+                position: 'relative',
+                width: '100%',
+                aspectRatio: '3/4',
+                overflow: 'hidden',
+                backgroundColor: '#EAE6DF'
+              }}>
+                <Image
+                  src="/photos/sobre/experiencia.webp"
+                  alt="NUDE REST — Da experiência à visão"
+                  fill
+                  unoptimized
+                  sizes="(max-width: 900px) 100vw, 50vw"
+                  style={{
+                    objectFit: 'cover',
+                    objectPosition: 'center 16%',
+                    transition: 'transform 0.8s cubic-bezier(0.16, 1, 0.3, 1)'
+                  }}
+                />
+              </div>
+            </Reveal>
+          </div>
+        </div>
+      </section>
+
+      {/* 05 — REFERENCE SECTION 3: DO DESENHO AO DETALHE */}
+      <section style={{
+        padding: 'clamp(56px, 6vw, 96px) 0',
+        backgroundColor: '#FAF9F6',
+        overflow: 'hidden',
+        width: '100%'
+      }}>
+        <div className="editorial-container" style={{ maxWidth: '1140px' }}>
+          <div className="model-showcase-row model-showcase-row-pure" style={{
+            display: 'grid',
+            gridTemplateColumns: 'minmax(0, 1fr) minmax(0, 1fr)',
+            alignItems: 'center',
+            gap: 'clamp(40px, 5.5vw, 84px)'
+          }}>
+            {/* Left Image Column (Exact 3:4 framing matching Section 04) */}
+            <Reveal direction="right" delay={200}>
+              <div className="image-hover-zoom" style={{
+                position: 'relative',
+                width: '100%',
+                aspectRatio: '3/4',
+                overflow: 'hidden',
+                backgroundColor: '#EAE6DF'
+              }}>
+                <Image
+                  src="/photos/detalhe/detalhe.webp"
+                  alt="NUDE REST — Do desenho ao detalhe"
+                  fill
+                  unoptimized
+                  sizes="(max-width: 900px) 100vw, 50vw"
+                  style={{
+                    objectFit: 'cover',
+                    objectPosition: 'center 40%',
+                    transition: 'transform 0.8s cubic-bezier(0.16, 1, 0.3, 1)'
+                  }}
+                />
+              </div>
+            </Reveal>
+
+            {/* Right Text Block */}
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
+              <Reveal direction="up" delay={150}>
+                <h2 style={{
+                  fontFamily: 'var(--font-title)',
+                  fontSize: 'clamp(34px, 3.8vw, 50px)',
+                  fontWeight: 400,
+                  lineHeight: 1.15,
+                  letterSpacing: '-0.02em',
+                  color: '#1C1A18',
+                  marginBottom: '22px'
+                }}>
+                  Do desenho<br />
+                  ao detalhe.
+                </h2>
+              </Reveal>
+
+              <Reveal direction="up" delay={250}>
+                <div style={{
+                  fontFamily: 'var(--font-sans)',
+                  fontSize: 'clamp(14px, 1.02vw, 15px)',
+                  lineHeight: 1.7,
+                  color: '#55514B',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: '16px',
+                  marginBottom: '32px',
+                  maxWidth: '410px'
+                }}>
+                  <p>
+                    Cada NUDE REST começa numa ideia e ganha forma através de escolhas feitas com intenção — das proporções ao estofo, das espumas ao tecido e aos acabamentos.
+                  </p>
+                  <p>
+                    São esses detalhes, muitos deles quase invisíveis, que definem a forma como a peça se sente, se integra no espaço e acompanha o dia a dia de quem a utiliza.
+                  </p>
+                </div>
+              </Reveal>
+
+              <Reveal direction="up" delay={350}>
+                <Link
+                  href="/atelie"
+                  style={{
+                    fontFamily: 'var(--font-sans)',
+                    fontSize: '11px',
+                    fontWeight: 600,
+                    letterSpacing: '0.18em',
+                    textTransform: 'uppercase',
+                    color: '#1C1A18',
+                    textDecoration: 'none',
+                    borderBottom: '1px solid #1C1A18',
+                    paddingBottom: '3px',
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '8px',
+                    transition: 'opacity 0.2s ease'
+                  }}
+                  onMouseEnter={(e) => (e.currentTarget.style.opacity = '0.7')}
+                  onMouseLeave={(e) => (e.currentTarget.style.opacity = '1')}
+                >
+                  <span>CONHECER O ATELIER</span>
+                  <span>→</span>
                 </Link>
               </Reveal>
             </div>
           </div>
         </div>
       </section>
-
-      {/* 04 — REFERENCE SECTION 2: ASYMMETRIC RIGHT-BLEED HERO EDITORIAL SHOT */}
-      <section style={{
-        padding: 'clamp(56px, 6vw, 96px) 0',
-        backgroundColor: '#FAF9F6',
-        overflow: 'hidden',
-        width: '100%'
-      }}>
-        <div className="editorial-bleed-right">
-          {/* Left Text Block (1/3 da seção) - distribuído na altura da imagem */}
-          {/* Left Text Block (1/3 da seção) - texto diretamente abaixo do título */}
-          <div className="editorial-bleed-text-col">
-            <Reveal direction="up" delay={150}>
-              <h2 style={{
-                fontFamily: 'var(--font-sans)',
-                fontSize: 'clamp(28px, 3.2vw, 42px)',
-                fontWeight: 400,
-                lineHeight: 1.15,
-                letterSpacing: '-0.025em',
-                color: '#1C1A18',
-                marginBottom: '20px'
-              }}>
-                Da experiência<br />
-                à visão.
-              </h2>
-            </Reveal>
-
-            <Reveal direction="up" delay={250}>
-              <div style={{
-                fontFamily: 'var(--font-sans)',
-                fontSize: 'clamp(14px, 1.05vw, 15.5px)',
-                lineHeight: 1.75,
-                color: '#55514B',
-                display: 'flex',
-                flexDirection: 'column',
-                gap: '16px',
-                marginBottom: '28px'
-              }}>
-                <p>
-                  A NUDE REST nasceu da prática diária no setor da estética e da perceção clara de que o conforto da marquesa dita a experiência de quem cuida e de quem é cuidada.
-                </p>
-                <p>
-                  Criamos peças com presença arquitetónica que transformam os espaços em ambientes de puro acolhimento.
-                </p>
-              </div>
-            </Reveal>
-
-            <Reveal direction="up" delay={350}>
-              <Link
-                href="/sobre"
-                style={{
-                  fontFamily: 'var(--font-sans)',
-                  fontSize: '11px',
-                  fontWeight: 500,
-                  letterSpacing: '0.16em',
-                  textTransform: 'uppercase',
-                  color: '#1C1A18',
-                  textDecoration: 'none',
-                  borderBottom: '1px solid #1C1A18',
-                  paddingBottom: '3px',
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  gap: '8px',
-                  transition: 'opacity 0.3s ease'
-                }}
-              >
-                <span>A NOSSA HISTÓRIA</span>
-                <span>→</span>
-              </Link>
-            </Reveal>
-          </div>
-
-          {/* Right Large Landscape Image (2/3 da seção, encostada na borda) */}
-          <Reveal direction="right" delay={200}>
-            <div className="image-hover-zoom editorial-bleed-right-image">
-              <Image
-                src="/photos/sobre/sobre.webp"
-                alt="NUDE REST - Da experiência à visão"
-                fill
-                sizes="(max-width: 900px) 100vw, 66vw"
-                style={{
-                  objectFit: 'cover',
-                  objectPosition: 'center center',
-                  transition: 'transform 0.8s cubic-bezier(0.16, 1, 0.3, 1)'
-                }}
-              />
-            </div>
-          </Reveal>
-        </div>
-      </section>
-
-      {/* 05 — REFERENCE SECTION 3: ASYMMETRIC LEFT-BLEED EDITORIAL SHOT */}
-      <section style={{
-        padding: 'clamp(56px, 6vw, 96px) 0',
-        backgroundColor: '#FAF9F6',
-        overflow: 'hidden',
-        width: '100%'
-      }}>
-        <div className="editorial-bleed-left">
-          {/* Left Large Landscape Image (2/3 da seção, encostada na borda) */}
-          <Reveal direction="left" delay={200}>
-            <div className="image-hover-zoom editorial-bleed-left-image">
-              <Image
-                src="/photos/detalhe/detalhe.webp"
-                alt="NUDE REST - Do desenho ao detalhe"
-                fill
-                sizes="(max-width: 900px) 100vw, 66vw"
-                style={{
-                  objectFit: 'cover',
-                  objectPosition: 'center center',
-                  transition: 'transform 0.8s cubic-bezier(0.16, 1, 0.3, 1)'
-                }}
-              />
-            </div>
-          </Reveal>
-
-          {/* Right Text Block (1/3 da seção) - texto diretamente abaixo do título */}
-          <div className="editorial-bleed-text-col">
-            <Reveal direction="up" delay={150}>
-              <h2 style={{
-                fontFamily: 'var(--font-sans)',
-                fontSize: 'clamp(28px, 3.2vw, 42px)',
-                fontWeight: 400,
-                lineHeight: 1.15,
-                letterSpacing: '-0.025em',
-                color: '#1C1A18',
-                marginBottom: '20px'
-              }}>
-                Do desenho<br />
-                ao detalhe.
-              </h2>
-            </Reveal>
-
-            <Reveal direction="up" delay={250}>
-              <div style={{
-                fontFamily: 'var(--font-sans)',
-                fontSize: 'clamp(14px, 1.05vw, 15.5px)',
-                lineHeight: 1.75,
-                color: '#55514B',
-                display: 'flex',
-                flexDirection: 'column',
-                gap: '16px',
-                marginBottom: '28px'
-              }}>
-                <p>
-                  Cada NUDE REST começa numa ideia e ganha forma através de escolhas feitas com intenção — das proporções ao estofo, das espumas ao tecido e aos acabamentos.
-                </p>
-                <p>
-                  São esses detalhes, muitos deles quase invisíveis, que definem a forma como a peça se sente, se integra no espaço e acompanha o dia a dia de quem a utiliza.
-                </p>
-              </div>
-            </Reveal>
-
-            <Reveal direction="up" delay={350}>
-              <Link
-                href="/atelie"
-                style={{
-                  fontFamily: 'var(--font-sans)',
-                  fontSize: '11px',
-                  fontWeight: 500,
-                  letterSpacing: '0.16em',
-                  textTransform: 'uppercase',
-                  color: '#1C1A18',
-                  textDecoration: 'none',
-                  borderBottom: '1px solid #1C1A18',
-                  paddingBottom: '3px',
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  gap: '8px',
-                  transition: 'opacity 0.3s ease'
-                }}
-              >
-                <span>CONHECER O ATELIER</span>
-                <span>→</span>
-              </Link>
-            </Reveal>
-          </div>
-        </div>
-      </section>
-
-
 
       {/* 07 — VALUES STRIP (MINIMALIST 4 COLUMNS) */}
       <section style={{
@@ -555,6 +698,53 @@ export default function HomePage() {
               </div>
             </Reveal>
           </div>
+        </div>
+      </section>
+
+      {/* 07.5 — MANIFESTO STATEMENT (LIGHT MODE) */}
+      <section
+        aria-label="Manifesto NUDE REST"
+        style={{
+          backgroundColor: '#FAF9F6',
+          borderTop: '1px solid #ECE7DE',
+          padding: 'clamp(84px, 10vw, 136px) 0',
+          textAlign: 'center'
+        }}
+      >
+        <div className="editorial-container" style={{ maxWidth: '980px', margin: '0 auto' }}>
+          <Reveal direction="up" delay={150}>
+            <blockquote
+              style={{
+                fontFamily: 'var(--font-title)',
+                fontSize: 'clamp(26px, 3.2vw, 42px)',
+                fontWeight: 400,
+                lineHeight: 1.35,
+                letterSpacing: '-0.015em',
+                color: '#1C1A18',
+                margin: '0 auto',
+                maxWidth: '860px'
+              }}
+            >
+              “O luxo no atendimento começa onde a cliente repousa: na união perfeita entre ergonomia absoluta e design por medida.”
+            </blockquote>
+          </Reveal>
+
+          <Reveal direction="up" delay={250}>
+            <span
+              style={{
+                display: 'inline-block',
+                fontFamily: 'var(--font-sans)',
+                fontSize: '11px',
+                fontWeight: 600,
+                letterSpacing: '0.22em',
+                textTransform: 'uppercase',
+                color: '#8E867C',
+                marginTop: '28px'
+              }}
+            >
+              — NUDE REST MANIFESTO
+            </span>
+          </Reveal>
         </div>
       </section>
 

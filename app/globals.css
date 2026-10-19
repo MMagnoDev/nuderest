@@ -59,10 +59,10 @@ html {
   scroll-behavior: auto;
 }
 
-/* Hardware accelerated transitions for fluid framerate */
+/* Maintain crisp high-resolution image rendering without raster blur */
 .image-hover-zoom img {
-  will-change: transform;
-  transform: translateZ(0);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 }
 
 footer.editorial-footer {
@@ -1425,5 +1425,98 @@ footer.footer-bar {
 
   .editorial-value-card:nth-child(odd) {
     border-left: none;
+  }
+}
+
+/* Signature Models Showcase Responsive */
+@media (max-width: 860px) {
+  .model-showcase-row {
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
+  }
+
+  .model-showcase-row:last-child {
+    margin-bottom: 0 !important;
+  }
+
+  .model-showcase-row-pure > div:first-child {
+    order: 2;
+  }
+
+  .model-showcase-row-pure > div:last-child {
+    order: 1;
+  }
+}
+
+/* Sobre Page Hero Grid Responsive */
+@media (max-width: 900px) {
+  .sobre-hero-grid {
+    grid-template-columns: 1fr !important;
+    gap: 40px !important;
+  }
+}
+
+
+/* --------------------------------------------------------------------------
+   Infinite Editorial Ticker (Marquee)
+   -------------------------------------------------------------------------- */
+.infinite-ticker-wrapper {
+  overflow: hidden;
+  width: 100%;
+  white-space: nowrap;
+  display: flex;
+}
+
+.infinite-ticker-track {
+  display: flex;
+  width: max-content;
+  will-change: transform;
+  animation: infiniteTickerScroll 70s linear infinite;
+}
+
+.infinite-ticker-group {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.ticker-item {
+  font-family: var(--font-title);
+  font-size: clamp(14px, 1.35vw, 18px);
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  color: #1C1A18;
+  padding: 0 clamp(12px, 1.5vw, 20px);
+  white-space: nowrap;
+}
+
+.ticker-item em {
+  font-family: var(--font-title);
+  font-style: italic;
+  font-weight: 400;
+}
+
+.ticker-dot {
+  font-family: var(--font-title);
+  font-size: clamp(14px, 1.35vw, 18px);
+  color: rgba(28, 26, 24, 0.22);
+  line-height: 1;
+  display: inline-block;
+  padding: 0 2px;
+  user-select: none;
+}
+
+@keyframes infiniteTickerScroll {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+@media (hover: hover) {
+  .infinite-ticker-wrapper:hover .infinite-ticker-track {
+    animation-play-state: paused;
   }
 }
