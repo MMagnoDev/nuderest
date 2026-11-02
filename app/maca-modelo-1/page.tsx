@@ -373,7 +373,7 @@ export default function MacaSculptPage() {
                 </div>
                 <div style={{ display: 'flex', justifyContent: 'space-between', paddingBottom: '10px', borderBottom: '1px solid #F0ECE5' }}>
                   <span style={{ color: '#8E867C' }}>Largura</span>
-                  <span style={{ fontWeight: 500, color: '#1C1A18' }}>74 cm</span>
+                  <span style={{ fontWeight: 500, color: '#1C1A18' }}>62 cm</span>
                 </div>
                 <div style={{ display: 'flex', justifyContent: 'space-between', paddingBottom: '10px', borderBottom: '1px solid #F0ECE5' }}>
                   <span style={{ color: '#8E867C' }}>Altura</span>
@@ -381,11 +381,11 @@ export default function MacaSculptPage() {
                 </div>
                 <div style={{ display: 'flex', justifyContent: 'space-between', paddingBottom: '10px', borderBottom: '1px solid #F0ECE5' }}>
                   <span style={{ color: '#8E867C' }}>Capacidade estrutural</span>
-                  <span style={{ fontWeight: 500, color: '#1C1A18' }}>até 200 kg estáticos</span>
+                  <span style={{ fontWeight: 500, color: '#1C1A18' }}>150 kg</span>
                 </div>
                 <div style={{ display: 'flex', justifyContent: 'space-between', paddingBottom: '10px', borderBottom: '1px solid #F0ECE5' }}>
                   <span style={{ color: '#8E867C' }}>Prazo de confeção</span>
-                  <span style={{ fontWeight: 500, color: '#1C1A18' }}>15 a 20 dias úteis</span>
+                  <span style={{ fontWeight: 500, color: '#1C1A18' }}>15 a 20 dias</span>
                 </div>
               </div>
 

@@ -32,9 +32,9 @@ export const PRODUCTS_CATALOG: Product[] = [
     longDescription: 'A Maca Sculpt Wave é a expressão máxima do design contemporâneo para ambientes de estética de luxo. Concebida como uma escultura funcional, a sua curvatura proporciona relaxamento imediato para a cliente e ergonomia impecável para a profissional.',
     dimensions: {
       length: '180 cm',
-      width: '74 cm',
+      width: '62 cm',
       height: '80 cm',
-      weightCapacity: 'Até 200 kg estáticos'
+      weightCapacity: '150 kg'
     },
     features: [
       'Design em arco escultural contínuo sem emendas aparentes',
@@ -67,7 +67,7 @@ export const PRODUCTS_CATALOG: Product[] = [
     rating: 5.0,
     reviewCount: 112,
     badge: 'Mais Desejada',
-    leadTime: 'Confeção em 7 a 10 dias úteis',
+    leadTime: 'Confeção em 15 a 20 dias',
     image: '/photos/pure.webp',
     gallery: [
       '/photos/pure.webp',
@@ -79,10 +79,10 @@ export const PRODUCTS_CATALOG: Product[] = [
     description: 'Estofo acolchoado com gomos anatómicos, curvatura suave e pés em X em aço carbono com banho dourado Champagne fosco de altíssima durabilidade.',
     longDescription: 'A Maca Pure Anatómica une a tradição do estofamento nobre ao suporte ortopédico ativo. Idealizada para procedimentos de longa duração, as suas almofadas anatómicas acolhem a cliente eliminando qualquer ponto de pressão lombar.',
     dimensions: {
-      length: '188 cm',
-      width: '74 cm',
-      height: '76 cm',
-      weightCapacity: 'Até 250 kg estáticos'
+      length: '180 cm',
+      width: '62 cm',
+      height: '80 cm',
+      weightCapacity: '150 kg'
     },
     features: [
       'Costura capitonê modular com espuma multi-densidade D33 Soft',

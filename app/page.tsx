@@ -205,7 +205,7 @@ export default function HomePage() {
           {/* Row 1: Sculpt (Text on Left, Image on Right) */}
           <div className="model-showcase-row model-showcase-row-sculpt" style={{
             display: 'grid',
-            gridTemplateColumns: 'minmax(280px, 1fr) minmax(360px, 1.45fr)',
+            gridTemplateColumns: 'minmax(280px, 1fr) minmax(320px, 1.1fr)',
             gap: 'clamp(36px, 6vw, 96px)',
             alignItems: 'center',
             marginBottom: 'clamp(64px, 8vw, 120px)'
@@ -272,7 +272,9 @@ export default function HomePage() {
                 <div className="image-hover-zoom" style={{
                   position: 'relative',
                   width: '100%',
-                  aspectRatio: '16/11',
+                  maxWidth: '520px',
+                  aspectRatio: '2/3',
+                  marginLeft: 'auto',
                   borderRadius: '2px',
                   overflow: 'hidden',
                   backgroundColor: '#EAE6DF',
@@ -299,7 +301,7 @@ export default function HomePage() {
           {/* Row 2: Pure (Image on Left, Text on Right) */}
           <div className="model-showcase-row model-showcase-row-pure" style={{
             display: 'grid',
-            gridTemplateColumns: 'minmax(360px, 1.45fr) minmax(280px, 1fr)',
+            gridTemplateColumns: 'minmax(320px, 1.1fr) minmax(280px, 1fr)',
             gap: 'clamp(36px, 6vw, 96px)',
             alignItems: 'center'
           }}>
@@ -309,7 +311,9 @@ export default function HomePage() {
                 <div className="image-hover-zoom" style={{
                   position: 'relative',
                   width: '100%',
-                  aspectRatio: '16/11',
+                  maxWidth: '520px',
+                  aspectRatio: '2/3',
+                  marginRight: 'auto',
                   borderRadius: '2px',
                   overflow: 'hidden',
                   backgroundColor: '#EAE6DF',
@@ -421,7 +425,7 @@ export default function HomePage() {
               <span className="ticker-dot">·</span>
               <span className="ticker-item">Personalização Exclusiva de <em>Tecidos & Estrutura</em></span>
               <span className="ticker-dot">·</span>
-              <span className="ticker-item">Estrutura Reforçada com <em>Capacidade até 200 kg</em></span>
+              <span className="ticker-item">Estrutura Reforçada com <em>Capacidade até 150 kg</em></span>
               <span className="ticker-dot">·</span>
             </div>
 
@@ -439,7 +443,7 @@ export default function HomePage() {
               <span className="ticker-dot">·</span>
               <span className="ticker-item">Personalização Exclusiva de <em>Tecidos & Estrutura</em></span>
               <span className="ticker-dot">·</span>
-              <span className="ticker-item">Estrutura Reforçada com <em>Capacidade até 200 kg</em></span>
+              <span className="ticker-item">Estrutura Reforçada com <em>Capacidade até 150 kg</em></span>
               <span className="ticker-dot">·</span>
             </div>
           </div>

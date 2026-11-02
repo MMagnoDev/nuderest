@@ -382,23 +382,23 @@ export default function MacaRoyalePage() {
               }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between' }}>
                   <span style={{ color: '#8E867C' }}>Comprimento Total</span>
-                  <span style={{ fontWeight: 500, color: '#1C1A18' }}>188 cm</span>
+                  <span style={{ fontWeight: 500, color: '#1C1A18' }}>180 cm</span>
                 </div>
                 <div style={{ display: 'flex', justifyContent: 'space-between' }}>
                   <span style={{ color: '#8E867C' }}>Largura de Conforto</span>
-                  <span style={{ fontWeight: 500, color: '#1C1A18' }}>74 cm</span>
+                  <span style={{ fontWeight: 500, color: '#1C1A18' }}>62 cm</span>
                 </div>
                 <div style={{ display: 'flex', justifyContent: 'space-between' }}>
                   <span style={{ color: '#8E867C' }}>Altura de Trabalho</span>
-                  <span style={{ fontWeight: 500, color: '#1C1A18' }}>76 cm (ergonomia para sentar/atender)</span>
+                  <span style={{ fontWeight: 500, color: '#1C1A18' }}>80 cm</span>
                 </div>
                 <div style={{ display: 'flex', justifyContent: 'space-between' }}>
                   <span style={{ color: '#8E867C' }}>Capacidade Estrutural</span>
-                  <span style={{ fontWeight: 500, color: '#1C1A18' }}>Até 250 kg estáticos</span>
+                  <span style={{ fontWeight: 500, color: '#1C1A18' }}>150 kg</span>
                 </div>
                 <div style={{ display: 'flex', justifyContent: 'space-between' }}>
                   <span style={{ color: '#8E867C' }}>Prazo de Confeção</span>
-                  <span style={{ fontWeight: 500, color: '#1C1A18' }}>7 a 10 dias úteis</span>
+                  <span style={{ fontWeight: 500, color: '#1C1A18' }}>15 a 20 dias</span>
                 </div>
               </div>
             </div>

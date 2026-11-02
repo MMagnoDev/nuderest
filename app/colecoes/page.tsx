@@ -157,7 +157,7 @@ export default function ColecoesPage() {
                   </div>
                   <div style={{ display: 'flex', justifyContent: 'space-between' }}>
                     <span style={{ color: '#8E867C' }}>Dimensões</span>
-                    <span>180 cm × 74 cm × 80 cm</span>
+                    <span>180 cm × 62 cm × 80 cm</span>
                   </div>
                 </div>
               </Reveal>
@@ -261,7 +261,7 @@ export default function ColecoesPage() {
                   </div>
                   <div style={{ display: 'flex', justifyContent: 'space-between' }}>
                     <span style={{ color: '#8E867C' }}>Dimensões</span>
-                    <span>188 cm × 74 cm × 76 cm</span>
+                    <span>180 cm × 62 cm × 80 cm</span>
                   </div>
                 </div>
               </Reveal>

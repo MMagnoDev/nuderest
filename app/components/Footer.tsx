@@ -19,7 +19,7 @@ const defaultFaqs = [
   },
   {
     question: 'Qual é a capacidade de suporte e estabilidade da estrutura?',
-    answer: 'As marquesas NUDE REST foram concebidas para uso profissional intenso, com capacidade estrutural de até 200 kg estáticos e ergonomia pensada tanto para o conforto da cliente como para a postura da profissional.'
+    answer: 'As marquesas NUDE REST foram concebidas para uso profissional intenso, com capacidade estrutural de até 150 kg estáticos e ergonomia pensada tanto para o conforto da cliente como para a postura da profissional.'
   },
   {
     question: 'Como posso solicitar uma proposta ou encomendar?',
@@ -290,6 +290,23 @@ export const Footer: React.FC = () => {
         }}>
           <div>
             © 2026 NUDE REST. Todos os direitos reservados.
+          </div>
+          <div>
+            Desenvolvido por{' '}
+            <a
+              href="https://www.instagram.com/clean.designn/"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                color: '#8E867C',
+                textDecoration: 'none',
+                transition: 'color 0.2s ease'
+              }}
+              onMouseEnter={(e) => (e.currentTarget.style.color = '#EDE8DF')}
+              onMouseLeave={(e) => (e.currentTarget.style.color = '#8E867C')}
+            >
+              Agência Clean
+            </a>
           </div>
           <div style={{ display: 'flex', gap: '20px' }}>
             <span>Design Minimalista & Ergonomia Ativa</span>
