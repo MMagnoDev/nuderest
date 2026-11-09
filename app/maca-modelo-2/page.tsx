@@ -12,10 +12,8 @@ export default function MacaRoyalePage() {
 
   const galleryImages = [
     '/photos/pure.webp',
-    '/photos/pecasdeassinatura/_C1M0299.webp',
     '/maca2/maca2_2.webp',
     '/maca2/maca2_3.webp',
-    '/maca2/maca2_4.webp',
     '/maca2/maca2_5.webp'
   ];
 
@@ -62,7 +60,10 @@ export default function MacaRoyalePage() {
             </Reveal>
 
             <Reveal direction="up" delay={250}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '24px' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '24px', flexWrap: 'wrap' }}>
+                <span style={{ fontFamily: 'var(--font-sans)', fontSize: '24px', fontWeight: 500, color: '#1C1A18', letterSpacing: '-0.02em' }}>
+                  700€
+                </span>
                 <span style={{
                   fontFamily: 'var(--font-sans)',
                   fontSize: '12px',
@@ -185,7 +186,7 @@ export default function MacaRoyalePage() {
                   onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = 'rgba(28, 26, 24, 0.05)')}
                   onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = 'transparent')}
                 >
-                  FALAR COM CONCIERGE
+                  FALE CONNOSCO
                 </Link>
               </div>
             </Reveal>
@@ -215,7 +216,7 @@ export default function MacaRoyalePage() {
             </Reveal>
 
             {/* Thumbnails */}
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: '10px' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '12px' }}>
               {galleryImages.map((img, idx) => (
                 <div
                   key={idx}
@@ -326,7 +327,7 @@ export default function MacaRoyalePage() {
             <Reveal direction="up" delay={450}>
               <div style={{ display: 'flex', flexDirection: 'column' }}>
                 <div className="image-hover-zoom" style={{ position: 'relative', width: '100%', height: 'clamp(260px, 22vw, 320px)', marginBottom: '16px', borderRadius: '2px', overflow: 'hidden', backgroundColor: '#EAE6DF' }}>
-                  <Image src="/photos/detalhe/detalhe.webp" alt="Feita para ser tua" fill sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw" style={{ objectFit: 'cover', transition: 'transform 0.8s' }} />
+                  <Image src="/maca2/maca2_5.webp" alt="Feita para ser tua" fill sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw" style={{ objectFit: 'cover', transition: 'transform 0.8s' }} />
                 </div>
                 <h3 style={{ fontFamily: 'var(--font-sans)', fontSize: '15px', fontWeight: 600, color: '#1C1A18', marginBottom: '8px' }}>
                   Feita para ser tua
@@ -399,6 +400,10 @@ export default function MacaRoyalePage() {
                 <div style={{ display: 'flex', justifyContent: 'space-between' }}>
                   <span style={{ color: '#8E867C' }}>Prazo de Confeção</span>
                   <span style={{ fontWeight: 500, color: '#1C1A18' }}>15 a 20 dias</span>
+                </div>
+                <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+                  <span style={{ color: '#8E867C' }}>Valor</span>
+                  <span style={{ fontWeight: 600, color: '#1C1A18' }}>700€</span>
                 </div>
               </div>
             </div>

@@ -30,16 +30,14 @@ export default function CustomizerPage() {
   const sculptImages = [
     '/photos/sculpt.webp',
     '/maca1/maca1_2.webp',
-    '/maca1/maca1_3.webp',
-    '/maca1/maca1_4.webp'
+    '/maca1/maca1_3.webp'
   ];
 
   const royaleImages = [
     '/photos/pure.webp',
-    '/photos/pecasdeassinatura/_C1M0299.webp',
     '/maca2/maca2_2.webp',
     '/maca2/maca2_3.webp',
-    '/maca2/maca2_4.webp'
+    '/maca2/maca2_5.webp'
   ];
 
   const currentGallery = selectedModel === 'sculpt' ? sculptImages : royaleImages;

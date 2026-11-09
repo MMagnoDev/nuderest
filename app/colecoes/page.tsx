@@ -153,11 +153,15 @@ export default function ColecoesPage() {
                   </div>
                   <div style={{ display: 'flex', justifyContent: 'space-between' }}>
                     <span style={{ color: '#8E867C' }}>Espuma</span>
-                    <span>D33 Ultra Soft com memória postural</span>
+                    <span>Espuma de alta densidade com camada extra de visco</span>
                   </div>
                   <div style={{ display: 'flex', justifyContent: 'space-between' }}>
                     <span style={{ color: '#8E867C' }}>Dimensões</span>
-                    <span>180 cm × 62 cm × 80 cm</span>
+                    <span>190 cm × 62 cm × 80 cm</span>
+                  </div>
+                  <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+                    <span style={{ color: '#8E867C' }}>Valor</span>
+                    <span style={{ fontWeight: 600 }}>750€</span>
                   </div>
                 </div>
               </Reveal>
@@ -262,6 +266,10 @@ export default function ColecoesPage() {
                   <div style={{ display: 'flex', justifyContent: 'space-between' }}>
                     <span style={{ color: '#8E867C' }}>Dimensões</span>
                     <span>180 cm × 62 cm × 80 cm</span>
+                  </div>
+                  <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+                    <span style={{ color: '#8E867C' }}>Valor</span>
+                    <span style={{ fontWeight: 600 }}>700€</span>
                   </div>
                 </div>
               </Reveal>

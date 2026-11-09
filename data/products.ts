@@ -14,7 +14,7 @@ export const PRODUCTS_CATALOG: Product[] = [
     name: 'Maca Sculpt Wave',
     subtitle: 'Silhueta em arco contínuo escultural com suporte ergonómico para Spas e Estética Avançada',
     category: 'luxo',
-    price: 0,
+    price: 750,
     originalPrice: 0,
     pixDiscountPercent: 0,
     rating: 5.0,
@@ -25,13 +25,12 @@ export const PRODUCTS_CATALOG: Product[] = [
     gallery: [
       '/photos/sculpt.webp',
       '/maca1/maca1_2.webp',
-      '/maca1/maca1_3.webp',
-      '/maca1/maca1_4.webp'
+      '/maca1/maca1_3.webp'
     ],
     description: 'Design curvo fluido contínuo com acabamento arquitetónico em tecido nobre, base estrutural em cilindro e curva anatómica para alívio da coluna lombar.',
     longDescription: 'A Maca Sculpt Wave é a expressão máxima do design contemporâneo para ambientes de estética de luxo. Concebida como uma escultura funcional, a sua curvatura proporciona relaxamento imediato para a cliente e ergonomia impecável para a profissional.',
     dimensions: {
-      length: '180 cm',
+      length: '190 cm',
       width: '62 cm',
       height: '80 cm',
       weightCapacity: '150 kg'
@@ -40,7 +39,7 @@ export const PRODUCTS_CATALOG: Product[] = [
       'Design em arco escultural contínuo sem emendas aparentes',
       'Estrutura em multilaminado naval com reforço duplo de sustentação',
       'Revestimento texturado nobre resistente a assepsia hospitalar com álcool a 70%',
-      'Espuma D33 Ultra Soft com memória postural ativa',
+      'Espuma de alta densidade com camada extra de visco',
       'Garantia estrutural de 5 anos'
     ],
     availableColors: SIGNATURE_COLORS,
@@ -50,7 +49,7 @@ export const PRODUCTS_CATALOG: Product[] = [
       { id: 'base-taupe-mate', name: 'Base em Acabamento Taupe Esculpido', extraPrice: 0 }
     ],
     optionalAddons: [
-      { id: 'embroidery-logo', name: 'Bordado Personalizado com a sua Marca/Monograma', price: 0, description: 'Bordado em alta definição com fios acetinados nobres' },
+      { id: 'embroidery-logo', name: 'Bordado Personalizado com a sua Marca/Monograma', price: 700, description: 'Bordado em alta definição com fios acetinados nobres' },
       { id: 'crystal-cover', name: 'Capa Protetora Cristal Náutico Flexível', price: 0, description: 'Proteção sob medida de elevada transparência' },
       { id: 'ergonomic-pillow', name: 'Manta & Almofada Cervical Anatómica Magnética', price: 0, description: 'Suporte cervical anatómico para procedimentos prolongados' }
     ]
@@ -73,7 +72,6 @@ export const PRODUCTS_CATALOG: Product[] = [
       '/photos/pure.webp',
       '/maca2/maca2_2.webp',
       '/maca2/maca2_3.webp',
-      '/maca2/maca2_4.webp',
       '/maca2/maca2_5.webp'
     ],
     description: 'Estofo acolchoado com gomos anatómicos, curvatura suave e pés em X em aço carbono com banho dourado Champagne fosco de altíssima durabilidade.',

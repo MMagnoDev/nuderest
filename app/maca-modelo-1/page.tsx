@@ -13,8 +13,7 @@ export default function MacaSculptPage() {
   const galleryImages = [
     '/photos/sculpt.webp',
     '/maca1/maca1_2.webp',
-    '/maca1/maca1_3.webp',
-    '/maca1/maca1_4.webp'
+    '/maca1/maca1_3.webp'
   ];
 
   return (
@@ -60,7 +59,10 @@ export default function MacaSculptPage() {
             </Reveal>
 
             <Reveal direction="up" delay={250}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '24px' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '24px', flexWrap: 'wrap' }}>
+                <span style={{ fontFamily: 'var(--font-sans)', fontSize: '24px', fontWeight: 500, color: '#1C1A18', letterSpacing: '-0.02em' }}>
+                  750€
+                </span>
                 <span style={{
                   fontFamily: 'var(--font-sans)',
                   fontSize: '12px',
@@ -187,7 +189,7 @@ export default function MacaSculptPage() {
                   onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = 'rgba(28, 26, 24, 0.05)')}
                   onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = 'transparent')}
                 >
-                  FALAR COM CONCIERGE
+                  FALE CONNOSCO
                 </Link>
               </div>
             </Reveal>
@@ -217,7 +219,7 @@ export default function MacaSculptPage() {
             </Reveal>
 
             {/* Thumbnails */}
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '12px' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '12px' }}>
               {galleryImages.map((img, idx) => (
                 <div
                   key={idx}
@@ -313,7 +315,7 @@ export default function MacaSculptPage() {
             <Reveal direction="up" delay={450}>
               <div style={{ display: 'flex', flexDirection: 'column' }}>
                 <div className="image-hover-zoom" style={{ position: 'relative', width: '100%', height: 'clamp(260px, 22vw, 320px)', marginBottom: '16px', borderRadius: '2px', overflow: 'hidden', backgroundColor: '#EAE6DF' }}>
-                  <Image src="/photos/detalhe/detalhe.webp" alt="Feita para pertencer ao teu espaço" fill sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw" style={{ objectFit: 'cover', transition: 'transform 0.8s' }} />
+                  <Image src="/photos/sculpt.webp" alt="Feita para pertencer ao teu espaço" fill sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw" style={{ objectFit: 'cover', transition: 'transform 0.8s' }} />
                 </div>
                 <h3 style={{ fontFamily: 'var(--font-sans)', fontSize: '15px', fontWeight: 600, color: '#1C1A18', marginBottom: '8px' }}>
                   Feita para pertencer ao teu espaço
@@ -369,7 +371,7 @@ export default function MacaSculptPage() {
               }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', paddingBottom: '10px', borderBottom: '1px solid #F0ECE5' }}>
                   <span style={{ color: '#8E867C' }}>Comprimento</span>
-                  <span style={{ fontWeight: 500, color: '#1C1A18' }}>180 cm</span>
+                  <span style={{ fontWeight: 500, color: '#1C1A18' }}>190 cm</span>
                 </div>
                 <div style={{ display: 'flex', justifyContent: 'space-between', paddingBottom: '10px', borderBottom: '1px solid #F0ECE5' }}>
                   <span style={{ color: '#8E867C' }}>Largura</span>
@@ -386,6 +388,10 @@ export default function MacaSculptPage() {
                 <div style={{ display: 'flex', justifyContent: 'space-between', paddingBottom: '10px', borderBottom: '1px solid #F0ECE5' }}>
                   <span style={{ color: '#8E867C' }}>Prazo de confeção</span>
                   <span style={{ fontWeight: 500, color: '#1C1A18' }}>15 a 20 dias</span>
+                </div>
+                <div style={{ display: 'flex', justifyContent: 'space-between', paddingBottom: '10px', borderBottom: '1px solid #F0ECE5' }}>
+                  <span style={{ color: '#8E867C' }}>Valor</span>
+                  <span style={{ fontWeight: 600, color: '#1C1A18' }}>750€</span>
                 </div>
               </div>
 

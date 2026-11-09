@@ -587,7 +587,7 @@ export default function HomePage() {
                   sizes="(max-width: 900px) 100vw, 50vw"
                   style={{
                     objectFit: 'cover',
-                    objectPosition: 'center 40%',
+                    objectPosition: 'center 50%',
                     transition: 'transform 0.8s cubic-bezier(0.16, 1, 0.3, 1)'
                   }}
                 />
