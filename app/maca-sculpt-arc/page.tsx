@@ -76,59 +76,59 @@ Gostaria de receber uma proposta personalizada e prazo de entrega.`;
           <div className="editorial-configurator-grid">
             {/* Left Column: Visualizer & Details */}
             <div>
-            <Link
-              href="/colecoes"
-              style={{
+              <Link
+                href="/colecoes"
+                style={{
+                  fontFamily: 'var(--font-sans)',
+                  fontSize: '11px',
+                  letterSpacing: '0.16em',
+                  textTransform: 'uppercase',
+                  color: '#8E867C',
+                  textDecoration: 'none',
+                  display: 'inline-block',
+                  marginBottom: '16px'
+                }}
+              >
+                ← VOLTAR ÀS COLEÇÕES
+              </Link>
+
+              <h1 style={{
+                fontFamily: 'var(--font-sans)',
+                fontSize: 'clamp(34px, 4vw, 50px)',
+                fontWeight: 400,
+                lineHeight: 1.12,
+                letterSpacing: '-0.025em',
+                color: '#1C1A18',
+                marginBottom: '6px'
+              }}>
+                {selectedModel === 'sculpt' ? 'Marquesa Sculpt' : 'Marquesa Pure'}
+              </h1>
+
+              <span style={{
                 fontFamily: 'var(--font-sans)',
                 fontSize: '11px',
-                letterSpacing: '0.16em',
+                fontWeight: 500,
+                letterSpacing: '0.18em',
                 textTransform: 'uppercase',
                 color: '#8E867C',
-                textDecoration: 'none',
-                display: 'inline-block',
+                display: 'block',
                 marginBottom: '16px'
-              }}
-            >
-              ← VOLTAR ÀS COLEÇÕES
-            </Link>
+              }}>
+                {selectedModel === 'sculpt' ? 'SCULPT WAVE' : 'ROYALE ANATÓMICA'}
+              </span>
 
-            <h1 style={{
-              fontFamily: 'var(--font-sans)',
-              fontSize: 'clamp(34px, 4vw, 50px)',
-              fontWeight: 400,
-              lineHeight: 1.12,
-              letterSpacing: '-0.025em',
-              color: '#1C1A18',
-              marginBottom: '6px'
-            }}>
-              {selectedModel === 'sculpt' ? 'Marquesa Sculpt' : 'Marquesa Pure'}
-            </h1>
-            
-            <span style={{
-              fontFamily: 'var(--font-sans)',
-              fontSize: '11px',
-              fontWeight: 500,
-              letterSpacing: '0.18em',
-              textTransform: 'uppercase',
-              color: '#8E867C',
-              display: 'block',
-              marginBottom: '16px'
-            }}>
-              {selectedModel === 'sculpt' ? 'SCULPT WAVE' : 'ROYALE ANATÓMICA'}
-            </span>
-
-            <p style={{
-              fontFamily: 'var(--font-sans)',
-              fontSize: '13.5px',
-              lineHeight: 1.7,
-              color: '#524E48',
-              marginBottom: '24px',
-              maxWidth: '520px'
-            }}>
-              {selectedModel === 'sculpt'
-                ? 'Design em arco escultural contínuo que combina ergonomia ativa e funcionalidade, proporcionando um relaxamento profundo e uma experiência única para a sua cliente.'
-                : 'Estofamento anatómico com gomos acolchoados em capitoné e pés em X refinados, ideal para lash designers e micropigmentação com conforto prolongado.'}
-            </p>
+              <p style={{
+                fontFamily: 'var(--font-sans)',
+                fontSize: '13.5px',
+                lineHeight: 1.7,
+                color: '#524E48',
+                marginBottom: '24px',
+                maxWidth: '520px'
+              }}>
+                {selectedModel === 'sculpt'
+                  ? 'Design em arco escultural contínuo que combina ergonomia ativa e funcionalidade, proporcionando um relaxamento profundo e uma experiência única para a sua cliente.'
+                  : 'Estofamento anatómico com gomos acolchoados em capitoné e pés em X refinados, ideal para lash designers e micropigmentação com conforto prolongado.'}
+              </p>
 
             {/* Main Image Stage */}
             <div className="image-hover-zoom" style={{
@@ -207,349 +207,349 @@ Gostaria de receber uma proposta personalizada e prazo de entrega.`;
                 Garantias do Atelier
               </h3>
 
-              <div style={{
-                display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fit, minmax(100px, 1fr))',
-                gap: '10px',
-                textAlign: 'center'
-              }}>
-                <div style={{ backgroundColor: '#F2EFEB', padding: '12px 8px', borderRadius: '2px' }}>
-                  <div style={{ fontSize: '10px', fontWeight: 600, textTransform: 'uppercase', color: '#1C1A18' }}>Alívio Postural</div>
-                  <div style={{ fontSize: '9.5px', color: '#8E867C' }}>Ativo</div>
-                </div>
-                <div style={{ backgroundColor: '#F2EFEB', padding: '12px 8px', borderRadius: '2px' }}>
-                  <div style={{ fontSize: '10px', fontWeight: 600, textTransform: 'uppercase', color: '#1C1A18' }}>Design em Arco</div>
-                  <div style={{ fontSize: '9.5px', color: '#8E867C' }}>Escultural</div>
-                </div>
-                <div style={{ backgroundColor: '#F2EFEB', padding: '12px 8px', borderRadius: '2px' }}>
-                  <div style={{ fontSize: '10px', fontWeight: 600, textTransform: 'uppercase', color: '#1C1A18' }}>Espuma D33</div>
-                  <div style={{ fontSize: '9.5px', color: '#8E867C' }}>Ultra Soft</div>
-                </div>
-                <div style={{ backgroundColor: '#F2EFEB', padding: '12px 8px', borderRadius: '2px' }}>
-                  <div style={{ fontSize: '10px', fontWeight: 600, textTransform: 'uppercase', color: '#1C1A18' }}>5 Anos</div>
-                  <div style={{ fontSize: '9.5px', color: '#8E867C' }}>Garantia</div>
-                </div>
-              </div>
-            </div>
-
-          </div>
-
-          {/* Right Column: 5-Step Customization Panel */}
-          <div style={{
-            backgroundColor: '#F7F5F0',
-            border: '1px solid #ECE7DE',
-            padding: 'clamp(28px, 4vw, 44px)',
-            borderRadius: '2px'
-          }}>
-            
-            {/* Step 1: Modelo */}
-            <div style={{ marginBottom: '28px' }}>
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '12px' }}>
-                <span style={{ fontFamily: 'var(--font-sans)', fontSize: '11px', fontWeight: 600, letterSpacing: '0.14em', textTransform: 'uppercase', color: '#1C1A18' }}>
-                  01. MODELO · {selectedModel === 'sculpt' ? 'MARQUESA SCULPT' : 'MARQUESA PURE'}
-                </span>
-                <span style={{ fontSize: '11px', color: '#8E867C' }}>1/5</span>
-              </div>
-
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px' }}>
-                <button
-                  type="button"
-                  onClick={() => {
-                    setSelectedModel('sculpt');
-                    setSelectedBase('Base Cilíndrica Revestida Nude');
-                    setSelectedAngle(0);
-                  }}
-                  style={{
-                    padding: '12px',
-                    border: selectedModel === 'sculpt' ? '2px solid #1C1A18' : '1px solid #E5E0D8',
-                    backgroundColor: selectedModel === 'sculpt' ? '#F8F6F1' : '#FFFFFF',
-                    borderRadius: '2px',
-                    textAlign: 'left',
-                    cursor: 'pointer',
-                    transition: 'all 0.2s'
-                  }}
-                >
-                  <div style={{ fontSize: '12px', fontWeight: 600, color: '#1C1A18' }}>Marquesa Sculpt</div>
-                  <div style={{ fontSize: '10px', color: '#8E867C' }}>Sculpt Wave</div>
-                </button>
-
-                <button
-                  type="button"
-                  onClick={() => {
-                    setSelectedModel('royale');
-                    setSelectedBase('Pés em X Dourado Champagne Escovado');
-                    setSelectedAngle(0);
-                  }}
-                  style={{
-                    padding: '12px',
-                    border: selectedModel === 'royale' ? '2px solid #1C1A18' : '1px solid #E5E0D8',
-                    backgroundColor: selectedModel === 'royale' ? '#F8F6F1' : '#FFFFFF',
-                    borderRadius: '2px',
-                    textAlign: 'left',
-                    cursor: 'pointer',
-                    transition: 'all 0.2s'
-                  }}
-                >
-                  <div style={{ fontSize: '12px', fontWeight: 600, color: '#1C1A18' }}>Marquesa Pure</div>
-                  <div style={{ fontSize: '10px', color: '#8E867C' }}>Pure Anatómica</div>
-                </button>
-              </div>
-            </div>
-
-            {/* Step 2: Revestimento & Cores */}
-            <div style={{ marginBottom: '28px' }}>
-              <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '12px' }}>
-                <span style={{ fontFamily: 'var(--font-sans)', fontSize: '11px', fontWeight: 600, letterSpacing: '0.14em', textTransform: 'uppercase', color: '#1C1A18' }}>
-                  02. REVESTIMENTO
-                </span>
-                <span style={{ fontSize: '11px', color: '#8E867C' }}>2/5</span>
-              </div>
-
-              {/* Type Tabs */}
-              <div style={{ display: 'flex', gap: '8px', marginBottom: '16px' }}>
-                <button
-                  type="button"
-                  onClick={() => setFabricType('tecido')}
-                  style={{
-                    flex: 1,
-                    padding: '9px',
-                    fontSize: '11px',
-                    letterSpacing: '0.1em',
-                    textTransform: 'uppercase',
-                    border: fabricType === 'tecido' ? '1px solid #1C1A18' : '1px solid #E5E0D8',
-                    backgroundColor: fabricType === 'tecido' ? '#1C1A18' : '#FFFFFF',
-                    color: fabricType === 'tecido' ? '#EDE8DF' : '#524E48',
-                    borderRadius: '2px',
-                    cursor: 'pointer',
-                    transition: 'all 0.2s'
-                  }}
-                >
-                  Tecido Premium
-                </button>
-                <button
-                  type="button"
-                  onClick={() => setFabricType('pele')}
-                  style={{
-                    flex: 1,
-                    padding: '9px',
-                    fontSize: '11px',
-                    letterSpacing: '0.1em',
-                    textTransform: 'uppercase',
-                    border: fabricType === 'pele' ? '1px solid #1C1A18' : '1px solid #E5E0D8',
-                    backgroundColor: fabricType === 'pele' ? '#1C1A18' : '#FFFFFF',
-                    color: fabricType === 'pele' ? '#EDE8DF' : '#524E48',
-                    borderRadius: '2px',
-                    cursor: 'pointer',
-                    transition: 'all 0.2s'
-                  }}
-                >
-                  Pele Sintética
-                </button>
-              </div>
-
-              {/* Swatches Grid */}
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '10px' }}>
-                {colors.map((c) => (
-                  <div
-                    key={c.name}
-                    onClick={() => setSelectedColor(c)}
-                    style={{
-                      display: 'flex',
-                      flexDirection: 'column',
-                      alignItems: 'center',
-                      cursor: 'pointer'
-                    }}
-                  >
-                    <div style={{
-                      width: '100%',
-                      height: '46px',
-                      backgroundColor: c.hex,
-                      border: selectedColor.name === c.name ? '2px solid #1C1A18' : '1px solid #DCD5C9',
-                      borderRadius: '2px',
-                      marginBottom: '6px'
-                    }} />
-                    <span style={{ fontSize: '9.5px', color: '#524E48', textAlign: 'center', lineHeight: 1.2 }}>
-                      {c.name}
-                    </span>
+                <div style={{
+                  display: 'grid',
+                  gridTemplateColumns: 'repeat(auto-fit, minmax(100px, 1fr))',
+                  gap: '10px',
+                  textAlign: 'center'
+                }}>
+                  <div style={{ backgroundColor: '#F2EFEB', padding: '12px 8px', borderRadius: '2px' }}>
+                    <div style={{ fontSize: '10px', fontWeight: 600, textTransform: 'uppercase', color: '#1C1A18' }}>Alívio Postural</div>
+                    <div style={{ fontSize: '9.5px', color: '#8E867C' }}>Ativo</div>
                   </div>
-                ))}
+                  <div style={{ backgroundColor: '#F2EFEB', padding: '12px 8px', borderRadius: '2px' }}>
+                    <div style={{ fontSize: '10px', fontWeight: 600, textTransform: 'uppercase', color: '#1C1A18' }}>Design em Arco</div>
+                    <div style={{ fontSize: '9.5px', color: '#8E867C' }}>Escultural</div>
+                  </div>
+                  <div style={{ backgroundColor: '#F2EFEB', padding: '12px 8px', borderRadius: '2px' }}>
+                    <div style={{ fontSize: '10px', fontWeight: 600, textTransform: 'uppercase', color: '#1C1A18' }}>Espuma D33</div>
+                    <div style={{ fontSize: '9.5px', color: '#8E867C' }}>Ultra Soft</div>
+                  </div>
+                  <div style={{ backgroundColor: '#F2EFEB', padding: '12px 8px', borderRadius: '2px' }}>
+                    <div style={{ fontSize: '10px', fontWeight: 600, textTransform: 'uppercase', color: '#1C1A18' }}>5 Anos</div>
+                    <div style={{ fontSize: '9.5px', color: '#8E867C' }}>Garantia</div>
+                  </div>
+                </div>
               </div>
+
             </div>
 
-            {/* Step 3: Estrutura da Base */}
-            <div style={{ marginBottom: '28px' }}>
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '12px' }}>
-                <span style={{ fontFamily: 'var(--font-sans)', fontSize: '11px', fontWeight: 600, letterSpacing: '0.14em', textTransform: 'uppercase', color: '#1C1A18' }}>
-                  03. ESTRUTURA DA BASE · {selectedModel === 'sculpt' ? 'BASE CILÍNDRICA' : 'PÉS EM X'}
-                </span>
-                <span style={{ fontSize: '11px', color: '#8E867C' }}>3/5</span>
-              </div>
+            {/* Right Column: 5-Step Customization Panel */}
+            <div style={{
+              backgroundColor: '#F7F5F0',
+              border: '1px solid #ECE7DE',
+              padding: 'clamp(28px, 4vw, 44px)',
+              borderRadius: '2px'
+            }}>
 
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-                {(selectedModel === 'sculpt' ? [
-                  { name: 'Base Cilíndrica Revestida Nude', desc: 'Design contínuo e monolítico' },
-                  { name: 'Base em Madeira Maciça Nobre', desc: 'Detalhe natural e sofisticado' },
-                  { name: 'Base em Acabamento Taupe Esculpido', desc: 'Acabamento escultural mate' }
-                ] : [
-                  { name: 'Pés em X Dourado Champagne Escovado', desc: 'Acabamento metálico acetinado nobre' },
-                  { name: 'Pés em X Ferro Negro Fosco', desc: 'Estrutura geométrica contemporânea' },
-                  { name: 'Pés em Madeira Maciça Nobre', desc: 'Calor orgânico e acabamento artesanal' }
-                ]).map((base) => (
-                  <div
-                    key={base.name}
-                    onClick={() => setSelectedBase(base.name)}
+              {/* Step 1: Modelo */}
+              <div style={{ marginBottom: '28px' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '12px' }}>
+                  <span style={{ fontFamily: 'var(--font-sans)', fontSize: '11px', fontWeight: 600, letterSpacing: '0.14em', textTransform: 'uppercase', color: '#1C1A18' }}>
+                    01. MODELO · {selectedModel === 'sculpt' ? 'MARQUESA SCULPT' : 'MARQUESA PURE'}
+                  </span>
+                  <span style={{ fontSize: '11px', color: '#8E867C' }}>1/5</span>
+                </div>
+
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px' }}>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setSelectedModel('sculpt');
+                      setSelectedBase('Base Cilíndrica Revestida Nude');
+                      setSelectedAngle(0);
+                    }}
                     style={{
-                      padding: '11px 14px',
-                      border: selectedBase === base.name ? '1px solid #1C1A18' : '1px solid #E5E0D8',
-                      backgroundColor: selectedBase === base.name ? '#F8F6F1' : '#FFFFFF',
+                      padding: '12px',
+                      border: selectedModel === 'sculpt' ? '2px solid #1C1A18' : '1px solid #E5E0D8',
+                      backgroundColor: selectedModel === 'sculpt' ? '#F8F6F1' : '#FFFFFF',
                       borderRadius: '2px',
+                      textAlign: 'left',
                       cursor: 'pointer',
-                      display: 'flex',
-                      justifyContent: 'space-between',
-                      alignItems: 'center',
                       transition: 'all 0.2s'
                     }}
                   >
-                    <div>
-                      <div style={{ fontSize: '12px', fontWeight: 500, color: '#1C1A18' }}>{base.name}</div>
-                      <div style={{ fontSize: '10px', color: '#8E867C' }}>{base.desc}</div>
+                    <div style={{ fontSize: '12px', fontWeight: 600, color: '#1C1A18' }}>Marquesa Sculpt</div>
+                    <div style={{ fontSize: '10px', color: '#8E867C' }}>Sculpt Wave</div>
+                  </button>
+
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setSelectedModel('royale');
+                      setSelectedBase('Pés em X Dourado Champagne Escovado');
+                      setSelectedAngle(0);
+                    }}
+                    style={{
+                      padding: '12px',
+                      border: selectedModel === 'royale' ? '2px solid #1C1A18' : '1px solid #E5E0D8',
+                      backgroundColor: selectedModel === 'royale' ? '#F8F6F1' : '#FFFFFF',
+                      borderRadius: '2px',
+                      textAlign: 'left',
+                      cursor: 'pointer',
+                      transition: 'all 0.2s'
+                    }}
+                  >
+                    <div style={{ fontSize: '12px', fontWeight: 600, color: '#1C1A18' }}>Marquesa Pure</div>
+                    <div style={{ fontSize: '10px', color: '#8E867C' }}>Pure Anatómica</div>
+                  </button>
+                </div>
+              </div>
+
+              {/* Step 2: Revestimento & Cores */}
+              <div style={{ marginBottom: '28px' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '12px' }}>
+                  <span style={{ fontFamily: 'var(--font-sans)', fontSize: '11px', fontWeight: 600, letterSpacing: '0.14em', textTransform: 'uppercase', color: '#1C1A18' }}>
+                    02. REVESTIMENTO
+                  </span>
+                  <span style={{ fontSize: '11px', color: '#8E867C' }}>2/5</span>
+                </div>
+
+                {/* Type Tabs */}
+                <div style={{ display: 'flex', gap: '8px', marginBottom: '16px' }}>
+                  <button
+                    type="button"
+                    onClick={() => setFabricType('tecido')}
+                    style={{
+                      flex: 1,
+                      padding: '9px',
+                      fontSize: '11px',
+                      letterSpacing: '0.1em',
+                      textTransform: 'uppercase',
+                      border: fabricType === 'tecido' ? '1px solid #1C1A18' : '1px solid #E5E0D8',
+                      backgroundColor: fabricType === 'tecido' ? '#1C1A18' : '#FFFFFF',
+                      color: fabricType === 'tecido' ? '#EDE8DF' : '#524E48',
+                      borderRadius: '2px',
+                      cursor: 'pointer',
+                      transition: 'all 0.2s'
+                    }}
+                  >
+                    Tecido Premium
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => setFabricType('pele')}
+                    style={{
+                      flex: 1,
+                      padding: '9px',
+                      fontSize: '11px',
+                      letterSpacing: '0.1em',
+                      textTransform: 'uppercase',
+                      border: fabricType === 'pele' ? '1px solid #1C1A18' : '1px solid #E5E0D8',
+                      backgroundColor: fabricType === 'pele' ? '#1C1A18' : '#FFFFFF',
+                      color: fabricType === 'pele' ? '#EDE8DF' : '#524E48',
+                      borderRadius: '2px',
+                      cursor: 'pointer',
+                      transition: 'all 0.2s'
+                    }}
+                  >
+                    Pele Sintética
+                  </button>
+                </div>
+
+                {/* Swatches Grid */}
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '10px' }}>
+                  {colors.map((c) => (
+                    <div
+                      key={c.name}
+                      onClick={() => setSelectedColor(c)}
+                      style={{
+                        display: 'flex',
+                        flexDirection: 'column',
+                        alignItems: 'center',
+                        cursor: 'pointer'
+                      }}
+                    >
+                      <div style={{
+                        width: '100%',
+                        height: '46px',
+                        backgroundColor: c.hex,
+                        border: selectedColor.name === c.name ? '2px solid #1C1A18' : '1px solid #DCD5C9',
+                        borderRadius: '2px',
+                        marginBottom: '6px'
+                      }} />
+                      <span style={{ fontSize: '9.5px', color: '#524E48', textAlign: 'center', lineHeight: 1.2 }}>
+                        {c.name}
+                      </span>
                     </div>
-                    <div style={{
-                      width: '14px',
-                      height: '14px',
-                      borderRadius: '50%',
-                      border: '1px solid #1C1A18',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center'
-                    }}>
-                      {selectedBase === base.name && (
-                        <div style={{ width: '8px', height: '8px', borderRadius: '50%', backgroundColor: '#1C1A18' }} />
-                      )}
+                  ))}
+                </div>
+              </div>
+
+              {/* Step 3: Estrutura da Base */}
+              <div style={{ marginBottom: '28px' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '12px' }}>
+                  <span style={{ fontFamily: 'var(--font-sans)', fontSize: '11px', fontWeight: 600, letterSpacing: '0.14em', textTransform: 'uppercase', color: '#1C1A18' }}>
+                    03. ESTRUTURA DA BASE · {selectedModel === 'sculpt' ? 'BASE CILÍNDRICA' : 'PÉS EM X'}
+                  </span>
+                  <span style={{ fontSize: '11px', color: '#8E867C' }}>3/5</span>
+                </div>
+
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                  {(selectedModel === 'sculpt' ? [
+                    { name: 'Base Cilíndrica Revestida Nude', desc: 'Design contínuo e monolítico' },
+                    { name: 'Base em Madeira Maciça Nobre', desc: 'Detalhe natural e sofisticado' },
+                    { name: 'Base em Acabamento Taupe Esculpido', desc: 'Acabamento escultural mate' }
+                  ] : [
+                    { name: 'Pés em X Dourado Champagne Escovado', desc: 'Acabamento metálico acetinado nobre' },
+                    { name: 'Pés em X Ferro Negro Fosco', desc: 'Estrutura geométrica contemporânea' },
+                    { name: 'Pés em Madeira Maciça Nobre', desc: 'Calor orgânico e acabamento artesanal' }
+                  ]).map((base) => (
+                    <div
+                      key={base.name}
+                      onClick={() => setSelectedBase(base.name)}
+                      style={{
+                        padding: '11px 14px',
+                        border: selectedBase === base.name ? '1px solid #1C1A18' : '1px solid #E5E0D8',
+                        backgroundColor: selectedBase === base.name ? '#F8F6F1' : '#FFFFFF',
+                        borderRadius: '2px',
+                        cursor: 'pointer',
+                        display: 'flex',
+                        justifyContent: 'space-between',
+                        alignItems: 'center',
+                        transition: 'all 0.2s'
+                      }}
+                    >
+                      <div>
+                        <div style={{ fontSize: '12px', fontWeight: 500, color: '#1C1A18' }}>{base.name}</div>
+                        <div style={{ fontSize: '10px', color: '#8E867C' }}>{base.desc}</div>
+                      </div>
+                      <div style={{
+                        width: '14px',
+                        height: '14px',
+                        borderRadius: '50%',
+                        border: '1px solid #1C1A18',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center'
+                      }}>
+                        {selectedBase === base.name && (
+                          <div style={{ width: '8px', height: '8px', borderRadius: '50%', backgroundColor: '#1C1A18' }} />
+                        )}
+                      </div>
                     </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Step 4: Acabamentos Extra */}
+              <div style={{ marginBottom: '32px' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '12px' }}>
+                  <span style={{ fontFamily: 'var(--font-sans)', fontSize: '11px', fontWeight: 600, letterSpacing: '0.14em', textTransform: 'uppercase', color: '#1C1A18' }}>
+                    04. ACABAMENTOS EXTRA
+                  </span>
+                  <span style={{ fontSize: '11px', color: '#8E867C' }}>4/5</span>
+                </div>
+
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+                  <div>
+                    <label style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', cursor: 'pointer', fontSize: '12.5px', color: '#3A3632' }}>
+                      <span>Bordado personalizado com logótipo</span>
+                      <input
+                        type="checkbox"
+                        checked={embroidery}
+                        onChange={(e) => setEmbroidery(e.target.checked)}
+                        style={{ width: '16px', height: '16px', accentColor: '#1C1A18' }}
+                      />
+                    </label>
+                    {embroidery && (
+                      <input
+                        type="text"
+                        placeholder="Nome ou texto do bordado..."
+                        value={embroideryText}
+                        onChange={(e) => setEmbroideryText(e.target.value)}
+                        style={{
+                          marginTop: '8px',
+                          width: '100%',
+                          padding: '8px 12px',
+                          fontSize: '12px',
+                          border: '1px solid #DCD5C9',
+                          borderRadius: '2px',
+                          fontFamily: 'var(--font-sans)'
+                        }}
+                      />
+                    )}
                   </div>
-                ))}
-              </div>
-            </div>
 
-            {/* Step 4: Acabamentos Extra */}
-            <div style={{ marginBottom: '32px' }}>
-              <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '12px' }}>
-                <span style={{ fontFamily: 'var(--font-sans)', fontSize: '11px', fontWeight: 600, letterSpacing: '0.14em', textTransform: 'uppercase', color: '#1C1A18' }}>
-                  04. ACABAMENTOS EXTRA
-                </span>
-                <span style={{ fontSize: '11px', color: '#8E867C' }}>4/5</span>
-              </div>
-
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-                <div>
                   <label style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', cursor: 'pointer', fontSize: '12.5px', color: '#3A3632' }}>
-                    <span>Bordado personalizado com logótipo</span>
+                    <span>Capa Protetora Cristal Náutico</span>
                     <input
                       type="checkbox"
-                      checked={embroidery}
-                      onChange={(e) => setEmbroidery(e.target.checked)}
+                      checked={protectiveCover}
+                      onChange={(e) => setProtectiveCover(e.target.checked)}
                       style={{ width: '16px', height: '16px', accentColor: '#1C1A18' }}
                     />
                   </label>
-                  {embroidery && (
+
+                  <label style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', cursor: 'pointer', fontSize: '12.5px', color: '#3A3632' }}>
+                    <span>Manta & Almofada Cervical Ergonómica</span>
                     <input
-                      type="text"
-                      placeholder="Nome ou texto do bordado..."
-                      value={embroideryText}
-                      onChange={(e) => setEmbroideryText(e.target.value)}
-                      style={{
-                        marginTop: '8px',
-                        width: '100%',
-                        padding: '8px 12px',
-                        fontSize: '12px',
-                        border: '1px solid #DCD5C9',
-                        borderRadius: '2px',
-                        fontFamily: 'var(--font-sans)'
-                      }}
+                      type="checkbox"
+                      checked={pillowSet}
+                      onChange={(e) => setPillowSet(e.target.checked)}
+                      style={{ width: '16px', height: '16px', accentColor: '#1C1A18' }}
                     />
-                  )}
+                  </label>
                 </div>
-
-                <label style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', cursor: 'pointer', fontSize: '12.5px', color: '#3A3632' }}>
-                  <span>Capa Protetora Cristal Náutico</span>
-                  <input
-                    type="checkbox"
-                    checked={protectiveCover}
-                    onChange={(e) => setProtectiveCover(e.target.checked)}
-                    style={{ width: '16px', height: '16px', accentColor: '#1C1A18' }}
-                  />
-                </label>
-                
-                <label style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', cursor: 'pointer', fontSize: '12.5px', color: '#3A3632' }}>
-                  <span>Manta & Almofada Cervical Ergonómica</span>
-                  <input
-                    type="checkbox"
-                    checked={pillowSet}
-                    onChange={(e) => setPillowSet(e.target.checked)}
-                    style={{ width: '16px', height: '16px', accentColor: '#1C1A18' }}
-                  />
-                </label>
               </div>
-            </div>
 
-            {/* Step 5: CTAs */}
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
-              <a
-                href={generateWhatsAppMessage()}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="editorial-btn"
-                style={{
+              {/* Step 5: CTAs */}
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
+                <a
+                  href={generateWhatsAppMessage()}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="editorial-btn"
+                  style={{
+                    display: 'flex',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    gap: '8px',
+                    width: '100%',
+                    padding: '15px 24px',
+                    backgroundColor: '#1C1A18',
+                    color: '#EDE8DF',
+                    fontSize: '11px',
+                    fontFamily: 'var(--font-sans)',
+                    fontWeight: 600,
+                    letterSpacing: '0.16em',
+                    textTransform: 'uppercase',
+                    border: 'none',
+                    borderRadius: '2px',
+                    textDecoration: 'none',
+                    transition: 'all 0.3s cubic-bezier(0.16, 1, 0.3, 1)'
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.backgroundColor = '#33302C';
+                    e.currentTarget.style.transform = 'translateY(-2px)';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.backgroundColor = '#1C1A18';
+                    e.currentTarget.style.transform = 'translateY(0)';
+                  }}
+                >
+                  <span>CONSULTAR POR WHATSAPP</span>
+                  <span>→</span>
+                </a>
+
+                <div style={{
                   display: 'flex',
-                  justifyContent: 'center',
-                  alignItems: 'center',
-                  gap: '8px',
-                  width: '100%',
-                  padding: '15px 24px',
-                  backgroundColor: '#1C1A18',
-                  color: '#EDE8DF',
-                  fontSize: '11px',
-                  fontFamily: 'var(--font-sans)',
-                  fontWeight: 600,
-                  letterSpacing: '0.16em',
-                  textTransform: 'uppercase',
-                  border: 'none',
-                  borderRadius: '2px',
-                  textDecoration: 'none',
-                  transition: 'all 0.3s cubic-bezier(0.16, 1, 0.3, 1)'
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.backgroundColor = '#33302C';
-                  e.currentTarget.style.transform = 'translateY(-2px)';
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.backgroundColor = '#1C1A18';
-                  e.currentTarget.style.transform = 'translateY(0)';
-                }}
-              >
-                <span>CONSULTAR POR WHATSAPP</span>
-                <span>→</span>
-              </a>
-
-              <div style={{
-                display: 'flex',
-                justifyContent: 'space-between',
-                fontSize: '10px',
-                color: '#8E867C',
-                textAlign: 'center',
-                paddingTop: '8px'
-              }}>
-                <span>✓ Atendimento Exclusivo</span>
-                <span>✓ Envio Seguro</span>
-                <span>✓ 5 Anos Garantia</span>
+                  justifyContent: 'space-between',
+                  fontSize: '10px',
+                  color: '#8E867C',
+                  textAlign: 'center',
+                  paddingTop: '8px'
+                }}>
+                  <span>✓ Atendimento Exclusivo</span>
+                  <span>✓ Envio Seguro</span>
+                  <span>✓ 5 Anos Garantia</span>
+                </div>
               </div>
-            </div>
 
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
       {/* Explore in Detail Bottom Section */}
       <section style={{ padding: 'clamp(64px, 8vw, 110px) 0', borderBottom: '1px solid #E5E0D8' }}>

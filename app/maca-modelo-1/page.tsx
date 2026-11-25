@@ -30,220 +30,220 @@ export default function MacaSculptPage() {
           <div className="editorial-product-grid">
             {/* Left Info Column */}
             <div>
-            <Reveal direction="up" delay={100}>
-              <span style={{
-                fontFamily: 'var(--font-sans)',
-                fontSize: '11px',
-                fontWeight: 600,
-                letterSpacing: '0.22em',
-                textTransform: 'uppercase',
-                color: '#8E867C',
-                display: 'block',
-                marginBottom: '14px'
-              }}>
-                SCULPT / DESIGN DE ASSINATURA
-              </span>
-            </Reveal>
-
-            <Reveal direction="up" delay={200}>
-              <h1 style={{
-                fontFamily: 'var(--font-sans)',
-                fontSize: 'clamp(38px, 4.5vw, 56px)',
-                fontWeight: 400,
-                lineHeight: 1.1,
-                letterSpacing: '-0.03em',
-                color: '#1C1A18',
-                marginBottom: '20px'
-              }}>
-                SCULPT
-              </h1>
-            </Reveal>
-
-            <Reveal direction="up" delay={250}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '24px', flexWrap: 'wrap' }}>
-                <span style={{ fontFamily: 'var(--font-sans)', fontSize: '24px', fontWeight: 500, color: '#1C1A18', letterSpacing: '-0.02em' }}>
-                  750€
-                </span>
+              <Reveal direction="up" delay={100}>
                 <span style={{
                   fontFamily: 'var(--font-sans)',
-                  fontSize: '12px',
+                  fontSize: '11px',
                   fontWeight: 600,
-                  letterSpacing: '0.08em',
+                  letterSpacing: '0.22em',
                   textTransform: 'uppercase',
-                  color: '#1C1A18',
-                  padding: '5px 12px',
-                  backgroundColor: '#EAE6DF',
-                  borderRadius: '2px'
+                  color: '#8E867C',
+                  display: 'block',
+                  marginBottom: '14px'
                 }}>
-                  Feita por encomenda
+                  SCULPT / DESIGN DE ASSINATURA
                 </span>
-                <span style={{ fontFamily: 'var(--font-sans)', fontSize: '13px', color: '#8E867C' }}>
-                  · Personalizável
-                </span>
-              </div>
-            </Reveal>
+              </Reveal>
 
-            <Reveal direction="up" delay={300}>
-              <div style={{
-                fontFamily: 'var(--font-sans)',
-                fontSize: 'clamp(14.5px, 1.05vw, 15.5px)',
-                lineHeight: 1.75,
-                color: '#55514B',
-                marginBottom: '32px',
-                maxWidth: '520px',
-                display: 'flex',
-                flexDirection: 'column',
-                gap: '16px'
-              }}>
-                <p style={{
-                  fontWeight: 500,
-                  color: '#1C1A18',
-                  fontSize: 'clamp(15px, 1.1vw, 16.5px)'
-                }}>
-                  Uma peça que muda a forma como se sente e como se vê um espaço.
-                </p>
-                <p>
-                  A SCULPT foi desenhada para receber o corpo de forma natural, criando uma sensação de conforto desde o momento em que a cliente se deita. As suas curvas contínuas acompanham a silhueta enquanto dão à peça a presença escultórica que a distingue.
-                </p>
-                <p style={{
+              <Reveal direction="up" delay={200}>
+                <h1 style={{
                   fontFamily: 'var(--font-sans)',
+                  fontSize: 'clamp(38px, 4.5vw, 56px)',
+                  fontWeight: 400,
+                  lineHeight: 1.1,
+                  letterSpacing: '-0.03em',
                   color: '#1C1A18',
-                  fontWeight: 500,
-                  lineHeight: 1.6
+                  marginBottom: '20px'
                 }}>
-                  Conforto pensado ao detalhe.<br />
-                  Design que não passa despercebido.
-                </p>
-              </div>
-            </Reveal>
+                  SCULPT
+                </h1>
+              </Reveal>
 
-            {/* Quick Specs Pill Row */}
-            <Reveal direction="up" delay={350}>
-              <div style={{
-                display: 'flex',
-                flexWrap: 'wrap',
-                gap: '8px',
-                marginBottom: '36px'
-              }}>
-                <span style={{ fontSize: '11.5px', padding: '6px 14px', backgroundColor: '#F2EFEB', borderRadius: '2px', color: '#3A3632' }}>
-                  Curvas pensadas para o corpo
-                </span>
-                <span style={{ fontSize: '11.5px', padding: '6px 14px', backgroundColor: '#F2EFEB', borderRadius: '2px', color: '#3A3632' }}>
-                  Espuma de alta densidade
-                </span>
-                <span style={{ fontSize: '11.5px', padding: '6px 14px', backgroundColor: '#F2EFEB', borderRadius: '2px', color: '#3A3632' }}>
-                  Produção artesanal
-                </span>
-                <span style={{ fontSize: '11.5px', padding: '6px 14px', backgroundColor: '#F2EFEB', borderRadius: '2px', color: '#3A3632' }}>
-                  Personalização à escolha
-                </span>
-              </div>
-            </Reveal>
-
-            {/* CTA Buttons */}
-            <Reveal direction="up" delay={400}>
-              <div style={{ display: 'flex', gap: '14px', flexWrap: 'wrap' }}>
-                <a
-                  href="https://wa.me/351934804066?text=Ol%C3%A1%2C%20gostaria%20de%20criar%20a%20minha%20SCULPT%20sob%20medida."
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={{
-                    display: 'inline-flex',
-                    alignItems: 'center',
-                    gap: '8px',
-                    padding: '14px 32px',
-                    fontSize: '11px',
+              <Reveal direction="up" delay={250}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '24px', flexWrap: 'wrap' }}>
+                  <span style={{ fontFamily: 'var(--font-sans)', fontSize: '24px', fontWeight: 500, color: '#1C1A18', letterSpacing: '-0.02em' }}>
+                    750€
+                  </span>
+                  <span style={{
                     fontFamily: 'var(--font-sans)',
+                    fontSize: '12px',
                     fontWeight: 600,
-                    letterSpacing: '0.16em',
-                    textTransform: 'uppercase',
-                    color: '#EDE8DF',
-                    backgroundColor: '#1C1A18',
-                    borderRadius: '2px',
-                    textDecoration: 'none',
-                    transition: 'background-color 0.25s ease'
-                  }}
-                  onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = '#38342F')}
-                  onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = '#1C1A18')}
-                >
-                  <span>CRIAR A MINHA SCULPT</span>
-                  <span>→</span>
-                </a>
-
-                <Link
-                  href="/contato"
-                  style={{
-                    display: 'inline-flex',
-                    alignItems: 'center',
-                    padding: '14px 26px',
-                    fontSize: '11px',
-                    fontFamily: 'var(--font-sans)',
-                    fontWeight: 500,
-                    letterSpacing: '0.16em',
+                    letterSpacing: '0.08em',
                     textTransform: 'uppercase',
                     color: '#1C1A18',
-                    border: '1px solid #1C1A18',
-                    borderRadius: '2px',
-                    textDecoration: 'none',
-                    transition: 'background-color 0.25s ease'
-                  }}
-                  onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = 'rgba(28, 26, 24, 0.05)')}
-                  onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = 'transparent')}
-                >
-                  FALE CONNOSCO
-                </Link>
-              </div>
-            </Reveal>
-          </div>
-
-          {/* Right Main Gallery Viewer */}
-          <div>
-            <Reveal direction="right" delay={200}>
-              <div className="image-hover-zoom" style={{
-                position: 'relative',
-                width: '100%',
-                height: 'clamp(360px, 42vw, 520px)',
-                backgroundColor: '#EAE6DF',
-                borderRadius: '2px',
-                overflow: 'hidden',
-                marginBottom: '16px'
-              }}>
-                <Image
-                  src={activeImage}
-                  alt="Marquesa Sculpt em Alta Definição"
-                  fill
-                  priority
-                  sizes="(max-width: 900px) 100vw, 55vw"
-                  style={{ objectFit: 'cover', transition: 'transform 0.8s cubic-bezier(0.16, 1, 0.3, 1)' }}
-                />
-              </div>
-            </Reveal>
-
-            {/* Thumbnails */}
-            <div style={{ display: 'grid', gridTemplateColumns: `repeat(${galleryImages.length}, 1fr)`, gap: '12px' }}>
-              {galleryImages.map((img, idx) => (
-                <div
-                  key={idx}
-                  onClick={() => setActiveImage(img)}
-                  style={{
-                    position: 'relative',
-                    height: '84px',
+                    padding: '5px 12px',
                     backgroundColor: '#EAE6DF',
-                    border: activeImage === img ? '2px solid #1C1A18' : '1px solid #ECE7DE',
-                    borderRadius: '2px',
-                    overflow: 'hidden',
-                    cursor: 'pointer',
-                    transition: 'border-color 0.2s ease'
-                  }}
-                >
-                  <Image src={img} alt={`Ângulo Sculpt ${idx + 1}`} fill sizes="120px" style={{ objectFit: 'cover' }} />
+                    borderRadius: '2px'
+                  }}>
+                    Feita por encomenda
+                  </span>
+                  <span style={{ fontFamily: 'var(--font-sans)', fontSize: '13px', color: '#8E867C' }}>
+                    · Personalizável
+                  </span>
                 </div>
-              ))}
+              </Reveal>
+
+              <Reveal direction="up" delay={300}>
+                <div style={{
+                  fontFamily: 'var(--font-sans)',
+                  fontSize: 'clamp(14.5px, 1.05vw, 15.5px)',
+                  lineHeight: 1.75,
+                  color: '#55514B',
+                  marginBottom: '32px',
+                  maxWidth: '520px',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: '16px'
+                }}>
+                  <p style={{
+                    fontWeight: 500,
+                    color: '#1C1A18',
+                    fontSize: 'clamp(15px, 1.1vw, 16.5px)'
+                  }}>
+                    Uma peça que muda a forma como se sente e como se vê um espaço.
+                  </p>
+                  <p>
+                    A SCULPT foi desenhada para receber o corpo de forma natural, criando uma sensação de conforto desde o momento em que a cliente se deita. As suas curvas contínuas acompanham a silhueta enquanto dão à peça a presença escultórica que a distingue.
+                  </p>
+                  <p style={{
+                    fontFamily: 'var(--font-sans)',
+                    color: '#1C1A18',
+                    fontWeight: 500,
+                    lineHeight: 1.6
+                  }}>
+                    Conforto pensado ao detalhe.<br />
+                    Design que não passa despercebido.
+                  </p>
+                </div>
+              </Reveal>
+
+              {/* Quick Specs Pill Row */}
+              <Reveal direction="up" delay={350}>
+                <div style={{
+                  display: 'flex',
+                  flexWrap: 'wrap',
+                  gap: '8px',
+                  marginBottom: '36px'
+                }}>
+                  <span style={{ fontSize: '11.5px', padding: '6px 14px', backgroundColor: '#F2EFEB', borderRadius: '2px', color: '#3A3632' }}>
+                    Curvas pensadas para o corpo
+                  </span>
+                  <span style={{ fontSize: '11.5px', padding: '6px 14px', backgroundColor: '#F2EFEB', borderRadius: '2px', color: '#3A3632' }}>
+                    Espuma de alta densidade
+                  </span>
+                  <span style={{ fontSize: '11.5px', padding: '6px 14px', backgroundColor: '#F2EFEB', borderRadius: '2px', color: '#3A3632' }}>
+                    Produção artesanal
+                  </span>
+                  <span style={{ fontSize: '11.5px', padding: '6px 14px', backgroundColor: '#F2EFEB', borderRadius: '2px', color: '#3A3632' }}>
+                    Personalização à escolha
+                  </span>
+                </div>
+              </Reveal>
+
+              {/* CTA Buttons */}
+              <Reveal direction="up" delay={400}>
+                <div style={{ display: 'flex', gap: '14px', flexWrap: 'wrap' }}>
+                  <a
+                    href="https://wa.me/351934804066?text=Ol%C3%A1%2C%20gostaria%20de%20criar%20a%20minha%20SCULPT%20sob%20medida."
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      gap: '8px',
+                      padding: '14px 32px',
+                      fontSize: '11px',
+                      fontFamily: 'var(--font-sans)',
+                      fontWeight: 600,
+                      letterSpacing: '0.16em',
+                      textTransform: 'uppercase',
+                      color: '#EDE8DF',
+                      backgroundColor: '#1C1A18',
+                      borderRadius: '2px',
+                      textDecoration: 'none',
+                      transition: 'background-color 0.25s ease'
+                    }}
+                    onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = '#38342F')}
+                    onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = '#1C1A18')}
+                  >
+                    <span>CRIAR A MINHA SCULPT</span>
+                    <span>→</span>
+                  </a>
+
+                  <Link
+                    href="/contato"
+                    style={{
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      padding: '14px 26px',
+                      fontSize: '11px',
+                      fontFamily: 'var(--font-sans)',
+                      fontWeight: 500,
+                      letterSpacing: '0.16em',
+                      textTransform: 'uppercase',
+                      color: '#1C1A18',
+                      border: '1px solid #1C1A18',
+                      borderRadius: '2px',
+                      textDecoration: 'none',
+                      transition: 'background-color 0.25s ease'
+                    }}
+                    onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = 'rgba(28, 26, 24, 0.05)')}
+                    onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = 'transparent')}
+                  >
+                    FALE CONNOSCO
+                  </Link>
+                </div>
+              </Reveal>
+            </div>
+
+            {/* Right Main Gallery Viewer */}
+            <div>
+              <Reveal direction="right" delay={200}>
+                <div className="image-hover-zoom" style={{
+                  position: 'relative',
+                  width: '100%',
+                  height: 'clamp(360px, 42vw, 520px)',
+                  backgroundColor: '#EAE6DF',
+                  borderRadius: '2px',
+                  overflow: 'hidden',
+                  marginBottom: '16px'
+                }}>
+                  <Image
+                    src={activeImage}
+                    alt="Marquesa Sculpt em Alta Definição"
+                    fill
+                    priority
+                    sizes="(max-width: 900px) 100vw, 55vw"
+                    style={{ objectFit: 'cover', transition: 'transform 0.8s cubic-bezier(0.16, 1, 0.3, 1)' }}
+                  />
+                </div>
+              </Reveal>
+
+              {/* Thumbnails */}
+              <div style={{ display: 'grid', gridTemplateColumns: `repeat(${galleryImages.length}, 1fr)`, gap: '12px' }}>
+                {galleryImages.map((img, idx) => (
+                  <div
+                    key={idx}
+                    onClick={() => setActiveImage(img)}
+                    style={{
+                      position: 'relative',
+                      height: '84px',
+                      backgroundColor: '#EAE6DF',
+                      border: activeImage === img ? '2px solid #1C1A18' : '1px solid #ECE7DE',
+                      borderRadius: '2px',
+                      overflow: 'hidden',
+                      cursor: 'pointer',
+                      transition: 'border-color 0.2s ease'
+                    }}
+                  >
+                    <Image src={img} alt={`Ângulo Sculpt ${idx + 1}`} fill sizes="120px" style={{ objectFit: 'cover' }} />
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
       {/* 02 — POR DENTRO DA SCULPT */}
       <section style={{
