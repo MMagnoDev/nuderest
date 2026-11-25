@@ -127,7 +127,7 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
   const checkoutWhatsApp = () => {
     if (cart.length === 0) return;
 
-    let message = `*SOLICITAÇÃO DE ORÇAMENTO — ATELIER NUDE REST*%0A%0A`;
+    let message = `*SOLICITAÇÃO DE ORÇAMENTO | ATELIER NUDE REST*%0A%0A`;
     message += `Olá! Gostaria de receber uma proposta personalizada para os seguintes modelos sob medida:%0A%0A`;
 
     cart.forEach((item, index) => {
@@ -150,7 +150,7 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
   };
 
   const checkoutDirectWhatsApp = (item: Omit<CartItem, 'id' | 'quantity'>) => {
-    let message = `*SOLICITAÇÃO DE ORÇAMENTO — ATELIER NUDE REST*%0A%0A`;
+    let message = `*SOLICITAÇÃO DE ORÇAMENTO | ATELIER NUDE REST*%0A%0A`;
     message += `Olá! Gostaria de solicitar proposta para a marquesa *${item.name}*:%0A`;
     message += `• Tonalidade: ${item.color.name}%0A`;
     message += `• Base / Pés: ${item.base.name}%0A`;

@@ -30,7 +30,7 @@ const jakarta = Plus_Jakarta_Sans({
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://nuderest.com.br'),
-  title: 'NUDE REST | Macas de Alto Padrão Feitas por Medida — Estética, Lash & Spas',
+  title: 'NUDE REST | Macas de Alto Padrão Feitas por Medida | Estética, Lash & Spas',
   description: 'Atelier de macas ergonómicas personalizadas por medida com gravação da sua marca. Espuma D33 multi-densidade, revestimento nobre hospitalar e 5 anos de garantia estrutural.',
   keywords: [
     'macas personalizadas',

@@ -183,7 +183,7 @@ export default function SobrePage() {
                   A NUDE REST nasce de uma necessidade real: repensar a peça que está no centro de tantos atendimentos.
                 </p>
                 <p>
-                  Quisemos criar marquesas que não fossem apenas bonitas, mas que fizessem sentido para os dois lados da experiência — para quem se deita e para quem trabalha.
+                  Quisemos criar marquesas que não fossem apenas bonitas, mas que fizessem sentido para os dois lados da experiência: para quem se deita e para quem trabalha.
                 </p>
                 <p>
                   Conforto, proporção, materiais, ergonomia e presença no espaço passaram a ser pensados como partes da mesma peça.

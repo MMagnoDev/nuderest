@@ -244,7 +244,7 @@ Gostaria de receber uma proposta personalizada e prazo de entrega.`;
             <div style={{ marginBottom: '28px' }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '12px' }}>
                 <span style={{ fontFamily: 'var(--font-sans)', fontSize: '11px', fontWeight: 600, letterSpacing: '0.14em', textTransform: 'uppercase', color: '#1C1A18' }}>
-                  01. MODELO — {selectedModel === 'sculpt' ? 'MACA SCULPT' : 'MACA ROYALE'}
+                  01. MODELO · {selectedModel === 'sculpt' ? 'MACA SCULPT' : 'MACA ROYALE'}
                 </span>
                 <span style={{ fontSize: '11px', color: '#8E867C' }}>1/5</span>
               </div>
@@ -378,7 +378,7 @@ Gostaria de receber uma proposta personalizada e prazo de entrega.`;
             <div style={{ marginBottom: '28px' }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '12px' }}>
                 <span style={{ fontFamily: 'var(--font-sans)', fontSize: '11px', fontWeight: 600, letterSpacing: '0.14em', textTransform: 'uppercase', color: '#1C1A18' }}>
-                  03. ESTRUTURA DA BASE — {selectedModel === 'sculpt' ? 'BASE CILÍNDRICA' : 'PÉS EM X'}
+                  03. ESTRUTURA DA BASE · {selectedModel === 'sculpt' ? 'BASE CILÍNDRICA' : 'PÉS EM X'}
                 </span>
                 <span style={{ fontSize: '11px', color: '#8E867C' }}>3/5</span>
               </div>

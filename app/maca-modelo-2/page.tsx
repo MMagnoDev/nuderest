@@ -305,7 +305,7 @@ export default function MacaRoyalePage() {
                   Estofo com diferentes expressões
                 </h3>
                 <p style={{ fontFamily: 'var(--font-sans)', fontSize: '13px', lineHeight: 1.65, color: '#55514B' }}>
-                  A PURE pode ser produzida com diferentes técnicas de estofo, permitindo alterar a linguagem da peça — de uma leitura mais limpa a um acabamento mais marcado e texturado.
+                  A PURE pode ser produzida com diferentes técnicas de estofo, permitindo alterar a linguagem da peça, desde uma leitura mais limpa até um acabamento mais marcado e texturado.
                 </p>
               </div>
             </Reveal>

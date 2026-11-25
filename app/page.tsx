@@ -111,16 +111,6 @@ export default function HomePage() {
               </h1>
             </Reveal>
 
-            {/* Subtle Divider Line */}
-            <Reveal direction="up" delay={250}>
-              <div style={{
-                width: '38px',
-                height: '1px',
-                backgroundColor: 'rgba(237, 232, 223, 0.5)',
-                marginBottom: '26px'
-              }} />
-            </Reveal>
-
             <Reveal direction="up" delay={350}>
               <div style={{
                 fontFamily: 'var(--font-sans)',
@@ -134,7 +124,7 @@ export default function HomePage() {
                 gap: '16px'
               }}>
                 <p>
-                  A NUDE REST nasceu de quem conhece esta realidade de perto — e acredita que a peça onde tudo acontece pode oferecer mais.
+                  A NUDE REST nasceu de quem conhece esta realidade de perto e acredita que a peça onde tudo acontece pode oferecer mais.
                 </p>
                 <p style={{
                   fontFamily: 'var(--font-editorial)',
@@ -624,7 +614,7 @@ export default function HomePage() {
                   maxWidth: '410px'
                 }}>
                   <p>
-                    Cada NUDE REST começa numa ideia e ganha forma através de escolhas feitas com intenção — das proporções ao estofo, das espumas ao tecido e aos acabamentos.
+                    Cada NUDE REST começa numa ideia e ganha forma através de escolhas feitas com intenção: das proporções ao estofo, das espumas ao tecido e aos acabamentos.
                   </p>
                   <p>
                     São esses detalhes, muitos deles quase invisíveis, que definem a forma como a peça se sente, se integra no espaço e acompanha o dia a dia de quem a utiliza.
@@ -746,7 +736,7 @@ export default function HomePage() {
                 marginTop: '28px'
               }}
             >
-              — NUDE REST MANIFESTO
+              NUDE REST MANIFESTO
             </span>
           </Reveal>
         </div>
