@@ -360,38 +360,30 @@ export default function MacaSculptPage() {
                 Tudo o que precisas de saber.
               </h2>
 
-              <div style={{
-                display: 'flex',
-                flexDirection: 'column',
-                gap: '14px',
-                fontFamily: 'var(--font-sans)',
-                fontSize: '14.5px',
-                borderTop: '1px solid #ECE7DE',
-                paddingTop: '20px'
-              }}>
-                <div style={{ display: 'flex', justifyContent: 'space-between', paddingBottom: '10px', borderBottom: '1px solid #F0ECE5' }}>
-                  <span style={{ color: '#8E867C' }}>Comprimento</span>
-                  <span style={{ fontWeight: 500, color: '#1C1A18' }}>190 cm</span>
+              <div className="editorial-spec-list">
+                <div className="editorial-spec-item">
+                  <span className="editorial-spec-label">Comprimento</span>
+                  <span className="editorial-spec-value" style={{ fontWeight: 500 }}>190 cm</span>
                 </div>
-                <div style={{ display: 'flex', justifyContent: 'space-between', paddingBottom: '10px', borderBottom: '1px solid #F0ECE5' }}>
-                  <span style={{ color: '#8E867C' }}>Largura</span>
-                  <span style={{ fontWeight: 500, color: '#1C1A18' }}>62 cm</span>
+                <div className="editorial-spec-item">
+                  <span className="editorial-spec-label">Largura</span>
+                  <span className="editorial-spec-value" style={{ fontWeight: 500 }}>62 cm</span>
                 </div>
-                <div style={{ display: 'flex', justifyContent: 'space-between', paddingBottom: '10px', borderBottom: '1px solid #F0ECE5' }}>
-                  <span style={{ color: '#8E867C' }}>Altura</span>
-                  <span style={{ fontWeight: 500, color: '#1C1A18' }}>80 cm*</span>
+                <div className="editorial-spec-item">
+                  <span className="editorial-spec-label">Altura</span>
+                  <span className="editorial-spec-value" style={{ fontWeight: 500 }}>80 cm*</span>
                 </div>
-                <div style={{ display: 'flex', justifyContent: 'space-between', paddingBottom: '10px', borderBottom: '1px solid #F0ECE5' }}>
-                  <span style={{ color: '#8E867C' }}>Capacidade estrutural</span>
-                  <span style={{ fontWeight: 500, color: '#1C1A18' }}>150 kg</span>
+                <div className="editorial-spec-item">
+                  <span className="editorial-spec-label">Capacidade estrutural</span>
+                  <span className="editorial-spec-value" style={{ fontWeight: 500 }}>150 kg</span>
                 </div>
-                <div style={{ display: 'flex', justifyContent: 'space-between', paddingBottom: '10px', borderBottom: '1px solid #F0ECE5' }}>
-                  <span style={{ color: '#8E867C' }}>Prazo de confeção</span>
-                  <span style={{ fontWeight: 500, color: '#1C1A18' }}>15 a 20 dias</span>
+                <div className="editorial-spec-item">
+                  <span className="editorial-spec-label">Prazo de confeção</span>
+                  <span className="editorial-spec-value" style={{ fontWeight: 500 }}>15 a 20 dias</span>
                 </div>
-                <div style={{ display: 'flex', justifyContent: 'space-between', paddingBottom: '10px', borderBottom: '1px solid #F0ECE5' }}>
-                  <span style={{ color: '#8E867C' }}>Valor</span>
-                  <span style={{ fontWeight: 600, color: '#1C1A18' }}>750€</span>
+                <div className="editorial-spec-item">
+                  <span className="editorial-spec-label">Valor</span>
+                  <span className="editorial-spec-value" style={{ fontWeight: 600 }}>750€</span>
                 </div>
               </div>
 

@@ -372,38 +372,34 @@ export default function MacaRoyalePage() {
                 Tudo o que precisas de saber.
               </h2>
 
-              <div style={{
-                display: 'flex',
-                flexDirection: 'column',
-                gap: '16px',
-                fontFamily: 'var(--font-sans)',
-                fontSize: '14px',
-                borderTop: '1px solid #ECE7DE',
-                paddingTop: '24px'
-              }}>
-                <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                  <span style={{ color: '#8E867C' }}>Comprimento Total</span>
-                  <span style={{ fontWeight: 500, color: '#1C1A18' }}>180 cm</span>
+              <div className="editorial-spec-list">
+                <div className="editorial-spec-item">
+                  <span className="editorial-spec-label">Comprimento</span>
+                  <span className="editorial-spec-value" style={{ fontWeight: 500 }}>180 cm</span>
                 </div>
-                <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                  <span style={{ color: '#8E867C' }}>Largura de Conforto</span>
-                  <span style={{ fontWeight: 500, color: '#1C1A18' }}>62 cm</span>
+                <div className="editorial-spec-item">
+                  <span className="editorial-spec-label">Largura</span>
+                  <span className="editorial-spec-value" style={{ fontWeight: 500 }}>62 cm</span>
                 </div>
-                <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                  <span style={{ color: '#8E867C' }}>Altura de Trabalho</span>
-                  <span style={{ fontWeight: 500, color: '#1C1A18' }}>80 cm</span>
+                <div className="editorial-spec-item">
+                  <span className="editorial-spec-label">Altura</span>
+                  <span className="editorial-spec-value" style={{ fontWeight: 500 }}>80 cm</span>
                 </div>
-                <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                  <span style={{ color: '#8E867C' }}>Capacidade Estrutural</span>
-                  <span style={{ fontWeight: 500, color: '#1C1A18' }}>150 kg</span>
+                <div className="editorial-spec-item">
+                  <span className="editorial-spec-label">Base</span>
+                  <span className="editorial-spec-value" style={{ fontWeight: 500 }}>Pés em X em ferro Champagne escovado</span>
                 </div>
-                <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                  <span style={{ color: '#8E867C' }}>Prazo de Confeção</span>
-                  <span style={{ fontWeight: 500, color: '#1C1A18' }}>15 a 20 dias</span>
+                <div className="editorial-spec-item">
+                  <span className="editorial-spec-label">Capacidade estrutural</span>
+                  <span className="editorial-spec-value" style={{ fontWeight: 500 }}>150 kg</span>
                 </div>
-                <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                  <span style={{ color: '#8E867C' }}>Valor</span>
-                  <span style={{ fontWeight: 600, color: '#1C1A18' }}>700€</span>
+                <div className="editorial-spec-item">
+                  <span className="editorial-spec-label">Prazo de confeção</span>
+                  <span className="editorial-spec-value" style={{ fontWeight: 500 }}>15 a 20 dias</span>
+                </div>
+                <div className="editorial-spec-item">
+                  <span className="editorial-spec-label">Valor</span>
+                  <span className="editorial-spec-value" style={{ fontWeight: 600 }}>700€</span>
                 </div>
               </div>
             </div>

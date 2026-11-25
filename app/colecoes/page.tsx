@@ -136,32 +136,22 @@ export default function ColecoesPage() {
               </Reveal>
 
               <Reveal direction="up" delay={350}>
-                <div style={{
-                  display: 'flex',
-                  flexDirection: 'column',
-                  gap: '12px',
-                  fontFamily: 'var(--font-sans)',
-                  fontSize: '13.5px',
-                  color: '#1C1A18',
-                  marginBottom: '36px',
-                  borderTop: '1px solid #ECE7DE',
-                  paddingTop: '20px'
-                }}>
-                  <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                    <span style={{ color: '#8E867C' }}>Estrutura</span>
-                    <span>Arco contínuo sem emendas aparentes</span>
+                <div className="editorial-spec-list">
+                  <div className="editorial-spec-item">
+                    <span className="editorial-spec-label">Estrutura</span>
+                    <span className="editorial-spec-value">Arco contínuo sem emendas aparentes</span>
                   </div>
-                  <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                    <span style={{ color: '#8E867C' }}>Espuma</span>
-                    <span>Espuma de alta densidade com camada extra de visco</span>
+                  <div className="editorial-spec-item">
+                    <span className="editorial-spec-label">Espuma</span>
+                    <span className="editorial-spec-value">Espuma de alta densidade com camada extra de visco</span>
                   </div>
-                  <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                    <span style={{ color: '#8E867C' }}>Dimensões</span>
-                    <span>190 cm × 62 cm × 80 cm</span>
+                  <div className="editorial-spec-item">
+                    <span className="editorial-spec-label">Dimensões</span>
+                    <span className="editorial-spec-value">190 cm × 62 cm × 80 cm</span>
                   </div>
-                  <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                    <span style={{ color: '#8E867C' }}>Valor</span>
-                    <span style={{ fontWeight: 600 }}>750€</span>
+                  <div className="editorial-spec-item">
+                    <span className="editorial-spec-label">Valor</span>
+                    <span className="editorial-spec-value" style={{ fontWeight: 600 }}>750€</span>
                   </div>
                 </div>
               </Reveal>
@@ -170,6 +160,7 @@ export default function ColecoesPage() {
                 <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
                   <Link
                     href="/maca-modelo-1"
+                    className="editorial-btn-mobile-full"
                     style={{
                       fontFamily: 'var(--font-sans)',
                       fontSize: '11px',
@@ -181,7 +172,10 @@ export default function ColecoesPage() {
                       padding: '14px 30px',
                       borderRadius: '2px',
                       textDecoration: 'none',
-                      transition: 'background-color 0.25s ease'
+                      transition: 'background-color 0.25s ease',
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      justifyContent: 'center'
                     }}
                   >
                     EXPLORAR SCULPT →
@@ -199,7 +193,7 @@ export default function ColecoesPage() {
         borderBottom: '1px solid #ECE7DE'
       }}>
         <div className="editorial-container">
-          <div className="editorial-split-grid">
+          <div className="editorial-split-grid editorial-split-grid-reverse">
             {/* Info */}
             <div>
               <Reveal direction="up" delay={200}>
@@ -244,32 +238,22 @@ export default function ColecoesPage() {
               </Reveal>
 
               <Reveal direction="up" delay={350}>
-                <div style={{
-                  display: 'flex',
-                  flexDirection: 'column',
-                  gap: '12px',
-                  fontFamily: 'var(--font-sans)',
-                  fontSize: '13.5px',
-                  color: '#1C1A18',
-                  marginBottom: '36px',
-                  borderTop: '1px solid #ECE7DE',
-                  paddingTop: '20px'
-                }}>
-                  <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                    <span style={{ color: '#8E867C' }}>Estofo</span>
-                    <span>Canais anatómicos acolchoados em alta densidade</span>
+                <div className="editorial-spec-list">
+                  <div className="editorial-spec-item">
+                    <span className="editorial-spec-label">Estofo</span>
+                    <span className="editorial-spec-value">Canais anatómicos acolchoados em alta densidade</span>
                   </div>
-                  <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                    <span style={{ color: '#8E867C' }}>Base</span>
-                    <span>Pés em X em aço Champagne escovado</span>
+                  <div className="editorial-spec-item">
+                    <span className="editorial-spec-label">Base</span>
+                    <span className="editorial-spec-value">Pés em X em ferro Champagne escovado</span>
                   </div>
-                  <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                    <span style={{ color: '#8E867C' }}>Dimensões</span>
-                    <span>180 cm × 62 cm × 80 cm</span>
+                  <div className="editorial-spec-item">
+                    <span className="editorial-spec-label">Dimensões</span>
+                    <span className="editorial-spec-value">180 cm × 62 cm × 80 cm</span>
                   </div>
-                  <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                    <span style={{ color: '#8E867C' }}>Valor</span>
-                    <span style={{ fontWeight: 600 }}>700€</span>
+                  <div className="editorial-spec-item">
+                    <span className="editorial-spec-label">Valor</span>
+                    <span className="editorial-spec-value" style={{ fontWeight: 600 }}>700€</span>
                   </div>
                 </div>
               </Reveal>
@@ -278,6 +262,7 @@ export default function ColecoesPage() {
                 <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
                   <Link
                     href="/maca-modelo-2"
+                    className="editorial-btn-mobile-full"
                     style={{
                       fontFamily: 'var(--font-sans)',
                       fontSize: '11px',
@@ -289,7 +274,10 @@ export default function ColecoesPage() {
                       padding: '14px 30px',
                       borderRadius: '2px',
                       textDecoration: 'none',
-                      transition: 'background-color 0.25s ease'
+                      transition: 'background-color 0.25s ease',
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      justifyContent: 'center'
                     }}
                   >
                     EXPLORAR PURE →
@@ -415,7 +403,7 @@ export default function ColecoesPage() {
                 </p>
                 <div style={{ borderTop: '1px solid #ECE7DE', paddingTop: '20px', display: 'flex', flexDirection: 'column', gap: '10px', fontSize: '13px', color: '#3A3632' }}>
                   <div>✓ Estofo capitoné com gomos anatómicos</div>
-                  <div>✓ Pés em X em aço dourado Champagne</div>
+                  <div>✓ Pés em X em ferro dourado Champagne</div>
                   <div>✓ Almofada cervical com encaixe integrada</div>
                 </div>
               </div>

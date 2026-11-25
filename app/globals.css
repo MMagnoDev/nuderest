@@ -152,6 +152,13 @@ body {
     gap: 40px;
   }
 
+  .editorial-split-grid-reverse > div:first-child {
+    order: 2;
+  }
+  .editorial-split-grid-reverse > div:last-child {
+    order: 1;
+  }
+
   .editorial-signature-row {
     grid-template-columns: 1fr;
     gap: 36px;
@@ -171,6 +178,87 @@ body {
   .editorial-signature-cards {
     grid-template-columns: 1fr;
     gap: 28px;
+  }
+}
+
+/* ==========================================================================
+   EDITORIAL SPECS RESPONSIVE LIST (PREVENTS OVERLAPPING ON MOBILE)
+   ========================================================================== */
+.editorial-spec-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  font-family: var(--font-sans);
+  font-size: 13.5px;
+  color: #1C1A18;
+  border-top: 1px solid #ECE7DE;
+  padding-top: 20px;
+  margin-bottom: 36px;
+}
+
+.editorial-spec-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 16px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #F0ECE5;
+}
+
+.editorial-spec-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.editorial-spec-label {
+  color: #8E867C;
+  flex-shrink: 0;
+  min-width: 95px;
+}
+
+.editorial-spec-value {
+  text-align: right;
+  font-weight: 400;
+  color: #1C1A18;
+  word-break: break-word;
+}
+
+@media (max-width: 640px) {
+  .editorial-spec-list {
+    gap: 10px;
+    font-size: 13px;
+    margin-bottom: 28px;
+  }
+  .editorial-spec-item {
+    gap: 12px;
+    padding-bottom: 8px;
+    align-items: flex-start;
+  }
+  .editorial-spec-label {
+    min-width: 75px;
+    font-size: 12.5px;
+  }
+  .editorial-spec-value {
+    font-size: 12.5px;
+  }
+}
+
+@media (max-width: 360px) {
+  .editorial-spec-item {
+    flex-direction: column;
+    gap: 3px;
+    align-items: flex-start;
+  }
+  .editorial-spec-value {
+    text-align: left;
+  }
+}
+
+@media (max-width: 480px) {
+  .editorial-btn-mobile-full {
+    width: 100% !important;
+    text-align: center !important;
+    justify-content: center !important;
   }
 }
 

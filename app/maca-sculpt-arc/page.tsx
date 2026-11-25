@@ -390,7 +390,7 @@ Gostaria de receber uma proposta personalizada e prazo de entrega.`;
                   { name: 'Base em Acabamento Taupe Esculpido', desc: 'Acabamento escultural mate' }
                 ] : [
                   { name: 'Pés em X Dourado Champagne Escovado', desc: 'Acabamento metálico acetinado nobre' },
-                  { name: 'Pés em X Aço Carbono Negro Fosco', desc: 'Estrutura geométrica contemporânea' },
+                  { name: 'Pés em X Ferro Negro Fosco', desc: 'Estrutura geométrica contemporânea' },
                   { name: 'Pés em Madeira Maciça Nobre', desc: 'Calor orgânico e acabamento artesanal' }
                 ]).map((base) => (
                   <div

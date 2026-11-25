@@ -74,7 +74,7 @@ export const PRODUCTS_CATALOG: Product[] = [
       '/maca2/maca2_3.webp',
       '/maca2/maca2_5.webp'
     ],
-    description: 'Estofo acolchoado com gomos anatómicos, curvatura suave e pés em X em aço carbono com banho dourado Champagne fosco de altíssima durabilidade.',
+    description: 'Estofo acolchoado com gomos anatómicos, curvatura suave e pés em X em ferro com acabamento dourado Champagne fosco de altíssima durabilidade.',
     longDescription: 'A Maca Pure Anatómica une a tradição do estofamento nobre ao suporte ortopédico ativo. Idealizada para procedimentos de longa duração, as suas almofadas anatómicas acolhem a cliente eliminando qualquer ponto de pressão lombar.',
     dimensions: {
       length: '180 cm',
@@ -84,7 +84,7 @@ export const PRODUCTS_CATALOG: Product[] = [
     },
     features: [
       'Costura capitonê modular com espuma multi-densidade D33 Soft',
-      'Estrutura dos pés em X em aço com pintura eletrostática dourada Champagne',
+      'Estrutura dos pés em X em ferro com pintura eletrostática dourada Champagne',
       'Almofada cervical com encaixe anatómico integrada',
       'Revestimento sintético impermeável com proteção contra manchas e pigmentos',
       'Garantia estrutural de 5 anos'
@@ -92,7 +92,7 @@ export const PRODUCTS_CATALOG: Product[] = [
     availableColors: SIGNATURE_COLORS,
     baseFinishes: [
       { id: 'pes-dourado-champagne', name: 'Pés em X Dourado Champagne Escovado', extraPrice: 0 },
-      { id: 'pes-aco-preto-mate', name: 'Pés em X Aço Carbono Negro Fosco', extraPrice: 0 },
+      { id: 'pes-ferro-preto-mate', name: 'Pés em X Ferro Negro Fosco', extraPrice: 0 },
       { id: 'pes-madeira-nobre', name: 'Pés em Madeira Maciça Nobre', extraPrice: 0 }
     ],
     optionalAddons: [
