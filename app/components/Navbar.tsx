@@ -97,7 +97,7 @@ export const Navbar: React.FC<{ transparent?: boolean }> = ({ transparent = fals
         {/* Desktop Right CTA */}
         <div className="header-right-desktop" style={{ display: 'flex', alignItems: 'center', gap: '18px' }}>
           <a
-            href="https://wa.me/351910800000?text=Ol%C3%A1%2C%20gostaria%20de%20falar%20com%20um%20consultor%20da%20NUDE%20REST."
+            href="https://wa.me/351934804066?text=Ol%C3%A1%2C%20gostaria%20de%20falar%20com%20um%20consultor%20da%20NUDE%20REST."
             target="_blank"
             rel="noopener noreferrer"
             style={{
@@ -262,7 +262,7 @@ export const Navbar: React.FC<{ transparent?: boolean }> = ({ transparent = fals
           {/* Bottom Action Area */}
           <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', paddingTop: '16px' }}>
             <a
-              href="https://wa.me/351910800000?text=Ol%C3%A1%2C%20gostaria%20de%20falar%20com%20um%20consultor%20da%20NUDE%20REST."
+              href="https://wa.me/351934804066?text=Ol%C3%A1%2C%20gostaria%20de%20falar%20com%20um%20consultor%20da%20NUDE%20REST."
               target="_blank"
               rel="noopener noreferrer"
               style={{

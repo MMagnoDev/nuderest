@@ -328,7 +328,7 @@ export default function AteliePage() {
                 </p>
               </div>
               <a
-                href="https://wa.me/351910800000?text=Ol%C3%A1%2C%20gostaria%20de%20personalizar%20a%20minha%20pe%C3%A7a%20NUDE%20REST."
+                href="https://wa.me/351934804066?text=Ol%C3%A1%2C%20gostaria%20de%20personalizar%20a%20minha%20pe%C3%A7a%20NUDE%20REST."
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{

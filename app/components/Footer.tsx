@@ -198,12 +198,12 @@ export const Footer: React.FC = () => {
             <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '12px', fontSize: '13px' }}>
               <li>
                 <Link href="/maca-modelo-1" style={{ color: '#8E867C', textDecoration: 'none', transition: 'color 0.2s ease' }} onMouseEnter={(e) => (e.currentTarget.style.color = '#EDE8DF')} onMouseLeave={(e) => (e.currentTarget.style.color = '#8E867C')}>
-                  Maca Sculpt Wave
+                  Marquesa Sculpt
                 </Link>
               </li>
               <li>
                 <Link href="/maca-modelo-2" style={{ color: '#8E867C', textDecoration: 'none', transition: 'color 0.2s ease' }} onMouseEnter={(e) => (e.currentTarget.style.color = '#EDE8DF')} onMouseLeave={(e) => (e.currentTarget.style.color = '#8E867C')}>
-                  Maca Pure Anatómica
+                  Marquesa Pure
                 </Link>
               </li>
               <li>
@@ -259,13 +259,13 @@ export const Footer: React.FC = () => {
             </h4>
             <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '12px', fontSize: '13px' }}>
               <li>
-                <a href="https://wa.me/351910800000" target="_blank" rel="noopener noreferrer" style={{ color: '#8E867C', textDecoration: 'none', transition: 'color 0.2s ease' }} onMouseEnter={(e) => (e.currentTarget.style.color = '#EDE8DF')} onMouseLeave={(e) => (e.currentTarget.style.color = '#8E867C')}>
-                  WhatsApp: +351 910 800 000
+                <a href="https://wa.me/351934804066" target="_blank" rel="noopener noreferrer" style={{ color: '#8E867C', textDecoration: 'none', transition: 'color 0.2s ease' }} onMouseEnter={(e) => (e.currentTarget.style.color = '#EDE8DF')} onMouseLeave={(e) => (e.currentTarget.style.color = '#8E867C')}>
+                  WhatsApp: +351 934 804 066
                 </a>
               </li>
               <li>
-                <a href="mailto:contacto@nuderest.com" style={{ color: '#8E867C', textDecoration: 'none', transition: 'color 0.2s ease' }} onMouseEnter={(e) => (e.currentTarget.style.color = '#EDE8DF')} onMouseLeave={(e) => (e.currentTarget.style.color = '#8E867C')}>
-                  contacto@nuderest.com
+                <a href="mailto:geral.nuderest@gmail.com" style={{ color: '#8E867C', textDecoration: 'none', transition: 'color 0.2s ease' }} onMouseEnter={(e) => (e.currentTarget.style.color = '#EDE8DF')} onMouseLeave={(e) => (e.currentTarget.style.color = '#8E867C')}>
+                  geral.nuderest@gmail.com
                 </a>
               </li>
               <li style={{ color: '#6A635A', fontSize: '12px' }}>

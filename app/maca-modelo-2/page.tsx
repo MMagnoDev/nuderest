@@ -12,6 +12,7 @@ export default function MacaRoyalePage() {
 
   const galleryImages = [
     '/photos/pure.webp',
+    '/photos/pure_0311.webp',
     '/maca2/maca2_2.webp',
     '/maca2/maca2_3.webp',
     '/maca2/maca2_5.webp'
@@ -140,7 +141,7 @@ export default function MacaRoyalePage() {
             <Reveal direction="up" delay={400}>
               <div style={{ display: 'flex', gap: '14px', flexWrap: 'wrap' }}>
                 <a
-                  href="https://wa.me/351910800000?text=Ol%C3%A1%2C%20gostaria%20de%20criar%20a%20minha%20PURE%20sob%20medida."
+                  href="https://wa.me/351934804066?text=Ol%C3%A1%2C%20gostaria%20de%20criar%20a%20minha%20PURE%20sob%20medida."
                   target="_blank"
                   rel="noopener noreferrer"
                   style={{
@@ -206,7 +207,7 @@ export default function MacaRoyalePage() {
               }}>
                 <Image
                   src={activeImage}
-                  alt="Maca Pure em Alta Definição"
+                  alt="Marquesa Pure em Alta Definição"
                   fill
                   priority
                   sizes="(max-width: 900px) 100vw, 55vw"
@@ -216,7 +217,7 @@ export default function MacaRoyalePage() {
             </Reveal>
 
             {/* Thumbnails */}
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '12px' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: `repeat(${galleryImages.length}, 1fr)`, gap: '12px' }}>
               {galleryImages.map((img, idx) => (
                 <div
                   key={idx}
@@ -410,7 +411,7 @@ export default function MacaRoyalePage() {
               height: 'clamp(320px, 38vw, 460px)',
               backgroundColor: 'transparent'
             }}>
-              <Image src="/photos/pecasdeassinatura/_C1M0299.webp" alt="Dimensões Maca Pure Anatómica" fill sizes="(max-width: 900px) 100vw, 800px" style={{ objectFit: 'contain' }} />
+              <Image src="/photos/pecasdeassinatura/_C1M0299.webp" alt="Dimensões Marquesa Pure Anatómica" fill sizes="(max-width: 900px) 100vw, 800px" style={{ objectFit: 'contain' }} />
             </div>
           </div>
         </div>

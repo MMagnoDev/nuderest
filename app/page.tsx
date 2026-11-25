@@ -205,14 +205,15 @@ export default function HomePage() {
               <Reveal direction="up" delay={150}>
                 <h2 style={{
                   fontFamily: 'var(--font-title)',
-                  fontSize: 'clamp(42px, 5vw, 68px)',
+                  fontSize: 'clamp(38px, 4.5vw, 62px)',
                   fontWeight: 400,
                   lineHeight: 1.05,
-                  letterSpacing: '-0.02em',
+                  letterSpacing: '0.04em',
+                  textTransform: 'uppercase',
                   color: '#1C1A18',
                   marginBottom: '20px'
                 }}>
-                  Sculpt
+                  SCULPT
                 </h2>
               </Reveal>
 
@@ -331,14 +332,15 @@ export default function HomePage() {
               <Reveal direction="up" delay={150}>
                 <h2 style={{
                   fontFamily: 'var(--font-title)',
-                  fontSize: 'clamp(42px, 5vw, 68px)',
+                  fontSize: 'clamp(38px, 4.5vw, 62px)',
                   fontWeight: 400,
                   lineHeight: 1.05,
-                  letterSpacing: '-0.02em',
+                  letterSpacing: '0.04em',
+                  textTransform: 'uppercase',
                   color: '#1C1A18',
                   marginBottom: '20px'
                 }}>
-                  Pure
+                  PURE
                 </h2>
               </Reveal>
 
@@ -409,7 +411,7 @@ export default function HomePage() {
               <span className="ticker-dot">·</span>
               <span className="ticker-item">NUDE REST <em>Atelier</em></span>
               <span className="ticker-dot">·</span>
-              <span className="ticker-item">Atelier de Macas de <em>Alta Costura</em></span>
+              <span className="ticker-item">Atelier de Marquesas de <em>Alta Costura</em></span>
               <span className="ticker-dot">·</span>
               <span className="ticker-item">Ergonomia Ativa & <em>Conforto Absoluto</em></span>
               <span className="ticker-dot">·</span>
@@ -427,7 +429,7 @@ export default function HomePage() {
               <span className="ticker-dot">·</span>
               <span className="ticker-item">NUDE REST <em>Atelier</em></span>
               <span className="ticker-dot">·</span>
-              <span className="ticker-item">Atelier de Macas de <em>Alta Costura</em></span>
+              <span className="ticker-item">Atelier de Marquesas de <em>Alta Costura</em></span>
               <span className="ticker-dot">·</span>
               <span className="ticker-item">Ergonomia Ativa & <em>Conforto Absoluto</em></span>
               <span className="ticker-dot">·</span>

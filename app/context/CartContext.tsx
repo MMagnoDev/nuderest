@@ -146,7 +146,7 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
     message += `──────────────────%0A`;
     message += `Poderiam confirmar o prazo de confeção artesanal e enviar a proposta detalhada?`;
 
-    window.open(`https://wa.me/351910800000?text=${message}`, '_blank');
+    window.open(`https://wa.me/351934804066?text=${message}`, '_blank');
   };
 
   const checkoutDirectWhatsApp = (item: Omit<CartItem, 'id' | 'quantity'>) => {
@@ -162,7 +162,7 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
     }
     message += `%0APoderiam confirmar a disponibilidade e o prazo de entrega?`;
 
-    window.open(`https://wa.me/351910800000?text=${message}`, '_blank');
+    window.open(`https://wa.me/351934804066?text=${message}`, '_blank');
   };
 
   return (

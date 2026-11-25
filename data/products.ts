@@ -11,7 +11,7 @@ export const PRODUCTS_CATALOG: Product[] = [
   {
     id: 'nr-modelo-1-sculpt',
     slug: 'maca-modelo-1',
-    name: 'Maca Sculpt Wave',
+    name: 'Marquesa Sculpt',
     subtitle: 'Silhueta em arco contínuo escultural com suporte ergonómico para Spas e Estética Avançada',
     category: 'luxo',
     price: 750,
@@ -24,11 +24,12 @@ export const PRODUCTS_CATALOG: Product[] = [
     image: '/photos/sculpt.webp',
     gallery: [
       '/photos/sculpt.webp',
+      '/photos/sculpt_0012.webp',
       '/maca1/maca1_2.webp',
       '/maca1/maca1_3.webp'
     ],
     description: 'Design curvo fluido contínuo com acabamento arquitetónico em tecido nobre, base estrutural em cilindro e curva anatómica para alívio da coluna lombar.',
-    longDescription: 'A Maca Sculpt Wave é a expressão máxima do design contemporâneo para ambientes de estética de luxo. Concebida como uma escultura funcional, a sua curvatura proporciona relaxamento imediato para a cliente e ergonomia impecável para a profissional.',
+    longDescription: 'A Marquesa Sculpt Wave é a expressão máxima do design contemporâneo para ambientes de estética de luxo. Concebida como uma escultura funcional, a sua curvatura proporciona relaxamento imediato para a cliente e ergonomia impecável para a profissional.',
     dimensions: {
       length: '190 cm',
       width: '62 cm',
@@ -57,7 +58,7 @@ export const PRODUCTS_CATALOG: Product[] = [
   {
     id: 'nr-modelo-2-royale',
     slug: 'maca-modelo-2',
-    name: 'Maca Pure Anatómica',
+    name: 'Marquesa Pure',
     subtitle: 'Estofo capitonê acolchoado de alto luxo com estrutura metálica dourada Champagne para Lash Designers',
     category: 'anatomica',
     price: 0,
@@ -70,12 +71,13 @@ export const PRODUCTS_CATALOG: Product[] = [
     image: '/photos/pure.webp',
     gallery: [
       '/photos/pure.webp',
+      '/photos/pure_0311.webp',
       '/maca2/maca2_2.webp',
       '/maca2/maca2_3.webp',
       '/maca2/maca2_5.webp'
     ],
     description: 'Estofo acolchoado com gomos anatómicos, curvatura suave e pés em X em ferro com acabamento dourado Champagne fosco de altíssima durabilidade.',
-    longDescription: 'A Maca Pure Anatómica une a tradição do estofamento nobre ao suporte ortopédico ativo. Idealizada para procedimentos de longa duração, as suas almofadas anatómicas acolhem a cliente eliminando qualquer ponto de pressão lombar.',
+    longDescription: 'A Marquesa Pure Anatómica une a tradição do estofamento nobre ao suporte ortopédico ativo. Idealizada para procedimentos de longa duração, as suas almofadas anatómicas acolhem a cliente eliminando qualquer ponto de pressão lombar.',
     dimensions: {
       length: '180 cm',
       width: '62 cm',

@@ -23,7 +23,7 @@ export default function ContatoPage() {
 - Modelo de Interesse: ${model}
 - Mensagem: ${message || 'Gostaria de receber uma proposta e prazo de entrega.'}`;
 
-    window.open(`https://wa.me/351910800000?text=${encodeURIComponent(text)}`, '_blank');
+    window.open(`https://wa.me/351934804066?text=${encodeURIComponent(text)}`, '_blank');
     setSubmitted(true);
   };
 
@@ -118,7 +118,7 @@ export default function ContatoPage() {
                       WHATSAPP CONCIERGE (RESPOSTA IMEDIATA)
                     </span>
                     <a
-                      href="https://wa.me/351910800000"
+                      href="https://wa.me/351934804066"
                       target="_blank"
                       rel="noopener noreferrer"
                       style={{
@@ -131,7 +131,7 @@ export default function ContatoPage() {
                         paddingBottom: '2px'
                       }}
                     >
-                      +351 910 800 000
+                      +351 934 804 066
                     </a>
                   </div>
 
@@ -140,7 +140,7 @@ export default function ContatoPage() {
                       E-MAIL INSTITUCIONAL
                     </span>
                     <a
-                      href="mailto:contacto@nuderest.com"
+                      href="mailto:geral.nuderest@gmail.com"
                       style={{
                         fontSize: 'clamp(16px, 1.4vw, 18px)',
                         fontWeight: 400,
@@ -150,7 +150,7 @@ export default function ContatoPage() {
                         paddingBottom: '2px'
                       }}
                     >
-                      contacto@nuderest.com
+                      geral.nuderest@gmail.com
                     </a>
                   </div>
 

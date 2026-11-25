@@ -29,12 +29,14 @@ export default function CustomizerPage() {
 
   const sculptImages = [
     '/photos/sculpt.webp',
+    '/photos/sculpt_0012.webp',
     '/maca1/maca1_2.webp',
     '/maca1/maca1_3.webp'
   ];
 
   const royaleImages = [
     '/photos/pure.webp',
+    '/photos/pure_0311.webp',
     '/maca2/maca2_2.webp',
     '/maca2/maca2_3.webp',
     '/maca2/maca2_5.webp'
@@ -44,7 +46,7 @@ export default function CustomizerPage() {
   const currentImage = currentGallery[selectedAngle] || currentGallery[0];
 
   const generateWhatsAppMessage = () => {
-    const modelName = selectedModel === 'sculpt' ? 'Maca Sculpt (Sculpt Wave)' : 'Maca Royale (Royale Anatómica)';
+    const modelName = selectedModel === 'sculpt' ? 'Marquesa Sculpt (Sculpt Wave)' : 'Marquesa Pure (Pure Anatómica)';
     const extras = [];
     if (embroidery) extras.push(`Bordado com Logótipo: "${embroideryText || 'A definir'}"`);
     if (protectiveCover) extras.push('Capa Cristal Náutico');
@@ -59,7 +61,7 @@ export default function CustomizerPage() {
 
 Gostaria de receber uma proposta personalizada e prazo de entrega.`;
 
-    return `https://wa.me/351910800000?text=${encodeURIComponent(text)}`;
+    return `https://wa.me/351934804066?text=${encodeURIComponent(text)}`;
   };
 
 
@@ -99,7 +101,7 @@ Gostaria de receber uma proposta personalizada e prazo de entrega.`;
               color: '#1C1A18',
               marginBottom: '6px'
             }}>
-              {selectedModel === 'sculpt' ? 'Maca Sculpt' : 'Maca Royale'}
+              {selectedModel === 'sculpt' ? 'Marquesa Sculpt' : 'Marquesa Pure'}
             </h1>
             
             <span style={{
@@ -141,7 +143,7 @@ Gostaria de receber uma proposta personalizada e prazo de entrega.`;
             }}>
               <Image
                 src={currentImage}
-                alt="Pré-visualização da Maca Personalizada"
+                alt="Pré-visualização da Marquesa Personalizada"
                 fill
                 priority
                 sizes="(max-width: 900px) 100vw, 55vw"
@@ -167,7 +169,7 @@ Gostaria de receber uma proposta personalizada e prazo de entrega.`;
             </div>
 
             {/* Angle Selectors */}
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '12px', marginBottom: '36px' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: `repeat(${currentGallery.length}, 1fr)`, gap: '12px', marginBottom: '36px' }}>
               {currentGallery.map((img, idx) => (
                 <div
                   key={idx}
@@ -244,7 +246,7 @@ Gostaria de receber uma proposta personalizada e prazo de entrega.`;
             <div style={{ marginBottom: '28px' }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '12px' }}>
                 <span style={{ fontFamily: 'var(--font-sans)', fontSize: '11px', fontWeight: 600, letterSpacing: '0.14em', textTransform: 'uppercase', color: '#1C1A18' }}>
-                  01. MODELO · {selectedModel === 'sculpt' ? 'MACA SCULPT' : 'MACA ROYALE'}
+                  01. MODELO · {selectedModel === 'sculpt' ? 'MARQUESA SCULPT' : 'MARQUESA PURE'}
                 </span>
                 <span style={{ fontSize: '11px', color: '#8E867C' }}>1/5</span>
               </div>
@@ -267,7 +269,7 @@ Gostaria de receber uma proposta personalizada e prazo de entrega.`;
                     transition: 'all 0.2s'
                   }}
                 >
-                  <div style={{ fontSize: '12px', fontWeight: 600, color: '#1C1A18' }}>Maca Sculpt</div>
+                  <div style={{ fontSize: '12px', fontWeight: 600, color: '#1C1A18' }}>Marquesa Sculpt</div>
                   <div style={{ fontSize: '10px', color: '#8E867C' }}>Sculpt Wave</div>
                 </button>
 
@@ -288,8 +290,8 @@ Gostaria de receber uma proposta personalizada e prazo de entrega.`;
                     transition: 'all 0.2s'
                   }}
                 >
-                  <div style={{ fontSize: '12px', fontWeight: 600, color: '#1C1A18' }}>Maca Royale</div>
-                  <div style={{ fontSize: '10px', color: '#8E867C' }}>Royale Anatómica</div>
+                  <div style={{ fontSize: '12px', fontWeight: 600, color: '#1C1A18' }}>Marquesa Pure</div>
+                  <div style={{ fontSize: '10px', color: '#8E867C' }}>Pure Anatómica</div>
                 </button>
               </div>
             </div>

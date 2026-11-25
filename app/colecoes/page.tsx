@@ -82,7 +82,7 @@ export default function ColecoesPage() {
               }}>
                 <Image
                   src="/photos/sculpt.webp"
-                  alt="Maca Sculpt Wave em Bouclé Marfim"
+                  alt="Marquesa Sculpt Wave em Bouclé Marfim"
                   fill
                   priority
                   unoptimized
@@ -111,15 +111,16 @@ export default function ColecoesPage() {
 
               <Reveal direction="up" delay={250}>
                 <h2 style={{
-                  fontFamily: 'var(--font-sans)',
+                  fontFamily: 'var(--font-title)',
                   fontSize: 'clamp(32px, 3.8vw, 46px)',
                   fontWeight: 400,
                   lineHeight: 1.15,
-                  letterSpacing: '-0.025em',
+                  letterSpacing: '0.04em',
+                  textTransform: 'uppercase',
                   color: '#1C1A18',
                   marginBottom: '20px'
                 }}>
-                  Maca Sculpt Wave
+                  MARQUESA SCULPT
                 </h2>
               </Reveal>
 
@@ -213,15 +214,16 @@ export default function ColecoesPage() {
 
               <Reveal direction="up" delay={250}>
                 <h2 style={{
-                  fontFamily: 'var(--font-sans)',
+                  fontFamily: 'var(--font-title)',
                   fontSize: 'clamp(32px, 3.8vw, 46px)',
                   fontWeight: 400,
                   lineHeight: 1.15,
-                  letterSpacing: '-0.025em',
+                  letterSpacing: '0.04em',
+                  textTransform: 'uppercase',
                   color: '#1C1A18',
                   marginBottom: '20px'
                 }}>
-                  Maca Pure Anatómica
+                  MARQUESA PURE
                 </h2>
               </Reveal>
 
@@ -298,7 +300,7 @@ export default function ColecoesPage() {
               }}>
                 <Image
                   src="/photos/pure.webp"
-                  alt="Maca Royale Anatómica"
+                  alt="Marquesa Pure Anatómica"
                   fill
                   unoptimized
                   sizes="(max-width: 900px) 100vw, 55vw"
@@ -370,10 +372,10 @@ export default function ColecoesPage() {
                 paddingTop: '32px'
               }}>
                 <div className="image-hover-zoom" style={{ position: 'relative', width: '100%', aspectRatio: '16/9', borderRadius: '2px', overflow: 'hidden', backgroundColor: '#EAE6DF', marginBottom: '24px' }}>
-                  <Image src="/photos/sculpt.webp" alt="Maca Sculpt Wave" fill unoptimized sizes="(max-width: 768px) 100vw, 50vw" style={{ objectFit: 'cover', transition: 'transform 0.8s cubic-bezier(0.16, 1, 0.3, 1)' }} />
+                  <Image src="/photos/sculpt.webp" alt="Marquesa Sculpt Wave" fill unoptimized sizes="(max-width: 768px) 100vw, 50vw" style={{ objectFit: 'cover', transition: 'transform 0.8s cubic-bezier(0.16, 1, 0.3, 1)' }} />
                 </div>
-                <h3 style={{ fontFamily: 'var(--font-sans)', fontSize: '20px', fontWeight: 500, color: '#1C1A18', marginBottom: '8px' }}>
-                  Maca Sculpt Wave
+                <h3 style={{ fontFamily: 'var(--font-title)', fontSize: '22px', fontWeight: 500, letterSpacing: '0.04em', textTransform: 'uppercase', color: '#1C1A18', marginBottom: '8px' }}>
+                  MARQUESA SCULPT
                 </h3>
                 <p style={{ fontSize: '13.5px', color: '#6E6860', marginBottom: '24px', lineHeight: 1.6 }}>
                   Ideal para clínicas de estética facial avançada, dermatologia, spas e ambientes com foco em design escultural minimalista.
@@ -393,10 +395,10 @@ export default function ColecoesPage() {
                 paddingTop: '32px'
               }}>
                 <div className="image-hover-zoom" style={{ position: 'relative', width: '100%', aspectRatio: '16/9', borderRadius: '2px', overflow: 'hidden', backgroundColor: '#EAE6DF', marginBottom: '24px' }}>
-                  <Image src="/photos/pure.webp" alt="Maca Pure Anatómica" fill unoptimized sizes="(max-width: 768px) 100vw, 50vw" style={{ objectFit: 'cover', transition: 'transform 0.8s cubic-bezier(0.16, 1, 0.3, 1)' }} />
+                  <Image src="/photos/pure.webp" alt="Marquesa Pure Anatómica" fill unoptimized sizes="(max-width: 768px) 100vw, 50vw" style={{ objectFit: 'cover', transition: 'transform 0.8s cubic-bezier(0.16, 1, 0.3, 1)' }} />
                 </div>
-                <h3 style={{ fontFamily: 'var(--font-sans)', fontSize: '20px', fontWeight: 500, color: '#1C1A18', marginBottom: '8px' }}>
-                  Maca Pure Anatómica
+                <h3 style={{ fontFamily: 'var(--font-title)', fontSize: '22px', fontWeight: 500, letterSpacing: '0.04em', textTransform: 'uppercase', color: '#1C1A18', marginBottom: '8px' }}>
+                  MARQUESA PURE
                 </h3>
                 <p style={{ fontSize: '13.5px', color: '#6E6860', marginBottom: '24px', lineHeight: 1.6 }}>
                   Ideal para procedimentos minuciosos de longa duração, lash designers e micropigmentação com máximo aconchego.

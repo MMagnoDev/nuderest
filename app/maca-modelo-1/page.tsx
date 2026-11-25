@@ -12,6 +12,7 @@ export default function MacaSculptPage() {
 
   const galleryImages = [
     '/photos/sculpt.webp',
+    '/photos/sculpt_0012.webp',
     '/maca1/maca1_2.webp',
     '/maca1/maca1_3.webp'
   ];
@@ -143,7 +144,7 @@ export default function MacaSculptPage() {
             <Reveal direction="up" delay={400}>
               <div style={{ display: 'flex', gap: '14px', flexWrap: 'wrap' }}>
                 <a
-                  href="https://wa.me/351910800000?text=Ol%C3%A1%2C%20gostaria%20de%20criar%20a%20minha%20SCULPT%20sob%20medida."
+                  href="https://wa.me/351934804066?text=Ol%C3%A1%2C%20gostaria%20de%20criar%20a%20minha%20SCULPT%20sob%20medida."
                   target="_blank"
                   rel="noopener noreferrer"
                   style={{
@@ -209,7 +210,7 @@ export default function MacaSculptPage() {
               }}>
                 <Image
                   src={activeImage}
-                  alt="Maca Sculpt em Alta Definição"
+                  alt="Marquesa Sculpt em Alta Definição"
                   fill
                   priority
                   sizes="(max-width: 900px) 100vw, 55vw"
@@ -219,7 +220,7 @@ export default function MacaSculptPage() {
             </Reveal>
 
             {/* Thumbnails */}
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '12px' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: `repeat(${galleryImages.length}, 1fr)`, gap: '12px' }}>
               {galleryImages.map((img, idx) => (
                 <div
                   key={idx}

@@ -30,19 +30,19 @@ const jakarta = Plus_Jakarta_Sans({
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://nuderest.com.br'),
-  title: 'NUDE REST | Macas de Alto Padrão Feitas por Medida | Estética, Lash & Spas',
-  description: 'Atelier de macas ergonómicas personalizadas por medida com gravação da sua marca. Espuma D33 multi-densidade, revestimento nobre hospitalar e 5 anos de garantia estrutural.',
+  title: 'NUDE REST | Marquesas de Alto Padrão Feitas por Medida | Estética, Lash & Spas',
+  description: 'Atelier de marquesas ergonómicas personalizadas por medida com gravação da sua marca. Espuma D33 multi-densidade, revestimento nobre hospitalar e 5 anos de garantia estrutural.',
   keywords: [
-    'macas personalizadas',
-    'maca para estética',
-    'maca lash designer',
-    'maca ergonomica',
-    'maca clinica de luxo',
-    'nude rest macas'
+    'marquesas personalizadas',
+    'marquesa para estética',
+    'marquesa lash designer',
+    'marquesa ergonomica',
+    'marquesa clinica de luxo',
+    'nude rest marquesas'
   ],
   openGraph: {
-    title: 'NUDE REST | Macas de Alto Padrão por Medida',
-    description: 'Eleve o posicionamento e a autoridade do seu espaço com macas ergonómicas feitas por medida.',
+    title: 'NUDE REST | Marquesas de Alto Padrão por Medida',
+    description: 'Eleve o posicionamento e a autoridade do seu espaço com marquesas ergonómicas feitas por medida.',
     url: 'https://nuderest.com.br',
     siteName: 'NUDE REST',
     images: [
@@ -50,7 +50,7 @@ export const metadata: Metadata = {
         url: '/logo.webp',
         width: 800,
         height: 600,
-        alt: 'NUDE REST Macas de Luxo'
+        alt: 'NUDE REST Marquesas de Luxo'
       }
     ],
     locale: 'pt_PT',
