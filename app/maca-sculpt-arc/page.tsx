@@ -168,44 +168,44 @@ Gostaria de receber uma proposta personalizada e prazo de entrega.`;
               </div>
             </div>
 
-            {/* Angle Selectors */}
-            <div style={{ display: 'grid', gridTemplateColumns: `repeat(${currentGallery.length}, 1fr)`, gap: '12px', marginBottom: '36px' }}>
-              {currentGallery.map((img, idx) => (
-                <div
-                  key={idx}
-                  onClick={() => setSelectedAngle(idx)}
-                  style={{
-                    position: 'relative',
-                    height: '76px',
-                    backgroundColor: '#FFFFFF',
-                    border: selectedAngle === idx ? '2px solid #1C1A18' : '1px solid #E5E0D8',
-                    borderRadius: '2px',
-                    overflow: 'hidden',
-                    cursor: 'pointer',
-                    transition: 'border-color 0.2s ease'
-                  }}
-                >
-                  <Image src={img} alt={`Ângulo ${idx + 1}`} fill sizes="120px" style={{ objectFit: 'cover' }} />
-                </div>
-              ))}
-            </div>
+              {/* Angle Selectors */}
+              <div style={{ display: 'grid', gridTemplateColumns: `repeat(${currentGallery.length}, 1fr)`, gap: '12px', marginBottom: '36px' }}>
+                {currentGallery.map((img, idx) => (
+                  <div
+                    key={idx}
+                    onClick={() => setSelectedAngle(idx)}
+                    style={{
+                      position: 'relative',
+                      height: '76px',
+                      backgroundColor: '#FFFFFF',
+                      border: selectedAngle === idx ? '2px solid #1C1A18' : '1px solid #E5E0D8',
+                      borderRadius: '2px',
+                      overflow: 'hidden',
+                      cursor: 'pointer',
+                      transition: 'border-color 0.2s ease'
+                    }}
+                  >
+                    <Image src={img} alt={`Ângulo ${idx + 1}`} fill sizes="120px" style={{ objectFit: 'cover' }} />
+                  </div>
+                ))}
+              </div>
 
-            {/* Feature Badges Strip */}
-            <div style={{
-              borderTop: '1px solid #E5E0D8',
-              paddingTop: '24px'
-            }}>
-              <h3 style={{
-                fontFamily: 'var(--font-sans)',
-                fontSize: '11px',
-                fontWeight: 600,
-                letterSpacing: '0.16em',
-                textTransform: 'uppercase',
-                color: '#1C1A18',
-                marginBottom: '16px'
+              {/* Feature Badges Strip */}
+              <div style={{
+                borderTop: '1px solid #E5E0D8',
+                paddingTop: '24px'
               }}>
-                Garantias do Atelier
-              </h3>
+                <h3 style={{
+                  fontFamily: 'var(--font-sans)',
+                  fontSize: '11px',
+                  fontWeight: 600,
+                  letterSpacing: '0.16em',
+                  textTransform: 'uppercase',
+                  color: '#1C1A18',
+                  marginBottom: '16px'
+                }}>
+                  Garantias do Atelier
+                </h3>
 
                 <div style={{
                   display: 'grid',
